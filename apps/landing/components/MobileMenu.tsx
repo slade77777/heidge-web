@@ -1,8 +1,7 @@
-import { Transition } from '@headlessui/react';
-import { useState } from 'react';
-import Menu from './icons/Menu';
-import { Channels, NavLinks } from './Header';
-import Close from './icons/Close';
+import { Transition } from "@headlessui/react";
+import { useState } from "react";
+import { Menu, Close } from "shared/icons";
+import { Channels, NavLinks } from "./Header";
 
 const MobileMenu = ({ className }: { className?: string }) => {
   const [open, setOpen] = useState(false);

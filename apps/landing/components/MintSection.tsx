@@ -1,12 +1,12 @@
-import Button from '../../common/Button';
-import { useState } from 'react';
-import MintCalculator from './MintCalculator';
-import { classNames } from '../../utils';
+import { Button } from "shared";
+import { useState } from "react";
+import MintCalculator from "./MintCalculator";
+import { classNames } from "shared/utils";
 
 const FIXED_NUMBER = new Array(20).fill(0).map((_, index) => index + 1);
 
 const defaultWrapperClass =
-  'space-y-5 max-w-xl mx-auto text-center bg-slate-100 shadow-gray-300/50 p-6 rounded-lg shadow-lg';
+  "space-y-5 max-w-xl mx-auto text-center bg-slate-100 shadow-gray-300/50 p-6 rounded-lg shadow-lg";
 
 const MintSection = ({ className }: { className?: string }) => {
   const [selectedVl, setSelectedVl] = useState(1);

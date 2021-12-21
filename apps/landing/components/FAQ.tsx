@@ -1,30 +1,30 @@
-import React, { ReactNode, useRef, useState } from 'react';
-import Title from '../../common/Title';
-import Arrow from '../../common/icons/Arrow';
-import Image from 'next/image';
+import Image from "next/image";
+import React, { ReactNode, useRef, useState } from "react";
+import { Title } from "shared";
+import { Arrow } from "shared/icons";
 
 const QUESTIONS = [
   {
-    id: 'q1',
-    question: 'What is the legacy free-to-play situation?',
+    id: "q1",
+    question: "What is the legacy free-to-play situation?",
     answer:
-      'Hedgie was the first project to allow purchasing NFT for fiat. We sold a Cryptopunk in our marketplace for Curio coin in April 2020. We have also sold an iPhone, many cool NFT artworks, Artvatars and other great offers.',
+      "Hedgie was the first project to allow purchasing NFT for fiat. We sold a Cryptopunk in our marketplace for Curio coin in April 2020. We have also sold an iPhone, many cool NFT artworks, Artvatars and other great offers.",
   },
   {
-    id: 'q2',
+    id: "q2",
     question:
-      'What are you going to do about free Hedgies, and doesn’t it dilute the OG Hedgies value? ',
+      "What are you going to do about free Hedgies, and doesn’t it dilute the OG Hedgies value? ",
     answer:
-      'What are you going to do about free Hedgies, and doesn’t it dilute the OG Hedgies value? ',
+      "What are you going to do about free Hedgies, and doesn’t it dilute the OG Hedgies value? ",
   },
   {
-    id: 'q3',
-    question: 'Wait, can my OG Hedgie dissolve too?',
-    answer: 'Wait, can my OG Hedgie dissolve too?',
+    id: "q3",
+    question: "Wait, can my OG Hedgie dissolve too?",
+    answer: "Wait, can my OG Hedgie dissolve too?",
   },
   {
-    id: 'q4',
-    question: 'What about those free players who will be active?',
+    id: "q4",
+    question: "What about those free players who will be active?",
     answer: (
       <div>
         <Image width={320} height={360} src="/images/roadmap.png" alt="test" />
@@ -32,21 +32,21 @@ const QUESTIONS = [
     ),
   },
   {
-    id: 'q5',
-    question: 'Wait, can my OG Hedgie dissolve too?',
-    answer: 'Wait, can my OG Hedgie dissolve too?',
+    id: "q5",
+    question: "Wait, can my OG Hedgie dissolve too?",
+    answer: "Wait, can my OG Hedgie dissolve too?",
   },
 ];
 
 const arrowUp =
-  'transform -rotate-90 text-slate-400 w-3 transition-all ease-in-out duration-300';
+  "transform -rotate-90 text-slate-400 w-3 transition-all ease-in-out duration-300";
 const arrowDown =
-  'transform rotate-90 text-teal-400 w-3 transition-all ease-in-out duration-300';
+  "transform rotate-90 text-teal-400 w-3 transition-all ease-in-out duration-300";
 
 const activeText =
-  'text-left font-semibold text-fuchsia-900 transition-all ease-in-out duration-300';
+  "text-left font-semibold text-fuchsia-900 transition-all ease-in-out duration-300";
 const text =
-  'text-left font-semibold text-teal-400 transition-all ease-in-out duration-300';
+  "text-left font-semibold text-teal-400 transition-all ease-in-out duration-300";
 
 const Question = ({
   question,

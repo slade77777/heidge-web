@@ -1,16 +1,14 @@
-import type { NextPage } from 'next';
-import Layout from '../common/Layout';
-import {
-  Collection,
-  Hero,
-  MintSection,
-  AboutTheGame,
-  Features,
-  Roadmap,
-  Faq,
-} from '../components/LandingPage';
+import type { NextPage } from "next";
 
-import BuyYourHedgie from '../components/LandingPage/BuyYourHedgie';
+import Layout from "../components/Layout";
+import BuyYourHedgie from "../components/BuyYourHedgie";
+import Hero from "../components/Hero";
+import MintSection from "../components/MintSection";
+import Collection from "../components/Collection";
+import AboutTheGame from "../components/AboutTheGame";
+import Features from "../components/Features";
+import Roadmap from "../components/Roadmap";
+import Faq from "../components/FAQ";
 
 const HomePage: NextPage = () => {
   return (

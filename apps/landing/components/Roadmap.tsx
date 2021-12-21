@@ -1,6 +1,6 @@
-import Image from 'next/image';
-import Title from '../../common/Title';
 import { ReactNode } from 'react';
+import Image from 'next/image';
+import { Title } from "shared";
 
 const milestones = [
   {

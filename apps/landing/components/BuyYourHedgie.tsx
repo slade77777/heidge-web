@@ -1,9 +1,9 @@
-import Button from '../../common/Button';
-import { scrollToEl } from '../../utils';
+import { Button } from "shared";
+import { scrollToEl } from "shared/utils";
 
 const BuyYourHedgie = () => {
   function scrollToMintButton() {
-    scrollToEl('mint-box', -50);
+    scrollToEl("mint-box", -50);
   }
   return (
     <div className="text-center bg-slate-100 py-10">
