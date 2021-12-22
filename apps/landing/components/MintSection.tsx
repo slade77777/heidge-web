@@ -2,6 +2,7 @@ import { Button } from "shared";
 import { useState } from "react";
 import MintCalculator from "./MintCalculator";
 import { classNames } from "shared/utils";
+import ConnectWalletButton from "./ConnectWalletButton";
 
 const FIXED_NUMBER = new Array(20).fill(0).map((_, index) => index + 1);
 
@@ -28,7 +29,7 @@ const MintSection = ({ className }: { className?: string }) => {
         <span>x</span>
         <MintCalculator quantity={selectedVl} />
       </div>
-      <Button className="w-64 btn btn-cyan">MINT</Button>
+      <ConnectWalletButton />
     </div>
   );
 };

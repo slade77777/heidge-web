@@ -14,18 +14,29 @@ declare global {
   }
 }
 
-const ONBOARD_TEXT = 'Click here to install MetaMask!';
-const CONNECT_TEXT = 'Connect';
+const CONNECT_TEXT = 'Connect wallet';
 const CONNECTED_TEXT = 'Connected';
+
+export enum Connection {
+  NotConnected,
+  Connected,
+}
 
 type ContextType = {
   connect?: () => void;
   disabled?: boolean;
+  connection: Connection;
+  account: string;
 };
-const Context = createContext<ContextType>({});
+export const Context = createContext<ContextType>({
+  connection: Connection.NotConnected,
+  account: '',
+});
 
-const MetamaskProvider = ({ children }: { children: ReactNode }) => {
-  const [buttonText, setButtonText] = useState(ONBOARD_TEXT);
+export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
+  const [connection, setConnection] = useState<Connection>(
+    Connection.NotConnected,
+  );
   const [isDisabled, setDisabled] = useState(false);
   const [accounts, setAccounts] = useState<string[]>([]);
   const onboarding = useRef<MetaMaskOnboarding>();
@@ -39,11 +50,11 @@ const MetamaskProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
       if (accounts.length > 0) {
-        setButtonText(CONNECTED_TEXT);
+        setConnection(Connection.Connected);
         setDisabled(true);
         onboarding.current?.stopOnboarding();
       } else {
-        setButtonText(CONNECT_TEXT);
+        setConnection(Connection.NotConnected);
         setDisabled(false);
       }
     }
@@ -79,6 +90,8 @@ const MetamaskProvider = ({ children }: { children: ReactNode }) => {
       value={{
         connect,
         disabled: isDisabled,
+        connection,
+        account: accounts?.[0] || '',
       }}
     >
       {children}
@@ -87,5 +100,3 @@ const MetamaskProvider = ({ children }: { children: ReactNode }) => {
 };
 
 const useMetamask = () => useContext(Context);
-
-export { MetamaskProvider, useMetamask };

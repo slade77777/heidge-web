@@ -1,7 +1,6 @@
-import React from "react";
+import { useContext } from 'react';
+import { MetamaskProvider, Context, Connection } from './MetamaskContext';
 
-const Wallet = () => {
-  return <div>Wallet</div>;
-};
+const useMetamask = () => useContext(Context);
 
-export default Wallet;
+export { useMetamask, MetamaskProvider, Connection };
