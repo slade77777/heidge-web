@@ -14,10 +14,7 @@ declare global {
   }
 }
 
-const CONNECT_TEXT = 'Connect wallet';
-const CONNECTED_TEXT = 'Connected';
-
-export enum Connection {
+export enum ConnectionEnum {
   NotConnected,
   Connected,
 }
@@ -25,17 +22,18 @@ export enum Connection {
 type ContextType = {
   connect?: () => void;
   disabled?: boolean;
-  connection: Connection;
+  connection: ConnectionEnum;
   account: string;
 };
-export const Context = createContext<ContextType>({
-  connection: Connection.NotConnected,
+
+const Context = createContext<ContextType>({
+  connection: ConnectionEnum.NotConnected,
   account: '',
 });
 
 export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
-  const [connection, setConnection] = useState<Connection>(
-    Connection.NotConnected,
+  const [connection, setConnection] = useState<ConnectionEnum>(
+    ConnectionEnum.NotConnected,
   );
   const [isDisabled, setDisabled] = useState(false);
   const [accounts, setAccounts] = useState<string[]>([]);
@@ -50,11 +48,11 @@ export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
   useEffect(() => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
       if (accounts.length > 0) {
-        setConnection(Connection.Connected);
+        setConnection(ConnectionEnum.Connected);
         setDisabled(true);
         onboarding.current?.stopOnboarding();
       } else {
-        setConnection(Connection.NotConnected);
+        setConnection(ConnectionEnum.NotConnected);
         setDisabled(false);
       }
     }
@@ -99,4 +97,4 @@ export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
   );
 };
 
-const useMetamask = () => useContext(Context);
+export const useMetamask = () => useContext(Context);
