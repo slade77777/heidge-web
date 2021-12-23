@@ -1,9 +1,10 @@
 export type Price = {
-  etherPriceCent: number;
-  etherPriceWei: number;
-  gasPriceCent: number;
-  gasPriceWei: number;
   generation: number;
+  gasPriceCent: number;
+  gasPriceWei: string;
+  hedgiePriceCent: number;
+  hedgiePriceWei: string;
+  hedgie_quantity: number;
 };
 
 export type Response<T> = Promise<{

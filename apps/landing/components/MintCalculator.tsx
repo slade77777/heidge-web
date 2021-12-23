@@ -1,22 +1,32 @@
 import { useMemo } from 'react';
-import { wei2Eth } from 'shared';
+import { wei2Eth, sum } from 'shared';
+import usePrice from '../hooks/usePrice';
 
-const MintCalculator = ({
-  quantity,
-  gasPriceWei,
-}: {
-  quantity: number;
-  gasPriceWei: string;
-}) => {
-  const [total, price] = useMemo(() => {
-    const convertedPrice = wei2Eth(gasPriceWei);
-    const price = (quantity * parseFloat(convertedPrice)).toFixed(5);
-    return [price, convertedPrice];
-  }, [quantity, gasPriceWei]);
+const MintCalculator = ({ quantity }: { quantity: number }) => {
+  const { price, isLoading } = usePrice();
+
+  const [gasAndPrice, total] = useMemo(() => {
+    if (!price) {
+      return ['0.00', '0.00'];
+    }
+    const sumGasAndPrice = sum(
+      price?.hedgiePriceWei.toString(),
+      price.gasPriceWei.toString(),
+    );
+
+    return [
+      wei2Eth(sumGasAndPrice),
+      quantity * parseFloat(wei2Eth(sumGasAndPrice)),
+    ];
+  }, [price, quantity]);
+
+  if (isLoading) {
+    return <div>Loading...</div>;
+  }
 
   return (
     <span className="text-2xl text-gray-700">
-      {price}Ξ = {total}Ξ
+      {gasAndPrice}Ξ = {total}Ξ
     </span>
   );
 };

@@ -1,7 +1,6 @@
 import React from 'react';
-import { Button, Spinner } from 'shared';
+import { Button } from 'shared';
 import MintCalculator from './MintCalculator';
-import usePrice from '../hooks/usePrice';
 
 const FIXED_NUMBER = new Array(20).fill(0).map((_, index) => index + 1);
 
@@ -15,8 +14,6 @@ const HedgieNumberSelection = ({
   onSelect,
   selectedValue,
 }: Props) => {
-  const { price, isLoading } = usePrice();
-
   return (
     <div className={className}>
       <h4 className="font-bold text-teal-400 text-2xl">Get your Hedgie</h4>
@@ -33,12 +30,7 @@ const HedgieNumberSelection = ({
           ))}
         </select>
         <span>x</span>
-        {!!price?.gasPriceWei && (
-          <MintCalculator
-            quantity={selectedValue}
-            gasPriceWei={price.gasPriceWei.toString()}
-          />
-        )}
+        <MintCalculator quantity={selectedValue} />
       </div>
       <Button className="w-64 btn btn-cyan uppercase">mint</Button>
     </div>
