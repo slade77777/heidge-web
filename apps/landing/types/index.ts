@@ -10,3 +10,8 @@ export type Price = {
 export type Response<T> = Promise<{
   data: T;
 }>;
+
+export type OrderParams = {
+  hedgie_quantity: number;
+  wallet: string;
+};

@@ -24,6 +24,7 @@ type ContextType = {
   disabled?: boolean;
   connection: ConnectionEnum;
   account: string;
+  balance?: string;
 };
 
 const Context = createContext<ContextType>({
@@ -37,6 +38,7 @@ export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
   );
   const [isDisabled, setDisabled] = useState(false);
   const [accounts, setAccounts] = useState<string[]>([]);
+  const [balance, setBalance] = useState<string>('');
   const onboarding = useRef<MetaMaskOnboarding>();
 
   useEffect(() => {
@@ -56,6 +58,16 @@ export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
         setDisabled(false);
       }
     }
+  }, [accounts]);
+
+  useEffect(() => {
+    (() => {
+      window.ethereum
+        .request({ method: 'eth_getBalance', params: [accounts[0], 'latest'] })
+        .then((balance: string) => {
+          setBalance(balance);
+        });
+    })();
   }, [accounts]);
 
   useEffect(() => {
@@ -90,6 +102,7 @@ export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
         disabled: isDisabled,
         connection,
         account: accounts?.[0] || '',
+        balance,
       }}
     >
       {children}
