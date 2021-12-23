@@ -6,7 +6,7 @@ const MintCalculator = ({
   gasPriceWei,
 }: {
   quantity: number;
-  gasPriceWei: number;
+  gasPriceWei: string;
 }) => {
   const [total, price] = useMemo(() => {
     const convertedPrice = wei2Eth(gasPriceWei);

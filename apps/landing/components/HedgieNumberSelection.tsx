@@ -36,7 +36,7 @@ const HedgieNumberSelection = ({
         {!!price?.gasPriceWei && (
           <MintCalculator
             quantity={selectedValue}
-            gasPriceWei={price.gasPriceWei}
+            gasPriceWei={price.gasPriceWei.toString()}
           />
         )}
       </div>
