@@ -18,7 +18,7 @@ export function getTotalWei(
   return BigNumber.from(hedgieWei).mul(quantity).add(BigNumber.from(gasWei));
 }
 
-export function checkBalanceEnough(balanceWei: string, amountWei: BigNumber) {
+export function hasEnoughBalance(balanceWei: string, amountWei: BigNumber) {
   return BigNumber.from(balanceWei).gt(amountWei);
 }
 

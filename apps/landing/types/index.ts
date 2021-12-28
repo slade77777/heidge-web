@@ -11,7 +11,8 @@ export type Response<T> = Promise<{
   data: T;
 }>;
 
-export type OrderParams = {
-  hedgie_quantity: number;
+export type PostParams = {
+  hedgie_quantity?: number;
   wallet: string;
+  tx_hash?: string;
 };
