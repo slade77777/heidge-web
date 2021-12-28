@@ -5,8 +5,13 @@ import {
   useRef,
   useState,
   useEffect,
+  useCallback,
 } from 'react';
 import MetaMaskOnboarding from '@metamask/onboarding';
+import { NetworkName } from '../types';
+import { BigNumber, ethers } from 'ethers';
+import type { Signer } from 'ethers';
+import { networkMapper } from '../lib/ether';
 
 declare global {
   interface Window {
@@ -25,6 +30,10 @@ type ContextType = {
   connection: ConnectionEnum;
   account: string;
   balance?: string;
+  networkName?: NetworkName;
+  provider?: any;
+  signer?: Signer;
+  purchase?: (to: string, value: BigNumber) => Promise<any>;
 };
 
 const Context = createContext<ContextType>({
@@ -33,17 +42,26 @@ const Context = createContext<ContextType>({
 });
 
 export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
+  const providerRef = useRef<any>(null);
   const [connection, setConnection] = useState<ConnectionEnum>(
     ConnectionEnum.NotConnected,
   );
   const [isDisabled, setDisabled] = useState(false);
   const [accounts, setAccounts] = useState<string[]>([]);
-  const [balance, setBalance] = useState<string>('');
+  const [balance, setBalance] = useState('');
+  const [networkName, setNetworkName] = useState<NetworkName>();
+
   const onboarding = useRef<MetaMaskOnboarding>();
 
   useEffect(() => {
     if (!onboarding.current) {
       onboarding.current = new MetaMaskOnboarding();
+    }
+  }, []);
+
+  useEffect(() => {
+    if (!providerRef.current && MetaMaskOnboarding.isMetaMaskInstalled()) {
+      providerRef.current = new ethers.providers.Web3Provider(window.ethereum);
     }
   }, []);
 
@@ -61,13 +79,13 @@ export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
   }, [accounts]);
 
   useEffect(() => {
-    (() => {
+    if (MetaMaskOnboarding.isMetaMaskInstalled() && !!accounts.length) {
       window.ethereum
         .request({ method: 'eth_getBalance', params: [accounts[0], 'latest'] })
         .then((balance: string) => {
           setBalance(balance);
         });
-    })();
+    }
   }, [accounts]);
 
   useEffect(() => {
@@ -85,7 +103,19 @@ export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
-  function connect() {
+  useEffect(() => {
+    function handleChain() {
+      window.location.reload();
+    }
+    if (MetaMaskOnboarding.isMetaMaskInstalled()) {
+      window.ethereum.on('chainChanged', handleChain);
+      return () => {
+        window.ethereum.removeListener('chainChanged', handleChain);
+      };
+    }
+  }, []);
+
+  const connectCb = useCallback(() => {
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
       window.ethereum
         .request({ method: 'eth_requestAccounts' })
@@ -93,16 +123,43 @@ export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
     } else {
       onboarding.current?.startOnboarding();
     }
-  }
+  }, []);
+
+  const purchaseCb = useCallback((to: string, value: BigNumber) => {
+    const signer = providerRef.current?.getSigner();
+
+    return signer.sendTransaction({
+      to,
+      value,
+    });
+  }, []);
+
+  useEffect(() => {
+    if (MetaMaskOnboarding.isMetaMaskInstalled()) {
+      const signer = providerRef.current?.getSigner();
+      signer
+        .getChainId()
+        .then((chainId: number) => {
+          setNetworkName(networkMapper[chainId]);
+        })
+        .catch((e: any) => {
+          console.log(e?.message);
+        });
+    }
+  }, []);
 
   return (
     <Context.Provider
       value={{
-        connect,
+        connect: connectCb,
         disabled: isDisabled,
         connection,
         account: accounts?.[0] || '',
         balance,
+        networkName,
+        provider: providerRef.current,
+        signer: providerRef.current?.getSigner(),
+        purchase: purchaseCb,
       }}
     >
       {children}

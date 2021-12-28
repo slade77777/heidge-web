@@ -15,7 +15,10 @@ const Button = ({ disabled, loading, children, onClick, className }: Props) => {
     <button
       type="button"
       onClick={onClick}
-      className={classNames(className, loading ? 'cursor-not-allowed' : '')}
+      className={classNames(
+        className,
+        loading || disabled ? 'cursor-not-allowed' : '',
+      )}
       disabled={loading || disabled}
     >
       {loading && <Spinner />}

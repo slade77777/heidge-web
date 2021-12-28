@@ -9,12 +9,14 @@ type Props = {
   selectedValue?: number;
   className?: string;
   onSubmit?: () => void;
+  loading?: boolean;
 };
 const HedgieNumberSelection = ({
   className,
   onSelect,
   selectedValue,
   onSubmit,
+  loading,
 }: Props) => {
   return (
     <div className={className}>
@@ -34,7 +36,11 @@ const HedgieNumberSelection = ({
         <span>x</span>
         <MintCalculator quantity={selectedValue} />
       </div>
-      <Button className="w-64 btn btn-cyan uppercase" onClick={onSubmit}>
+      <Button
+        className="w-64 btn btn-cyan uppercase"
+        onClick={onSubmit}
+        loading={loading}
+      >
         mint
       </Button>
     </div>
