@@ -1,6 +1,6 @@
-import Spinner from './Spinner';
 import { ReactNode } from 'react';
 import { classNames } from '../utils';
+import LoadingDots from './LoadingDots';
 
 type Props = {
   disabled?: boolean;
@@ -21,8 +21,8 @@ const Button = ({ disabled, loading, children, onClick, className }: Props) => {
       )}
       disabled={loading || disabled}
     >
-      {loading && <Spinner />}
       {children}
+      {loading && <LoadingDots size="md" />}
     </button>
   );
 };
