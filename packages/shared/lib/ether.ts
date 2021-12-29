@@ -6,10 +6,6 @@ export function wei2Eth(wei: BigNumberish) {
   return ethers.utils.formatEther(wei);
 }
 
-export function sum(x: BigNumberish, y: BigNumberish): string {
-  return BigNumber.from(x).add(BigNumber.from(y)).toString();
-}
-
 export function getTotalWei(
   quantity: number,
   hedgieWei: string,
