@@ -64,6 +64,7 @@ const MintSection = ({ className }: { className?: string }) => {
         tx_hash: postRes.hash,
         wallet: account,
       });
+
       setAction('success');
       toast.success('Minting success');
     } catch (e: any) {
