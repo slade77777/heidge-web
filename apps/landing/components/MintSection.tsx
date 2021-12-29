@@ -54,6 +54,7 @@ const MintSection = ({ className }: { className?: string }) => {
 
       if (!hasEnoughBalance(balance, amount)) {
         toast.error('insufficient funds');
+        setAction('idle');
         return;
       }
 
