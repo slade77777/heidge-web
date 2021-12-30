@@ -1,5 +1,5 @@
 import React from 'react';
-import { classNames } from '../utils';
+import { classNames } from 'shared/utils';
 
 const DOTS = new Array(3).fill(0);
 

@@ -1,6 +1,5 @@
 import { ReactNode } from 'react';
 import { classNames } from '../utils';
-import LoadingDots from './LoadingDots';
 
 type Props = {
   disabled?: boolean;
@@ -8,9 +7,17 @@ type Props = {
   children: ReactNode;
   onClick?: () => void;
   className?: string;
+  spinner?: ReactNode;
 };
 
-const Button = ({ disabled, loading, children, onClick, className }: Props) => {
+const Button = ({
+  spinner,
+  disabled,
+  loading,
+  children,
+  onClick,
+  className,
+}: Props) => {
   return (
     <button
       type="button"
@@ -22,7 +29,7 @@ const Button = ({ disabled, loading, children, onClick, className }: Props) => {
       disabled={loading || disabled}
     >
       {children}
-      {loading && <LoadingDots size="md" />}
+      {loading && spinner}
     </button>
   );
 };

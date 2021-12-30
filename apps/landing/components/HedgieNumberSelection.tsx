@@ -1,6 +1,7 @@
 import React from 'react';
 import { Button } from 'shared';
 import MintCalculator from './MintCalculator';
+import LoadingDots from './LoadingDots';
 
 const FIXED_NUMBER = new Array(20).fill(0).map((_, index) => index + 1);
 
@@ -40,8 +41,9 @@ const HedgieNumberSelection = ({
         className="w-64 btn btn-cyan uppercase"
         onClick={onSubmit}
         loading={loading}
+        spinner={<LoadingDots size="md" />}
       >
-        mint
+        {loading ? 'minting' : 'mint'}
       </Button>
     </div>
   );

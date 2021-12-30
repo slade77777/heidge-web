@@ -93,9 +93,11 @@ export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
       setAccounts(newAccounts);
     }
     if (MetaMaskOnboarding.isMetaMaskInstalled()) {
-      window.ethereum
-        .request({ method: 'eth_requestAccounts' })
-        .then(handleNewAccounts);
+      if (window.innerWidth <= 768) {
+        window.ethereum
+          .request({ method: 'eth_requestAccounts' })
+          .then(handleNewAccounts);
+      }
       window.ethereum.on('accountsChanged', handleNewAccounts);
       return () => {
         window.ethereum.removeListener('accountsChanged', handleNewAccounts);
