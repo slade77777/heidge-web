@@ -96,9 +96,18 @@ const MintSection = ({ className }: { className?: string }) => {
         </>
       ) : (
         <div className="text-center -mt-6">
-          <Button className="w-64 btn btn-cyan uppercase" onClick={connect}>
+          <Button
+            className="hidden md:block w-64 btn btn-cyan uppercase"
+            onClick={connect}
+          >
             Connect wallet
           </Button>
+          <a
+            className="md:hidden w-64 btn btn-cyan uppercase"
+            href={process.env.NEXT_PUBLIC_DEEP_LINK}
+          >
+            Connect wallet
+          </a>
         </div>
       )}
     </div>
