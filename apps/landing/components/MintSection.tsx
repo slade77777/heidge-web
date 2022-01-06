@@ -97,7 +97,7 @@ const MintSection = ({ className }: { className?: string }) => {
       ) : (
         <div className="text-center -mt-6">
           <Button
-            className="hidden md:block w-64 btn btn-cyan uppercase"
+            className="hidden md:inline-block w-64 btn btn-cyan uppercase"
             onClick={connect}
           >
             Connect wallet
