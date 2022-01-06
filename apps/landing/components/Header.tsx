@@ -1,7 +1,7 @@
 import Logo from "./Logo";
+import { scrollToEl } from "shared/utils";
 import { Discord, Twitter, Sender } from "shared/icons";
 import MobileMenu from "./MobileMenu";
-import { scrollToEl } from "shared/utils";
 
 const SOCIALS = [
   { id: "discord", icon: Discord, href: "" },
