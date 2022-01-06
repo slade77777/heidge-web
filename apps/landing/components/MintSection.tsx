@@ -103,7 +103,7 @@ const MintSection = ({ className }: { className?: string }) => {
             Connect wallet
           </Button>
           <a
-            className="md:hidden w-64 btn btn-cyan uppercase"
+            className="md:hidden w-64 btn btn-cyan uppercase cursor-pointer"
             href={process.env.NEXT_PUBLIC_DEEP_LINK}
           >
             Connect wallet
