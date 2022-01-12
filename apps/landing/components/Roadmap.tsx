@@ -1,6 +1,6 @@
 import { ReactNode } from 'react';
 import Image from 'next/image';
-import { Title } from "shared";
+import { Title } from 'shared';
 
 const milestones = [
   {
@@ -8,10 +8,18 @@ const milestones = [
     title: 'First 100 OG Hedgies sold',
     numberOfHdgSold: 100,
     content: [
-      <a key="ct-1" className="text-teal-400">
-        Unlocks the NN Artist Edition Hedgies to be sold at the auction on
-        OpenSea
-      </a>,
+      <span key="1-launch">OG Hedgie edition launches</span>,
+      <span key="ct-1">
+        Special Artist Collab Hedgies auctioned on{' '}
+        <a
+          href="https://opensea.io/collection/hedgie"
+          target="_blank"
+          className="text-teal-400"
+          rel="noreferrer"
+        >
+          OpenSea (link to auction page)
+        </a>
+      </span>,
       <span key="content-2">Improved NFT Battle Arena launched</span>,
     ],
   },
@@ -20,14 +28,11 @@ const milestones = [
     title: '500 Hedgies sold',
     numberOfHdgSold: 500,
     content: [
+      <span key="2-key-1">Train your Hedgies and get ready</span>,
       <span key="key-2">
-        Unlocks the first tournament with amazing prizes including a Cryptopunk
-        (a nod to our past when{' '}
-        <a className="text-teal-400">
-          we sold a Cryptopunk at Hedgi Marketplace in April 2020 for Curio
-          coin)
-        </a>
+        Once minimum 500 OG Hedgies are sold, the first tournament is scheduled
       </span>,
+      <span key="2-key-3">Battle other players and win amazing prizes!</span>,
     ],
   },
   {
@@ -35,27 +40,23 @@ const milestones = [
     title: '1000 Hedgies sold',
     numberOfHdgSold: 1000,
     content: [
-      'Unlocks welcoming other NFT projects to join our NFT Battle Arena',
-      'The first inter-project tournament',
+      'Welcoming other NFT projects to join our Battle Arena',
+      'The first inter-project tournament is scheduled',
     ],
   },
   {
     id: '4',
     title: '2500 Hedgies sold',
     numberOfHdgSold: 2500,
-    content: [
-      'Special edition 2018 reserve Hedgies are randomly airdropped to NN lucky OG Hedgie holders',
-    ],
+    content: ['Hedgie Art Club launches', 'More on that here'],
   },
   {
     id: '5',
     title: 'All 5K Hedgies sold',
     numberOfHdgSold: 5000,
     content: [
-      'Unlocks the NFT Battle Arena for more projects',
-      'Second interproject tournament',
       'New features and improvements are continuously launched',
-      'Curio coin minted on chain, and listed on Uniswap or similar decentralized platform in a trading pair with ETH',
+      'Coin minted on chain, and listed on Uniswap or similar decentralised platform',
     ],
   },
 ];
@@ -102,7 +103,10 @@ const MileStone = ({
           <h4 className="font-semibold text-fuchsia-900 text-lg">{title}</h4>
           <div className="prose">
             {content.map((text, index) => (
-              <div key={index} className="grid grid-cols-[auto,1fr]">
+              <div
+                key={index}
+                className="grid group-odd:grid-cols-[auto,1fr] group-even:grid-cols-[1fr,auto]"
+              >
                 <span className="group-odd:order-none group-even:order-1 w-[6px] h-[6px] mt-[10px] group-even:ml-2 group-odd:mr-2 inline-block bg-teal-400 rounded-full" />
                 <span className="inline-block">{text}</span>
               </div>

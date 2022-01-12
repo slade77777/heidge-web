@@ -1,41 +1,41 @@
-import Image from "next/image";
-import { Title } from "shared";
+import Image from 'next/image';
+import { Title } from 'shared';
 
 const ARR = [
   {
-    id: "1",
-    name: "Train & Boost",
+    id: '1',
+    name: 'Train & Boost',
     content:
-      "Once you get your Hedgie, send it to journeys to boost its powers and level-up. Get resources and build furniture in Hedgie House to reduce the recovery time. Accumulate $HDG coin.",
-    img: "/images/about/train_and_boost.svg",
+      'Send your Hedgie to journeys to boost its powers and level-up. Get resources and build furniture in Hedgie House to reduce the recovery time. Accumulate Curio coin.',
+    img: '/images/about/train_and_boost.svg',
   },
   {
-    id: "2",
-    name: "NFT Battle Arena",
+    id: '2',
+    name: 'NFT Battle Arena',
     content:
-      "Participate in battles and tournaments to win amazing prizes. Immediately available for Hedgie owners, and later for other NFT projects as well.",
-    img: "/images/about/nft_battle_arena.png",
+      'Participate in battles and tournaments to win amazing prizes. Immediately available for Hedgie owners, and soon for other NFT holders as well.',
+    img: '/images/about/nft_battle_arena.png',
   },
   {
-    id: "3",
-    name: "Marketplace",
+    id: '3',
+    name: 'Marketplace',
     content:
-      "Spend $HDG coin on the coolest and trendiest NFTs and other offers in our marketplace.",
-    img: "/images/about/marketplace.svg",
+      'Spend Curio coin on the cool and trendy NFTs and other offers in our marketplace.',
+    img: '/images/about/marketplace.svg',
   },
   {
-    id: "4",
-    name: "$HDG Coin",
+    id: '4',
+    name: 'Curio Coin',
     content:
-      "Spend it in the marketplace, trade for ETH on Uniswap or another decentralized service, stake for governance, and unlock exclusive benefits down the road.",
-    img: "/images/about/hdg_coin.png",
+      'Spend it in the marketplace now. Soon you will be able to trade on Uniswap or another decentralised exchange.',
+    img: '/images/about/hdg_coin.png',
   },
   {
-    id: "5",
-    name: "Community Fund",
+    id: '5',
+    name: 'Community Fund',
     content:
-      "We will place 20% of all proceeds from the sale of OG Hedgie collection into the community fund to be used for giveaways, promotions and exclusive benefits for OG Hedgie holders.",
-    img: "/images/about/community_fund.svg",
+      '20% of sales of OG Hedges go into the community fund to be used for tournament prizes, giveaways, promotions and exclusive benefits for Hedgie holders.',
+    img: '/images/about/community_fund.svg',
   },
 ];
 
@@ -45,7 +45,8 @@ const AboutTheGame = () => {
       <div className="mx-auto max-w-5xl text-center">
         <Title className="pb-1">About the Game</Title>
         <span className="text-sm">
-          Hedgie is much more than collecting cute creatures on the blockchain
+          With the P2E game live, Hedgie is much more than collecting cute
+          creatures on the blockchain.
         </span>
         <div className="grid grid-cols-1 md:grid-cols-3 lg:grid-cols-5 gap-3 pt-10">
           {ARR.map((item) => (

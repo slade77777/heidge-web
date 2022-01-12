@@ -2,33 +2,28 @@ const CollectionContent = () => {
   return (
     <div className="prose-sm">
       <p className="font-semibold">
-        7,000 Hedgies with very special attributes on Ethereum blockchain.{' '}
+        7,000 Hedgies with very special attributes on Ethereum blockchain to be
+        minted using our original smart contract from 2018.
       </p>
       <ul>
         <li>
-          1,018 to be claimed by the current Hedgie token holders over the
-          two-week community grant period
+          1,018 to be claimed by the Generation 1 (Genesis) Hedgie holders
         </li>
-        <li>982 reserved for giveaways, promotions and team</li>
-        <li>
-          Then, once the remaining 5,000 Hedgies are sold, there won’t be any
-          more new Hedgies released, ever.{' '}
-        </li>
+        <li>300 reserved for giveaways, promotions and team</li>
+        <li>5,000 to be distributed via a public sale</li>
+        <li>This edition will complete the Hedgie collection at 10K</li>
+        <li>There will never be any more Hedgies minted, ever</li>
       </ul>
       <p className="font-semibold">
-        Each OG Hedgie is absolutely unique, programmatically generated using NN
-        different attributes. No two OG Hedgies are identical, and some will be
-        rarer than others. Among these will be:
+        Each OG Hedgie is unique, programmatically generated using NN different
+        attributes. Among these will be 20 very special artist collab editions
+        that will be auctioned on OpenSea, and kick off the Hedgie Art Club.
       </p>
-      <ul>
-        <li>NN super cool Artist Edition Hedgies to be auctioned</li>
-        <li>
-          NN special edition Hedgies from our own reserves of the first (2018)
-          release to be airdropped to random OG Hedgie holders
-        </li>
-        <li>NNNN programmatically generated OG Edition Hedgies, of which</li>
-        <li>1,018 are reserved for current Hedgie holders to claim</li>
-      </ul>
+      <p className="font-semibold">
+        The purchase price is 0.08 ETH. The Hedgies are randomly assigned to
+        your wallet. You never know which one you’re going to get! You can
+        purchase a maximum of 10 Hedgies in one transaction.
+      </p>
     </div>
   );
 };
