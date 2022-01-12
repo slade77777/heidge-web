@@ -14,10 +14,10 @@ const milestones = [
         <a
           href="https://opensea.io/collection/hedgie"
           target="_blank"
-          className="text-teal-400"
+          className="text-teal-400 hover:text-fuchsia-900"
           rel="noreferrer"
         >
-          OpenSea (link to auction page)
+          OpenSea
         </a>
       </span>,
       <span key="content-2">Improved NFT Battle Arena launched</span>,
@@ -129,7 +129,7 @@ const Desktop = () => {
         <Image
           src="/images/subtract.svg"
           width={48}
-          height={761}
+          height={710}
           alt="subtract"
         />
       </div>

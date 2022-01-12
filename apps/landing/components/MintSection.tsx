@@ -21,7 +21,7 @@ const REQUIRED_NETWORK: NetworkName =
   (process.env.NEXT_PUBLIC_METAMASK_NETWORK as NetworkName) || 'rinkeby';
 
 const defaultWrapperClass =
-  'space-y-5 max-w-xl mx-auto text-center bg-slate-100 shadow-gray-300/50 p-6 rounded-lg shadow-lg';
+  'space-y-5 max-w-xl mx-auto text-center bg-slate-100 shadow-gray-300/50 py-5 px-2 md:p-6 rounded-lg shadow-lg';
 
 const MintSection = ({ className }: { className?: string }) => {
   const [action, setAction] = useState<

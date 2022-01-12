@@ -12,7 +12,15 @@ const Hero = () => {
             </p>
             <br />
             <p>Now we are creating a very special final edition: OG Hedgies</p>
-            <div className="pt-10">
+            <div className="pt-5 md:hidden">
+              <Image
+                src="/images/mobile-hdg-hero.png"
+                width={360}
+                height={400}
+                objectFit="contain"
+              />
+            </div>
+            <div className="pt-10 hidden md:block">
               <Image
                 src="/images/hero-banner.png"
                 width={649}

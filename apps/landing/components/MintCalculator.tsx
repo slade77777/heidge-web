@@ -18,7 +18,7 @@ const MintCalculator = ({ quantity }: { quantity: number }) => {
   }, [price?.gasPriceCent, price?.hedgiePriceCent, quantity]);
 
   return (
-    <span className="text-2xl text-gray-700">
+    <span className="text-lg lg:text-2xl text-gray-700">
       {isLoading ? '0.00' : ethPrice}Ξ +{' '}
       <span className="text-gray-600">gas</span> = $
       {isLoading ? 'Loading...' : dollarTotal.toFixed(2)}

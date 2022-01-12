@@ -25,7 +25,7 @@ const HedgieNumberSelection = ({
       <div className="space-x-3">
         <select
           onChange={(e: any) => onSelect(e.target.value)}
-          className="border-none w-20 text-xl py-2 px-3 ring-1 ring-teal-400 shadow-sm rounded-sm focus:outline-none focus:ring-2 focus:ring-teal-400 caret-teal-400"
+          className="border-none w-20 text-lg lg:text-xl py-2 px-3 ring-1 ring-teal-400 shadow-sm rounded-sm focus:outline-none focus:ring-2 focus:ring-teal-400 caret-teal-400"
           placeholder="Number of Hedgie"
         >
           {FIXED_NUMBER.map((num) => (

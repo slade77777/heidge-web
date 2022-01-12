@@ -126,7 +126,7 @@ const arrowDown =
   'transform rotate-90 text-teal-400 w-3 transition-all ease-in-out duration-300';
 
 const activeText =
-  'text-left font-semibold text-fuchsia-900 transition-all ease-in-out duration-300';
+  'text-left font-semibold text-fuchsia-900 transition-all ease-in-out duration-300 group-hover:text-teal-400';
 const text =
   'text-left font-semibold text-teal-400 transition-all ease-in-out duration-300';
 
@@ -145,7 +145,7 @@ const Question = ({
   }
 
   return (
-    <div className="bg-white shadow-hdg py-2 px-4 rounded-lg">
+    <div className="bg-white shadow-hdg py-2 px-4 rounded-lg group">
       <button
         className="grid grid-cols-[1fr,auto] gap-x-3 items-center w-full"
         onClick={expandView}
@@ -170,7 +170,7 @@ const Faq = () => {
   return (
     <div className="mx-auto max-w-5xl py-16 px-4 lg:px-0" id="faq">
       <Title className="text-center">FAQ</Title>
-      <div className="space-y-5">
+      <div className="space-y-3">
         {QUESTIONS.map((qs) => (
           <Question key={qs.id} {...qs} />
         ))}

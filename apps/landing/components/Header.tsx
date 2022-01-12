@@ -1,12 +1,13 @@
-import Logo from "./Logo";
-import { scrollToEl } from "shared/utils";
-import { Discord, Twitter, Sender } from "shared/icons";
-import MobileMenu from "./MobileMenu";
+import Logo from './Logo';
+import { scrollToEl } from 'shared/utils';
+import { Discord, Twitter, Sender } from 'shared/icons';
+import MobileMenu from './MobileMenu';
+import { DISCORD, TELEGRAM, TWITTER } from '../constants';
 
 const SOCIALS = [
-  { id: "discord", icon: Discord, href: "" },
-  { id: "twitter", icon: Twitter, href: "" },
-  { id: "sender", icon: Sender, href: "" },
+  { id: 'discord', icon: Discord, href: DISCORD },
+  { id: 'twitter', icon: Twitter, href: TWITTER },
+  { id: 'sender', icon: Sender, href: TELEGRAM },
 ];
 
 export const NavLinks = ({
@@ -24,18 +25,18 @@ export const NavLinks = ({
     <nav className={className}>
       <button
         className="hover:text-fuchsia-400 font-semibold"
-        onClick={() => handleClick("game")}
+        onClick={() => handleClick('game')}
       >
         Game
       </button>
       <button
-        onClick={() => handleClick("roadmap")}
+        onClick={() => handleClick('roadmap')}
         className="hover:text-fuchsia-400 font-semibold px-4"
       >
         Roadmap
       </button>
       <button
-        onClick={() => handleClick("faq")}
+        onClick={() => handleClick('faq')}
         className="hover:text-fuchsia-400 font-semibold"
       >
         FAQ
@@ -58,12 +59,12 @@ export const Channels = ({
         <a
           href={item.href}
           target="_blank"
-          className={`group ${linkClassName}`}
+          className={`group cursor-pointer ${linkClassName}`}
           key={item.id}
           rel="noreferrer"
         >
           <item.icon
-            className={iconClass || "text-white w-5 group-hover:text-teal-400"}
+            className={iconClass || 'text-white w-5 group-hover:text-teal-400'}
           />
         </a>
       ))}

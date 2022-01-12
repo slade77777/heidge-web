@@ -9,6 +9,7 @@ const marketPlaces = [
     title: 'Featured: Lion by unmaskedfire',
     subTitle: 'Global offer from Crypto Art',
     curio: 1000000,
+    url: 'https://www.hedgie.io/product/d4365ebc-f36b-45e6-8ec7-2e0aa57591f9',
     imgUrl: '/images/features/lion.png',
   },
   {
@@ -16,6 +17,7 @@ const marketPlaces = [
     title: 'Featured: Lion by unmaskedfire',
     subTitle: 'Global offer from Crypto Art',
     curio: 1100000,
+    url: 'https://www.hedgie.io/product/dcc0b07f-dc49-4d89-a5e0-55b549ac9b21',
     imgUrl: '/images/features/art.png',
   },
 ];
@@ -34,7 +36,14 @@ const Marketplace = () => {
             <Curio className="text-yellow-300" />
             <span>{mk.curio}</span>
           </div>
-          <Button className="btn btn-purple">Buy</Button>
+          <a
+            href={mk.url}
+            target="_blank"
+            rel="noreferrer"
+            className="inline-block"
+          >
+            <Button className="btn btn-purple">Buy</Button>
+          </a>
         </div>
       ))}
     </div>
