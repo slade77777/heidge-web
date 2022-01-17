@@ -7,35 +7,35 @@ const ARR = [
     name: 'Train & Boost',
     content:
       'Send your Hedgie to journeys to boost its powers and level-up. Get resources and build furniture in Hedgie House to reduce the recovery time. Accumulate Curio coin.',
-    img: '/images/about/train_and_boost.svg',
+    img: '/icons/pen.svg',
   },
   {
     id: '2',
     name: 'NFT Battle Arena',
     content:
       'Participate in battles and tournaments to win amazing prizes. Immediately available for Hedgie owners, and soon for other NFT holders as well.',
-    img: '/images/about/nft_battle_arena.png',
+    img: '/icons/flash.svg',
   },
   {
     id: '3',
     name: 'Marketplace',
     content:
       'Spend Curio coin on the cool and trendy NFTs and other offers in our marketplace.',
-    img: '/images/about/marketplace.svg',
+    img: '/icons/flag.svg',
   },
   {
     id: '4',
     name: 'Curio Coin',
     content:
       'Spend it in the marketplace now. Soon you will be able to trade on Uniswap or another decentralised exchange.',
-    img: '/images/about/hdg_coin.png',
+    img: '/icons/curio.svg',
   },
   {
     id: '5',
     name: 'Community Fund',
     content:
       '20% of sales of OG Hedges go into the community fund to be used for tournament prizes, giveaways, promotions and exclusive benefits for Hedgie holders.',
-    img: '/images/about/community_fund.svg',
+    img: '/icons/cup.svg',
   },
 ];
 
