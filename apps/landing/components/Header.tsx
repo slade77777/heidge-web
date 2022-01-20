@@ -74,12 +74,12 @@ export const Channels = ({
 const Header = () => {
   return (
     <div className="hdgGradient px-4 lg:px-0 py-3 sticky top-0 left-0 z-20">
-      <div className="mx-auto max-w-5xl grid grid-cols-[1fr,auto] md:grid-cols-[1fr,1fr,auto] items-center">
-        <div className="place-self-center justify-self-start">
+      <div className="mx-auto max-w-5xl grid grid-cols-[1fr,auto] md:grid-cols-[1fr,1fr,auto]">
+        <div className="place-self-center lg:place-self-start justify-self-start">
           <Logo />
         </div>
         <NavLinks className="hidden lg:flex text-white space-x-12 place-self-center justify-self-center" />
-        <Channels className="hidden md:flex items-center space-x-5 place-self-center justify-self-end pr-14" />
+        <Channels className="hidden md:flex items-center space-x-5 place-self-center justify-self-end pr-14 lg:pr-0" />
         <MobileMenu className="lg:hidden place-self-center justify-self-end" />
       </div>
     </div>
