@@ -7,6 +7,7 @@ const milestones = [
     id: '1',
     title: 'First 100 OG Hedgies sold',
     numberOfHdgSold: 100,
+    icon: '/icons/curio.svg',
     content: [
       <span key="1-launch">OG Hedgie edition launches</span>,
       <span key="ct-1">
@@ -25,6 +26,7 @@ const milestones = [
   },
   {
     id: '2',
+    icon: '/icons/curio.svg',
     title: '500 Hedgies sold',
     numberOfHdgSold: 500,
     content: [
@@ -37,6 +39,7 @@ const milestones = [
   },
   {
     id: '3',
+    icon: '/icons/curio.svg',
     title: '1000 Hedgies sold',
     numberOfHdgSold: 1000,
     content: [
@@ -46,6 +49,7 @@ const milestones = [
   },
   {
     id: '4',
+    icon: '/icons/curio.svg',
     title: '2500 Hedgies sold',
     numberOfHdgSold: 2500,
     content: ['Hedgie Art Club launches', 'More on that here'],
@@ -54,6 +58,7 @@ const milestones = [
     id: '5',
     title: 'All 5K Hedgies sold',
     numberOfHdgSold: 5000,
+    icon: '/icons/curio.svg',
     content: [
       'New features and improvements are continuously launched',
       'Coin minted on chain, and listed on Uniswap or similar decentralised platform',
@@ -66,6 +71,7 @@ type MileStoneType = {
   numberOfHdgSold: number;
   content: ReactNode[];
   type: 'desktop' | 'mobile';
+  icon: string;
 };
 
 const MileStone = ({
@@ -94,11 +100,11 @@ const MileStone = ({
     );
   }
   return (
-    <div className="grid grid-cols-2 items-center gap-x-8 group first:pt-3">
+    <div className="grid grid-cols-2 items-center gap-x-44 group first:pt-3">
       <div className="group-odd:order-2 group-even:order-1 flex items-center group-even:justify-self-end">
-        <div className="group-odd:pr-8 group-even:pl-8 block text-3xl font-semibold text-teal-400 group-odd:order-2 group-even:order-3">
-          {numberOfHdgSold}
-        </div>
+        {/*<div className="group-odd:pr-8 group-even:pl-8 block text-3xl font-semibold text-teal-400 group-odd:order-2 group-even:order-3">*/}
+        {/*  <div className="w-12" />*/}
+        {/*</div>*/}
         <div className="group-odd:order-2 group-even:order-1 group-odd:text-left group-even:text-right">
           <h4 className="font-semibold text-fuchsia-900 text-lg">{title}</h4>
           <div className="prose">
@@ -121,15 +127,16 @@ const MileStone = ({
 
 const Desktop = () => {
   return (
-    <div className="relative grid-cols-1 gap-y-3 hidden lg:grid">
+    <div className="relative grid-cols-1 gap-y-6 hidden lg:grid">
       {milestones.map((mt) => (
         <MileStone key={mt.id} {...mt} type="desktop" />
       ))}
-      <div className="absolute top-0 left-1/2 transform -translate-x-1/2">
+      <div className="absolute top-5 left-1/2 transform -translate-x-1/2">
         <Image
-          src="/images/subtract.svg"
-          width={48}
-          height={710}
+          src="/images/roadmap-path.png"
+          width={150}
+          height={630}
+          objectFit="contain"
           alt="subtract"
         />
       </div>

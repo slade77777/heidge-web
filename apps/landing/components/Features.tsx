@@ -1,24 +1,25 @@
-import Image from 'next/image';
 import { ReactNode } from 'react';
 import { Title, Button } from 'shared';
 import { Curio } from 'shared/icons';
+import CustomImage from './CustomImage';
 
 const marketPlaces = [
   {
     id: 'lion',
     title: 'Featured: Lion by unmaskedfire',
     subTitle: 'Global offer from Crypto Art',
-    curio: 1000000,
+    curio: 5000,
     url: 'https://www.hedgie.io/product/d4365ebc-f36b-45e6-8ec7-2e0aa57591f9',
     imgUrl: '/images/features/lion.png',
   },
   {
     id: 'unmaskedfire',
-    title: 'Featured: Lion by unmaskedfire',
+    title: 'Vitalik in Hedgies artwork raffle',
     subTitle: 'Global offer from Crypto Art',
-    curio: 1100000,
-    url: 'https://www.hedgie.io/product/dcc0b07f-dc49-4d89-a5e0-55b549ac9b21',
-    imgUrl: '/images/features/art.png',
+    curio: 100,
+    url: 'https://www.hedgie.io/product/afc7f3d5-5911-42df-ada1-1346d480a5a9',
+    imgUrl:
+      'https://img.hedgie.io/hedgie-general-assets/77869d86-88cf-486d-9abc-71e147a37d36/suborg-v.jpg',
   },
 ];
 
@@ -28,7 +29,7 @@ const Marketplace = () => {
       {marketPlaces.map((mk) => (
         <div className="space-y-3 w-full" key={mk.id}>
           <div className="aspect-w-1 aspect-h-1 relative">
-            <Image src={mk.imgUrl} layout="fill" objectFit="contain" />
+            <CustomImage src={mk.imgUrl} layout="fill" objectFit="contain" />
           </div>
           <h4 className="font-semibold">{mk.title}</h4>
           <a className="text-fuchsia-900 text-sm">{mk.subTitle}</a>
@@ -69,7 +70,7 @@ const Feature = ({
       </div>
       {imgUrl ? (
         <div className="aspect-w-4 aspect-h-3 relative">
-          <Image src={imgUrl} layout="fill" objectFit="contain" />
+          <CustomImage src={imgUrl} layout="fill" objectFit="contain" />
         </div>
       ) : (
         component
