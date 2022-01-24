@@ -10,9 +10,13 @@ export function getPrice(): Response<Price> {
 }
 
 export function orderHedgie(params: PostParams) {
-  return requester.post('/order/gen3', params);
+  return requester.post('/freegen3/order', params);
 }
 
 export function mintHedgie(params: PostParams) {
-  return requester.post('/mint/gen3', params);
+  return requester.post('/freegen3/mint', params);
+}
+
+export function getNumberOfDiscountHedgies(wallet: string): Response<Price> {
+  return requester.get(`/freegen3/get?wallet=${wallet}`);
 }

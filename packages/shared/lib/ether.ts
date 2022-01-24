@@ -2,8 +2,13 @@ import { BigNumber, ethers } from 'ethers';
 import type { BigNumberish } from 'ethers';
 import { Network, NetworkName } from '../types';
 
-export function wei2Eth(wei: BigNumberish) {
+export function wei2Eth(wei: BigNumberish): string {
   return ethers.utils.formatEther(wei);
+}
+
+export function getAmountOfWei(quantity: number, wei: string) {
+  if (!quantity) return 0;
+  return BigNumber.from(wei).mul(quantity);
 }
 
 export function getTotalWei(
