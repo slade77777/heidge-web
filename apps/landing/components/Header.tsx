@@ -3,6 +3,7 @@ import { scrollToEl } from 'shared/utils';
 import { Discord, Twitter, Sender } from 'shared/icons';
 import MobileMenu from './MobileMenu';
 import { DISCORD, TELEGRAM, TWITTER } from '../constants';
+import {Button} from "shared";
 
 const SOCIALS = [
   { id: 'discord', icon: Discord, href: DISCORD },
@@ -41,6 +42,7 @@ export const NavLinks = ({
       >
         FAQ
       </button>
+      <Button className="btn bg-teal-400 font-normal py-2 px-3">Buy Hedgie</Button>
     </nav>
   );
 };
