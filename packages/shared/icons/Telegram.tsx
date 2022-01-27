@@ -1,6 +1,6 @@
 import React from 'react';
 
-const Sender = ({ className }: { className?: string }) => {
+const Telegram = ({ className }: { className?: string }) => {
   return (
     <svg
       viewBox="0 0 32 27"
@@ -13,4 +13,4 @@ const Sender = ({ className }: { className?: string }) => {
   );
 };
 
-export default Sender;
+export default Telegram;
