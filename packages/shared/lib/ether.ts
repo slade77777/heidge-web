@@ -11,6 +11,10 @@ export function getAmountOfWei(quantity: number, wei: string) {
   return BigNumber.from(wei).mul(quantity);
 }
 
+export function str2BigNumber(vl: string): BigNumber {
+  return BigNumber.from(vl || 0);
+}
+
 export function getTotalWei(
   quantity: number,
   hedgieWei: string,
@@ -46,3 +50,7 @@ export const NETWORKS: Record<NetworkName, Network> = {
     name: 'Rinkeby Test Network',
   },
 };
+
+export function cent2Dollar(cent: number) {
+  return cent / 100;
+}

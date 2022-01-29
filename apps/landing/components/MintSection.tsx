@@ -3,22 +3,20 @@ import { classNames } from 'shared/utils';
 import {
   Button,
   ConnectionEnum,
-  getTotalWei,
   useMetamask,
   toast,
   hasEnoughBalance,
   NetworkName,
   NETWORKS,
+  str2BigNumber,
 } from 'shared';
 import HedgieNumberSelection from './HedgieNumberSelection';
 import { useMutation } from 'react-query';
 import { mintHedgie, orderHedgie } from '../api';
-
-const HEDGIE_PAYMENT_WALLET_ADDRESS =
-  '0x6d1e4b3ea39e17e9966dba5f06642c8fd2193f59';
+import { WALLET_ADDRESS } from '../constants';
 
 const REQUIRED_NETWORK: NetworkName =
-  (process.env.NEXT_PUBLIC_METAMASK_NETWORK as NetworkName) || 'rinkeby';
+  (process.env.NEXT_PUBLIC_METAMASK_NETWORK as NetworkName) || 'ropsten';
 
 const defaultWrapperClass =
   'space-y-5 max-w-xl mx-auto text-center bg-slate-100 shadow-gray-300/50 py-5 px-2 md:p-6 rounded-lg shadow-lg';
@@ -46,11 +44,7 @@ const MintSection = ({ className }: { className?: string }) => {
         wallet: account,
       });
 
-      const amount = getTotalWei(
-        selectedVl,
-        data?.data?.hedgiePriceWei.toString(),
-        data?.data?.gasPriceWei.toString(),
-      );
+      const amount = str2BigNumber(data?.data?.totalPriceWei?.toString());
 
       if (!hasEnoughBalance(balance, amount)) {
         toast.error('insufficient funds');
@@ -58,7 +52,7 @@ const MintSection = ({ className }: { className?: string }) => {
         return;
       }
 
-      const postRes = await purchase(HEDGIE_PAYMENT_WALLET_ADDRESS, amount);
+      const postRes = await purchase(WALLET_ADDRESS, amount);
 
       await mintMutation.mutateAsync({
         tx_hash: postRes.hash,
@@ -89,6 +83,7 @@ const MintSection = ({ className }: { className?: string }) => {
               className={classNames(defaultWrapperClass, className)}
               onSelect={setSelectedVl}
               selectedValue={selectedVl}
+              account={account}
               loading={action === 'loading'}
               onSubmit={handleMinting}
             />

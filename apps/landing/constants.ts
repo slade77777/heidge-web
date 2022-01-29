@@ -2,6 +2,9 @@ export const TELEGRAM = process.env.NEXT_PUBLIC_TELEGRAM_URL;
 export const DISCORD = process.env.NEXT_PUBLIC_DISCORD_URL;
 export const TWITTER = process.env.NEXT_PUBLIC_TWITTER_URL;
 export const INSTAGRAM = process.env.NEXT_PUBLIC_INSTAGRAM_URL;
+export const WALLET_ADDRESS =
+  process.env.NEXT_PUBLIC_WALLET_ADDRESS ||
+  '0x6d1e4b3ea39e17e9966dba5f06642c8fd2193f59';
 export const ETH_PRICE = 0.08;
 export const COLLECTIONS = [
   '/images/carousel/0a7baa.png',

@@ -2,6 +2,7 @@ import React from 'react';
 import { Button } from 'shared';
 import MintCalculator from './MintCalculator';
 import LoadingDots from './LoadingDots';
+import usePrice from '../hooks/usePrice';
 
 const FIXED_NUMBER = new Array(10).fill(0).map((_, index) => index + 1);
 
@@ -11,14 +12,17 @@ type Props = {
   className?: string;
   onSubmit?: () => void;
   loading?: boolean;
+  account?: string;
 };
 const HedgieNumberSelection = ({
   className,
   onSelect,
   selectedValue,
   onSubmit,
+  account,
   loading,
 }: Props) => {
+  const { price, isLoading } = usePrice(account, selectedValue);
   return (
     <div className={className}>
       <h4 className="font-bold text-teal-400 text-2xl">Get your Hedgie</h4>
@@ -35,11 +39,12 @@ const HedgieNumberSelection = ({
           ))}
         </select>
         <span>x</span>
-        <MintCalculator quantity={selectedValue} />
+        <MintCalculator price={price} isLoading={isLoading} />
       </div>
       <Button
         className="w-64 btn btn-cyan uppercase"
         onClick={onSubmit}
+        disabled={isLoading || loading}
         loading={loading}
         spinner={<LoadingDots size="md" />}
       >

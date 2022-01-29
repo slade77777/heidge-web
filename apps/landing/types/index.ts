@@ -5,6 +5,10 @@ export type Price = {
   hedgiePriceCent: number;
   hedgiePriceWei: string;
   hedgie_quantity: number;
+  free_quantity?: number;
+  id?: number;
+  totalPriceCent: number;
+  totalPriceWei: number;
 };
 
 export type Response<T> = Promise<{

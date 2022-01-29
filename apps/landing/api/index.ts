@@ -5,16 +5,16 @@ const requester = getAxiosInstance(
   'https://api.staging.hedgie.io/api/v1/hedgies',
 );
 
-export function getPrice(): Response<Price> {
-  return requester.get('/getPrice/gen3');
+export function getPrice(url: string): Response<Price> {
+  return requester.get(url);
 }
 
 export function orderHedgie(params: PostParams) {
-  return requester.post('/freegen3/order', params);
+  return requester.post('/gen3/order', params);
 }
 
 export function mintHedgie(params: PostParams) {
-  return requester.post('/freegen3/mint', params);
+  return requester.post('/gen3/mint', params);
 }
 
 export function getNumberOfDiscountHedgies(wallet: string): Response<Price> {

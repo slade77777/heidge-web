@@ -12,7 +12,13 @@ const SIZES = {
 
 const AnimationsDelay = ['0', '0.2s', '0.4s'];
 
-const LoadingDots = ({ size }: { size?: 'sm' | 'md' | 'lg' | 'xl' }) => {
+const LoadingDots = ({
+  size,
+  className,
+}: {
+  size?: 'sm' | 'md' | 'lg' | 'xl';
+  className?: string;
+}) => {
   return (
     <span className="inline-flex space-x-0.5 pl-2">
       {DOTS.map((dot, index) => (
@@ -21,6 +27,7 @@ const LoadingDots = ({ size }: { size?: 'sm' | 'md' | 'lg' | 'xl' }) => {
           className={classNames(
             'bg-gray-100 inline-block rounded-full animate-loadingDot',
             SIZES[size || 'sm'],
+            className,
           )}
           style={{ animationDelay: AnimationsDelay[index] }}
         />
