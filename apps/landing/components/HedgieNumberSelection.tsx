@@ -3,7 +3,7 @@ import { Button } from 'shared';
 import MintCalculator from './MintCalculator';
 import LoadingDots from './LoadingDots';
 
-const FIXED_NUMBER = new Array(20).fill(0).map((_, index) => index + 1);
+const FIXED_NUMBER = new Array(10).fill(0).map((_, index) => index + 1);
 
 type Props = {
   onSelect?: (no: number) => void;

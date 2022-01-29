@@ -5,7 +5,7 @@ import { Title } from 'shared';
 const milestones = [
   {
     id: '1',
-    title: 'First 100 OG Hedgies sold',
+    title: 'Final primary market release',
     numberOfHdgSold: 100,
     icon: '/icons/curio.svg',
     content: [
@@ -27,12 +27,13 @@ const milestones = [
   {
     id: '2',
     icon: '/icons/curio.svg',
-    title: '500 Hedgies sold',
+    title: 'First official tournament',
     numberOfHdgSold: 500,
     content: [
       <span key="2-key-1">Train your Hedgies and get ready</span>,
       <span key="key-2">
-        Once minimum 500 OG Hedgies are sold, the first tournament is scheduled
+        Once minimum 1,000 OG Hedgies are sold, the first tournament is
+        scheduled
       </span>,
       <span key="2-key-3">Battle other players and win amazing prizes!</span>,
     ],
@@ -40,7 +41,7 @@ const milestones = [
   {
     id: '3',
     icon: '/icons/curio.svg',
-    title: '1000 Hedgies sold',
+    title: 'Other projects enter',
     numberOfHdgSold: 1000,
     content: [
       'Welcoming other NFT projects to join our Battle Arena',
@@ -50,13 +51,13 @@ const milestones = [
   {
     id: '4',
     icon: '/icons/curio.svg',
-    title: '2500 Hedgies sold',
+    title: 'Hedgie Art Club',
     numberOfHdgSold: 2500,
     content: ['Hedgie Art Club launches', 'More on that here'],
   },
   {
     id: '5',
-    title: 'All 5K Hedgies sold',
+    title: 'Coin on-chain',
     numberOfHdgSold: 5000,
     icon: '/icons/curio.svg',
     content: [

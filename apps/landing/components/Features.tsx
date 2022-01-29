@@ -6,16 +6,16 @@ import CustomImage from './CustomImage';
 const marketPlaces = [
   {
     id: 'lion',
-    title: 'Featured: Lion by unmaskedfire',
-    subTitle: 'Global offer from Crypto Art',
+    title: 'Lion by unmaskedfire',
+    subTitle: 'Drawing with a razor blade on black photo paper.',
     curio: 5000,
     url: 'https://www.hedgie.io/product/d4365ebc-f36b-45e6-8ec7-2e0aa57591f9',
     imgUrl: '/images/features/lion.png',
   },
   {
     id: 'unmaskedfire',
-    title: 'Vitalik in Hedgies artwork raffle',
-    subTitle: 'Global offer from Crypto Art',
+    title: 'Vitalik in Hedgies Raffle',
+    subTitle: 'WIN 1 edition of this artwork with Curio raffle',
     curio: 100,
     url: 'https://www.hedgie.io/product/afc7f3d5-5911-42df-ada1-1346d480a5a9',
     imgUrl:
@@ -37,13 +37,8 @@ const Marketplace = () => {
             <Curio className="text-yellow-300" />
             <span>{mk.curio}</span>
           </div>
-          <a
-            href={mk.url}
-            target="_blank"
-            rel="noreferrer"
-            className="inline-block"
-          >
-            <Button className="btn btn-purple">Buy</Button>
+          <a className="px-4 py-2 bg-fuchsia-900 rounded-md inline-block mt-2 text-white font-bold">
+            Buy
           </a>
         </div>
       ))}

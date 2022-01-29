@@ -13,12 +13,22 @@ const SOCIALS = [
   { id: 'instagram', icon: Instagram, href: INSTAGRAM },
 ];
 
+const NAVS = [
+  { id: 'game', title: 'Game' },
+  { id: 'roadmap', title: 'Roadmap' },
+  { id: 'faq', title: 'Faq' },
+];
+
 export const NavLinks = ({
   className,
   onClick,
+  hideBuyBtn,
+  linkClassName,
 }: {
   className?: string;
   onClick?: () => void;
+  hideBuyBtn?: boolean;
+  linkClassName?: string;
 }) => {
   function handleClick(scrollToId: string) {
     scrollToEl(scrollToId, -50);
@@ -26,30 +36,23 @@ export const NavLinks = ({
   }
   return (
     <nav className={className}>
-      <button
-        className="hover:text-fuchsia-400 font-semibold"
-        onClick={() => handleClick('game')}
-      >
-        Game
-      </button>
-      <button
-        onClick={() => handleClick('roadmap')}
-        className="hover:text-fuchsia-400 font-semibold px-4"
-      >
-        Roadmap
-      </button>
-      <button
-        onClick={() => handleClick('faq')}
-        className="hover:text-fuchsia-400 font-semibold"
-      >
-        FAQ
-      </button>
-      <Button
-        onClick={() => handleClick('mint-box')}
-        className="btn border border-teal-400 text-teal-400 py-2 px-3 hover:bg-teal-400 hover:text-white"
-      >
-        Buy Hedgie
-      </Button>
+      {NAVS.map((nav) => (
+        <button
+          key={nav.id}
+          className={linkClassName || 'hover:text-fuchsia-400 font-semibold'}
+          onClick={() => handleClick(nav.id)}
+        >
+          {nav.title}
+        </button>
+      ))}
+      {hideBuyBtn ? null : (
+        <Button
+          onClick={() => handleClick('mint-box')}
+          className="btn border border-teal-400 text-teal-400 py-2 px-3 hover:bg-teal-400 hover:text-white"
+        >
+          Buy Hedgie
+        </Button>
+      )}
     </nav>
   );
 };

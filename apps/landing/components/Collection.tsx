@@ -10,6 +10,7 @@ import CollectionContent from './CollectionContent';
 import { Title } from 'shared';
 import { Arrow } from 'shared/icons';
 import { classNames } from 'shared/utils';
+import { COLLECTIONS } from '../constants';
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -44,17 +45,12 @@ const Collection = () => {
                 prevEl: '.arrow-prev',
               }}
             >
-              {[
-                '/images/hedgie.png',
-                '/images/hedgie-2.png',
-                '/images/hedgie.png',
-                '/images/hedgie-2.png',
-              ].map((img, index) => (
+              {COLLECTIONS.map((img, index) => (
                 <SwiperSlide key={index} className="first:pl-2">
                   <Image
                     src={img}
-                    width={240}
-                    height={310}
+                    width={480}
+                    height={583}
                     objectFit="contain"
                   />
                 </SwiperSlide>
