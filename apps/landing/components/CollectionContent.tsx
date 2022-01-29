@@ -14,12 +14,12 @@ const CollectionContent = () => {
         <li>This edition will complete the Hedgie collection at 10K</li>
         <li>There will never be any more Hedgies minted, ever</li>
       </ul>
-      <p className="font-semibold">
+      <p>
         Each OG Hedgie is unique, programmatically generated using NN different
         attributes. Among these will be 20 very special artist collab editions
         that will be auctioned on OpenSea, and kick off the Hedgie Art Club.
       </p>
-      <p className="font-semibold">
+      <p>
         The purchase price is 0.08 ETH. The Hedgies are randomly assigned to
         your wallet. You never know which one you’re going to get! You can
         purchase a maximum of 10 Hedgies in one transaction.

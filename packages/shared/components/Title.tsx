@@ -9,7 +9,12 @@ const Title = ({
   className?: string;
 }) => {
   return (
-    <h2 className={classNames('font-black text-3xl text-teal-400 py-5', className)}>
+    <h2
+      className={classNames(
+        'font-black text-3xl text-teal-400 py-5',
+        className,
+      )}
+    >
       {children}
     </h2>
   );
