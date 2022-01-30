@@ -32,7 +32,7 @@ const Hero = () => {
             objectFit="contain"
           />
         </div>
-        <video autoPlay muted loop className="hidden md:block">
+        <video playsInline autoPlay muted loop className="hidden md:block">
           <source src="/video/hero-banner.mp4" type="video/mp4" />
         </video>
       </div>
