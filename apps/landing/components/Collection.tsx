@@ -17,7 +17,7 @@ SwiperCore.use([Navigation, Pagination]);
 const Collection = () => {
   const [selectedIndex, setSelectedIndex] = useState(1);
   return (
-    <div className="py-16 max-w-5xl mx-auto">
+    <div className="pt-5 lg:py-16 max-w-5xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center lg:gap-x-5">
         <div className="place-self-right px-4 lg:px-0">
           <Title>The OG Hedgies (the final) edition</Title>

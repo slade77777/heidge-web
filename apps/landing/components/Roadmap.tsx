@@ -75,21 +75,16 @@ type MileStoneType = {
   icon: string;
 };
 
-const MileStone = ({
-  numberOfHdgSold,
-  content,
-  title,
-  type,
-}: MileStoneType) => {
+const MileStone = ({ content, title, type }: MileStoneType) => {
   if (type === 'mobile') {
     return (
       <div className="grid grid-cols-[auto,1fr] gap-x-5 md:gap-x-8">
-        <div className="mt-1 md:ml-2 text-lg md:text-2xl text-teal-400 font-semibold border-4 border-teal-400 rounded-full w-16 md:w-20 h-16 md:h-20 flex items-center justify-center">
-          {numberOfHdgSold}
-        </div>
+        {/*<div className="mt-1 md:ml-2 text-lg md:text-2xl text-teal-400 font-semibold border-4 border-teal-400 rounded-full w-16 md:w-20 h-16 md:h-20 flex items-center justify-center">*/}
+        {/*  {numberOfHdgSold}*/}
+        {/*</div>*/}
         <div className="text-left prose-sm">
-          <h4 className="font-semibold text-fuchsia-900 md:text-lg">{title}</h4>
-          <ul className="pl-0">
+          <h4 className="font-bold text-fuchsia-900 text-lg">{title}</h4>
+          <ul className="pl-2">
             {content.map((ct, index) => (
               <li key={index} className="text-left">
                 {ct}
