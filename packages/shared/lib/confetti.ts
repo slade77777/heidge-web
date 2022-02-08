@@ -5,6 +5,6 @@ export function showSuccessEffect() {
     zIndex: 999,
     particleCount: 100,
     spread: 70,
-    origin: { x: 0.75, y: 0.8 },
+    origin: { x: 0.5, y: 0.8 },
   });
 }
