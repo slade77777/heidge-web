@@ -6,6 +6,7 @@ export * as utils from './utils';
 export * from './context/MetamaskContext';
 export * from './lib/axios';
 export * from './lib/ether';
+export * from './lib/confetti';
 export { Toaster } from 'react-hot-toast';
 export { default as toast } from 'react-hot-toast';
 export * from './types';

@@ -9,17 +9,18 @@ import {
   NetworkName,
   NETWORKS,
   str2BigNumber,
+  showSuccessEffect,
 } from 'shared';
 import HedgieNumberSelection from './HedgieNumberSelection';
 import { useMutation } from 'react-query';
 import { mintHedgie, orderHedgie } from '../api';
-import { WALLET_ADDRESS } from '../constants';
+import { OPENSEA_URL, WALLET_ADDRESS } from '../constants';
 
 const REQUIRED_NETWORK: NetworkName =
   (process.env.NEXT_PUBLIC_METAMASK_NETWORK as NetworkName) || 'ropsten';
 
 const defaultWrapperClass =
-  'space-y-5 max-w-xl mx-auto text-center bg-slate-100 shadow-gray-300/50 py-5 px-2 md:p-6 rounded-lg shadow-lg';
+  'space-y-5 max-w-md mx-auto text-center bg-white shadow-gray-300/50 py-5 px-2 md:p-6 rounded-lg shadow-lg';
 
 const MintSection = ({ className }: { className?: string }) => {
   const [action, setAction] = useState<
@@ -61,6 +62,7 @@ const MintSection = ({ className }: { className?: string }) => {
 
       setAction('success');
       toast.success('Minting success');
+      showSuccessEffect();
     } catch (e: any) {
       setAction('error');
       toast.error(e?.message);
@@ -74,9 +76,15 @@ const MintSection = ({ className }: { className?: string }) => {
             <div className={classNames(defaultWrapperClass, className)}>
               <h3 className="font-bold text-teal-400 text-2xl">Thank you!</h3>
               <div>Your hedgie(s) has been minted</div>
-              <Button className="w-64 btn btn-cyan uppercase">
+              <button onClick={() => showSuccessEffect()}>click</button>
+              <a
+                href={OPENSEA_URL}
+                target="_blank"
+                className="w-64 btn btn-cyan uppercase relative"
+                rel="noreferrer"
+              >
                 View on OpenSea
-              </Button>
+              </a>
             </div>
           ) : (
             <HedgieNumberSelection
