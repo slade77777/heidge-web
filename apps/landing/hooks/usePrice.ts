@@ -8,6 +8,7 @@ export default function usePrice(wallet: string, quantity: number) {
     () => getPrice(queryKey),
     {
       enabled: !!wallet && !!quantity,
+      refetchOnWindowFocus: false,
     },
   );
 

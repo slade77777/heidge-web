@@ -2,6 +2,7 @@ import React from 'react';
 import { Button, wei2Eth } from 'shared';
 import LoadingDots from './LoadingDots';
 import usePrice from '../hooks/usePrice';
+import useFreeHedgies from '../hooks/useFreeHedgies';
 
 function genList(limit: number): Array<number> {
   if (limit > 0) {
@@ -47,12 +48,17 @@ const HedgieNumberSelection = ({
   account,
   loading,
 }: Props) => {
+  const { freeQuantity, loadingFreeQuantity } = useFreeHedgies(account);
   const { price, isLoading } = usePrice(account, selectedValue);
 
   return (
     <div className={className}>
       <h4 className="font-bold text-teal-400 text-2xl">Get your Hedgie</h4>
-      {!!price?.free_quantity ? (
+      {loadingFreeQuantity && <LoadingDots size="lg" className="bg-teal-400" />}
+      {!freeQuantity && !loadingFreeQuantity && (
+        <p className="text-lg">You don&apos;t have free hedgies</p>
+      )}
+      {!!freeQuantity && (
         <>
           <div className="space-x-3 flex items-center justify-center">
             <select
@@ -61,7 +67,7 @@ const HedgieNumberSelection = ({
               className="border-none w-[70px] text-lg lg:text-xl py-2 px-3 ring-1 ring-teal-400 shadow-sm rounded-sm focus:outline-none focus:ring-2 focus:ring-teal-400 caret-teal-400 font-bold"
               placeholder="Number of Hedgie"
             >
-              {genList(price.free_quantity).map((num) => (
+              {genList(freeQuantity).map((num) => (
                 <option value={num} key={num}>
                   {num}
                 </option>
@@ -76,7 +82,6 @@ const HedgieNumberSelection = ({
               />
             </span>
           </div>
-          )
           <Button
             className="w-64 btn btn-cyan uppercase"
             onClick={onSubmit}
@@ -87,8 +92,6 @@ const HedgieNumberSelection = ({
             {loading ? 'minting' : 'mint'}
           </Button>
         </>
-      ) : (
-        <p className="text-lg">You don&apos;t have free hedgies</p>
       )}
     </div>
   );

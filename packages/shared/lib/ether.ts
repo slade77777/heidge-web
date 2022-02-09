@@ -4,7 +4,7 @@ import { Network, NetworkName } from '../types';
 
 export function wei2Eth(wei: BigNumberish): string {
   const ethStr = ethers.utils.formatEther(wei);
-  return parseFloat(ethStr).toFixed(5);
+  return parseFloat(ethStr).toFixed(4);
 }
 
 export function str2BigNumber(vl: string): BigNumber {

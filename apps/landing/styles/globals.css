@@ -35,6 +35,9 @@
   .hdgGradient {
     @apply bg-gradient-to-l from-blue-900 to-fuchsia-900;
   }
+  .loading-dot {
+    @apply bg-gray-100 inline-block rounded-full animate-loadingDot;
+  }
 }
 .swiper-pagination-bullet-active {
   background-color: #00caab !important;
