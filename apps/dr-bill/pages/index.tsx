@@ -1,24 +1,15 @@
-import type { NextPage } from 'next';
-import { useTheme as useNextTheme } from 'next-themes';
-import { Button, Switch, useTheme } from '@nextui-org/react';
+import type {NextPage} from 'next';
+import SwitchThemeButton from '../components/SwitchThemeButton';
 
 const Home: NextPage = () => {
-  const { setTheme } = useNextTheme();
-  const { isDark, type } = useTheme();
   return (
     <div>
-      Using Next UI{' '}
-      <a href="https://nextui.org/" target="_blank" rel="noreferrer">
-        https://nextui.org
-      </a>
-      <div>
-        The current theme is: {type}
-        <Switch
-          initialChecked={isDark}
-          onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
-        />
+      <SwitchThemeButton/>
+      <h1>Dr. Bill, the OG of Generative Art </h1>
+      <div className="text-2xl font-heading">para</div>
+      <div className="flex flex-col h-screen justify-center items-center text-2xl">
+        <p>Almost before we knew it, we had left the ground.</p>
       </div>
-      <Button>Hello</Button>
     </div>
   );
 };

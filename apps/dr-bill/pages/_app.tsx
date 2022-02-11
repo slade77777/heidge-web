@@ -1,24 +1,11 @@
 import '../styles/globals.css';
-import type { AppProps } from 'next/app';
-import { ThemeProvider as NextThemesProvider } from 'next-themes';
-import { NextUIProvider, createTheme } from '@nextui-org/react';
+import type {AppProps} from 'next/app';
+import {ThemeProvider as NextThemesProvider} from 'next-themes';
+import {NextUIProvider} from '@nextui-org/react';
+import Header from '../components/Header';
+import {darkTheme, lightTheme} from '../customThemes';
 
-// 2. Call `createTheme` and pass your custom values
-const lightTheme = createTheme({
-  type: 'light',
-  theme: {
-    colors: {},
-  },
-});
-
-const darkTheme = createTheme({
-  type: 'dark',
-  theme: {
-    colors: {},
-  },
-});
-
-function MyApp({ Component, pageProps }: AppProps) {
+function MyApp({Component, pageProps}: AppProps) {
   return (
     <NextThemesProvider
       defaultTheme="system"
@@ -29,6 +16,7 @@ function MyApp({ Component, pageProps }: AppProps) {
       }}
     >
       <NextUIProvider>
+        <Header/>
         <Component {...pageProps} />
       </NextUIProvider>
     </NextThemesProvider>
