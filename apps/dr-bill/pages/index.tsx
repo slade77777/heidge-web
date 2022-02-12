@@ -1,5 +1,5 @@
 import type {NextPage} from 'next';
-import SwitchThemeButton from '../components/SwitchThemeButton';
+import SwitchThemeButton from '../components/Button/SwitchThemeButton';
 
 const Home: NextPage = () => {
   return (

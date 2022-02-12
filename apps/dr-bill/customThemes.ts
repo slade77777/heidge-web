@@ -1,15 +1,12 @@
 import {createTheme} from '@nextui-org/react';
 
-const generalTheme = {
-  fonts: {
-    sans: 'Josefin Sans',
-  },
-}
-
 export const lightTheme = createTheme({
   type: 'light',
   theme: {
-    ...generalTheme,
+    fonts: {
+      sans: 'Josefin Sans',
+      heading: 'Abril Fatface',
+    },
     colors: {
       background: '#DFDCD5',
       backgroundImage: 'url("/assets/noise-dark.png")',
@@ -21,7 +18,10 @@ export const lightTheme = createTheme({
 export const darkTheme = createTheme({
   type: 'dark',
   theme: {
-    ...generalTheme,
+    fonts: {
+      sans: 'Josefin Sans',
+      heading: 'Abril Fatface',
+    },
     colors: {
       background: '#000000',
       text: 'white',

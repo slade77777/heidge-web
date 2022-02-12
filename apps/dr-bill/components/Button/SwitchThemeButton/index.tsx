@@ -6,7 +6,6 @@ export default function SwitchThemeButton() {
   const {isDark, type} = useTheme();
   return (
     <div>
-      The current theme is: {type}
       <Switch
         initialChecked={isDark}
         size="xl"
