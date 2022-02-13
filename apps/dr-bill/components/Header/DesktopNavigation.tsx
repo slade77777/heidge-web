@@ -25,11 +25,10 @@ const Button = ({title, url}) => {
       <a>
         <Text
           css={{
-            fontSize: '22px',
             lineHeight: '22px',
             fontWeight: 600,
             '&:active': {
-              borderBottom: '1px solid black',
+              borderBottom: '1px solid $primary',
             },
           }}
         >

@@ -1,4 +1,5 @@
 import {Collapse, Text} from '@nextui-org/react';
+import {Paragraph} from '../../components/Text';
 
 export default function CollapsableContent() {
   return (
@@ -6,14 +7,14 @@ export default function CollapsableContent() {
       <Collapse
         title="Professional experience"
         css={{
-          borderColor: '$black',
+          borderColor: '$primary',
           'div[role=button]': {
             padding: '50px 0 0 0',
             marginBottom: '50px',
           },
           'h3': {
             fontFamily: '$heading',
-            fontSize: '42px',
+            fontSize: '$md',
             lineHeight: '46.2px',
             fontWeight: 400,
             letterSpacing: 0,
@@ -21,13 +22,7 @@ export default function CollapsableContent() {
         }}
       >
         <div className="grid grid-cols-2 grid-flow-col gap-[50px]">
-          <Text
-            css={{
-              fontSize: '22px',
-              lineHeight: '34.1px',
-              fontWeight: 300,
-            }}
-          >
+          <Paragraph>
             <Text span weight="bold">Largo, Florida </Text>(Computer Graphic Artist Emeritus / 2020 - present).
             Generative Art, Interactive Media
             Art and Legacy work.
@@ -44,14 +39,8 @@ export default function CollapsableContent() {
             components
             for learning products and other marketing collateral and display materials. Contributed to the visual
             design and usability of learning products and learning management systems.
-          </Text>
-          <Text
-            css={{
-              fontSize: '22px',
-              lineHeight: '34.1px',
-              fontWeight: 300,
-            }}
-          >
+          </Paragraph>
+          <Paragraph>
             <Text span weight="bold">Pixar </Text>(Marketing / 1989 - 1997). <br/>
             Contributed to the design of successful Pixar Interactive “edutainment” products (Toy Story Animated
             storybook and Toy Story Activity Center educational CD-ROMs) by doing market research, focus groups
@@ -71,20 +60,20 @@ export default function CollapsableContent() {
             1985).
             Taught Engineering Graphics courses: Mechanical Drawing, Descriptive Geometry and Technical
             illustration.
-          </Text>
+          </Paragraph>
         </div>
       </Collapse>
       <Collapse
         title="Education and Professional Development"
         css={{
-          borderColor: '$black',
+          borderColor: '$primary',
           'div[role=button]': {
             padding: '50px 0 0 0',
             marginBottom: '50px',
           },
           'h3': {
             fontFamily: '$heading',
-            fontSize: '42px',
+            fontSize: '$md',
             lineHeight: '46.2px',
             fontWeight: 400,
             letterSpacing: 0,
@@ -92,32 +81,20 @@ export default function CollapsableContent() {
         }}
       >
         <div className="grid grid-cols-2 grid-flow-col gap-[50px]">
-          <Text
-            css={{
-              fontSize: '22px',
-              lineHeight: '34.1px',
-              fontWeight: 300,
-            }}
-          >
+          <Paragraph>
             <Text span weight="bold">Education</Text><br/>
             PhD, Higher Education and Administration, Michigan State University. East Lansing, MI. 1981 <br/>
             MFA, Graphic Design, Michigan State University. East Lansing, MI. 1975 <br/>
             BFA, Industrial Design, Michigan State University. East Lansing, MI. 1969<br/>
-          </Text>
-          <Text
-            css={{
-              fontSize: '22px',
-              lineHeight: '34.1px',
-              fontWeight: 300,
-            }}
-          >
+          </Paragraph>
+          <Paragraph>
             <Text span weight="bold">Professional Development</Text><br/>
             Visiting Scholar (post-Doctorate), Graduate School of Education, University of California at Berkeley.
             Berkeley, CA. 1997. <br/>
             Participant Saint Petersburg College - Corporate Training HIgh Tech Training (HITT) Grant Training.
             Certificates: Java Web Programming Certification Training, Java Programming Class 1, Javascript, Agile
             Development. 2014.
-          </Text>
+          </Paragraph>
         </div>
       </Collapse>
     </Collapse.Group>

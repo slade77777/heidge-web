@@ -1,16 +1,43 @@
 import {createTheme} from '@nextui-org/react';
 
+const generalTheme = {
+  fonts: {
+    sans: 'Josefin Sans',
+    heading: 'Abril Fatface',
+  },
+  fontSizes: {
+    tiny: '11px',
+    xs: '18px',
+    base: '22px',
+    sm: '34px',
+    md: '42px',
+    lg: '54px',
+    xl: '74px',
+  },
+  lineHeights: {
+    xs: '11px',
+    sm: '22px',
+    md: '34px',
+    lg: '46px',
+    xl: '74px',
+  },
+  breakpoints: {
+    md: '361px',
+    lg: '769px',
+    xl:' 1280px',
+  },
+}
+
 export const lightTheme = createTheme({
   type: 'light',
   theme: {
-    fonts: {
-      sans: 'Josefin Sans',
-      heading: 'Abril Fatface',
-    },
+    ...generalTheme,
     colors: {
       background: '#DFDCD5',
-      backgroundImage: 'url("/assets/noise-dark.png")',
-      text: 'black',
+      text: '$primary',
+      primary: '$black',
+      primaryDark: '#EDEAE2',
+      primaryLight: '$black',
     },
   },
 });
@@ -18,15 +45,13 @@ export const lightTheme = createTheme({
 export const darkTheme = createTheme({
   type: 'dark',
   theme: {
-    fonts: {
-      sans: 'Josefin Sans',
-      heading: 'Abril Fatface',
-    },
+    ...generalTheme,
     colors: {
       background: '#000000',
-      text: 'white',
+      text: '$primary',
       primary: '#EDEAE2',
       primaryDark: '#EDEAE2',
+      primaryLight: '$black',
     },
   },
 });

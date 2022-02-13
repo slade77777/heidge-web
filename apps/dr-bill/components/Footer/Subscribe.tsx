@@ -1,5 +1,4 @@
-import {Input, Text} from '@nextui-org/react';
-import {Button} from 'shared';
+import {Button, Input, Text} from '@nextui-org/react';
 
 export default function Subscribe({className}) {
   return (
@@ -15,24 +14,40 @@ export default function Subscribe({className}) {
             height: '54px',
             background: 'transparent',
             borderRadius: 0,
-            border: '1px solid $black',
-            boxSizing: 'border-box'
+            border: '1px solid $primary',
+            boxSizing: 'border-box',
           },
           'input': {
-            fontSize: '18px',
+            fontSize: '$xs',
             lineHeight: '30.6px',
             fontWeight: 300,
-            color: '$black'
-          }
+            color: '$primary',
+          },
+          'input::placeholder': {
+            color: '$primary',
+          },
+          'input:focus': {
+            outline: 'none',
+            boxShadow: 'none',
+        },
         }}
-       />
-      <Button className="bg-black h-[54px] w-full">
+      />
+      {/*<Button className="bg-black h-[54px] w-full mt-2">*/}
+      <Button css={
+        {
+          background: '$primary',
+          height: '54px',
+          width: '100%',
+          marginTop: '7px',
+          borderRadius: 0,
+        }
+      }>
         <Text
           css={{
-            fontSize: '20px',
+            
             lineHeight: '34px',
             fontWeight: 600,
-            color: '#E3E0D9'
+            color: '$background',
           }}
         >
           Subscribe

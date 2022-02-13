@@ -6,7 +6,7 @@ export default function Footer() {
   return (
     <div className="bg-[#0000000d] border-t border-t-[#00000038]">
       <Container
-        md
+        xl
         css={{
           height: '437px',
           display: 'flex',
@@ -17,7 +17,7 @@ export default function Footer() {
           <SocialNetworkList className="mb-5 w-full"/>
           <Text
             css={{
-              fontSize: '20px',
+              fontSize: '$tiny',
               lineHeight: '32px',
               fontWeight: 300,
               marginBottom: '20px',
@@ -28,7 +28,7 @@ export default function Footer() {
           </Text>
           <Text
             css={{
-              fontSize: '20px',
+
               lineHeight: '34px',
               fontWeight: 600,
             }}
@@ -39,7 +39,6 @@ export default function Footer() {
         <div className="w-[335px]">
           <Text
             css={{
-              fontSize: '22px',
               lineHeight: '35.2px',
               fontWeight: 300,
               marginBottom: '20px',

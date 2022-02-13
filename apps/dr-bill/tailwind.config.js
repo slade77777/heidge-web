@@ -12,6 +12,10 @@ module.exports = {
       sans: ['Josefin Sans', ...defaultTheme.fontFamily.sans],
       heading: ['Abril Fatface']
     },
+    screens: {
+      md: '361px',
+      lg: '769px',
+    },
   },
   extend: {},
   plugins: [

@@ -8,15 +8,14 @@ export default function SwitchThemeButton() {
     <div>
       <Switch
         initialChecked={isDark}
-        size="xl"
         css={{
           'div': {
-            border: '1px solid black',
+            border: '1px solid $primaryDark',
             width: '84px',
           },
           'span': {
             position: 'relative',
-            background: 'black',
+            background: '$primaryLight',
           },
           'span::after': {
             content: 'NIGHT\\AMODE',
@@ -24,7 +23,7 @@ export default function SwitchThemeButton() {
             position: 'absolute',
             top: 2.5,
             left: 30,
-            fontSize: '12px',
+            fontSize: '$tiny',
             fontStyle: 'normal',
             fontWeight: 400,
             lineHeight: '11px',
@@ -35,12 +34,12 @@ export default function SwitchThemeButton() {
           },
           'span::before': {
             content: 'DAY\\AMODE',
-            color: 'black',
+            color: '$primaryLight',
             whiteSpace: 'pre',
             position: 'absolute',
             top: 2.5,
             right: 30,
-            fontSize: '12px',
+            fontSize: '$tiny',
             fontStyle: 'normal',
             fontWeight: 400,
             lineHeight: '11px',
