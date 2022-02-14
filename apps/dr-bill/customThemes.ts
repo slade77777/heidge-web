@@ -35,6 +35,7 @@ export const lightTheme = createTheme({
     colors: {
       background: '#DFDCD5',
       text: '$primary',
+      link: '$primary',
       primary: '$black',
       primaryDark: '#EDEAE2',
       primaryLight: '$black',
@@ -49,6 +50,7 @@ export const darkTheme = createTheme({
     colors: {
       background: '#000000',
       text: '$primary',
+      link: '$primary',
       primary: '#EDEAE2',
       primaryDark: '#EDEAE2',
       primaryLight: '$black',

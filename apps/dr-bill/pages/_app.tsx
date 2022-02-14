@@ -3,7 +3,7 @@ import type {AppProps} from 'next/app';
 import {ThemeProvider as NextThemesProvider} from 'next-themes';
 import {NextUIProvider} from '@nextui-org/react';
 import Header from '../components/Header';
-import {darkTheme, lightTheme, defaultTheme} from '../customThemes';
+import {darkTheme, lightTheme} from '../customThemes';
 import Footer from '../components/Footer';
 
 function MyApp({Component, pageProps}: AppProps) {

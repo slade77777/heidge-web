@@ -29,7 +29,7 @@ export default function SocialNetworkList({className}: { className?: string }) {
             display: 'flex',
             justifyContent: 'center',
             alignItems: 'center',
-            color: '$background'
+            color: '$background',
           }}
         >
           {e.icon}
