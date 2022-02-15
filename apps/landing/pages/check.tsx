@@ -10,7 +10,9 @@ const CheckPage = () => {
 
   function handleSubmit(e: any) {
     e.preventDefault();
-    fetchData(color);
+    if (color.length) {
+      fetchData(color);
+    }
   }
   return (
     <Layout>
@@ -28,7 +30,7 @@ const CheckPage = () => {
           <button
             type="submit"
             className="btn btn-cyan py-2 w-28 disabled:bg-teal-200"
-            disabled={isLoading === 'loading'}
+            disabled={isLoading === 'loading' || !color.length}
           >
             Check
           </button>
