@@ -40,7 +40,7 @@ const MobileMenu = ({ className }: { className?: string }) => {
                 leaveTo="translate-y-0 opacity-0 -translate-y-2"
               >
                 <NavLinks
-                  className="mt-8 text-white flex flex-col space-y-10 text-2xl md:text-3xl"
+                  className="mt-8 text-white flex flex-col items-center space-y-10 text-2xl md:text-3xl"
                   onClick={() => setOpen(false)}
                 />
               </Transition.Child>

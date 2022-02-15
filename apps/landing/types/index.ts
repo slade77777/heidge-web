@@ -20,3 +20,5 @@ export type PostParams = {
   wallet: string;
   tx_hash?: string;
 };
+
+export type Loading = 'loading' | 'done' | 'none' | 'error';

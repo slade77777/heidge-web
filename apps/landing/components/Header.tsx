@@ -23,6 +23,7 @@ export const NavLinks = ({
   className,
   hideBuyBtn,
   linkClassName,
+  onClick,
 }: {
   className?: string;
   onClick?: () => void;
@@ -34,6 +35,7 @@ export const NavLinks = ({
       {NAVS.map((nav) => (
         <Link key={nav.id} href={nav.href}>
           <a
+            onClick={onClick}
             className={linkClassName || 'hover:text-fuchsia-400 font-semibold'}
           >
             {nav.title}
@@ -42,7 +44,10 @@ export const NavLinks = ({
       ))}
       {hideBuyBtn ? null : (
         <Link href="/#mint-box">
-          <a className="btn border border-teal-400 text-teal-400 py-2 px-3 hover:bg-teal-400 hover:text-white">
+          <a
+            onClick={onClick}
+            className="btn border border-teal-400 text-teal-400 py-2 px-3 hover:bg-teal-400 hover:text-white"
+          >
             Buy Hedgie
           </a>
         </Link>
