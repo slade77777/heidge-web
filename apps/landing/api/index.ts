@@ -1,4 +1,4 @@
-import { getAxiosInstance } from 'shared';
+import { getAxiosInstance, Hedgie } from 'shared';
 import { PostParams, Price, Response } from '../types';
 
 const requester = getAxiosInstance(
@@ -19,4 +19,8 @@ export function mintHedgie(params: PostParams) {
 
 export function getNumberOfDiscountHedgies(wallet: string): Response<Price> {
   return requester.get(`/freegen3/get?wallet=${wallet}`);
+}
+
+export function checkFreeHedgie(color: string): Response<{ hedgie: Hedgie }> {
+  return requester.get(`/${color}`);
 }

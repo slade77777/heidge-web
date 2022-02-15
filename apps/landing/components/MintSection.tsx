@@ -75,7 +75,7 @@ const MintSection = ({ className }: { className?: string }) => {
           {action === 'success' ? (
             <div className={classNames(defaultWrapperClass, className)}>
               <h3 className="font-bold text-teal-400 text-2xl">Thank you!</h3>
-              <div>Your hedgie(s) has been minted</div>
+              <div>Your hedgie(s) are being minted</div>
               <a
                 href={OPENSEA_URL}
                 target="_blank"

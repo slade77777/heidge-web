@@ -22,8 +22,11 @@ export function getAxiosInstance(baseURL: string, token?: string) {
       return response.data;
     },
     function (error: any) {
-      if (error?.response?.status === 401) {
-        // do smt
+      if (error.response) {
+        if (error?.response?.status === 401) {
+          // do smt
+        }
+        return Promise.reject(error?.response?.data);
       }
       return Promise.reject(error);
     },

@@ -1,9 +1,8 @@
 import Logo from './Logo';
-import { scrollToEl } from 'shared/utils';
+import Link from 'next/link';
 import { Discord, Twitter, Telegram } from 'shared/icons';
 import MobileMenu from './MobileMenu';
 import { DISCORD, INSTAGRAM, TELEGRAM, TWITTER } from '../constants';
-import { Button } from 'shared';
 import Instagram from 'shared/icons/Instagram';
 
 const SOCIALS = [
@@ -14,14 +13,14 @@ const SOCIALS = [
 ];
 
 const NAVS = [
-  { id: 'game', title: 'Game' },
-  { id: 'roadmap', title: 'Roadmap' },
-  { id: 'faq', title: 'Faq' },
+  { id: 'game', title: 'Game', href: '/#game' },
+  { id: 'roadmap', title: 'Roadmap', href: '/#roadmap' },
+  { id: 'faq', title: 'Faq', href: '/#faq' },
+  { id: 'check', title: 'Check', href: '/check' },
 ];
 
 export const NavLinks = ({
   className,
-  onClick,
   hideBuyBtn,
   linkClassName,
 }: {
@@ -30,28 +29,23 @@ export const NavLinks = ({
   hideBuyBtn?: boolean;
   linkClassName?: string;
 }) => {
-  function handleClick(scrollToId: string) {
-    scrollToEl(scrollToId, -50);
-    onClick?.();
-  }
   return (
     <nav className={className}>
       {NAVS.map((nav) => (
-        <button
-          key={nav.id}
-          className={linkClassName || 'hover:text-fuchsia-400 font-semibold'}
-          onClick={() => handleClick(nav.id)}
-        >
-          {nav.title}
-        </button>
+        <Link key={nav.id} href={nav.href}>
+          <a
+            className={linkClassName || 'hover:text-fuchsia-400 font-semibold'}
+          >
+            {nav.title}
+          </a>
+        </Link>
       ))}
       {hideBuyBtn ? null : (
-        <Button
-          onClick={() => handleClick('mint-box')}
-          className="btn border border-teal-400 text-teal-400 py-2 px-3 hover:bg-teal-400 hover:text-white"
-        >
-          Buy Hedgie
-        </Button>
+        <Link href="/#mint-box">
+          <a className="btn border border-teal-400 text-teal-400 py-2 px-3 hover:bg-teal-400 hover:text-white">
+            Buy Hedgie
+          </a>
+        </Link>
       )}
     </nav>
   );
@@ -85,12 +79,16 @@ export const Channels = ({
 };
 const Header = () => {
   return (
-    <div className="hdgGradient px-4 lg:px-0 py-3 sticky top-0 left-0 z-20">
+    <div className="hdgGradient px-4 lg:px-0 py-3">
       <div className="mx-auto max-w-5xl grid grid-cols-[auto,auto] md:grid-cols-[auto,1fr,auto]">
         <div className="place-self-center lg:place-self-start justify-self-start">
-          <Logo className="text-white h-10 pt-1" />
+          <Link href="/">
+            <a>
+              <Logo className="text-white h-10 pt-1" />
+            </a>
+          </Link>
         </div>
-        <NavLinks className="hidden lg:flex text-white space-x-8 place-self-center justify-self-end pr-10" />
+        <NavLinks className="hidden lg:flex items-center text-white space-x-8 place-self-center justify-self-end pr-10" />
         <Channels className="hidden md:flex items-center space-x-5 place-self-center justify-self-end pr-14 lg:pr-0" />
         <MobileMenu className="lg:hidden place-self-center justify-self-end" />
       </div>

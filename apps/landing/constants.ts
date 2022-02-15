@@ -3,6 +3,7 @@ export const DISCORD = process.env.NEXT_PUBLIC_DISCORD_URL;
 export const TWITTER = process.env.NEXT_PUBLIC_TWITTER_URL;
 export const INSTAGRAM = process.env.NEXT_PUBLIC_INSTAGRAM_URL;
 export const OPENSEA_URL = process.env.NEXT_PUBLIC_OPEN_SEA_URL;
+export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const WALLET_ADDRESS =
   process.env.NEXT_PUBLIC_WALLET_ADDRESS ||

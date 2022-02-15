@@ -11,3 +11,12 @@ export type PurchaseParams = {
   hedgieWei: string;
   gasWei: string;
 };
+
+export interface Hedgie {
+  id: string;
+  color?: string;
+  level?: number;
+  ownerName?: string;
+  status?: number;
+  canTakeGen3?: number;
+}
