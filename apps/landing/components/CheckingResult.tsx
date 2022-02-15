@@ -27,7 +27,7 @@ const CheckingResult = ({
       <span>Can Take Gen3:</span>{' '}
       <span className="font-bold text-lg">
         {!!canTakeGen3 ? (
-          <span className="text-teal-400">👌 Yet it is</span>
+          <span className="text-teal-400">👌 Yes</span>
         ) : (
           <span className="text-red-400">No</span>
         )}
