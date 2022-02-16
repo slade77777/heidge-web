@@ -113,7 +113,7 @@ const QUESTIONS = [
       <p>
         This is work in progress, we’re working on it as fast as we can, and
         will share the announcement once we’re ready. Minting Curio coin on
-        chain and listing it on Uniswap or similar service are critical
+        chain and listing it on Uniswap, or similar service, are critical
         milestones in our 2022 roadmap.
       </p>
     ),
