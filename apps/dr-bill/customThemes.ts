@@ -21,11 +21,6 @@ const generalTheme = {
     lg: '46px',
     xl: '74px',
   },
-  breakpoints: {
-    md: '361px',
-    lg: '769px',
-    xl:' 1280px',
-  },
 }
 
 export const lightTheme = createTheme({

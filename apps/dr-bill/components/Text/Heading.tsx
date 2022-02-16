@@ -9,11 +9,11 @@ export default function Heading({children, css}: { css?: Object, children: React
         fontWeight: 400,
         fontSize: '$sm',
         lineHeight: '$md',
-        '@md': {
+        '@xs': {
           fontSize: '$lg',
           lineHeight: '$lg',
         },
-        '@lg': {
+        '@sm': {
           fontSize: '$xl',
           lineHeight: '74px',
         },

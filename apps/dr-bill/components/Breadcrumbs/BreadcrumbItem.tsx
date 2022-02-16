@@ -1,6 +1,6 @@
 import Link from 'next/link';
 import {BreadItem} from './index';
-import {Text, styled} from '@nextui-org/react';
+import {Text} from '@nextui-org/react';
 
 type Props = {
   item: BreadItem;
