@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import React, { ReactNode, useRef, useState } from 'react';
+import React from 'react';
 import { Title } from 'shared';
-import { Arrow } from 'shared/icons';
+import Expandable from './Expandable';
 
 const QUESTIONS = [
   {
@@ -120,59 +120,13 @@ const QUESTIONS = [
   },
 ];
 
-const arrowUp =
-  'transform -rotate-90 text-slate-400 w-3 transition-all ease-in-out duration-300';
-const arrowDown =
-  'transform rotate-90 text-teal-400 w-3 transition-all ease-in-out duration-300';
-
-const activeText =
-  'text-left font-semibold text-fuchsia-900 transition-all ease-in-out duration-300 group-hover:text-teal-400';
-const text =
-  'text-left font-semibold text-teal-400 transition-all ease-in-out duration-300';
-
-const Question = ({
-  question,
-  answer,
-}: {
-  question: string;
-  answer: ReactNode;
-}) => {
-  const contentEl = useRef<HTMLDivElement>(null);
-  const [open, setOpen] = useState(false);
-
-  function expandView() {
-    setOpen(!open);
-  }
-
-  return (
-    <div className="bg-white shadow-hdg py-2 px-4 rounded-lg group">
-      <button
-        className="grid grid-cols-[1fr,auto] gap-x-3 items-center w-full"
-        onClick={expandView}
-      >
-        <span className={open ? text : activeText}>{question}</span>
-        <Arrow className={open ? arrowDown : arrowUp} />
-      </button>
-      <div
-        ref={contentEl}
-        className="transition-all duration-300 ease overflow-hidden pr-10"
-        style={
-          open ? { height: contentEl.current?.scrollHeight } : { height: 0 }
-        }
-      >
-        {answer}
-      </div>
-    </div>
-  );
-};
-
 const Faq = () => {
   return (
     <div className="mx-auto max-w-5xl py-16 px-4 lg:px-0" id="faq">
       <Title className="text-center">FAQ</Title>
       <div className="space-y-3">
         {QUESTIONS.map((qs) => (
-          <Question key={qs.id} {...qs} />
+          <Expandable key={qs.id} title={qs.question} content={qs.answer} />
         ))}
       </div>
     </div>

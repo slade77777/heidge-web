@@ -23,16 +23,19 @@ const CheckingResult = ({
     return <p className="text-red-400 mt-2">{errorMsg}</p>;
   }
   return (
-    <div className="pt-5 text-left">
+    <div className="mt-2">
       <span>Can Take Gen3:</span>{' '}
-      <span className="font-bold text-lg">
-        {!!canTakeGen3 ? (
-          <span className="text-teal-400">👌 Yes</span>
+      <span className="font-bold">
+        {canTakeGen3 === 1 ? (
+          <span className="bg-teal-100 text-teal-500 rounded-full px-2 py-1 text-lg">
+            👌 Yes
+          </span>
         ) : (
-          <span className="text-red-400">No</span>
+          <span className="bg-red-100 rounded-full px-2 py-1 text-red-400 text-lg">
+            No
+          </span>
         )}
       </span>
-      {!!canTakeGen3 && <p>Quantity: {canTakeGen3}</p>}
     </div>
   );
 };
