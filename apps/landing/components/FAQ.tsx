@@ -118,6 +118,28 @@ const QUESTIONS = [
       </p>
     ),
   },
+  {
+    id: 'qs9',
+    question: 'What is the team behind the project?',
+    answer: (
+      <p>
+        The project is lead by Stazie, one of the original co-founders, an NFT
+        degen who’s been in the space from 2017. We have a new CTO with 20+
+        years of coding experience, and a mix of original and new team members,
+        experts in their respective fields. The leadership team is fully doxxed.
+        Please see{' '}
+        <a
+          href="https://www.hedgie.io/our-team"
+          target="_blank"
+          rel="noreferrer"
+          className="text-teal-400 underline"
+        >
+          Team
+        </a>{' '}
+        page of the main site for details.
+      </p>
+    ),
+  },
 ];
 
 const Faq = () => {

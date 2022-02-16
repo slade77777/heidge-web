@@ -15,7 +15,13 @@ const SOCIALS = [
 const NAVS = [
   { id: 'game', title: 'Game', href: '/#game' },
   { id: 'roadmap', title: 'Roadmap', href: '/#roadmap' },
-  { id: 'faq', title: 'Faq', href: '/#faq' },
+  { id: 'faq', title: 'FAQ', href: '/#faq' },
+  {
+    id: 'team',
+    title: 'Team',
+    href: 'https://www.hedgie.io/our-team',
+    openNewTab: true,
+  },
   { id: 'check', title: 'Check', href: '/check' },
 ];
 
@@ -36,7 +42,9 @@ export const NavLinks = ({
         <Link key={nav.id} href={nav.href}>
           <a
             onClick={onClick}
+            target={nav.openNewTab ? '_blank' : undefined}
             className={linkClassName || 'hover:text-fuchsia-400 font-semibold'}
+            rel={nav.openNewTab ? 'noreferrer' : undefined}
           >
             {nav.title}
           </a>
