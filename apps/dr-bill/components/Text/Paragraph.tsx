@@ -8,11 +8,11 @@ export default function Paragraph({children, css}: { css?: Object, children: Rea
         fontSize: '$xs',
         lineHeight: '$md',
         fontWeight: 300,
-        '@md': {
+        '@xs': {
           fontSize: '$xs',
           lineHeight: '$md',
         },
-        '@lg': {
+        '@sm': {
           fontSize: '$base',
           lineHeight: '$md',
         },

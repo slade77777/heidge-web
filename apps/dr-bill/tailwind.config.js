@@ -13,8 +13,8 @@ module.exports = {
       heading: ['Abril Fatface']
     },
     screens: {
-      md: '361px',
-      lg: '769px',
+      md: '650px',
+      lg: '960px',
     },
   },
   extend: {},

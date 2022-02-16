@@ -1,11 +1,11 @@
 import {Switch, useTheme} from '@nextui-org/react';
 import {useTheme as useNextTheme} from 'next-themes';
 
-export default function SwitchThemeButton() {
+export default function SwitchThemeButton({className}: {className?: string}) {
   const {setTheme} = useNextTheme();
-  const {isDark, type} = useTheme();
+  const {isDark} = useTheme();
   return (
-    <div>
+    <div className={className}>
       <Switch
         initialChecked={isDark}
         css={{

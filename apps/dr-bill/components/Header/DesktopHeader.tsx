@@ -6,7 +6,7 @@ import SocialNetworkList from './SocialNetworkList';
 
 export default function DesktopHeader({className}: { className?: string }) {
   return (
-    <Container xl>
+    <Container md>
       <div
         className={classNames(
           'h-full flex items-center justify-between',
