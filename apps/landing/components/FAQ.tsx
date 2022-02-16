@@ -68,7 +68,7 @@ const QUESTIONS = [
         Give back to the community! We reinvest profits into building and
         improving the project so our players see their assets go up in value.
         We’re also creating a community fund to be used for tournament prizes,
-        giveaways, promotions and exclusive benefits for OG Hedgie holders&apos;
+        giveaways, promotions and exclusive benefits for OG Hedgie holders
       </p>
     ),
   },
@@ -111,10 +111,10 @@ const QUESTIONS = [
       'What is the tokenomics Curio coin and when is it going to be minted?',
     answer: (
       <p>
-        This is work in progress, we’re workin on it as fast as we can, and will
-        share the announcement once we’re ready. Minting Curio coin on chain and
-        listing it on Uniswap or similar service are critical milestones in our
-        2022 roadmap.
+        This is work in progress, we’re working on it as fast as we can, and
+        will share the announcement once we’re ready. Minting Curio coin on
+        chain and listing it on Uniswap or similar service are critical
+        milestones in our 2022 roadmap.
       </p>
     ),
   },
