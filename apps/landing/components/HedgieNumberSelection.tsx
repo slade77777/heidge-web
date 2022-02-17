@@ -64,8 +64,9 @@ const HedgieNumberSelection = ({
             <select
               value={selectedValue}
               onChange={(e: any) => onSelect(e.target.value)}
-              className="border-none w-[70px] text-lg lg:text-xl py-2 px-3 ring-1 ring-teal-400 shadow-sm rounded-sm focus:outline-none focus:ring-2 focus:ring-teal-400 caret-teal-400 font-bold"
+              className="select"
               placeholder="Number of Hedgie"
+              disabled={loading}
             >
               {genList(freeQuantity).map((num) => (
                 <option value={num} key={num}>
@@ -83,7 +84,7 @@ const HedgieNumberSelection = ({
             </span>
           </div>
           <Button
-            className="w-64 btn btn-cyan uppercase"
+            className="w-64 btn btn-cyan uppercase disabled:bg-teal-300 disabled:shadow-none"
             onClick={onSubmit}
             disabled={isLoading || loading}
             loading={loading}
