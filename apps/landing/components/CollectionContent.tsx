@@ -16,9 +16,10 @@ const CollectionContent = () => {
         <li>There will never be any more Hedgies minted, ever</li>
       </ul>
       <p>
-        Each OG Hedgie is unique, programmatically generated using about 100 different
-        attributes. Among these will be very special artist collab editions
-        that will be auctioned on OpenSea, and kick off the Hedgie Art Club.
+        Each OG Hedgie is unique, programmatically generated using about 100
+        different attributes. Among these will be very special artist collab
+        Hedgies that will be auctioned on OpenSea, and kick off the Hedgie Art
+        Club.
       </p>
       <p>
         The purchase price is 0.08 ETH. The Hedgies are randomly assigned to

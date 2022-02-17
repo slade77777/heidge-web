@@ -10,7 +10,7 @@ const HowToFindHexCode = () => {
         <a href={OPENSEA_URL} target="_blank" rel="noreferrer">
           OpenSea
         </a>{' '}
-        on a given Hedgie detail page you will see hex code like so. Copy if,
+        on a given Hedgie detail page you will see hex code like so. Copy it,
         and paste into the field above.
       </p>
       <Image
