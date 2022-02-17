@@ -13,7 +13,7 @@ export default function AdjacentBtn({buttonType, size = 60}: Props) {
         border: '1px solid $text',
         color: '$text',
         background: 'transparent',
-        minWidth: 'none',
+        minWidth: 0,
         width: `${size}px`,
         height: `${size}px`,
         '&:hover': {

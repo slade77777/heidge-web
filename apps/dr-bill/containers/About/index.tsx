@@ -7,7 +7,7 @@ import {Heading, Paragraph} from '../../components/Text'
 
 export default function About() {
   return (
-    <Container xl>
+    <Container md>
       <Breadcrumbs
         data={[
           {

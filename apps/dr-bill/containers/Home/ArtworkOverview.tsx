@@ -4,8 +4,8 @@ import MoreLink from '../../components/MoreLink';
 import Artwork from '../../components/Card/Artwork';
 
 const artworks = [
-  {src: 'https://cdn.discordapp.com/attachments/478474748909846533/942738153758924800/Rectangle_9.png'},
-  {src: 'https://cdn.discordapp.com/attachments/478474748909846533/942738153989636116/Rectangle_105.png'},
+  {src: '/assets/about/artwork1.png'},
+  {src: '/assets/about/artwork2.png'},
 ]
 
 const customGridStyle = {
@@ -17,8 +17,8 @@ const customGridStyle = {
 
 export default function ArtworkOverview() {
   return (
-    <Grid.Container css={{margin: '200px auto'}} justify="center">
-      <Grid xs={6} sm={5} css={customGridStyle}>
+    <div className="grid grid-cols-12 gap-12 my-[200px]">
+      <div className="col-span-12 md:col-span-6 lg:col-span-5">
         <div className="my-auto">
           <Heading> Artworks </Heading>
           <Paragraph css={{marginTop: '24px'}}>
@@ -28,28 +28,27 @@ export default function ArtworkOverview() {
           </Paragraph>
           <MoreLink href="/about" content="See all collections"/>
         </div>
-      </Grid>
-      <Grid xs={6} sm={7} css={customGridStyle}>
-        <div
-          className="relative mx-auto">
-          <Artwork images={artworks} tag="New">
-            <Heading css={{
-              '@xs': {
-                fontSize: '$lg',
-                lineHeight: '$lg',
-              },
-              '@sm': {
-                fontSize: '$sm',
-                lineHeight: '$md',
-                padding: '26px 34px',
-              },
-            }}>
-              Generative Art Vending Machine
-            </Heading>
-          </Artwork>
-        </div>
-      </Grid>
-    </Grid.Container>
+      </div>
+      <div className="col-span-12 md:col-span-6 lg:col-span-7">
+        <Artwork images={artworks} tag="New">
+          <Heading css={{
+            padding: '14px 22px',
+            '@xs': {
+              fontSize: '$lg',
+              lineHeight: '$lg',
+              padding: '18px 26px',
+            },
+            '@sm': {
+              fontSize: '$sm',
+              lineHeight: '$md',
+              padding: '26px 34px',
+            },
+          }}>
+            Generative Art Vending Machine
+          </Heading>
+        </Artwork>
+      </div>
+    </div>
   );
 };
 
