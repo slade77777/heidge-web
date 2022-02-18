@@ -15,12 +15,11 @@ export default function Introduction() {
           <Image src="/assets/about/avatar.png" layout="fill" alt="avatar" objectFit="cover"/>
         </div>
       </div>
-      <div className="col-span-12 md:col-span-6 lg:col-span-7">
+      <div className="col-span-12 md:col-span-6 lg:col-span-7 flex flex-col items-end">
         <Heading> Dr. Bill, the OG of Generative Art </Heading>
         <Paragraph css={{marginTop: '24px'}}>
           Dr. Bill Kolomyjec has been involved in Generative Art from the very beginning of the form. As one of
-          the
-          earliest pioneers of the medium he started making computer art in the early 70’s.
+          the earliest pioneers of the medium he started making computer art in the early 70’s.
         </Paragraph>
         <MoreLink href="/about" content="Learn more"/>
       </div>

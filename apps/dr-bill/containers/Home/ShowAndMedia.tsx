@@ -1,11 +1,10 @@
 import {Spacer, Text} from '@nextui-org/react';
 import {Heading, Paragraph} from '../../components/Text';
-import Artwork from '../../components/Card/Artwork';
+import ArtworkCard from '../../components/Card/ArtworkCard';
 import ScheduleCard from '../../components/Card/ScheduleCard';
 import AdjacentBtn from '../../components/Button/AdjacentBtn';
 import MoreLink from '../../components/MoreLink';
 import RawCard from '../../components/Card/RawCard';
-
 
 const artworks = [
   {src: '/assets/about/show-and-media.png'},
@@ -17,7 +16,7 @@ export default function ShowAndMedia() {
       <div className="col-span-12 md:col-span-6 lg:col-span-5">
         <Heading> Show & Media </Heading>
       </div>
-      <div className="col-span-12 md:col-span-6 lg:col-span-7">
+      <div className="col-span-12 md:col-span-6 lg:col-span-7 flex justify-end">
         <div className="flex flex-row gap-5 justify-end">
           <AdjacentBtn buttonType="previous"/>
           <AdjacentBtn buttonType="next"/>
@@ -26,7 +25,11 @@ export default function ShowAndMedia() {
       <div className="col-span-12 md:col-span-6 lg:col-span-5">
         <div className="my-auto">
           <div className="relative mx-auto mt-[50px]">
-            <Artwork images={artworks} tag="Events">
+            <ArtworkCard
+              className="max-w-[490px]"
+              imageClassName="w-[490px]"
+              images={artworks}
+              tag="Events">
               <RawCard>
                 <Text css={{lineHeight: '$md', fontWeight: 600}}>
                   Dr. Bill at the NFT exhibition
@@ -37,11 +40,11 @@ export default function ShowAndMedia() {
                   magna aliqua. Ut enim...
                 </Paragraph>
               </RawCard>
-            </Artwork>
+            </ArtworkCard>
           </div>
         </div>
       </div>
-      <div className="col-span-12 md:col-span-6 lg:col-span-7">
+      <div className="col-span-12 md:col-span-6 lg:col-span-7 flex justify-end">
         <div className="mt-[50px]">
           <ScheduleCard
             tag="Promotions"

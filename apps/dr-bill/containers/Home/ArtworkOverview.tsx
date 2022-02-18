@@ -1,19 +1,11 @@
-import {Grid} from '@nextui-org/react';
 import {Heading, Paragraph} from '../../components/Text';
 import MoreLink from '../../components/MoreLink';
-import Artwork from '../../components/Card/Artwork';
+import ArtworkCard from '../../components/Card/ArtworkCard';
 
 const artworks = [
   {src: '/assets/about/artwork1.png'},
   {src: '/assets/about/artwork2.png'},
 ]
-
-const customGridStyle = {
-  '@xsMax': {
-    maxWidth: '100% !important',
-    flexBasis: '100% !important',
-  },
-}
 
 export default function ArtworkOverview() {
   return (
@@ -29,8 +21,12 @@ export default function ArtworkOverview() {
           <MoreLink href="/about" content="See all collections"/>
         </div>
       </div>
-      <div className="col-span-12 md:col-span-6 lg:col-span-7">
-        <Artwork images={artworks} tag="New">
+      <div className="col-span-12 md:col-span-6 lg:col-span-7 flex justify-end">
+        <ArtworkCard
+          images={artworks}
+          tag="New"
+          className="max-w-[668px] relative"
+        >
           <Heading css={{
             padding: '14px 22px',
             '@xs': {
@@ -46,7 +42,7 @@ export default function ArtworkOverview() {
           }}>
             Generative Art Vending Machine
           </Heading>
-        </Artwork>
+        </ArtworkCard>
       </div>
     </div>
   );

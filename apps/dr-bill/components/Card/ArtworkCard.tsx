@@ -1,8 +1,8 @@
 import Image from 'next/image';
-import {Text, theme} from '@nextui-org/react';
-import {Heading} from '../Text';
+import {Text} from '@nextui-org/react';
 import {ReactNode} from 'react';
 import {classNames} from 'shared/utils';
+import RawCard from './RawCard';
 
 type Props = {
   images: {
@@ -11,15 +11,18 @@ type Props = {
   }[];
   tag?: string;
   children: ReactNode;
+  className?: string;
+  imageClassName?: string;
 }
-export default function Artwork({images, tag, children}: Props) {
+export default function ArtworkCard({images, tag, children, className, imageClassName}: Props) {
   return (
-    <div
-      className={classNames(`relative max-w-[${334 * images.length}px] border`)}
-      style={{borderColor: theme.colors.text.value}}>
+    <RawCard
+      className={classNames('max-w-[334px]', className)}
+      css={{border: '1px solid $text'}}
+    >
       <div className="flex flex-row">
         {images.map(({src, alt = 'image'}, i) =>
-          <div className="relative w-[334px] h-[334px]" key={i}>
+          <div className={classNames('relative w-[334px] h-[334px]', imageClassName)} key={i}>
             <Image src={src} alt={alt} layout="fill" objectFit="cover"/>
           </div>,
         )}
@@ -38,6 +41,6 @@ export default function Artwork({images, tag, children}: Props) {
           padding: '10px 20px',
         }}>{tag}</Text>
       }
-    </div>
+    </RawCard>
   )
 }

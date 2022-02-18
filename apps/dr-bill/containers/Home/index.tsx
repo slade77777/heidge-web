@@ -8,7 +8,7 @@ export default function Home() {
   return (
     <Container md className="relative">
       <SwitchThemeButton className="absolute top-0 right-0"/>
-      <div className="mt-[200px]">
+      <div className="mt-[200px] mb-[120px]">
         <Introduction />
         <ArtworkOverview />
         <ShowAndMedia />
