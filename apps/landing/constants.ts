@@ -2,7 +2,8 @@ export const TELEGRAM = process.env.NEXT_PUBLIC_TELEGRAM_URL;
 export const DISCORD = process.env.NEXT_PUBLIC_DISCORD_URL;
 export const TWITTER = process.env.NEXT_PUBLIC_TWITTER_URL;
 export const INSTAGRAM = process.env.NEXT_PUBLIC_INSTAGRAM_URL;
-export const OPENSEA_URL = process.env.NEXT_PUBLIC_OPEN_SEA_URL;
+export const OPENSEA_URL =
+  process.env.NEXT_PUBLIC_OPEN_SEA_URL || 'https://opensea.io';
 export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const WALLET_ADDRESS =

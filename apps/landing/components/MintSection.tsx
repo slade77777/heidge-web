@@ -77,7 +77,7 @@ const MintSection = ({ className }: { className?: string }) => {
               <h3 className="font-bold text-teal-400 text-2xl">Thank you!</h3>
               <div>Your hedgie(s) are being minted</div>
               <a
-                href={OPENSEA_URL}
+                href={`${OPENSEA_URL}/${account}`}
                 target="_blank"
                 className="w-64 btn btn-cyan uppercase relative"
                 rel="noreferrer"
