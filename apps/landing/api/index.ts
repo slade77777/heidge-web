@@ -1,9 +1,8 @@
 import { getAxiosInstance, Hedgie } from 'shared';
 import { PostParams, Price, Response } from '../types';
+import { API_URL } from '../constants';
 
-const requester = getAxiosInstance(
-  'https://api.staging.hedgie.io/api/v1/hedgies',
-);
+const requester = getAxiosInstance(`${API_URL}/api/v1/hedgies`);
 
 export function getPrice(url: string): Response<Price> {
   return requester.get(url);
