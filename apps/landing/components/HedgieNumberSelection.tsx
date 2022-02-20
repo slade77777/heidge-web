@@ -35,7 +35,7 @@ const HedgieNumberSelection = ({
             <div>
               <span className="text-6xl">☕</span>
               <p className="pt-2">
-                Please wait 30 minutes since previous minting
+                Please wait 24h since previous minting
               </p>
             </div>
           )}
