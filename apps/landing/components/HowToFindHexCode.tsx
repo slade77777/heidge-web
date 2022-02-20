@@ -1,15 +1,17 @@
 import React from 'react';
 import { OPENSEA_URL } from '../constants';
 import Image from 'next/image';
-import { useMetamask } from 'shared';
 
 const HowToFindHexCode = () => {
-  const { account } = useMetamask();
   return (
     <div className="prose mt-3 lg:prose-lg border rounded shadow-md p-4 prose-a:text-teal-400 prose-a:hover:text-fuchsia-900 prose-a:hover:cursor-pointer">
       <p>
         On{' '}
-        <a href={`${OPENSEA_URL}/${account}`} target="_blank" rel="noreferrer">
+        <a
+          href={`${OPENSEA_URL}/collection/hedgie`}
+          target="_blank"
+          rel="noreferrer"
+        >
           OpenSea
         </a>{' '}
         on a given Hedgie detail page you will see hex code like so. Copy it,
