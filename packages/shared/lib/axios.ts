@@ -24,7 +24,6 @@ export function getAxiosInstance(baseURL: string, token?: string) {
     function (error: any) {
       if (error.response) {
         if (error?.response?.status === 401) {
-          // do smt
         }
         return Promise.reject(error?.response?.data);
       }
