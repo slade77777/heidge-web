@@ -1,4 +1,4 @@
-import {Spacer, Text} from '@nextui-org/react';
+import {Card, Spacer, Text} from '@nextui-org/react';
 import {Heading, Paragraph} from '../../components/Text';
 import ArtworkCard from '../../components/Card/ArtworkCard';
 import ScheduleCard from '../../components/Card/ScheduleCard';
@@ -26,20 +26,20 @@ export default function ShowAndMedia() {
         <div className="my-auto">
           <div className="relative mx-auto mt-[50px]">
             <ArtworkCard
-              className="max-w-[490px]"
-              imageClassName="w-[490px]"
               images={artworks}
+              className="h-full"
+              imageClassName="h-[334px]"
+              layout="fill"
+              objectFit="cover"
               tag="Events">
-              <RawCard>
-                <Text css={{lineHeight: '$md', fontWeight: 600}}>
-                  Dr. Bill at the NFT exhibition
-                  02.07.2023
-                </Text>
-                <Paragraph>
-                  Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore
-                  magna aliqua. Ut enim...
-                </Paragraph>
-              </RawCard>
+              <Text css={{lineHeight: '$md', fontWeight: 600}}>
+                Dr. Bill at the NFT exhibition
+                02.07.2023
+              </Text>
+              <Paragraph>
+                Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore
+                magna aliqua. Ut enim...
+              </Paragraph>
             </ArtworkCard>
           </div>
         </div>

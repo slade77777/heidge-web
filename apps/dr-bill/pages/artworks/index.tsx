@@ -1,5 +1,5 @@
 import type {NextPage} from 'next';
-import Artworks from '../containers/Artworks';
+import Artworks from '../../containers/Artworks';
 
 const ArtworkPage: NextPage = () => {
   return (

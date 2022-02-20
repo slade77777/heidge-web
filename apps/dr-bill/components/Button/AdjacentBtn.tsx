@@ -21,7 +21,7 @@ export default function AdjacentBtn({buttonType, size = 60}: Props) {
         },
       }}
     >
-      <NextArrow className={buttonType === 'previous' && 'rotate-180'}/>
+      <NextArrow className={buttonType === 'previous' ? 'rotate-180' : undefined}/>
     </Button>
   )
 }

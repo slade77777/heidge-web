@@ -36,12 +36,13 @@ const artworks = [
 export default function ArtworkList() {
   const [first, ...rest] = artworks;
   return (
-    <div className="grid lg:grid-cols-3 lg:gap-10">
-      <div className="col-span-2">
+    <div className="grid lg:grid-cols-3 gap-5 md:gap-7 lg:gap-10">
+      <div className="md:col-span-2">
         <ArtworkCard
-          className="max-w-full h-full"
-          imageClassName="w-[668px]"
+          className="h-full"
+          imageClassName="h-[384px]"
           images={first.image}
+          layout="fill"
           tag="Events">
           <RawCard>
             <Text css={{lineHeight: '$md', fontWeight: 600}}>
@@ -59,8 +60,9 @@ export default function ArtworkList() {
         rest.map((artwork, index) => (
           <ArtworkCard
             key={index}
-            className="max-w-[490px]"
-            imageClassName="w-[490px]"
+            className="h-full"
+            imageClassName="h-[384px]"
+            layout="fill"
             images={artwork.image}
             tag="Events">
             <RawCard>

@@ -25,19 +25,20 @@ export default function ArtworkOverview() {
         <ArtworkCard
           images={artworks}
           tag="New"
-          className="max-w-[668px] relative"
+          className="h-full"
+          imageClassName="h-[352px]"
+          layout="fill"
+          objectFit="cover"
         >
           <Heading css={{
-            padding: '14px 22px',
+            overflow: 'hidden',
             '@xs': {
               fontSize: '$lg',
               lineHeight: '$lg',
-              padding: '18px 26px',
             },
             '@sm': {
               fontSize: '$sm',
               lineHeight: '$md',
-              padding: '26px 34px',
             },
           }}>
             Generative Art Vending Machine

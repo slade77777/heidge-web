@@ -26,7 +26,7 @@ const MobileMenu = ({ className }: { className?: string }) => {
           <div className="hdgGradient w-screen fixed h-screen left-0 top-0 z-10">
             <div className="grid grid-rows-[auto,1fr,1fr] h-full">
               <div className="text-right pt-3 pr-3">
-                <button className="" onClick={() => setOpen(false)}>
+                <button onClick={() => setOpen(false)}>
                   <Close className="w-8 h-8 text-white" />
                 </button>
               </div>

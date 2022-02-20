@@ -7,11 +7,11 @@ import ShowAndMedia from './ShowAndMedia';
 export default function Home() {
   return (
     <Container md className="relative">
-      <SwitchThemeButton className="absolute top-0 right-0"/>
+      <SwitchThemeButton className="absolute -top-20 right-0"/>
       <div className="mt-[200px] mb-[120px]">
-        <Introduction />
-        <ArtworkOverview />
-        <ShowAndMedia />
+        <Introduction/>
+        <ArtworkOverview/>
+        <ShowAndMedia/>
       </div>
     </Container>
   )
