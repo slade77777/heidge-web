@@ -21,6 +21,7 @@
     "swiper": "^7.4.1"
   },
   "devDependencies": {
+    "@types/node": "^17.0.19",
     "@types/react": "^17.0.38",
     "autoprefixer": "^10.4.2",
     "config": "*",
