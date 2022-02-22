@@ -6,7 +6,6 @@ import {
   useMetamask,
   toast,
   hasEnoughBalance,
-  NetworkName,
   NETWORKS,
   str2BigNumber,
   showSuccessEffect,
@@ -14,18 +13,14 @@ import {
 import HedgieNumberSelection from './HedgieNumberSelection';
 import { useMutation } from 'react-query';
 import { mintHedgie, orderHedgie } from '../api';
-import { OPENSEA_URL, WALLET_ADDRESS } from '../constants';
-
-const REQUIRED_NETWORK: NetworkName =
-  (process.env.NEXT_PUBLIC_METAMASK_NETWORK as NetworkName) || 'ropsten';
+import { METAMASK_NETWORK, OPENSEA_URL, WALLET_ADDRESS } from '../constants';
+import { MintAction } from '../types';
 
 const defaultWrapperClass =
   'space-y-5 max-w-md mx-auto text-center bg-white shadow-gray-300/50 py-5 px-2 md:p-6 rounded-lg shadow-lg';
 
 const MintSection = ({ className }: { className?: string }) => {
-  const [action, setAction] = useState<
-    'idle' | 'success' | 'error' | 'loading'
-  >('idle');
+  const [action, setAction] = useState<MintAction>('idle');
   const { connection, connect, account, balance, purchase, networkName } =
     useMetamask();
   const [selectedVl, setSelectedVl] = useState<number>(1);
@@ -34,8 +29,8 @@ const MintSection = ({ className }: { className?: string }) => {
   const mintMutation = useMutation(mintHedgie);
 
   async function handleMinting() {
-    if (networkName !== REQUIRED_NETWORK) {
-      toast.error(`Please switch to use ${NETWORKS[REQUIRED_NETWORK].name}`);
+    if (networkName !== METAMASK_NETWORK) {
+      toast.error(`Please switch to use ${NETWORKS[METAMASK_NETWORK].name}`);
       return;
     }
     setAction('loading');

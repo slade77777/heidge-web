@@ -22,3 +22,4 @@ export type PostParams = {
 };
 
 export type Loading = 'loading' | 'done' | 'none' | 'error';
+export type MintAction = 'idle' | 'success' | 'error' | 'loading';
