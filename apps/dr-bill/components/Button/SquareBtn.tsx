@@ -1,27 +1,38 @@
 import {Button, Text} from '@nextui-org/react';
+import {ReactNode} from 'react';
 
-export default function SquareBtn() {
+type Props = {
+  children: ReactNode;
+  css?: Object;
+}
+
+export default function SquareBtn({children, css}: Props) {
   return (
     <Button css={{
+      minWidth: 0,
       borderRadius: 0,
       background: 'transparent',
-      width: '260px',
-      height: '60px',
       border: '1px solid $primary',
       '&:hover': {
         border: '2px solid $primary',
       },
+      ...css
     }}>
       <Text
         css={{
-          lineHeight: '22px',
+          fontSize: '$xs',
+          lineHeight: '$xs',
           fontWeight: 600,
           '&:active': {
             borderBottom: '1px solid $primary',
           },
+          '@sm': {
+            fontSize: 'base',
+            lineHeight: '$sm',
+          }
         }}
       >
-        Connect Wallet
+        {children}
       </Text>
     </Button>
   )
