@@ -14,6 +14,7 @@ export const METAMASK_NETWORK =
 export const WALLET_ADDRESS =
   process.env.NEXT_PUBLIC_WALLET_ADDRESS ||
   '0x6d1e4b3ea39e17e9966dba5f06642c8fd2193f59';
+
 export const ETH_PRICE = 0.08;
 
 export const COLLECTIONS = [
