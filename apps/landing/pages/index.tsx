@@ -15,8 +15,10 @@ const HomePage: NextPage = () => {
     <>
       <Layout>
         <Hero />
+
         <div className="px-4 lg:px-0 relative z-10">
           <MintSection className="-mt-24" />
+          <div id="mint-box" className="absolute -top-20 left-1/2" />
         </div>
         <Collection />
         <AboutTheGame />

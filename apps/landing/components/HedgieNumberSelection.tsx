@@ -34,9 +34,7 @@ const HedgieNumberSelection = ({
           {freeQuantity < 0 && (
             <div>
               <span className="text-6xl">☕</span>
-              <p className="pt-2">
-                Please wait 24h since previous minting
-              </p>
+              <p className="pt-2">Please wait 24h since previous minting</p>
             </div>
           )}
           {freeQuantity === 0 && (

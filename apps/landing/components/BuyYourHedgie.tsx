@@ -10,9 +10,9 @@ const BuyYourHedgie = () => {
       <h4 className="text-fuchsia-900 font-semibold py-3">Ready?</h4>
       <Button
         onClick={scrollToMintButton}
-        className="btn btn-cyan uppercase px-8 leading-5"
+        className="btn btn-cyan uppercase px-8"
       >
-        Buy your Hedgie
+        Mint your Hedgie
       </Button>
     </div>
   );

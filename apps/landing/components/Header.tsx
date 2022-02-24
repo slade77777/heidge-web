@@ -56,7 +56,7 @@ export const NavLinks = ({
             onClick={onClick}
             className="btn border border-teal-400 text-teal-400 py-1.5 px-4 hover:bg-teal-400 hover:text-white"
           >
-            Buy
+            Mint
           </a>
         </Link>
       )}

@@ -64,7 +64,7 @@ const MintSection = ({ className }: { className?: string }) => {
     }
   }
   return (
-    <div id="mint-box">
+    <div>
       {connection === ConnectionEnum.Connected ? (
         <>
           {action === 'success' ? (
