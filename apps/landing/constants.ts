@@ -6,8 +6,7 @@ export const TWITTER = process.env.NEXT_PUBLIC_TWITTER_URL;
 export const INSTAGRAM = process.env.NEXT_PUBLIC_INSTAGRAM_URL;
 export const OPENSEA_URL =
   process.env.NEXT_PUBLIC_OPEN_SEA_URL || 'https://opensea.io';
-export const API_URL =
-  process.env.NEXT_PUBLIC_API_URL || 'https://api.staging.hedgie.io';
+export const API_URL = process.env.NEXT_PUBLIC_API_URL;
 
 export const METAMASK_NETWORK =
   (process.env.NEXT_PUBLIC_METAMASK_NETWORK as NetworkName) || 'ropsten';
