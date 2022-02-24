@@ -54,9 +54,9 @@ export const NavLinks = ({
         <Link href="/#mint-box">
           <a
             onClick={onClick}
-            className="btn border border-teal-400 text-teal-400 py-2 px-3 hover:bg-teal-400 hover:text-white"
+            className="btn border border-teal-400 text-teal-400 py-1.5 px-4 hover:bg-teal-400 hover:text-white"
           >
-            Buy Hedgie
+            Buy
           </a>
         </Link>
       )}

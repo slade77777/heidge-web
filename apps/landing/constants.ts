@@ -1,3 +1,5 @@
+import { NetworkName } from 'shared';
+
 export const TELEGRAM = process.env.NEXT_PUBLIC_TELEGRAM_URL;
 export const DISCORD = process.env.NEXT_PUBLIC_DISCORD_URL;
 export const TWITTER = process.env.NEXT_PUBLIC_TWITTER_URL;
@@ -7,10 +9,14 @@ export const OPENSEA_URL =
 export const API_URL =
   process.env.NEXT_PUBLIC_API_URL || 'https://api.staging.hedgie.io';
 
+export const METAMASK_NETWORK =
+  (process.env.NEXT_PUBLIC_METAMASK_NETWORK as NetworkName) || 'ropsten';
+
 export const WALLET_ADDRESS =
   process.env.NEXT_PUBLIC_WALLET_ADDRESS ||
   '0x6d1e4b3ea39e17e9966dba5f06642c8fd2193f59';
 export const ETH_PRICE = 0.08;
+
 export const COLLECTIONS = [
   '/images/carousel/0a7baa.png',
   '/images/carousel/0adaca.png',
