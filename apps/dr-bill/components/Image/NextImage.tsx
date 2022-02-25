@@ -1,5 +1,5 @@
-import {useEffect, useState} from 'react';
-import NImage, {ImageProps} from 'next/image';
+import { useEffect, useState } from 'react';
+import NImage, { ImageProps } from 'next/image';
 
 const getMeta = (url) => {
   return new Promise((resolve, reject) => {
@@ -8,22 +8,28 @@ const getMeta = (url) => {
     img.onerror = () => reject();
     img.src = url;
   });
-}
+};
 
-export default function NextImage({src, alt, width, height, ...rest}: ImageProps) {
+export default function NextImage({
+  src,
+  alt,
+  width,
+  height,
+  ...rest
+}: ImageProps | any) {
   const [dimension, setDimension] = useState({
     width: 384,
     height: 384,
-  })
+  });
   useEffect(() => {
     (async () => {
       // @ts-ignore
-      const {width, height} = await getMeta(src);
+      const { width, height } = await getMeta(src);
       if (height && width) {
-        setDimension({width, height})
+        setDimension({ width, height });
       }
-    })()
-  }, [])
+    })();
+  }, []);
   return (
     <NImage
       src={src}
@@ -32,6 +38,5 @@ export default function NextImage({src, alt, width, height, ...rest}: ImageProps
       width={width || dimension.width}
       {...rest}
     />
-  )
+  );
 }
-
