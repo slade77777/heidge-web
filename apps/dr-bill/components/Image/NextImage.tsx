@@ -29,7 +29,7 @@ export default function NextImage({
         setDimension({ width, height });
       }
     })();
-  }, []);
+  }, [src]);
   return (
     <NImage
       src={src}
