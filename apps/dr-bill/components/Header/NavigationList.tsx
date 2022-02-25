@@ -1,22 +1,23 @@
 import Link from 'next/link'
 import {Text} from '@nextui-org/react';
+import {PageNames} from '../../constants/pageNames';
 
-const navigation = [
+const navigationList = [
   {
     title: 'Home',
     url: '/',
   },
   {
     title: 'About',
-    url: '/about',
+    url: PageNames.ABOUT.en,
   },
   {
     title: 'Artworks',
-    url: '/artworks',
+    url: PageNames.ARTWORK.en,
   },
   {
     title: 'Show & Media',
-    url: '/show-and-media',
+    url: PageNames.SHOW_AND_MEDIA.en,
   },
 ]
 const Button = ({title, url}) => {
@@ -42,7 +43,7 @@ const Button = ({title, url}) => {
 export default function DesktopNavigation({className}) {
   return (
     <div className={className}>
-      {navigation.map((e, i) => <Button key={i} {...e}/>)}
+      {navigationList.map((e, i) => <Button key={i} {...e}/>)}
     </div>
   )
 }

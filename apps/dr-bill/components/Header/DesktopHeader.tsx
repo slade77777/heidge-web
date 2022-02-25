@@ -1,4 +1,4 @@
-import DesktopNavigation from './DesktopNavigation';
+import DesktopNavigation from './NavigationList';
 import ConnectWalletButton from '../Button/ConnectWalletBtn';
 import {classNames} from 'shared/utils';
 import {Container} from '@nextui-org/react';
@@ -12,16 +12,6 @@ export default function DesktopHeader({className}: { className?: string }) {
           'h-full flex items-center justify-between',
           className,
         )}>
-        {/*<Link href="/">*/}
-        {/*  <a className="flex items-center">*/}
-        {/*    <Image*/}
-        {/*      src="/assets/logo.png"*/}
-        {/*      alt="DrBill"*/}
-        {/*      width={59}*/}
-        {/*      height={59}*/}
-        {/*    />*/}
-        {/*  </a>*/}
-        {/*</Link>*/}
         <DesktopNavigation className="flex w-1/2 justify-between"/>
         <div className="flex flex-row items-center">
           <SocialNetworkList className="w-[100px] mr-11"/>

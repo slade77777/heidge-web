@@ -1,46 +1,33 @@
-import { useState  } from "react"
+import {Modal, useModal} from '@nextui-org/react';
+import DesktopNavigation from './NavigationList';
+import SocialNetworkList from './SocialNetworkList';
+import ConnectWalletButton from '../Button/ConnectWalletBtn';
+import {Menu} from 'shared/icons';
+import {classNames} from 'shared/utils';
 
-export default function MobileHeader({className}: {className?:string}) {
-  const [showModal, setShowModal] = useState(false);
+export default function MobileHeader({className}: { className?: string }) {
+  const {setVisible, bindings} = useModal();
   return (
-    <div className={className}>
-      demo
-      <button>open</button>
-      <div className="modal opacity-0 pointer-events-none fixed w-full h-full top-0 left-0 flex items-center justify-center">
-        <div className="modal-overlay absolute w-full h-full bg-white opacity-95" />
-        <div className="modal-container fixed w-full h-full z-50 overflow-y-auto ">
-          <div className="modal-close absolute top-0 right-0 cursor-pointer flex flex-col items-center mt-4 mr-4 text-black text-sm z-50">
-            <svg
-              className="fill-current text-black"
-              xmlns="http://www.w3.org/2000/svg"
-              width={18}
-              height={18}
-              viewBox="0 0 18 18"
-            >
-              <path d="M14.53 4.53l-1.06-1.06L9 7.94 4.53 3.47 3.47 4.53 7.94 9l-4.47 4.47 1.06 1.06L9 10.06l4.47 4.47 1.06-1.06L10.06 9z" />
-            </svg>
-            (Esc)
-          </div>
-          {/* Add margin if you want to see grey behind the modal*/}
-          <div className="modal-content container mx-auto h-auto text-left p-4"         >
-            {/*Title*/}
-            <div className="flex justify-between items-center pb-2">
-              <p className="text-2xl font-bold">Full Screen Modal!</p>
-            </div>
-            {/*Body*/}
-            <p>Modal content can go here</p>
-            {/*Footer*/}
-            <div className="flex justify-end pt-2">
-              <button className="px-4 bg-transparent p-3 rounded-lg text-indigo-500 hover:bg-gray-100 hover:text-indigo-400 mr-2">
-              Action
-              </button>
-              <button className="modal-close px-4 bg-indigo-500 p-3 rounded-lg text-white hover:bg-indigo-400">
-              Close
-              </button>
-            </div>
-          </div>
-        </div>
-      </div>
+    <div
+      className={classNames(
+        'flex items-center justify-end',
+        className,
+      )}>
+      <button onClick={() => setVisible(true)}>
+        <Menu className="w-10 h-5"/>
+      </button>
+      <Modal
+        className="rounded-none"
+        fullScreen
+        closeButton
+        {...bindings}
+      >
+        <Modal.Body className="flex flex-col justify-center items-center gap-[60px]">
+          <DesktopNavigation className="flex flex-col items-center gap-[30px]"/>
+          <ConnectWalletButton/>
+          <SocialNetworkList className="gap-7"/>
+        </Modal.Body>
+      </Modal>
     </div>
   )
 }
