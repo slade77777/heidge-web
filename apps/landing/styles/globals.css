@@ -3,6 +3,9 @@
 @tailwind utilities;
 
 @layer base {
+  html {
+    scroll-behavior: smooth;
+  }
   ul {
     list-style: none;
   }
@@ -35,7 +38,14 @@
   .hdgGradient {
     @apply bg-gradient-to-l from-blue-900 to-fuchsia-900;
   }
+  .loading-dot {
+    @apply bg-gray-100 inline-block rounded-full animate-loadingDot;
+  }
+  .select {
+    @apply border-none w-[70px] text-lg lg:text-xl py-2 px-3 ring-1 ring-teal-400 shadow-sm rounded-sm focus:outline-none focus:ring-2 focus:ring-teal-400 caret-teal-400 font-bold disabled:bg-gray-100 disabled:ring-gray-300 disabled:text-gray-500;
+  }
 }
 .swiper-pagination-bullet-active {
   background-color: #00caab !important;
 }
+

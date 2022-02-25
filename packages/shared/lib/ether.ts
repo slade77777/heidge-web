@@ -3,24 +3,12 @@ import type { BigNumberish } from 'ethers';
 import { Network, NetworkName } from '../types';
 
 export function wei2Eth(wei: BigNumberish): string {
-  return ethers.utils.formatEther(wei);
-}
-
-export function getAmountOfWei(quantity: number, wei: string) {
-  if (!quantity) return 0;
-  return BigNumber.from(wei).mul(quantity);
+  const ethStr = ethers.utils.formatEther(wei);
+  return parseFloat(ethStr).toFixed(4);
 }
 
 export function str2BigNumber(vl: string): BigNumber {
   return BigNumber.from(vl || 0);
-}
-
-export function getTotalWei(
-  quantity: number,
-  hedgieWei: string,
-  gasWei: string,
-): BigNumber {
-  return BigNumber.from(hedgieWei).mul(quantity).add(BigNumber.from(gasWei));
 }
 
 export function hasEnoughBalance(balanceWei: string, amountWei: BigNumber) {

@@ -7,9 +7,9 @@ const Footer = () => {
         <NavLinks
           hideBuyBtn
           linkClassName="hover:text-fuchsia-400 px-3 font-semibold"
-          className="font-semibold hidden md:grid grid-cols-3 divide-x divide-fuchsia-900"
+          className="hidden md:flex items-center"
         />
-        <Channels className="flex space-x-3" />
+        <Channels className="flex space-x-6" />
         <span className="text-xs">
           © Copyright 2018-2022 Hedgie Inc. All rights reserved
         </span>

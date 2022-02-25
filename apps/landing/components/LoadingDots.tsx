@@ -24,11 +24,7 @@ const LoadingDots = ({
       {DOTS.map((dot, index) => (
         <span
           key={index}
-          className={classNames(
-            'bg-gray-100 inline-block rounded-full animate-loadingDot',
-            SIZES[size || 'sm'],
-            className,
-          )}
+          className={classNames('loading-dot', SIZES[size || 'sm'], className)}
           style={{ animationDelay: AnimationsDelay[index] }}
         />
       ))}

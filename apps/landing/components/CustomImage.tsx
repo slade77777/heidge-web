@@ -1,6 +1,6 @@
 import Image, { ImageProps } from 'next/image';
 
-const myLoader = ({ src, width, quality }) => {
+const myLoader = ({ src, width, quality }: any) => {
   return `${src}?w=${width}&q=${quality || 90}`;
 };
 

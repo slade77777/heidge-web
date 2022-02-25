@@ -13,7 +13,7 @@
     "@tailwindcss/aspect-ratio": "^0.4.0",
     "@tailwindcss/forms": "^0.4.0",
     "@tailwindcss/typography": "^0.5.0",
-    "next": "latest",
+    "next": "^12.1.0",
     "react": "^17.0.2",
     "react-dom": "17.0.2",
     "react-query": "^3.34.8",
@@ -21,6 +21,7 @@
     "swiper": "^7.4.1"
   },
   "devDependencies": {
+    "@types/node": "^17.0.19",
     "@types/react": "^17.0.38",
     "autoprefixer": "^10.4.2",
     "config": "*",

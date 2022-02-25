@@ -61,8 +61,8 @@ const milestones = [
     numberOfHdgSold: 5000,
     icon: '/icons/curio.svg',
     content: [
-      'New features and improvements are continuously launched',
-      'Coin minted on chain, and listed on Uniswap or similar decentralised platform',
+      'Coin minted on chain, and listed on Uniswap or similar platform',
+      'New features and improvements to game mechanics and visuals are launched',
     ],
   },
 ];

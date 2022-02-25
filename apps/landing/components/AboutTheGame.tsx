@@ -34,7 +34,7 @@ const ARR = [
     id: '5',
     name: 'Community Fund',
     content:
-      '20% of sales of OG Hedges go into the community fund to be used for tournament prizes, giveaways, promotions and exclusive benefits for Hedgie holders.',
+      '20% of sales of OG Hedgies go into the community fund to be used for tournament prizes, giveaways, promotions and exclusive benefits for Hedgie holders.',
     img: '/images/about/about3.svg',
   },
 ];

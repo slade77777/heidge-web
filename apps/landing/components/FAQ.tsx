@@ -1,7 +1,7 @@
 import Image from 'next/image';
-import React, { ReactNode, useRef, useState } from 'react';
+import React from 'react';
 import { Title } from 'shared';
-import { Arrow } from 'shared/icons';
+import Expandable from './Expandable';
 
 const QUESTIONS = [
   {
@@ -68,7 +68,7 @@ const QUESTIONS = [
         Give back to the community! We reinvest profits into building and
         improving the project so our players see their assets go up in value.
         We’re also creating a community fund to be used for tournament prizes,
-        giveaways, promotions and exclusive benefits for OG Hedgie holders&apos;
+        giveaways, promotions and exclusive benefits for OG Hedgie holders
       </p>
     ),
   },
@@ -111,60 +111,36 @@ const QUESTIONS = [
       'What is the tokenomics Curio coin and when is it going to be minted?',
     answer: (
       <p>
-        This is work in progress, we’re workin on it as fast as we can, and will
-        share the announcement once we’re ready. Minting Curio coin on chain and
-        listing it on Uniswap or similar service are critical milestones in our
-        2022 roadmap.
+        This is work in progress, we’re working on it as fast as we can, and
+        will share the announcement once we’re ready. Minting Curio coin on
+        chain and listing it on Uniswap, or similar service, are critical
+        milestones in our 2022 roadmap.
+      </p>
+    ),
+  },
+  {
+    id: 'qs9',
+    question: 'What is the team behind the project?',
+    answer: (
+      <p>
+        The project is lead by Stazie, one of the original co-founders, an NFT
+        degen who’s been in the space from 2017. We have a new CTO with 20+
+        years of coding experience, and a mix of original and new team members,
+        experts in their respective fields. The leadership team is fully doxxed.
+        Please see{' '}
+        <a
+          href="https://www.hedgie.io/our-team"
+          target="_blank"
+          rel="noreferrer"
+          className="text-teal-400 underline"
+        >
+          Team
+        </a>{' '}
+        page of the main site for details.
       </p>
     ),
   },
 ];
-
-const arrowUp =
-  'transform -rotate-90 text-slate-400 w-3 transition-all ease-in-out duration-300';
-const arrowDown =
-  'transform rotate-90 text-teal-400 w-3 transition-all ease-in-out duration-300';
-
-const activeText =
-  'text-left font-semibold text-fuchsia-900 transition-all ease-in-out duration-300 group-hover:text-teal-400';
-const text =
-  'text-left font-semibold text-teal-400 transition-all ease-in-out duration-300';
-
-const Question = ({
-  question,
-  answer,
-}: {
-  question: string;
-  answer: ReactNode;
-}) => {
-  const contentEl = useRef<HTMLDivElement>(null);
-  const [open, setOpen] = useState(false);
-
-  function expandView() {
-    setOpen(!open);
-  }
-
-  return (
-    <div className="bg-white shadow-hdg py-2 px-4 rounded-lg group">
-      <button
-        className="grid grid-cols-[1fr,auto] gap-x-3 items-center w-full"
-        onClick={expandView}
-      >
-        <span className={open ? text : activeText}>{question}</span>
-        <Arrow className={open ? arrowDown : arrowUp} />
-      </button>
-      <div
-        ref={contentEl}
-        className="transition-all duration-300 ease overflow-hidden pr-10"
-        style={
-          open ? { height: contentEl.current?.scrollHeight } : { height: 0 }
-        }
-      >
-        {answer}
-      </div>
-    </div>
-  );
-};
 
 const Faq = () => {
   return (
@@ -172,7 +148,7 @@ const Faq = () => {
       <Title className="text-center">FAQ</Title>
       <div className="space-y-3">
         {QUESTIONS.map((qs) => (
-          <Question key={qs.id} {...qs} />
+          <Expandable key={qs.id} title={qs.question} content={qs.answer} />
         ))}
       </div>
     </div>

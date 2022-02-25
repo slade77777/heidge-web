@@ -6,25 +6,21 @@ import {
   useMetamask,
   toast,
   hasEnoughBalance,
-  NetworkName,
   NETWORKS,
   str2BigNumber,
+  showSuccessEffect,
 } from 'shared';
 import HedgieNumberSelection from './HedgieNumberSelection';
 import { useMutation } from 'react-query';
 import { mintHedgie, orderHedgie } from '../api';
-import { WALLET_ADDRESS } from '../constants';
-
-const REQUIRED_NETWORK: NetworkName =
-  (process.env.NEXT_PUBLIC_METAMASK_NETWORK as NetworkName) || 'ropsten';
+import { METAMASK_NETWORK, OPENSEA_URL, WALLET_ADDRESS } from '../constants';
+import { MintAction } from '../types';
 
 const defaultWrapperClass =
-  'space-y-5 max-w-xl mx-auto text-center bg-slate-100 shadow-gray-300/50 py-5 px-2 md:p-6 rounded-lg shadow-lg';
+  'space-y-5 max-w-md mx-auto text-center bg-white shadow-gray-300/50 py-5 px-2 md:p-6 rounded-lg shadow-lg';
 
 const MintSection = ({ className }: { className?: string }) => {
-  const [action, setAction] = useState<
-    'idle' | 'success' | 'error' | 'loading'
-  >('idle');
+  const [action, setAction] = useState<MintAction>('idle');
   const { connection, connect, account, balance, purchase, networkName } =
     useMetamask();
   const [selectedVl, setSelectedVl] = useState<number>(1);
@@ -33,8 +29,8 @@ const MintSection = ({ className }: { className?: string }) => {
   const mintMutation = useMutation(mintHedgie);
 
   async function handleMinting() {
-    if (networkName !== REQUIRED_NETWORK) {
-      toast.error(`Please switch to use ${NETWORKS[REQUIRED_NETWORK].name}`);
+    if (networkName !== METAMASK_NETWORK) {
+      toast.error(`Please switch to use ${NETWORKS[METAMASK_NETWORK].name}`);
       return;
     }
     setAction('loading');
@@ -61,22 +57,28 @@ const MintSection = ({ className }: { className?: string }) => {
 
       setAction('success');
       toast.success('Minting success');
+      showSuccessEffect();
     } catch (e: any) {
       setAction('error');
       toast.error(e?.message);
     }
   }
   return (
-    <div id="mint-box">
+    <div>
       {connection === ConnectionEnum.Connected ? (
         <>
           {action === 'success' ? (
             <div className={classNames(defaultWrapperClass, className)}>
               <h3 className="font-bold text-teal-400 text-2xl">Thank you!</h3>
-              <div>Your hedgie(s) has been minted</div>
-              <Button className="w-64 btn btn-cyan uppercase">
+              <div>Your hedgie(s) are being minted</div>
+              <a
+                href={`${OPENSEA_URL}/${account}`}
+                target="_blank"
+                className="w-64 btn btn-cyan uppercase relative"
+                rel="noreferrer"
+              >
                 View on OpenSea
-              </Button>
+              </a>
             </div>
           ) : (
             <HedgieNumberSelection

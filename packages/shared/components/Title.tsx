@@ -10,10 +10,7 @@ const Title = ({
 }) => {
   return (
     <h2
-      className={classNames(
-        'font-black text-3xl text-teal-400 py-5',
-        className,
-      )}
+      className={classNames('font-bold text-3xl text-teal-400 py-5', className)}
     >
       {children}
     </h2>

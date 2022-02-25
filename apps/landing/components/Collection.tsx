@@ -20,7 +20,7 @@ const Collection = () => {
     <div className="pt-5 lg:py-16 max-w-5xl mx-auto">
       <div className="grid grid-cols-1 lg:grid-cols-2 items-center lg:gap-x-5">
         <div className="place-self-right px-4 lg:px-0">
-          <Title>The OG Hedgies (the final) edition</Title>
+          <Title>OG Hedgies the final edition</Title>
           <CollectionContent />
         </div>
         <div className="flex items-center md:max-w-3xl lg:w-full">

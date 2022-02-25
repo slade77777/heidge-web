@@ -2,22 +2,24 @@ const CollectionContent = () => {
   return (
     <div className="prose-sm">
       <p className="font-semibold">
-        7,000 Hedgies with very special attributes on Ethereum blockchain to be
+        Hedgies with very special attributes on Ethereum blockchain will be
         minted using our original smart contract from 2018.
       </p>
       <ul>
         <li>
-          1,018 to be claimed by the Generation 1 (Genesis) Hedgie holders
+          Gen 1 and Gen 2 Hedgie holders will claim one OG Hedgie (Gen 3) for
+          each Hedgie they hold
         </li>
-        <li>300 reserved for giveaways, promotions and team</li>
-        <li>5,000 to be distributed via a public sale</li>
+        <li>300 are reserved for giveaways, promotions and team</li>
+        <li>The rest will be distributed via a public sale</li>
         <li>This edition will complete the Hedgie collection at 10K</li>
         <li>There will never be any more Hedgies minted, ever</li>
       </ul>
       <p>
-        Each OG Hedgie is unique, programmatically generated using NN different
-        attributes. Among these will be 20 very special artist collab editions
-        that will be auctioned on OpenSea, and kick off the Hedgie Art Club.
+        Each OG Hedgie is unique, programmatically generated using about 100
+        different attributes. Among these will be very special artist collab
+        Hedgies that will be auctioned on OpenSea, and kick off the Hedgie Art
+        Club.
       </p>
       <p>
         The purchase price is 0.08 ETH. The Hedgies are randomly assigned to
