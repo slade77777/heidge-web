@@ -26,7 +26,7 @@ export default function About() {
           Dr. Bill Kolomyjec
         </Heading>
         <Paragraph>
-          I've been involved in many aspects of computer art/computer graphics and learning. First as a student and
+          I have been involved in many aspects of computer art/computer graphics and learning. First as a student and
           pioneer of the medium at Michigan State University (MSU). Followed by several years of professing
           engineering
           graphics, computer graphics and computer art at The Ohio State University (OSU). Followed by being called
@@ -48,7 +48,7 @@ export default function About() {
           When Pixar gave up Pixar Interactive and became an animation studio I went to work at Anderson Consulting as
           a Learning Architect. There I found my niche designing graphics for multimedia training products. After
           several years my division morphed into Accenture Learning and I started designing E-Learning graphics and
-          managing projects. I "retired" from Accenture Learning and relocated to Pinellas County Florida.
+          managing projects. I &qout;retired&qout; from Accenture Learning and relocated to Pinellas County Florida.
           <br/><br/>
           I came out of retirement to take a position as academic adjunct faculty at the Art Institute of Tampa (AiTA)
           to teach E-Learning, Web Design and Interactive Media classes. After several years I left AiTA and took a
