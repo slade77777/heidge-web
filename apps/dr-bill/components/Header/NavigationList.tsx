@@ -20,10 +20,10 @@ const navigationList = [
     url: PageNames.SHOW_AND_MEDIA.en,
   },
 ]
-const Button = ({title, url}) => {
+const Button = ({title, url, onClick}) => {
   return (
     <Link href={url}>
-      <a>
+      <a onClick={onClick}>
         <Text
           css={{
             lineHeight: '22px',
@@ -40,10 +40,15 @@ const Button = ({title, url}) => {
     </Link>
   )
 }
-export default function DesktopNavigation({className}) {
+
+type Props = {
+  className?: string;
+  onClose?: () => void;
+}
+export default function DesktopNavigation({className, onClose}: Props) {
   return (
     <div className={className}>
-      {navigationList.map((e, i) => <Button key={i} {...e}/>)}
+      {navigationList.map((e, i) => <Button onClick={onClose} key={i} {...e}/>)}
     </div>
   )
 }

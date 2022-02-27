@@ -77,7 +77,7 @@ export default function ShowAndMedia() {
                 className="w-full break-inside-avoid relative !mb-8 !last:mb-0"
                 imageClassName="w-full"
                 images={artwork.image}
-                href="/artworks/generative-art-vending-machine/oblique-cube-composition"
+                href="/show-and-media/dr-bill-at-the-nft-exhibition-02.07.2023"
                 layout="responsive"
                 tag="Events">
                 <RawCard>

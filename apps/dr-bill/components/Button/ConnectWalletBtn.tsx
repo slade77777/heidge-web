@@ -1,11 +1,14 @@
 import SquareBtn from './SquareBtn';
+import {Text} from '@nextui-org/react';
 
 export default function ConnectWalletButton({css}: { css?: Object }) {
   return (
     <SquareBtn css={{
-      width: '260px',
-      height: '60px',
+      width: '240px',
+      height: '56px',
       ...css,
-    }}> Connect Wallet </SquareBtn>
+    }}>
+      <Text css={{fontSize: '$base', fontWeight: 600}}>Connect Wallet </Text>
+    </SquareBtn>
   )
 }
