@@ -5,6 +5,7 @@ import {Heading, Paragraph} from '../../components/Text';
 import ArtworkCard from '../../components/Card/ArtworkCard';
 import RawCard from '../../components/Card/RawCard';
 import SquareBtn from '../../components/Button/SquareBtn';
+import Watermark from '../../components/Watermark';
 
 const artworks = [
   {
@@ -51,7 +52,7 @@ const artworks = [
 
 export default function ShowAndMedia() {
   return (
-    <Container md>
+    <Watermark text="Show & Media"><Container md>
       <Breadcrumbs
         data={[
           {
@@ -64,10 +65,10 @@ export default function ShowAndMedia() {
       <div className="mt-[100px] mb-[200px]">
         <Heading css={{marginBottom: '80px'}}> Show & Media </Heading>
         <div className="flex flex-row gap-2 mb-10">
-          <SquareBtn css={{width:  '160px', height: '44px'}}> All materials </SquareBtn>
-          <SquareBtn css={{width:  '160px', height: '44px'}}> Events </SquareBtn>
-          <SquareBtn css={{width:  '160px', height: '44px'}}> Promotions </SquareBtn>
-          <SquareBtn css={{width:  '160px', height: '44px'}}> Performances </SquareBtn>
+          <SquareBtn css={{width: '160px', height: '44px'}}> All materials </SquareBtn>
+          <SquareBtn css={{width: '160px', height: '44px'}}> Events </SquareBtn>
+          <SquareBtn css={{width: '160px', height: '44px'}}> Promotions </SquareBtn>
+          <SquareBtn css={{width: '160px', height: '44px'}}> Performances </SquareBtn>
         </div>
         <div className="columns-3 gap-10 w-full">
           {
@@ -107,6 +108,6 @@ export default function ShowAndMedia() {
           }
         </div>
       </div>
-    </Container>
+    </Container></Watermark>
   )
 }

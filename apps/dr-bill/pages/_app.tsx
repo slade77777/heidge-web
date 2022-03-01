@@ -6,6 +6,7 @@ import {NextUIProvider} from '@nextui-org/react';
 import Header from '../components/Header';
 import {darkTheme, lightTheme} from '../customThemes';
 import Footer from '../components/Footer';
+import Background from '../components/Background';
 
 function App({Component, pageProps}: AppProps) {
   return (
@@ -18,9 +19,11 @@ function App({Component, pageProps}: AppProps) {
       }}
     >
       <NextUIProvider>
-        <Header/>
-        <Component {...pageProps} />
-        <Footer/>
+        <Background>
+          <Header/>
+          <Component {...pageProps} />
+          <Footer/>
+        </Background>
       </NextUIProvider>
     </NextThemesProvider>
   );
