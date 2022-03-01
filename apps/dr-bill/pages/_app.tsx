@@ -1,4 +1,5 @@
 import '../styles/globals.css';
+import 'swiper/swiper-bundle.css';
 import type {AppProps} from 'next/app';
 import {ThemeProvider as NextThemesProvider} from 'next-themes';
 import {NextUIProvider} from '@nextui-org/react';
@@ -6,7 +7,7 @@ import Header from '../components/Header';
 import {darkTheme, lightTheme} from '../customThemes';
 import Footer from '../components/Footer';
 
-function MyApp({Component, pageProps}: AppProps) {
+function App({Component, pageProps}: AppProps) {
   return (
     <NextThemesProvider
       defaultTheme="system"
@@ -25,4 +26,4 @@ function MyApp({Component, pageProps}: AppProps) {
   );
 }
 
-export default MyApp;
+export default App;

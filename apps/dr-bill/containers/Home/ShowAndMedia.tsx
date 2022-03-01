@@ -5,12 +5,19 @@ import ScheduleCard from '../../components/Card/ScheduleCard';
 import AdjacentBtn from '../../components/Button/AdjacentBtn';
 import MoreLink from '../../components/MoreLink';
 import {Swiper, SwiperSlide} from 'swiper/react';
+import SwiperCore, {Navigation, Pagination} from 'swiper';
+import {useRef} from 'react';
+
+SwiperCore.use([Navigation, Pagination]);
 
 const artworks = [
   {src: '/assets/about/show-and-media.png'},
 ]
 
 export default function ShowAndMedia() {
+  const prevRef = useRef(null);
+  const nextRef = useRef(null);
+
   return (
     <>
       <div className="grid grid-cols-12 gap-12">
@@ -19,12 +26,26 @@ export default function ShowAndMedia() {
         </div>
         <div className="col-span-12 md:col-span-6 lg:col-span-7 flex justify-end">
           <div className="flex flex-row gap-5 justify-end">
-            <AdjacentBtn buttonType="previous"/>
-            <AdjacentBtn buttonType="next"/>
+            <AdjacentBtn buttonType="previous" ref={prevRef}/>
+            <AdjacentBtn buttonType="next" ref={nextRef}/>
           </div>
         </div>
       </div>
-      <Swiper>
+      <Swiper
+        slidesPerView={1}
+        spaceBetween={30}
+        loop={true}
+        navigation={{
+          prevEl: prevRef.current,
+          nextEl: nextRef.current,
+        }}
+        onBeforeInit={swiper => {
+          // @ts-ignore
+          swiper.params.navigation.prevEl = prevRef.current;
+          // @ts-ignore
+          swiper.params.navigation.nextEl = nextRef.current;
+        }}
+      >
         <SwiperSlide>
           <div className="grid grid-cols-12 gap-12">
             <div className="col-span-12 md:col-span-6 lg:col-span-5">
@@ -73,5 +94,5 @@ export default function ShowAndMedia() {
       </Swiper>
     </>
   );
-};
+}
 
