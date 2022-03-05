@@ -1,4 +1,3 @@
-import Logo from './Logo';
 import Link from 'next/link';
 import { Discord, Twitter, Telegram } from 'shared/icons';
 import MobileMenu from './MobileMenu';
@@ -94,15 +93,18 @@ const Header = () => {
   return (
     <div className="hdgGradient px-4 lg:px-0 py-3">
       <div className="mx-auto max-w-5xl grid grid-cols-[auto,auto] md:grid-cols-[auto,1fr,auto]">
-        <div className="place-self-center lg:place-self-start justify-self-start">
+        <div className="place-self-center justify-self-start">
           <Link href="/">
             <a>
-              <Logo className="text-white h-10 pt-1" />
+              {/*<Logo className="text-white h-10 pt-1" />*/}
+              <span className="font-bold text-[28px] text-white">
+                Kingdoms of Curiopia
+              </span>
             </a>
           </Link>
         </div>
-        <NavLinks className="hidden lg:flex items-center text-white space-x-8 place-self-center justify-self-end pr-10" />
-        <Channels className="hidden md:flex items-center space-x-5 place-self-center justify-self-end pr-14 lg:pr-0" />
+        <NavLinks className="hidden lg:flex items-center text-white space-x-5 place-self-center justify-self-end pr-5" />
+        <Channels className="hidden md:flex items-center space-x-3 place-self-center justify-self-end pr-14 lg:pr-0" />
         <MobileMenu className="lg:hidden place-self-center justify-self-end" />
       </div>
     </div>
