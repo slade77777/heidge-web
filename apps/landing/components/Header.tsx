@@ -97,7 +97,7 @@ const Header = () => {
           <Link href="/">
             <a>
               {/*<Logo className="text-white h-10 pt-1" />*/}
-              <span className="font-bold text-[28px] text-white">
+              <span className="font-bold text-xl lg:text-[28px] text-white">
                 Kingdoms of Curiopia
               </span>
             </a>
