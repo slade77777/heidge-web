@@ -1,3 +1,5 @@
+import {useTheme} from '@nextui-org/react';
+
 export const TriangleAndSquare = ({className}) => {
   return (
     <svg className={className} width="519" height="395" viewBox="0 0 519 395" fill="none"
@@ -13,7 +15,8 @@ export const Triangle = ({className}) => {
   return (
     <svg className={className} width="406" height="422" viewBox="0 0 406 422" fill="none"
          xmlns="http://www.w3.org/2000/svg">
-      <path opacity="0.03" d="M96.8214 421.91L-16.0839 0.000710053L405.555 112.978L96.8214 421.91Z" fill="black"/>
+      <path opacity="0.03" d="M96.8214 421.91L-16.0839 0.000710053L405.555 112.978L96.8214 421.91Z"
+            fill="currentColor"/>
     </svg>
 
   )
@@ -27,6 +30,16 @@ export const PolygonAndEllipse = ({className}) => {
             d="M89.0984 0.232014L218.716 47.5795L210.246 182.655L75.3929 218.789L0.519622 106.045L89.0984 0.232014Z"
             fill="currentColor"/>
       <circle opacity="0.03" cx="171.5" cy="36.5" r="28.5" fill="currentColor"/>
+    </svg>
+  )
+}
+
+export const Circle = ({className}) => {
+  const {theme} = useTheme();
+  return (
+    <svg className={className} width="686" height="686" viewBox="0 0 686 686" fill="none"
+         xmlns="http://www.w3.org/2000/svg" style={{color: theme.colors.background.value}}>
+      <circle cx="343" cy="343" r="343" fill="currentColor"/>
     </svg>
   )
 }
