@@ -1,5 +1,3 @@
-import {useTheme} from '@nextui-org/react';
-
 export const TriangleAndSquare = ({className}) => {
   return (
     <svg className={className} width="519" height="395" viewBox="0 0 519 395" fill="none"
@@ -34,12 +32,19 @@ export const PolygonAndEllipse = ({className}) => {
   )
 }
 
-export const Circle = ({className}) => {
-  const {theme} = useTheme();
+export const Circle = ({className, style}: {className?: string, style?: object}) => {
   return (
-    <svg className={className} width="686" height="686" viewBox="0 0 686 686" fill="none"
-         xmlns="http://www.w3.org/2000/svg" style={{color: theme.colors.background.value}}>
-      <circle cx="343" cy="343" r="343" fill="currentColor"/>
+    <svg className={className} style={style} width="686" height="686" viewBox="0 0 686 686" fill="none"
+         xmlns="http://www.w3.org/2000/svg">
+      <circle opacity="0.3" cx="343" cy="343" r="343" fill="currentColor"/>
+    </svg>
+  )
+}
+
+export const Ellipse = ({className}) => {
+  return (
+    <svg className={className} width="1042" height="664" viewBox="0 0 1042 664" fill="none" xmlns="http://www.w3.org/2000/svg">
+      <ellipse cx="521" cy="332" rx="521" ry="332" fill="currentColor"/>
     </svg>
   )
 }
