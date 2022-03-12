@@ -1,4 +1,4 @@
-import { useQuery } from 'react-query';
+import { useQuery } from 'shared';
 import { getNumberOfDiscountHedgies } from '../api';
 
 export default function useDiscountHedgies(wallet: string) {

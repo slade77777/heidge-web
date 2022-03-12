@@ -9,9 +9,9 @@ import {
   NETWORKS,
   str2BigNumber,
   showSuccessEffect,
+  useMutation,
 } from 'shared';
 import HedgieNumberSelection from './HedgieNumberSelection';
-import { useMutation } from 'react-query';
 import { mintHedgie, orderHedgie } from '../api';
 import { METAMASK_NETWORK, OPENSEA_URL, WALLET_ADDRESS } from '../constants';
 import { MintAction } from '../types';
