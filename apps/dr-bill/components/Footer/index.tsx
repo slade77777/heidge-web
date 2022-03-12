@@ -6,18 +6,36 @@ export default function Footer() {
   return (
     <div className="bg-[#0000000d] border-t border-t-[#00000038]">
       <Container
-        xl
+        md
         css={{
-          height: '437px',
+          // height: '437px',
           display: 'flex',
           justifyContent: 'space-between',
+          flexDirection: 'column',
           alignItems: 'center',
+          paddingTop: '60px',
+          '@xs': {
+            flexDirection: 'row',
+            paddingTop: '120px',
+            alignItems: 'flex-start',
+          },
         }}>
-        <div className="w-[335px]">
+        <div className="w-full md:w-[335px]">
+          <Text
+            css={{
+              lineHeight: '35.2px',
+              fontWeight: 300,
+              marginBottom: '20px',
+            }}
+          >
+            Leave your email to be informed of exhibits, drops and other goodies.
+          </Text>
+          <Subscribe className="w-full md:max-w-[306px] mx-auto mb-[50px]"/>
+        </div>
+        <div className="w-full md:w-[335px] md:order-first">
           <SocialNetworkList className="mb-5 w-full"/>
           <Text
             css={{
-              fontSize: '$tiny',
               lineHeight: '32px',
               fontWeight: 300,
               marginBottom: '20px',
@@ -28,25 +46,12 @@ export default function Footer() {
           </Text>
           <Text
             css={{
-
               lineHeight: '34px',
               fontWeight: 600,
             }}
           >
             © Copyright 1969-2022
           </Text>
-        </div>
-        <div className="w-[335px]">
-          <Text
-            css={{
-              lineHeight: '35.2px',
-              fontWeight: 300,
-              marginBottom: '20px',
-            }}
-          >
-            Leave your email to be informed of exhibits, drops and other goodies.
-          </Text>
-          <Subscribe className="w-[306px]"/>
         </div>
       </Container>
     </div>

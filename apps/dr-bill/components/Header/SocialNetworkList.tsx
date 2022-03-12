@@ -4,7 +4,7 @@ import {classNames} from 'shared/utils';
 
 export default function SocialNetworkList({className}: {className?: string}) {
   return (
-    <div className={classNames('flex flex-row items-center justify-between', className)}>
+    <div className={classNames('flex flex-row items-center justify-between gap-4', className)}>
       <Button>
         <Discord className="w-5 h-5"/>
       </Button>
