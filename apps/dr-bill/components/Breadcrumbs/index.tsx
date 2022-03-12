@@ -10,17 +10,16 @@ export type BreadItem = {
 
 type Props = {
   data: BreadItem[];
-  style?: any;
 };
 
-const Breadcrumbs: React.FC<Props> = ({data, style, ...rest}) => {
+const Breadcrumbs: React.FC<Props> = ({data}) => {
   const isLastItem = (currentIndex) => {
     return currentIndex == data.length - 1;
   };
 
   return (
-    <nav className="mt-[50px] lg:mt-[100px]">
-      <ol className="flex flex-no-wrap items-center m-0 p-0 list-none">
+    <nav className="mt-[50px] lg:mt-[100px] relative">
+      <ol className="flex flex-no-wrap items-center m-0 p-0 list-none z-10">
         {data.map((item, index) => (
           <li className="flex items-center gap-4" key={index}>
             <div className={classNames('text-red-800', isLastItem(index) && 'font-bold')}>

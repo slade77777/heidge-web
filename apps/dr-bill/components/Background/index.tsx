@@ -1,5 +1,5 @@
 import {Circle, PolygonAndEllipse, Triangle, TriangleAndSquare} from './Polygons';
-import {useEffect, useMemo, useState} from 'react';
+// import {useEffect, useMemo, useState} from 'react';
 
 
 const CircleWithDimension = ({width, height, top, left}) => {
@@ -28,14 +28,14 @@ const renderRandomCircles = (width, height) => {
 }
 
 export default function Background({children}) {
-  const [dimension, setDimension] = useState({width: 0, height: 0})
+  // const [dimension, setDimension] = useState({width: 0, height: 0})
 
-  const arr = useMemo(() => renderRandomCircles(dimension.width, dimension.height), [dimension])
-  useEffect(() => {
-    if (window?.innerHeight && window?.innerWidth) {
-      setDimension({width: window.innerWidth, height: window.innerHeight});
-    }
-  }, [])
+  // const arr = useMemo(() => renderRandomCircles(dimension.width, dimension.height), [dimension])
+  // useEffect(() => {
+  //   if (window?.innerHeight && window?.innerWidth) {
+  //     setDimension({width: window.innerWidth, height: window.innerHeight});
+  //   }
+  // }, [])
 
   return (
     <div className="relative">
@@ -46,7 +46,7 @@ export default function Background({children}) {
         className="absolute w-[208px] md:w-[273px] lg:w-[662px] h-[208px] md:h-[273px] lg:h-[662px] blur-xl text-white -translate-x-1/2 -translate-y-1/2"/>
       <Circle
         className="absolute hidden lg:block w-[381px] h-[381px] blur-2xl text-white -translate-x-1/2 -translate-y-1/2 right-0"/>
-      {arr}
+      {/*{arr}*/}
       {children}
     </div>
   )
