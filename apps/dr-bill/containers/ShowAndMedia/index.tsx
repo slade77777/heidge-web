@@ -70,7 +70,7 @@ export default function ShowAndMedia() {
           <SquareBtn css={{width: '160px', height: '44px'}}> Promotions </SquareBtn>
           <SquareBtn css={{width: '160px', height: '44px'}}> Performances </SquareBtn>
         </div>
-        <div className="columns-3 gap-10 w-full">
+        <div className="md:columns-2 lg:columns-3 gap-10 w-full">
           {
             artworks.map((artwork, index) => (
               <ArtworkCard
@@ -84,13 +84,13 @@ export default function ShowAndMedia() {
                 <RawCard>
                   <Heading css={{
                     fontFamily: '$p',
-                    fontSize: '$base',
+                    fontSize: '$xs',
                     lineHeight: '$sm',
                     fontWeight: 600,
                     marginBottom: '12px',
-                    '@sm': {
-                      fontSize: '$base',
-                      lineHeight: '$sm',
+                    '@xs': {
+                      fontSize: '$base !important',
+                      lineHeight: '$md !important',
                     },
                   }}> {artwork.title} </Heading>
                   <Paragraph css={{
