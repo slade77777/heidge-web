@@ -12,7 +12,7 @@ export default function DesktopHeader({className}: { className?: string }) {
           'h-full flex items-center justify-between',
           className,
         )}>
-        <DesktopNavigation className="flex w-1/2 justify-between"/>
+        <DesktopNavigation className="flex w-1/2 justify-between z-10"/>
         <div className="flex flex-row items-center">
           <SocialNetworkList className="w-[100px] mr-11"/>
           <ConnectWalletButton/>

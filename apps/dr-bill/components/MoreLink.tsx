@@ -11,11 +11,14 @@ export default function MoreLink({href, content}: Props) {
     <Link href={href}>
       <a>
         <Text css={{
-          fontSize: '$base',
+          fontSize: '$xs',
           lineHeight: '$sm',
           fontWeight: 600,
           display: 'inline',
           marginRight: '16px',
+          '@sm': {
+            fontSize: '$base',
+          },
         }}>{content}</Text>
         <Direction className="inline"/>
       </a>

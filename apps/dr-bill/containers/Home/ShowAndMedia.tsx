@@ -20,11 +20,11 @@ export default function ShowAndMedia() {
 
   return (
     <>
-      <div className="grid grid-cols-12 gap-12">
+      <div className="grid grid-cols-12 md:gap-10 lg:gap-12">
         <div className="col-span-12 md:col-span-6 lg:col-span-5">
           <Heading> Show & Media </Heading>
         </div>
-        <div className="col-span-12 md:col-span-6 lg:col-span-7 flex justify-end">
+        <div className="hidden span:block col-span-12 md:col-span-6 lg:col-span-7">
           <div className="flex flex-row gap-5 justify-end">
             <AdjacentBtn buttonType="previous" ref={prevRef}/>
             <AdjacentBtn buttonType="next" ref={nextRef}/>
@@ -47,7 +47,7 @@ export default function ShowAndMedia() {
         }}
       >
         <SwiperSlide>
-          <div className="grid grid-cols-12 gap-12">
+          <div className="grid grid-cols-12 md:gap-12">
             <div className="col-span-12 md:col-span-6 lg:col-span-5">
               <div className="my-auto">
                 <div className="relative mx-auto mt-[50px]">
