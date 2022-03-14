@@ -13,10 +13,8 @@ export default function DesktopHeader({className}: { className?: string }) {
           className,
         )}>
         <DesktopNavigation className="flex w-1/2 justify-between z-10"/>
-        <div className="flex flex-row items-center">
-          <SocialNetworkList className="w-[100px] mr-11"/>
-          <ConnectWalletButton/>
-        </div>
+        <SocialNetworkList className="w-[100px]"/>
+        <ConnectWalletButton/>
       </div>
 
     </Container>

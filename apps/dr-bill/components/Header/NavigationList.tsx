@@ -21,10 +21,10 @@ const navigationList = [
     url: PageNames.SHOW_AND_MEDIA.en,
   },
 ]
-const Button = ({title, url, onClick, active = false}) => {
+const Button = ({className, title, url, onClick, active = false}) => {
   return (
     <Link href={url}>
-      <a onClick={onClick}>
+      <a className={className} onClick={onClick}>
         <Text
           css={{
             lineHeight: '22px',
@@ -50,9 +50,11 @@ export default function DesktopNavigation({className, onClose}: Props) {
     <div className={className}>
       {navigationList.map((e, i) =>
         <Button
+          className="hover:opacity-40"
           onClick={onClose}
           active={e.url === `/${pathname.split('/')[1]}`}
-          key={i} {...e}/>)}
+          key={i}
+          {...e}/>)}
     </div>
   )
 }
