@@ -14,6 +14,7 @@ export default function RawCard({css, className, children}: Props) {
         background: 'transparent',
         borderRadius: 0,
         border: 'none',
+        boxShadow: 'none',
         padding: 0,
         margin: 0,
         'div': {

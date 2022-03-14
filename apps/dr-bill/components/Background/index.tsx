@@ -1,4 +1,6 @@
 import {Circle, PolygonAndEllipse, Triangle, TriangleAndSquare} from './Polygons';
+import {useTheme} from '@nextui-org/react';
+import SwitchThemeButton from '../Button/SwitchThemeBtn';
 // import {useEffect, useMemo, useState} from 'react';
 
 
@@ -28,6 +30,7 @@ const renderRandomCircles = (width, height) => {
 }
 
 export default function Background({children}) {
+  const {theme} = useTheme();
   // const [dimension, setDimension] = useState({width: 0, height: 0})
 
   // const arr = useMemo(() => renderRandomCircles(dimension.width, dimension.height), [dimension])
@@ -43,11 +46,16 @@ export default function Background({children}) {
       <PolygonAndEllipse className="absolute top-2/3 right-1/2"/>
       <Triangle className="absolute top-1/2"/>
       <Circle
-        className="absolute w-[208px] md:w-[273px] lg:w-[662px] h-[208px] md:h-[273px] lg:h-[662px] blur-xl text-white -translate-x-1/2 -translate-y-1/2"/>
+        className="absolute w-[208px] md:w-[273px] lg:w-[662px] h-[208px] md:h-[273px] lg:h-[662px] blur-xl -translate-x-1/2 -translate-y-1/2"
+        style={{color: theme.colors.accents1.value}}
+      />
       <Circle
-        className="absolute hidden lg:block w-[381px] h-[381px] blur-2xl text-white -translate-x-1/2 -translate-y-1/2 right-0"/>
+        className="absolute hidden lg:block w-[381px] h-[381px] blur-2xl text-white -translate-x-1/2 -translate-y-1/2 right-0"
+        style={{color: theme.colors.background.value}}
+      />
       {/*{arr}*/}
       {children}
+      <SwitchThemeButton className="absolute top-1/2 right-0 -translate-x-1/2"/>
     </div>
   )
 }

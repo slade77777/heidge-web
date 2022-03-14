@@ -6,9 +6,12 @@ import NextImage from '../../components/Image/NextImage';
 import SquareBtn from '../../components/Button/SquareBtn';
 import GeneratedArtworkList from './GeneratedArtworkList';
 import Watermark from '../../components/Watermark';
+import {useRouter} from 'next/router';
 
 const src = 'https://cdn.discordapp.com/attachments/748042111148097556/944153275819778098/unknown.png';
 export default function ArtworkDetail() {
+  const {asPath, pathname} = useRouter();
+  console.log(asPath, pathname);
   return (
     <Watermark text="Oblique Cube Composition">
       <Container md>
@@ -19,8 +22,8 @@ export default function ArtworkDetail() {
               href: '/',
             },
             {text: 'Artworks', href: `${PageNames.ARTWORK.en}`},
-            {text: 'Generative Art Vending Machine', href: `generative-art-vending-machine`},
-            {text: 'Oblique Cube Composition', href: 'oblique-cube-composition'},
+            {text: 'Generative Art Vending Machine', href: `/${PageNames.ARTWORK.en}/generative-art-vending-machine`},
+            {text: 'Oblique Cube Composition', href: `/${PageNames.ARTWORK.en}/generative-art-vending-machine/oblique-cube-composition`},
           ]}
         />
         <div className="mt-[100px] mb-[200px]">
