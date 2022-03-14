@@ -24,7 +24,7 @@ export default function ShowAndMedia() {
         <div className="col-span-12 md:col-span-6 lg:col-span-5">
           <Heading> Show & Media </Heading>
         </div>
-        <div className="hidden span:block col-span-12 md:col-span-6 lg:col-span-7">
+        <div className="hidden md:block col-span-12 md:col-span-6 lg:col-span-7">
           <div className="flex flex-row gap-5 justify-end">
             <AdjacentBtn buttonType="previous" ref={prevRef}/>
             <AdjacentBtn buttonType="next" ref={nextRef}/>
