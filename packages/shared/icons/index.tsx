@@ -9,5 +9,7 @@ import Instagram from "./Instagram";
 import Direction from "./Direction";
 import NextArrow from "./NextArrow";
 import PlusIcon from './PlusIcon';
+import Day from './Day';
+import Night from './Night';
 
-export { Arrow, Close, Curio, Menu, Telegram, Twitter, Discord, PlusIcon, Instagram, Direction, NextArrow };
+export { Arrow, Close, Curio, Menu, Telegram, Twitter, Discord, PlusIcon, Instagram, Direction, NextArrow, Day, Night };

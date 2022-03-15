@@ -20,7 +20,7 @@ export default function MobileHeader({className}: { className?: string }) {
         <Menu className="w-10 h-5"/>
       </button>
       <Modal
-        className="rounded-none"
+        style={{borderRadius: 0}}
         fullScreen
         closeButton
         onClose={closeHandler}
