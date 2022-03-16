@@ -5,7 +5,7 @@ import SwitchThemeButton from '../Button/SwitchThemeBtn';
 
 export default function SocialNetworkList({className}: { className?: string }) {
   return (
-    <div className={classNames('flex flex-row items-center justify-between gap-4', className)}>
+    <div className={classNames('flex flex-row items-center justify-between gap-2', className)}>
       <Button className="hover:opacity-40">
         <Discord className="w-5 h-5"/>
       </Button>
@@ -15,7 +15,7 @@ export default function SocialNetworkList({className}: { className?: string }) {
       <Button className="hover:opacity-40">
         <Instagram className="w-5 h-5"/>
       </Button>
-      <SwitchThemeButton className="w-5 h-5"/>
+      <SwitchThemeButton />
     </div>
   )
 }

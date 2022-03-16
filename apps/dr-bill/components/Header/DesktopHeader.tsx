@@ -13,10 +13,9 @@ export default function DesktopHeader({className}: { className?: string }) {
           className,
         )}>
         <DesktopNavigation className="flex w-1/2 justify-between z-10"/>
-        <SocialNetworkList className="w-[100px]"/>
+        <SocialNetworkList/>
         <ConnectWalletButton/>
       </div>
-
     </Container>
   )
 }
