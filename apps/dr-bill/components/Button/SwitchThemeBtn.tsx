@@ -1,21 +1,26 @@
-import {Switch, useTheme} from '@nextui-org/react';
-import {useTheme as useNextTheme} from 'next-themes';
+import { Switch, useTheme } from '@nextui-org/react';
+import { useTheme as useNextTheme } from 'next-themes';
+import { MoonOutline, SunOutline } from 'shared/icons';
 
-export default function SwitchThemeButton({className}: { className?: string }) {
-  const {setTheme} = useNextTheme();
-  const {isDark} = useTheme();
+export default function SwitchThemeButton({
+  className,
+}: {
+  className?: string;
+}) {
+  const { setTheme } = useNextTheme();
+  const { isDark } = useTheme();
   return (
     <Switch
       initialChecked={isDark}
       css={{
         height: 'auto',
-        'div': {
-          border: '1px solid $primaryDark',
+        div: {
+          border: `1px solid ${isDark ? '$primaryDark' : '$primaryLight'}`,
           width: '80px',
         },
-        'span': {
+        span: {
           position: 'relative',
-          background: '$primaryLight',
+          background: isDark ? 'transparent' : '$primaryLight',
         },
         'span::after': {
           content: 'NIGHT\\AMODE',
@@ -48,7 +53,9 @@ export default function SwitchThemeButton({className}: { className?: string }) {
           height: '100%',
         },
       }}
+      iconOn={<SunOutline className="text-black" />}
+      iconOff={<MoonOutline className="text-white" />}
       onChange={(e) => setTheme(e.target.checked ? 'dark' : 'light')}
     />
-  )
+  );
 }
