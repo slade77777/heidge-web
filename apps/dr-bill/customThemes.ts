@@ -1,4 +1,4 @@
-import {createTheme} from '@nextui-org/react';
+import { createTheme } from '@nextui-org/react';
 
 const generalTheme = {
   fonts: {
@@ -21,7 +21,7 @@ const generalTheme = {
     lg: '46px',
     xl: '74px',
   },
-}
+};
 
 export const lightTheme = createTheme({
   type: 'light',
