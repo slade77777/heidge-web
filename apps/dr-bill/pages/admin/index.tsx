@@ -1,5 +1,5 @@
 import type { ReactElement } from 'react';
-import PhotosUploader from '../../containers/PhotosUploader';
+import PhotosUploader from '../../components/PhotosUploader';
 
 export default function AdminPage() {
   return <PhotosUploader />;

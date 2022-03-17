@@ -1,6 +1,6 @@
-import {Heading, Paragraph} from '../../components/CustomText';
-import MoreLink from '../../components/MoreLink';
-import CardArtwork from '../../components/CardArtwork';
+import {Heading, Paragraph} from '../CustomText';
+import MoreLink from '../MoreLink';
+import CardArtwork from '../CardArtwork';
 
 const artworks = [
   {src: '/assets/about/artwork1.png'},

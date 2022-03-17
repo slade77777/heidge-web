@@ -1,9 +1,9 @@
 import {Spacer, Text} from '@nextui-org/react';
-import {Heading, Paragraph} from '../../components/CustomText';
-import CardArtwork from '../../components/CardArtwork';
-import CardSchedule from '../../components/CardSchedule';
-import AdjacentBtn from '../../components/Button/AdjacentBtn';
-import MoreLink from '../../components/MoreLink';
+import {Heading, Paragraph} from '../CustomText';
+import CardArtwork from '../CardArtwork';
+import CardSchedule from '../CardSchedule';
+import AdjacentBtn from '../Button/AdjacentBtn';
+import MoreLink from '../MoreLink';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Navigation, Pagination} from 'swiper';
 import {useRef} from 'react';

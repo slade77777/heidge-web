@@ -1,11 +1,11 @@
 import {Container} from '@nextui-org/react';
-import Breadcrumbs from '../../components/Breadcrumbs';
+import Breadcrumbs from '../Breadcrumbs';
 import {PageNames} from '../../constants/pageNames';
-import {Heading, Paragraph} from '../../components/CustomText';
-import NextImage from '../../components/NextImage';
-import SquareBtn from '../../components/Button/SquareBtn';
+import {Heading, Paragraph} from '../CustomText';
+import NextImage from '../NextImage';
+import SquareBtn from '../Button/SquareBtn';
 import GeneratedArtworkList from './GeneratedArtworkList';
-import Watermark from '../../components/Watermark';
+import Watermark from '../Watermark';
 import {useRouter} from 'next/router';
 
 const src = 'https://cdn.discordapp.com/attachments/748042111148097556/944153275819778098/unknown.png';

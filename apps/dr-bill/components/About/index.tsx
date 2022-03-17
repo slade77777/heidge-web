@@ -1,10 +1,10 @@
 import {Container} from '@nextui-org/react';
 import Image from 'next/image';
 import CollapsableContent from './CollapsableContent';
-import Breadcrumbs from '../../components/Breadcrumbs';
+import Breadcrumbs from '../Breadcrumbs';
 import {PageNames} from '../../constants/pageNames';
-import {Heading, Paragraph} from '../../components/CustomText'
-import Watermark from '../../components/Watermark';
+import {Heading, Paragraph} from '../CustomText'
+import Watermark from '../Watermark';
 
 export default function About() {
   return (

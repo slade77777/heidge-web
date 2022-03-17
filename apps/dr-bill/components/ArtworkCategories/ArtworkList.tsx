@@ -1,7 +1,8 @@
-import CardArtwork from '../../components/CardArtwork';
-import CardRaw from '../../components/CardRaw';
+import CardArtwork from '../CardArtwork';
+import CardRaw from '../CardRaw';
 import {Text} from '@nextui-org/react';
-import {Paragraph} from '../../components/CustomText';
+import {Paragraph} from '../CustomText';
+import {PageNames} from '../../constants/pageNames';
 
 const artworks = [
   {
@@ -14,7 +15,7 @@ const artworks = [
   {
     title: 'Plotter Art',
     description: 'Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry',
-    image: [{src: 'https://cdn.discordapp.com/attachments/748042111148097556/944153274716676096/unknown.png'}],
+    image: Array.from(Array(29).keys()).map((_, i) => ({src: `https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-${i + 1}.png`})),
   },
   {
     title: 'HEN',
@@ -50,8 +51,10 @@ export default function ArtworkList() {
               02.07.2023
             </Text>
             <Paragraph>
-              Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore
-              magna aliqua. Ut enim...
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit. Vestibulum commodo vehicula fringilla. In
+              tincidunt augue tellus, et maximus eros elementum et. Pellentesque pellentesque pharetra cursus. Vivamus
+              at elementum nisi. Integer ultrices tortor quis metus lacinia scelerisque. Integer tincidunt nulla sed
+              vulputate mattis.
             </Paragraph>
           </CardRaw>
         </CardArtwork>
@@ -64,7 +67,9 @@ export default function ArtworkList() {
             imageClassName="h-[384px]"
             layout="fill"
             images={artwork.image}
-            tag="Events">
+            tag="Events"
+            href={`${PageNames.ARTWORK.en}/${artwork.title.replaceAll(' ', '-').toLowerCase()}`}
+          >
             <CardRaw>
               <Text css={{lineHeight: '$md', fontWeight: 600}}> {artwork.title} </Text>
               <Paragraph> {artwork.description} </Paragraph>

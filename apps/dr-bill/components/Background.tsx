@@ -1,6 +1,6 @@
 import {Circle, PolygonAndEllipse, Triangle, TriangleAndSquare} from './Polygons';
 import {useTheme} from '@nextui-org/react';
-import SwitchThemeButton from '../Button/SwitchThemeBtn';
+import SwitchThemeButton from './Button/SwitchThemeBtn';
 // import {useEffect, useMemo, useState} from 'react';
 
 
@@ -56,9 +56,9 @@ export default function Background({children}) {
       {/*{arr}*/}
       {children}
       <div className="fixed bottom-0 md:top-1/2 right-5 z-10">
-        <SwitchThemeButton />
+        <SwitchThemeButton/>
       </div>
       {/*<SwitchThemeButton className="absolute top-1/2 right-0 -translate-x-1/2"/>*/}
     </div>
   );
-}
+};

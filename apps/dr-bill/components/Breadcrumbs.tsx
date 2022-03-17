@@ -44,7 +44,7 @@ export default function Breadcrumbs({data}: { data: BreadItem[] }) {
   };
 
   return (
-    <nav className="mt-[50px] lg:mt-[100px] relative">
+    <nav className="relative">
       <ol className="flex flex-no-wrap items-center m-0 p-0 list-none z-10">
         {data.map((item, index) => (
           <li className="flex items-center gap-4" key={index}>

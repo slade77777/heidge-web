@@ -24,7 +24,7 @@ export default function CardArtwork({
   children,
   className,
   imageClassName,
-  href = '/artworks/generative-art-vending-machine',
+  href = '/',
   ...props
 }: Props) {
   return (

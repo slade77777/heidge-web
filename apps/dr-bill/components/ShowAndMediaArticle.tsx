@@ -1,8 +1,8 @@
 import {Container} from '@nextui-org/react';
-import Breadcrumbs from '../components/Breadcrumbs';
+import Breadcrumbs from './Breadcrumbs';
 import {PageNames} from '../constants/pageNames';
-import {Heading, Paragraph} from '../components/CustomText';
-import NextImage from '../components/NextImage';
+import {Heading, Paragraph} from './CustomText';
+import NextImage from './NextImage';
 
 export default function ShowAndMediaArticle() {
   return (
@@ -29,7 +29,7 @@ export default function ShowAndMediaArticle() {
           Dr. Bill at the NFT exhibition 02.07.2023
         </Heading>
         <Paragraph>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
           standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
           make a type specimen book. It has survived not only five centuries, but also the leap into electronic
           typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset
@@ -44,7 +44,7 @@ export default function ShowAndMediaArticle() {
             layout="responsive"/>
         </div>
         <Paragraph>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
           standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
           make
           a type specimen book. It has survived not only five centuries, but also the leap into electronic typesetting,
@@ -59,7 +59,7 @@ export default function ShowAndMediaArticle() {
           Lorem Ipsum is simply dummy
         </Heading>
         <Paragraph>
-          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's
+          Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry
           standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to
           make a type specimen book. It has survived not only five centuries, but also the leap into electronic
           typesetting, remaining essentially unchanged. It was popularised in the 1960s with the release of Letraset

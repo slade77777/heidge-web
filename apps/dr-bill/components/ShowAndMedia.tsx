@@ -1,11 +1,11 @@
 import {Container} from '@nextui-org/react';
-import Breadcrumbs from '../../components/Breadcrumbs';
-import {PageNames} from '../../constants/pageNames';
-import {Heading, Paragraph} from '../../components/CustomText';
-import CardArtwork from '../../components/CardArtwork';
-import CardRaw from '../../components/CardRaw';
-import SquareBtn from '../../components/Button/SquareBtn';
-import Watermark from '../../components/Watermark';
+import Breadcrumbs from './Breadcrumbs';
+import {PageNames} from '../constants/pageNames';
+import {Heading, Paragraph} from './CustomText';
+import CardArtwork from './CardArtwork';
+import CardRaw from './CardRaw';
+import SquareBtn from './Button/SquareBtn';
+import Watermark from './Watermark';
 
 const artworks = [
   {
