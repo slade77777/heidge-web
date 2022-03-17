@@ -15,6 +15,7 @@ import Medium from './Medium';
 import Reddit from './Reddit';
 export { default as MoonOutline } from './MoonOutline';
 export { default as SunOutline } from './SunOutline';
+export { default as Wallet } from './Wallet';
 
 export {
   Arrow,
