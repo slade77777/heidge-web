@@ -1,0 +1,27 @@
+<svg width="29px" height="41px" viewBox="0 0 29 41" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient x1="62.9989203%" y1="30.2924967%" x2="16.236848%" y2="100%" id="linearGradient-1">
+      <stop stop-color="#D8BB79" offset="0%"></stop>
+      <stop stop-color="#E1AE2A" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="41.1456615%" y1="41.1779173%" x2="90.4315976%" y2="81.6123203%" id="linearGradient-2">
+      <stop stop-color="#ECD088" offset="0%"></stop>
+      <stop stop-color="#E1AE2A" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="15.9092681%" y1="66.7482248%" x2="100%" y2="33.4938519%" id="linearGradient-3">
+      <stop stop-color="#E0B24B" offset="0%"></stop>
+      <stop stop-color="#ECD088" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Start_Journey/web" transform="translate(-298.000000, -30.000000)">
+      <g id="start-journey-btn">
+        <g id="Group-2" transform="translate(296.000000, 29.000000)">
+          <polygon id="Star-Copy-2" fill="url(#linearGradient-1)" transform="translate(22.792403, 19.792403) scale(-1, 1) rotate(6.000000) translate(-22.792403, -19.792403) " points="22.7924029 23.7924029 18.0901209 26.2645388 18.9881768 21.0284708 15.1839507 17.3202669 20.4412619 16.5563349 22.7924029 11.7924029 25.1435439 16.5563349 30.400855 17.3202669 26.5966289 21.0284708 27.4946849 26.2645388"></polygon>
+          <polygon id="Star-Copy-3" fill="url(#linearGradient-2)" transform="translate(8.196152, 35.196152) scale(-1, 1) rotate(-30.000000) translate(-8.196152, -35.196152) " points="8.19615242 38.1961524 4.66944091 40.0502544 5.34298287 36.1232034 2.48981332 33.3420505 6.43279667 32.7691014 8.19615242 29.1961524 9.95950818 32.7691014 13.9024915 33.3420505 11.049322 36.1232034 11.7228639 40.0502544"></polygon>
+          <polygon id="Star-Copy-4" fill="url(#linearGradient-3)" transform="translate(12.315704, 5.315704) scale(-1, 1) rotate(-25.000000) translate(-12.315704, -5.315704) " points="12.3157042 7.3157042 9.96456319 8.55177217 10.4135912 5.93373818 8.51147813 4.07963622 11.1401337 3.69767021 12.3157042 1.3157042 13.4912747 3.69767021 16.1199303 4.07963622 14.2178172 5.93373818 14.6668452 8.55177217"></polygon>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>
