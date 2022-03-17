@@ -12,6 +12,7 @@ import Header from '../components/Header';
 import { darkTheme, lightTheme } from '../customThemes';
 import Footer from '../components/Footer';
 import Background from '../components/Background';
+import { AppProvider } from 'shared';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -33,17 +34,19 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
         dark: darkTheme.className,
       }}
     >
-      <NextUIProvider>
-        {Component.getLayout ? (
-          getLayout(<Component {...pageProps} />)
-        ) : (
-          <Background>
-            <Header />
-            <Component {...pageProps} />
-            <Footer />
-          </Background>
-        )}
-      </NextUIProvider>
+      <AppProvider>
+        <NextUIProvider>
+          {Component.getLayout ? (
+            getLayout(<Component {...pageProps} />)
+          ) : (
+            <Background>
+              <Header />
+              <Component {...pageProps} />
+              <Footer />
+            </Background>
+          )}
+        </NextUIProvider>
+      </AppProvider>
     </NextThemesProvider>
   );
 }
