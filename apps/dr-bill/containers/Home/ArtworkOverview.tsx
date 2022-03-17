@@ -1,6 +1,6 @@
-import {Heading, Paragraph} from '../../components/Text';
+import {Heading, Paragraph} from '../../components/CustomText';
 import MoreLink from '../../components/MoreLink';
-import ArtworkCard from '../../components/Card/ArtworkCard';
+import CardArtwork from '../../components/CardArtwork';
 
 const artworks = [
   {src: '/assets/about/artwork1.png'},
@@ -14,7 +14,7 @@ export default function ArtworkOverview() {
         <div className="my-auto">
           <Heading> Artworks </Heading>
           <div className="md:hidden mt-6">
-            <ArtworkCard
+            <CardArtwork
               images={artworks}
               tag="New"
               className="h-full"
@@ -35,7 +35,7 @@ export default function ArtworkOverview() {
               }}>
                 Generative Art Vending Machine
               </Heading>
-            </ArtworkCard>
+            </CardArtwork>
           </div>
           <Paragraph css={{margin: '24px 0'}}>
             Dr. Bill has been pioneering the medium of Generative Art since the early 70’s. His Plotter Art
@@ -46,7 +46,7 @@ export default function ArtworkOverview() {
         </div>
       </div>
       <div className="hidden md:block col-span-12 md:col-span-6 lg:col-span-7 flex justify-end">
-        <ArtworkCard
+        <CardArtwork
           images={artworks}
           tag="New"
           className="h-full"
@@ -67,7 +67,7 @@ export default function ArtworkOverview() {
           }}>
             Generative Art Vending Machine
           </Heading>
-        </ArtworkCard>
+        </CardArtwork>
       </div>
     </div>
   );

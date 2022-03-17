@@ -1,10 +1,10 @@
 import {Container} from '@nextui-org/react';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import {PageNames} from '../../constants/pageNames';
-import {Heading, Paragraph} from '../../components/Text';
+import {Heading, Paragraph} from '../../components/CustomText';
 import MoreLink from '../../components/MoreLink';
-import ArtworkCard from '../../components/Card/ArtworkCard';
-import RawCard from '../../components/Card/RawCard';
+import CardArtwork from '../../components/CardArtwork';
+import CardRaw from '../../components/CardRaw';
 import Watermark from '../../components/Watermark';
 
 const artworks = [
@@ -81,7 +81,7 @@ export default function Category() {
               <div className="columns-2 gap-8 w-full">
                 {
                   artworks.map((artwork, index) => (
-                    <ArtworkCard
+                    <CardArtwork
                       key={index}
                       className="w-full break-inside-avoid relative !mb-8 !last:mb-0"
                       imageClassName="w-full"
@@ -89,7 +89,7 @@ export default function Category() {
                       href="/artworks/generative-art-vending-machine/oblique-cube-composition"
                       layout="responsive"
                       tag="Events">
-                      <RawCard>
+                      <CardRaw>
                         <Heading css={{
                           fontSize: '$base',
                           lineHeight: '$sm',
@@ -109,8 +109,8 @@ export default function Category() {
                             lineHeight: '$md',
                           },
                         }}> {artwork.description} </Paragraph>
-                      </RawCard>
-                    </ArtworkCard>
+                      </CardRaw>
+                    </CardArtwork>
                   ))
                 }
               </div>

@@ -1,8 +1,8 @@
 import {Container} from '@nextui-org/react';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import {PageNames} from '../../constants/pageNames';
-import {Heading, Paragraph} from '../../components/Text';
-import NextImage from '../../components/Image/NextImage';
+import {Heading, Paragraph} from '../../components/CustomText';
+import NextImage from '../../components/NextImage';
 import SquareBtn from '../../components/Button/SquareBtn';
 import GeneratedArtworkList from './GeneratedArtworkList';
 import Watermark from '../../components/Watermark';

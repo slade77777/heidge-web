@@ -1,6 +1,7 @@
-import BreadcrumbsItem from './BreadcrumbItem';
 import FilledArrow from 'shared/icons/FilledArrow';
 import {classNames} from 'shared/utils';
+import Link from 'next/link';
+import {Text} from '@nextui-org/react';
 
 export type BreadItem = {
   href?: string;
@@ -9,10 +10,35 @@ export type BreadItem = {
 };
 
 type Props = {
-  data: BreadItem[];
+  item: BreadItem;
+  isLastItem?: boolean;
 };
 
-const Breadcrumbs: React.FC<Props> = ({data}) => {
+const BreadcrumbsItem: React.FC<Props> = ({item, isLastItem}) => {
+  if (item.href) {
+    return (
+      <Link href={item.href}>
+        <a>
+          <Text css={{
+            fontSize: '$tiny',
+            lineHeight: '11px',
+            textTransform: 'uppercase',
+            fontWeight: isLastItem ? 600 : 300,
+          }}>{item.text}</Text>
+        </a>
+      </Link>
+    );
+  }
+
+  return <Text css={{
+    fontSize: '$tiny',
+    lineHeight: '11px',
+    textTransform: 'uppercase',
+    fontWeight: isLastItem ? 600 : 300,
+  }}>{item.text}</Text>;
+};
+
+export default function Breadcrumbs({data}: { data: BreadItem[] }) {
   const isLastItem = (currentIndex) => {
     return currentIndex == data.length - 1;
   };
@@ -34,5 +60,3 @@ const Breadcrumbs: React.FC<Props> = ({data}) => {
     </nav>
   );
 };
-
-export default Breadcrumbs;

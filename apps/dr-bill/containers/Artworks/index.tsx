@@ -1,7 +1,7 @@
 import {Container} from '@nextui-org/react';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import {PageNames} from '../../constants/pageNames';
-import {Heading, Paragraph} from '../../components/Text';
+import {Heading, Paragraph} from '../../components/CustomText';
 import ArtworkList from './ArtworkList';
 import Watermark from '../../components/Watermark';
 

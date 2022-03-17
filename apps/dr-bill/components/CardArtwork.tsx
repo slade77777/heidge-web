@@ -1,9 +1,9 @@
 import { Text } from '@nextui-org/react';
 import { ReactNode } from 'react';
 import { classNames } from 'shared/utils';
-import RawCard from './RawCard';
+import CardRaw from './CardRaw';
 import Link from 'next/link';
-import NextImage from '../Image/NextImage';
+import NextImage from './NextImage';
 
 type Props = {
   images: {
@@ -18,7 +18,7 @@ type Props = {
   layout?: string;
   objectFit?: string;
 };
-export default function ArtworkCard({
+export default function CardArtwork({
   images,
   tag,
   children,
@@ -30,11 +30,11 @@ export default function ArtworkCard({
   return (
     <Link href={href} passHref>
       <a>
-        <RawCard css={{ border: '1px solid $text' }} className={className}>
+        <CardRaw css={{ border: '1px solid $text' }} className={className}>
           <div className={classNames('relative', imageClassName)}>
             <NextImage src={images[0].src} alt={images[0].alt} {...props} />
           </div>
-          <RawCard
+          <CardRaw
             css={{
               padding: '14px 22px !important',
               '@xs': {
@@ -50,7 +50,7 @@ export default function ArtworkCard({
             }}
           >
             {children}
-          </RawCard>
+          </CardRaw>
           {!!tag && (
             <Text
               css={{
@@ -68,7 +68,7 @@ export default function ArtworkCard({
               {tag}
             </Text>
           )}
-        </RawCard>
+        </CardRaw>
       </a>
     </Link>
   );

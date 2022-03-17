@@ -1,4 +1,4 @@
-import NextImage from '../../components/Image/NextImage';
+import NextImage from '../../components/NextImage';
 
 const src = 'https://cdn.discordapp.com/attachments/748042111148097556/944153275819778098/unknown.png';
 

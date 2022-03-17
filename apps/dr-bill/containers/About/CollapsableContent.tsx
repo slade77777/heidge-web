@@ -1,5 +1,5 @@
 import {Collapse, Text} from '@nextui-org/react';
-import {Paragraph} from '../../components/Text';
+import {Paragraph} from '../../components/CustomText';
 
 export default function CollapsableContent() {
   return (

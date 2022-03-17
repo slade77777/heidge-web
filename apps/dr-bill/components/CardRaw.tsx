@@ -6,7 +6,7 @@ type Props = {
   children?: ReactNode;
   className?: string;
 }
-export default function RawCard({css, className, children}: Props) {
+export default function CardRaw({css, className, children}: Props) {
   return (
     <Card
       className={className}

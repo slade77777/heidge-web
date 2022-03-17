@@ -1,7 +1,7 @@
-import ArtworkCard from '../../components/Card/ArtworkCard';
-import RawCard from '../../components/Card/RawCard';
+import CardArtwork from '../../components/CardArtwork';
+import CardRaw from '../../components/CardRaw';
 import {Text} from '@nextui-org/react';
-import {Paragraph} from '../../components/Text';
+import {Paragraph} from '../../components/CustomText';
 
 const artworks = [
   {
@@ -38,13 +38,13 @@ export default function ArtworkList() {
   return (
     <div className="grid lg:grid-cols-3 gap-5 md:gap-7 lg:gap-10">
       <div className="md:col-span-2">
-        <ArtworkCard
+        <CardArtwork
           className="h-full"
           imageClassName="h-[384px]"
           images={first.image}
           layout="fill"
           tag="Events">
-          <RawCard>
+          <CardRaw>
             <Text css={{lineHeight: '$md', fontWeight: 600}}>
               Dr. Bill at the NFT exhibition
               02.07.2023
@@ -53,23 +53,23 @@ export default function ArtworkList() {
               Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore
               magna aliqua. Ut enim...
             </Paragraph>
-          </RawCard>
-        </ArtworkCard>
+          </CardRaw>
+        </CardArtwork>
       </div>
       {
         rest.map((artwork, index) => (
-          <ArtworkCard
+          <CardArtwork
             key={index}
             className="h-full"
             imageClassName="h-[384px]"
             layout="fill"
             images={artwork.image}
             tag="Events">
-            <RawCard>
+            <CardRaw>
               <Text css={{lineHeight: '$md', fontWeight: 600}}> {artwork.title} </Text>
               <Paragraph> {artwork.description} </Paragraph>
-            </RawCard>
-          </ArtworkCard>
+            </CardRaw>
+          </CardArtwork>
         ))
       }
     </div>

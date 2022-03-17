@@ -1,6 +1,6 @@
 import {theme} from '@nextui-org/react';
 import Image from 'next/image';
-import {Heading, Paragraph} from '../../components/Text';
+import {Heading, Paragraph} from '../../components/CustomText';
 import MoreLink from '../../components/MoreLink';
 
 export default function Introduction() {

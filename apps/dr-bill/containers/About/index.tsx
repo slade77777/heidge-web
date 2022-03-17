@@ -3,7 +3,7 @@ import Image from 'next/image';
 import CollapsableContent from './CollapsableContent';
 import Breadcrumbs from '../../components/Breadcrumbs';
 import {PageNames} from '../../constants/pageNames';
-import {Heading, Paragraph} from '../../components/Text'
+import {Heading, Paragraph} from '../../components/CustomText'
 import Watermark from '../../components/Watermark';
 
 export default function About() {
