@@ -1,9 +1,9 @@
 import {Spacer, Text} from '@nextui-org/react';
-import {Heading, Paragraph} from '../../components/Text';
-import ArtworkCard from '../../components/Card/ArtworkCard';
-import ScheduleCard from '../../components/Card/ScheduleCard';
-import AdjacentBtn from '../../components/Button/AdjacentBtn';
-import MoreLink from '../../components/MoreLink';
+import {Heading, Paragraph} from '../CustomText';
+import CardArtwork from '../CardArtwork';
+import CardSchedule from '../CardSchedule';
+import AdjacentBtn from '../Button/AdjacentBtn';
+import MoreLink from '../MoreLink';
 import {Swiper, SwiperSlide} from 'swiper/react';
 import SwiperCore, {Navigation, Pagination} from 'swiper';
 import {useRef} from 'react';
@@ -51,7 +51,7 @@ export default function ShowAndMedia() {
             <div className="col-span-12 md:col-span-6 lg:col-span-5">
               <div className="my-auto">
                 <div className="relative mx-auto mt-[50px]">
-                  <ArtworkCard
+                  <CardArtwork
                     images={artworks}
                     className="h-full"
                     imageClassName="h-[334px]"
@@ -67,19 +67,19 @@ export default function ShowAndMedia() {
                       dolore
                       magna aliqua. Ut enim...
                     </Paragraph>
-                  </ArtworkCard>
+                  </CardArtwork>
                 </div>
               </div>
             </div>
             <div className="col-span-12 md:col-span-6 lg:col-span-7 flex justify-end">
               <div className="mt-[50px] h-full">
-                <ScheduleCard
+                <CardSchedule
                   tag="Promotions"
                   title="Master Drawings New York 01.05.2022"
                   content="Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua..."
                 />
                 <Spacer y={1}/>
-                <ScheduleCard
+                <CardSchedule
                   tag="Events"
                   title="Master Drawings New York 01.05.2022"
                   content="Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua..."

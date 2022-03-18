@@ -1,5 +1,5 @@
 import {Card, Text} from '@nextui-org/react';
-import {Paragraph} from '../Text';
+import {Paragraph} from './CustomText';
 
 type Props = {
   title?: string;
@@ -7,7 +7,7 @@ type Props = {
   tag?: string;
 }
 
-export default function ScheduleCard({title, content, tag}: Props) {
+export default function CardSchedule({title, content, tag}: Props) {
   return (
     <Card className="relative" shadow={false} css={{
       border: '1px solid $text',

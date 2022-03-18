@@ -1,11 +1,11 @@
 import {Container} from '@nextui-org/react';
-import Breadcrumbs from '../../components/Breadcrumbs';
-import {PageNames} from '../../constants/pageNames';
-import {Heading, Paragraph} from '../../components/Text';
-import ArtworkCard from '../../components/Card/ArtworkCard';
-import RawCard from '../../components/Card/RawCard';
-import SquareBtn from '../../components/Button/SquareBtn';
-import Watermark from '../../components/Watermark';
+import Breadcrumbs from './Breadcrumbs';
+import {PageNames} from '../constants/pageNames';
+import {Heading, Paragraph} from './CustomText';
+import CardArtwork from './CardArtwork';
+import CardRaw from './CardRaw';
+import SquareBtn from './Button/SquareBtn';
+import Watermark from './Watermark';
 
 const artworks = [
   {
@@ -73,7 +73,7 @@ export default function ShowAndMedia() {
         <div className="md:columns-2 lg:columns-3 gap-10 w-full">
           {
             artworks.map((artwork, index) => (
-              <ArtworkCard
+              <CardArtwork
                 key={index}
                 className="w-full break-inside-avoid relative !mb-8 !last:mb-0"
                 imageClassName="w-full"
@@ -81,7 +81,7 @@ export default function ShowAndMedia() {
                 href="/show-and-media/dr-bill-at-the-nft-exhibition-02.07.2023"
                 layout="responsive"
                 tag="Events">
-                <RawCard>
+                <CardRaw>
                   <Heading css={{
                     fontFamily: '$p',
                     fontSize: '$xs',
@@ -102,8 +102,8 @@ export default function ShowAndMedia() {
                       lineHeight: '$md',
                     },
                   }}> {artwork.description} </Paragraph>
-                </RawCard>
-              </ArtworkCard>
+                </CardRaw>
+              </CardArtwork>
             ))
           }
         </div>
