@@ -6,11 +6,12 @@ const HeidgeImg: FC<{
   color?: string;
   maxWidth?: string;
   imgURL?: string;
-}> = ({ width, color, maxWidth, imgURL }) => {
+  className?: string;
+}> = ({ width, color, maxWidth, imgURL, className }) => {
   return (
     <div
       className={""}
-      dangerouslySetInnerHTML={createSVG(width, color, maxWidth)}
+      dangerouslySetInnerHTML={createSVG(width, color, maxWidth, className)}
     />
   );
 };
