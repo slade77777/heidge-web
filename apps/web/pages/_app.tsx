@@ -5,7 +5,7 @@ import Layout from "../components/Layout";
 
 function MyApp({ Component, pageProps }: AppProps) {
   return (
-    <AppProvider>
+    <AppProvider requiredAuth>
       <Layout>
         <Component {...pageProps} />
       </Layout>

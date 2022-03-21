@@ -15,6 +15,8 @@ import {
   Reddit,
 } from "shared/icons";
 import { classNames } from "shared/utils";
+import LogoutButton from "../Authentication/LogoutButton";
+import LoginButton from "../Authentication/LoginButton";
 
 const SOCIALS = [
   { url: "https://t.me/hellohedgie", icon: Telegram },
@@ -54,7 +56,8 @@ const Header: FC = () => {
               {item.name}
             </a>
           ))}
-          <a className="bg-[#61285d] px-8 py-2 ml-2 text-white">Sign In</a>
+          {/*<a className="bg-[#61285d] px-8 py-2 ml-2 text-white">Sign In</a>*/}
+          <LoginButton />
         </div>
       </div>
       <div
@@ -65,7 +68,7 @@ const Header: FC = () => {
       >
         <div
           className={classNames(
-            "py-8 px-8 transition-opacity ease-in",
+            "py-8 px-8 transition-opacity ease-in block lg:hidden",
             showMobileMenu ? "duration-1000" : "duration-0",
             showMobileMenu ? "opacity-100" : "opacity-0"
           )}
