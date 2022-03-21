@@ -15,8 +15,8 @@ import {
   Reddit,
 } from "shared/icons";
 import { classNames } from "shared/utils";
-import LogoutButton from "../Authentication/LogoutButton";
 import LoginButton from "../Authentication/LoginButton";
+import Logo from "../Logo";
 
 const SOCIALS = [
   { url: "https://t.me/hellohedgie", icon: Telegram },
@@ -45,7 +45,7 @@ const Header: FC = () => {
   return (
     <div>
       <div className="h-[60px] bg-[#380934] w-full flex flex-row items-center justify-between px-4 lg:pl-16">
-        <span className="text-white text-xl font-bold lg:text-3xl">Hedgie</span>
+        <Logo />
         <MenuIcon
           onClick={() => setMobileMenu(!showMobileMenu)}
           className="w-8 h-8 text-white block lg:hidden"

@@ -1,15 +1,19 @@
-import React from "react";
+import Link from "next/link";
 import { useAuth } from "shared";
 import LogoutButton from "./LogoutButton";
 
 const LoginButton = () => {
-  const { account } = useAuth();
+  const { account, loading } = useAuth();
 
   if (account) {
     return <LogoutButton />;
   }
 
-  return <button className="btn">Sign in</button>;
+  return (
+    <Link href="/login">
+      <a className="btn w-24">{loading ? "Loading..." : "Sign In"}</a>
+    </Link>
+  );
 };
 
 export default LoginButton;

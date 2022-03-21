@@ -20,6 +20,7 @@ type AuthContextType = {
   login?: (user: User) => Promise<any>;
   signup?: (user: User) => Promise<any>;
   logout?: () => void;
+  loading?: boolean;
 };
 
 const AuthContext = createContext<AuthContextType>({
@@ -28,7 +29,7 @@ const AuthContext = createContext<AuthContextType>({
 
 const AuthProvider = ({ children }: { children: ReactNode }) => {
   const [account, setAccount] = useState<any>(null);
-  // const [loading, setLoading] = useState(true);
+  const [loading, setLoading] = useState(true);
 
   useEffect(() => {
     const unsubscribe = onAuthStateChanged(auth, async (user) => {
@@ -36,6 +37,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         setAccount(null);
         nookies.destroy(null, 'token');
         nookies.set(null, 'token', '', { path: '/' });
+        setLoading(false);
         return;
       }
 
@@ -43,6 +45,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
       setAccount(user);
       nookies.destroy(null, 'token');
       nookies.set(null, 'token', token, { path: '/' });
+      setLoading(false);
     });
 
     return () => unsubscribe();
@@ -68,6 +71,7 @@ const AuthProvider = ({ children }: { children: ReactNode }) => {
         login,
         signup,
         logout,
+        loading,
       }}
     >
       {children}
