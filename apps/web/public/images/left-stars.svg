@@ -1,0 +1,22 @@
+<svg width="24px" height="35px" viewBox="0 0 24 35" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+  <defs>
+    <linearGradient x1="71.2712156%" y1="17.9611131%" x2="16.236848%" y2="100%" id="linearGradient-1">
+      <stop stop-color="#D8BB79" offset="0%"></stop>
+      <stop stop-color="#E1AE2A" offset="100%"></stop>
+    </linearGradient>
+    <linearGradient x1="41.1456615%" y1="41.1779173%" x2="90.4315976%" y2="81.6123203%" id="linearGradient-2">
+      <stop stop-color="#ECD088" offset="0%"></stop>
+      <stop stop-color="#E1AE2A" offset="100%"></stop>
+    </linearGradient>
+  </defs>
+  <g id="Symbols" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+    <g id="Start_Journey/web" transform="translate(-20.000000, -24.000000)">
+      <g id="start-journey-btn">
+        <g id="Group" transform="translate(17.000000, 22.000000)">
+          <polygon id="Star" fill="url(#linearGradient-1)" transform="translate(11.023739, 29.023739) rotate(32.000000) translate(-11.023739, -29.023739) " points="11.0237389 33.0237389 6.32145686 35.4958748 7.21951282 30.2598069 3.41528675 26.5516029 8.67259787 25.7876709 11.0237389 21.0237389 13.3748799 25.7876709 18.632191 26.5516029 14.8279649 30.2598069 15.7260209 35.4958748"></polygon>
+          <polygon id="Star-Copy" fill="url(#linearGradient-2)" transform="translate(20.810743, 7.810743) rotate(22.000000) translate(-20.810743, -7.810743) " points="20.8107427 10.8107427 17.2840312 12.6648447 17.9575731 8.73779367 15.1044036 5.95664072 19.0473869 5.3836917 20.8107427 1.81074269 22.5740984 5.3836917 26.5170818 5.95664072 23.6639122 8.73779367 24.3374542 12.6648447"></polygon>
+        </g>
+      </g>
+    </g>
+  </g>
+</svg>

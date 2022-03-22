@@ -1,5 +1,5 @@
 import type {NextPage} from 'next';
-import ArtworkDetail from '../../../containers/ArtworkDetail';
+import ArtworkDetail from '../../../components/ArtworkDetail';
 
 const ArtworkDetailPage: NextPage = () => {
   return (

@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import {Text} from '@nextui-org/react';
 import {PageNames} from '../../constants/pageNames';
+import {useRouter} from 'next/router';
 
 const navigationList = [
   {
@@ -20,17 +21,15 @@ const navigationList = [
     url: PageNames.SHOW_AND_MEDIA.en,
   },
 ]
-const Button = ({title, url}) => {
+const Button = ({className, title, url, onClick, active = false}) => {
   return (
     <Link href={url}>
-      <a>
+      <a className={className} onClick={onClick}>
         <Text
           css={{
             lineHeight: '22px',
             fontWeight: 600,
-            '&:active': {
-              borderBottom: '1px solid $primary',
-            },
+            borderBottom: active && '1px solid $primary',
           }}
         >
           {title}
@@ -40,10 +39,22 @@ const Button = ({title, url}) => {
     </Link>
   )
 }
-export default function DesktopNavigation({className}) {
+
+type Props = {
+  className?: string;
+  onClose?: () => void;
+}
+export default function DesktopNavigation({className, onClose}: Props) {
+  const {pathname} = useRouter();
   return (
     <div className={className}>
-      {navigationList.map((e, i) => <Button key={i} {...e}/>)}
+      {navigationList.map((e, i) =>
+        <Button
+          className="hover:opacity-40"
+          onClick={onClose}
+          active={e.url === `/${pathname.split('/')[1]}`}
+          key={i}
+          {...e}/>)}
     </div>
   )
 }

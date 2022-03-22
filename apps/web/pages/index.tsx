@@ -1,10 +1,9 @@
-import { Button } from "shared";
+import HeroSection from "../components/Home/HeroSection";
 
 export default function Web() {
   return (
     <div>
-      <h1>Web</h1>
-      <Button>Test</Button>
+      <HeroSection />
     </div>
   );
 }

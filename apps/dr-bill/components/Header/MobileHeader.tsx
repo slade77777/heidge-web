@@ -7,6 +7,9 @@ import {classNames} from 'shared/utils';
 
 export default function MobileHeader({className}: { className?: string }) {
   const {setVisible, bindings} = useModal();
+  const closeHandler = () => {
+    setVisible(false);
+  };
   return (
     <div
       className={classNames(
@@ -17,13 +20,14 @@ export default function MobileHeader({className}: { className?: string }) {
         <Menu className="w-10 h-5"/>
       </button>
       <Modal
-        className="rounded-none"
+        style={{borderRadius: 0}}
         fullScreen
         closeButton
+        onClose={closeHandler}
         {...bindings}
       >
         <Modal.Body className="flex flex-col justify-center items-center gap-[60px]">
-          <DesktopNavigation className="flex flex-col items-center gap-[30px]"/>
+          <DesktopNavigation className="flex flex-col items-center gap-[30px]" onClose={closeHandler}/>
           <ConnectWalletButton/>
           <SocialNetworkList className="gap-7"/>
         </Modal.Body>
