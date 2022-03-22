@@ -30,11 +30,9 @@ const AuthContext = createContext<AuthContextType>({
 const AuthProvider = ({
   children,
   auth,
-  callback,
 }: {
   children: ReactNode;
   auth: Auth;
-  callback: (idToken?: string) => void;
 }) => {
   const [account, setAccount] = useState<any>(null);
   const [loading, setLoading] = useState(true);
@@ -45,14 +43,12 @@ const AuthProvider = ({
         setAccount(null);
         nookies.destroy(null, 'token');
         nookies.set(null, 'token', '', { path: '/' });
-        callback?.();
         setLoading(false);
         return;
       }
 
       const token = await user.getIdToken(true);
       setAccount(user);
-      callback?.(token);
       nookies.destroy(null, 'token');
       nookies.set(null, 'token', token, { path: '/' });
       setLoading(false);
