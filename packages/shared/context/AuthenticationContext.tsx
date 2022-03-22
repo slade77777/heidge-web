@@ -50,7 +50,7 @@ const AuthProvider = ({
         return;
       }
 
-      const token = await user.getIdToken();
+      const token = await user.getIdToken(true);
       setAccount(user);
       callback?.(token);
       nookies.destroy(null, 'token');

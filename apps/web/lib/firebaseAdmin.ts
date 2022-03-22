@@ -1,7 +1,7 @@
 import { getApps, cert, initializeApp } from "firebase-admin/app";
 import { getAuth, DecodedIdToken } from "firebase-admin/auth";
 
-export function verifyToken(idToken: string): Promise<boolean> {
+function initializeFirebaseAdmin() {
   if (!getApps().length) {
     initializeApp({
       credential: cert({
@@ -11,11 +11,15 @@ export function verifyToken(idToken: string): Promise<boolean> {
       }),
     });
   }
+}
+
+export function verifyToken(idToken: string): Promise<boolean> {
   return new Promise((resolve) => {
+    initializeFirebaseAdmin();
     getAuth()
       .verifyIdToken(idToken)
       .then((decodedToken: DecodedIdToken) => {
-        console.log("decodedToken", decodedToken.email);
+        console.log("decodedToken", decodedToken);
         resolve(true);
       })
       .catch((err) => {
