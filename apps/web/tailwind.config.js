@@ -26,7 +26,13 @@ module.exports = {
       boxShadow: {
         100: "rgb(0 0 0 / 26%) 0px 0px 8px 0px",
       },
+      lineClamp: {
+        7: "7",
+        8: "8",
+        9: "9",
+        10: "10",
+      },
     },
   },
-  plugins: [],
+  plugins: [require("@tailwindcss/line-clamp")],
 };
