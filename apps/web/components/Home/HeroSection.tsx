@@ -8,13 +8,13 @@ const HeroSection = () => {
         {/* eslint-disable-next-line react/no-unescaped-entities */}
         Hello, I'm Hedgie!
       </div>
-      <div className="text-[#62295e] mt-4 text-lg lg:text-xl font-semibold">
+      <div className="text-purple-700 mt-4 text-lg lg:text-xl font-semibold">
         Play the game for free. Earn cryptocoin. Spend in real life.
       </div>
-      <div className="w-[220px] h-[62px] shadow-[0_4px_8px_0_rgba(242,179,9,0.39)] bg-[url('/images/left-start.svg'), url('/images/right-start.svg')] bg-gradient-to-b from-[#f1d97e] to-[#ca8314] rounded-[18px] border-[1px] border-[#f2b309] bg-[#f2b309] flex items-center justify-center mt-4 text-white font-semibold text-xl bg-blend-luminosity bg-no-repeat bg-auto">
+      <div className="w-52 h-16 shadow-[0_1_2_0_rgba(242,179,9,0.39)] bg-[url('/images/left-start.svg'), url('/images/right-start.svg')] bg-gradient-to-b from-[#f1d97e] to-[#ca8314] rounded-[18px] border-[1px] border-[#f2b309] bg-[#f2b309] flex items-center justify-center mt-4 text-white font-semibold text-xl bg-blend-luminosity bg-no-repeat bg-auto">
         Mint Your Hedgies
       </div>
-      <div className="absolute bottom-[-65px] right-[-88px] lg:bottom-[-110px] lg:right-[24%] rotate-12 lg:rotate-4">
+      <div className="absolute top-24 left-80 lg:top-24 lg:left-[35%] rotate-12 lg:rotate-4">
         <div className="lg:hidden">
           <HeidgeImg color="#009BDE" width={220} />
         </div>

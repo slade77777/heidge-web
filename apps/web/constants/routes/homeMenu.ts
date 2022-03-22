@@ -1,3 +1,14 @@
+import {
+  Discord,
+  Facebook,
+  Instagram,
+  Medium,
+  Reddit,
+  Telegram,
+  Twitter,
+  Youtube,
+} from "shared/icons";
+
 export const PRIVATE_MENUS = [
   {
     id: "my-hedgies",
@@ -110,4 +121,24 @@ export const MOBILE_PUBLIC_MENUS = [
     name: "Contact Us",
     href: "mailto:hedgie@hedgie.io",
   },
+];
+
+export const SOCIALS = [
+  { url: "https://t.me/hellohedgie", icon: Telegram },
+  { url: "https://discord.gg/mhYwH5G", icon: Discord },
+  {
+    url: "https://www.instagram.com/hedgieio/",
+    icon: Instagram,
+  },
+  { url: "https://twitter.com/hellohedgie", icon: Twitter },
+  {
+    url: "https://www.facebook.com/hellohedgie/",
+    icon: Facebook,
+  },
+  { url: "https://medium.com/hellohedgie", icon: Medium },
+  {
+    url: "https://www.youtube.com/hellohedgie",
+    icon: Youtube,
+  },
+  { url: "https://www.reddit.com/r/Hedgie", icon: Reddit },
 ];
