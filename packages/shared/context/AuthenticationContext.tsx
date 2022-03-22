@@ -11,9 +11,9 @@ import {
   createUserWithEmailAndPassword,
   signInWithEmailAndPassword,
   signOut,
+  Auth,
 } from 'firebase/auth';
 import { User } from '../types';
-import { auth } from '../lib/firebaseClient';
 
 type AuthContextType = {
   account: any;
@@ -27,7 +27,13 @@ const AuthContext = createContext<AuthContextType>({
   account: null,
 });
 
-const AuthProvider = ({ children }: { children: ReactNode }) => {
+const AuthProvider = ({
+  children,
+  auth,
+}: {
+  children: ReactNode;
+  auth: Auth;
+}) => {
   const [account, setAccount] = useState<any>(null);
   const [loading, setLoading] = useState(true);
 

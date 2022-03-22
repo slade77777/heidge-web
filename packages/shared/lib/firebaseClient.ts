@@ -1,22 +1,16 @@
 import { initializeApp, getApps } from 'firebase/app';
-import { getAuth } from 'firebase/auth';
+import { getAuth, Auth } from 'firebase/auth';
+import { FireBaseConfig } from '../types';
 
-const firebaseConfig = {
-  apiKey: process.env.NEXT_PUBLIC_FIREBASE_API_KEY,
-  authDomain: process.env.NEXT_PUBLIC_FIREBASE_AUTH_DOMAIN,
-  databaseURL: process.env.NEXT_PUBLIC_FIREBASE_DATABASE_URL,
-  projectId: process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID,
-  storageBucket: `${process.env.NEXT_PUBLIC_FIREBASE_PROJECT_ID}.appspot.com`,
-  messagingSenderId: process.env.NEXT_PUBLIC_FIREBASE_MESSAGING_SENDER_ID,
-  appId: process.env.NEXT_PUBLIC_FIREBASE_APP_ID,
-  measurementId: 'G-MEASUREMENT_ID',
-};
+let auth: Auth;
 
-let auth: any;
-
-if (!getApps().length && !auth) {
-  const app = initializeApp(firebaseConfig);
-  auth = getAuth(app);
+function getFirebaseClient(firebaseConfig: FireBaseConfig) {
+  if (!getApps().length && !auth) {
+    const app = initializeApp(firebaseConfig);
+    auth = getAuth(app);
+  }
+  return auth;
 }
 
-export { auth };
+export { getFirebaseClient, auth };
+export type { Auth };
