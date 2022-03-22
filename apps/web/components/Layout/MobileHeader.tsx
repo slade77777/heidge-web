@@ -2,6 +2,7 @@ import { memo, useCallback } from "react";
 import { MenuIcon } from "@heroicons/react/solid";
 import { MOBILE_PUBLIC_MENUS, SOCIALS } from "../../constants/routes/homeMenu";
 import { Modal, useModal } from "@nextui-org/react";
+import Logo from "../Logo";
 
 const MobileHeader = () => {
   const { setVisible, bindings } = useModal();
@@ -11,7 +12,7 @@ const MobileHeader = () => {
   return (
     <div className="lg:hidden">
       <div className="h-[60px] bg-fuchsia-900 w-full flex flex-row items-center justify-between px-4 lg:pl-16">
-        <span className="text-white text-xl font-bold lg:text-3xl">Hedgie</span>
+        <Logo />
         <MenuIcon
           onClick={() => setVisible(true)}
           className="w-8 h-8 text-white block lg:hidden"
