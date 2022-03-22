@@ -1,8 +1,7 @@
 import "../styles/globals.css";
 import type { AppProps } from "next/app";
-import { AppProvider, AuthProvider } from "shared";
 import Layout from "../components/Layout";
-import { getFirebaseClient } from "shared/lib/firebaseClient";
+import { AppProvider, AuthProvider, getFirebaseClient } from "shared";
 import { firebaseConfig } from "../constants/firebase";
 
 const firebaseAuth = getFirebaseClient(firebaseConfig);
