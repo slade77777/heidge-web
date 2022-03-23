@@ -17,5 +17,8 @@ export function checkAuthentication(
   context: GetServerSidePropsContext
 ): Promise<boolean> {
   const token = getTokenServerSide(context);
+  if (!token) {
+    return Promise.resolve(false);
+  }
   return verifyToken(token);
 }
