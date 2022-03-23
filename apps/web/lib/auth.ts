@@ -1,5 +1,6 @@
 import nookies from "nookies";
 import { GetServerSidePropsContext } from "next";
+import { verifyToken } from "./firebaseAdmin";
 
 export function getCookie(
   ctx: GetServerSidePropsContext,
@@ -8,6 +9,13 @@ export function getCookie(
   return nookies.get(ctx)?.[cookieName] || "";
 }
 
-export function isAuthenticated(ctx: GetServerSidePropsContext): boolean {
-  return !!getCookie(ctx, "token");
+export function getTokenServerSide(context: GetServerSidePropsContext) {
+  return getCookie(context, "token");
+}
+
+export function checkAuthentication(
+  context: GetServerSidePropsContext
+): Promise<boolean> {
+  const token = getTokenServerSide(context);
+  return verifyToken(token);
 }

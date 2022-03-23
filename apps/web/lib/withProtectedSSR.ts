@@ -1,18 +1,24 @@
 import type { GetServerSideProps, GetServerSidePropsContext } from "next";
-import { isAuthenticated } from "./auth";
+import { checkAuthentication } from "./auth";
 
 export default function withProtectedSSR(
-  getServerSidePropsFunc: GetServerSideProps
+  getServerSidePropsFunc?: GetServerSideProps
 ): GetServerSideProps {
-  return async (ctx: GetServerSidePropsContext) => {
-    if (!isAuthenticated(ctx)) {
+  return async (context: GetServerSidePropsContext) => {
+    const isAuthenticated = await checkAuthentication(context);
+    if (!isAuthenticated) {
       return {
         redirect: {
-          destination: `/login?redirectTo=${ctx.resolvedUrl}`,
+          destination: `/login?redirectTo=${context.resolvedUrl}`,
           permanent: false,
         },
       };
     }
-    return await getServerSidePropsFunc(ctx);
+    if (getServerSidePropsFunc) {
+      return await getServerSidePropsFunc(context);
+    }
+    return {
+      props: {},
+    };
   };
 }
