@@ -2,7 +2,8 @@ import CardArtwork from '../CardArtwork';
 import CardRaw from '../CardRaw';
 import { Text } from '@nextui-org/react';
 import { Paragraph } from '../CustomText';
-import { ARTWORKS } from './mockContent';
+import { ARTWORKS } from '../../constants/artworks';
+import { PageNames } from '../../constants/pageNames';
 
 type Artwork = {
   image: {
@@ -21,7 +22,7 @@ const ArtWork = ({ artwork }: { artwork: Artwork }) => {
       imageClassName="h-[384px]"
       layout="fill"
       images={[artwork.image]}
-      href={artwork.slug}
+      href={`${PageNames.ARTWORK.en}/${artwork.slug}`}
     >
       <CardRaw>
         <Text h4>{artwork.title}</Text>
@@ -35,13 +36,13 @@ const ArtWork = ({ artwork }: { artwork: Artwork }) => {
 export default function ArtworkList() {
   return (
     <div className="grid lg:grid-cols-3 gap-5 md:gap-7 lg:gap-10">
-      {ARTWORKS.map((artwork) =>
-        artwork.isHighlight ? (
-          <div className="md:col-span-2" key={artwork.slug}>
-            <ArtWork artwork={artwork} />
+      {Object.keys(ARTWORKS).map((k) =>
+        ARTWORKS[k].isHighlight ? (
+          <div className="md:col-span-2" key={ARTWORKS[k].slug}>
+            <ArtWork artwork={ARTWORKS[k]} />
           </div>
         ) : (
-          <ArtWork artwork={artwork} key={artwork.slug} />
+          <ArtWork artwork={ARTWORKS[k]} key={ARTWORKS[k].slug} />
         ),
       )}
     </div>
