@@ -1,18 +1,21 @@
-import {Spacer, Text} from '@nextui-org/react';
-import {Heading, Paragraph} from '../CustomText';
+import { Spacer, Text } from '@nextui-org/react';
+import { Heading, Paragraph } from '../CustomText';
 import CardArtwork from '../CardArtwork';
 import CardSchedule from '../CardSchedule';
 import AdjacentBtn from '../Button/AdjacentBtn';
 import MoreLink from '../MoreLink';
-import {Swiper, SwiperSlide} from 'swiper/react';
-import SwiperCore, {Navigation, Pagination} from 'swiper';
-import {useRef} from 'react';
+import { Swiper, SwiperSlide } from 'swiper/react';
+import SwiperCore, { Navigation, Pagination } from 'swiper';
+import { useRef } from 'react';
+import { MAGAZINE_LINK, YOUTUBE_LINK_RETRO } from '../../constants/common';
 
 SwiperCore.use([Navigation, Pagination]);
 
 const artworks = [
-  {src: '/assets/about/show-and-media.png'},
-]
+  {
+    src: 'https://res.cloudinary.com/suborg/image/upload/w_800/v1648110595/DrBill/common/Post_Instagram_Facebook__1080x1080_krhq1a.png',
+  },
+];
 
 export default function ShowAndMedia() {
   const prevRef = useRef(null);
@@ -26,20 +29,19 @@ export default function ShowAndMedia() {
         </div>
         <div className="hidden md:block col-span-12 md:col-span-6 lg:col-span-7">
           <div className="flex flex-row gap-5 justify-end">
-            <AdjacentBtn buttonType="previous" ref={prevRef}/>
-            <AdjacentBtn buttonType="next" ref={nextRef}/>
+            <AdjacentBtn buttonType="previous" ref={prevRef} />
+            <AdjacentBtn buttonType="next" ref={nextRef} />
           </div>
         </div>
       </div>
       <Swiper
         slidesPerView={1}
         spaceBetween={30}
-        loop={true}
         navigation={{
           prevEl: prevRef.current,
           nextEl: nextRef.current,
         }}
-        onBeforeInit={swiper => {
+        onBeforeInit={(swiper) => {
           // @ts-ignore
           swiper.params.navigation.prevEl = prevRef.current;
           // @ts-ignore
@@ -53,19 +55,18 @@ export default function ShowAndMedia() {
                 <div className="relative mx-auto mt-[50px]">
                   <CardArtwork
                     images={artworks}
+                    href="https://nft-art.eventbrite.ca"
+                    isExternalLink
                     className="h-full"
-                    imageClassName="h-[334px]"
-                    layout="fill"
-                    objectFit="cover"
-                    tag="Events">
-                    <Text css={{lineHeight: '$md', fontWeight: 600}}>
-                      Dr. Bill at the NFT exhibition
-                      02.07.2023
+                    imageClassName=""
+                    tag="Events"
+                  >
+                    <Text css={{ lineHeight: '$md', fontWeight: 600 }}>
+                      NFT Art - Spring Mixer 03.26.2022
                     </Text>
                     <Paragraph>
-                      Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et
-                      dolore
-                      magna aliqua. Ut enim...
+                      My artwork will be exhibited on digital screens at this
+                      NFT Art gathering in Toronto on March 26, 2022
                     </Paragraph>
                   </CardArtwork>
                 </div>
@@ -74,18 +75,22 @@ export default function ShowAndMedia() {
             <div className="col-span-12 md:col-span-6 lg:col-span-7 flex justify-end">
               <div className="mt-[50px] h-full">
                 <CardSchedule
-                  tag="Promotions"
+                  href={MAGAZINE_LINK}
+                  isExternal
+                  tag="Article"
                   title="Master Drawings New York 01.05.2022"
-                  content="Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua..."
+                  content="Concept behind ‘shotgun’ art approaches 1940s abstract expressionism"
                 />
-                <Spacer y={1}/>
+                <Spacer y={1} />
                 <CardSchedule
                   tag="Events"
-                  title="Master Drawings New York 01.05.2022"
-                  content="Lorem ipsum dolor sit amet, consectetur adipisci elit, sed eiusmod tempor incidunt ut labore et dolore magna aliqua..."
+                  title="Generative Art Retrospective 11.20.2021"
+                  href={YOUTUBE_LINK_RETRO}
+                  isExternal
+                  content="Dr. Bill takes the audience of an NFT Art event in Toronto on the generative art journey, from the 70’s until now"
                 />
                 <div className="h-[135px] flex justify-end items-end">
-                  <MoreLink href="/about" content="Learn more"/>
+                  <MoreLink href="/about" content="Learn more" />
                 </div>
               </div>
             </div>
@@ -95,4 +100,3 @@ export default function ShowAndMedia() {
     </>
   );
 }
-
