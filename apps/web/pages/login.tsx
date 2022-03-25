@@ -1,8 +1,8 @@
-import { NextPage, GetServerSideProps, GetServerSidePropsContext } from "next";
+import { NextPage, GetServerSidePropsContext } from "next";
 import { useAuth, User } from "shared";
 import { useState } from "react";
 import { useRouter } from "next/router";
-import { isAuthenticated } from "../lib/auth";
+import { checkAuthentication } from "../lib/auth";
 
 const LoginPage: NextPage = () => {
   const router = useRouter();
@@ -59,7 +59,8 @@ const LoginPage: NextPage = () => {
 export const getServerSideProps = async (
   context: GetServerSidePropsContext
 ) => {
-  if (isAuthenticated(context)) {
+  const isAuthenticated = await checkAuthentication(context);
+  if (isAuthenticated) {
     return {
       redirect: {
         destination: context.query?.redirectTo || "/",

@@ -5,11 +5,17 @@ import { Heading, Paragraph } from './CustomText';
 import CardArtwork from './CardArtwork';
 import CardRaw from './CardRaw';
 import Watermark from './Watermark';
+import { ArtDetailType, ArtworkType } from '../types';
 
-export default function ArtworksByCategory({ artworks, category }) {
-  // const { title, description } = category;
+export default function ArtworksByCategory({
+  artworks,
+  category,
+}: {
+  artworks: ArtworkType[];
+  category: ArtDetailType;
+}) {
   return (
-    <Watermark text="Generative Art Vending Machine">
+    <Watermark text={category?.page}>
       <Container md>
         <Breadcrumbs
           data={[
@@ -18,31 +24,35 @@ export default function ArtworksByCategory({ artworks, category }) {
               href: '/',
             },
             { text: 'Artworks', href: `${PageNames.ARTWORK.en}` },
-            { text: category?.title },
+            { text: category?.page },
           ]}
         />
         <div className="mt-[100px] mb-[200px]">
           <div className="flex flex-col items-center md:items-start md:grid lg:grid-cols-12 gap-12 mt-[200px]">
             <div className="col-span-12 md:col-span-6 lg:col-span-5 sticky top-10">
               <div className="my-auto">
-                <Heading> {category?.title} </Heading>
-                <Paragraph css={{ marginTop: '24px' }}>
-                  {' '}
-                  {category?.description}{' '}
-                </Paragraph>
+                <Heading> {category?.page}</Heading>
+                <div>
+                  {category?.description.map((text, index) => (
+                    <Paragraph css={{ marginTop: '24px' }} key={index}>
+                      {text}
+                    </Paragraph>
+                  ))}
+                </div>
               </div>
             </div>
             <div className="col-span-12 md:col-span-6 lg:col-span-7">
               <div className="columns-2 gap-8 w-full">
-                {artworks.map((artwork, index) => (
+                {artworks?.map((artwork) => (
                   <CardArtwork
-                    key={index}
+                    key={artwork.key}
                     className="w-full break-inside-avoid relative !mb-8 !last:mb-0"
                     imageClassName="w-full"
-                    images={artwork.image}
-                    href="/artworks/generative-art-vending-machine/oblique-cube-composition"
+                    images={[artwork.image]}
+                    href={`/${PageNames.ARTWORK.en}/${
+                      category.slug
+                    }/${artwork.key.toLowerCase()}`}
                     layout="responsive"
-                    tag="Events"
                   >
                     <CardRaw>
                       <Heading
@@ -58,7 +68,7 @@ export default function ArtworksByCategory({ artworks, category }) {
                         }}
                       >
                         {' '}
-                        {artwork.title}{' '}
+                        {artwork.name}{' '}
                       </Heading>
                       <Paragraph
                         css={{
@@ -80,21 +90,6 @@ export default function ArtworksByCategory({ artworks, category }) {
               </div>
             </div>
           </div>
-          <Paragraph>
-            Lorem Ipsum is simply dummy text of the printing and typesetting
-            industry. Lorem Ipsum has been the industry standard dummy text ever
-            since the 1500s, when an unknown printer took a galley of type and
-            scrambled it to make a type specimen book. It has survived not only
-            five centuries, but also the leap into electronic typesetting,
-            remaining essentially unchanged. It was popularised in the 1960s
-            with the release of Letraset sheets containing Lorem Ipsum passages,
-            and more recently with desktop publishing software like Aldus
-            PageMaker including versions of Lorem Ipsum. Lorem Ipsum is simply
-            dummy text of the printing and typesetting industry. Lorem Ipsum is
-            simply dummy text of the printing and typesetting industry. Lorem
-            Ipsum has been Aldus PageMaker including versions of Lorem Ipsum.
-            Lorem Ipsum is simply dummy.
-          </Paragraph>
         </div>
       </Container>
     </Watermark>

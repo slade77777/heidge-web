@@ -5,19 +5,22 @@ type Props = {
   children: ReactNode;
   css?: Object;
   onClick?: () => void;
+  disabled?: boolean;
 };
 
-export default function SquareBtn({ children, css, onClick }: Props) {
+export default function SquareBtn({ children, css, onClick, disabled }: Props) {
   return (
     <Button
       onClick={onClick}
+      disabled={disabled}
       css={{
         minWidth: 0,
         borderRadius: 0,
-        background: 'transparent',
-        border: '1px solid $primary',
+        color: disabled ? '$gray100' : '$black',
+        backgroundColor: disabled ? '$gray600' : 'transparent',
+        border: disabled ? '1px solid $gray500' : '1px solid $primary',
         '&:hover': {
-          border: '2px solid $primary',
+          border: disabled ? '2px solid transparent' : '2px solid $primary',
         },
         ...css,
       }}

@@ -11,6 +11,7 @@ const LogoutButton = () => {
       onClick={() => {
         logout();
         // router.push("/login");
+        window.location.reload();
       }}
     >
       Log out
