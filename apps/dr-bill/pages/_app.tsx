@@ -1,12 +1,30 @@
 import '../styles/globals.css';
-import type {AppProps} from 'next/app';
-import {ThemeProvider as NextThemesProvider} from 'next-themes';
-import {NextUIProvider} from '@nextui-org/react';
-import Header from '../components/Header';
-import {darkTheme, lightTheme} from '../customThemes';
-import Footer from '../components/Footer';
+import 'swiper/css';
+import type { AppProps } from 'next/app';
 
-function MyApp({Component, pageProps}: AppProps) {
+import { NextPage } from 'next';
+import type { ReactElement } from 'react';
+import { ReactNode } from 'react';
+
+import { ThemeProvider as NextThemesProvider } from 'next-themes';
+import { NextUIProvider } from '@nextui-org/react';
+import Header from '../components/Header';
+import { darkTheme, lightTheme } from '../customThemes';
+import Footer from '../components/Footer';
+import Background from '../components/Background';
+import { AppProvider } from 'shared';
+
+type NextPageWithLayout = NextPage & {
+  getLayout?: (page: ReactElement) => ReactNode;
+};
+
+type AppPropsWithLayout = AppProps & {
+  Component: NextPageWithLayout;
+};
+
+function App({ Component, pageProps }: AppPropsWithLayout) {
+  const getLayout = Component.getLayout;
+
   return (
     <NextThemesProvider
       defaultTheme="system"
@@ -16,13 +34,21 @@ function MyApp({Component, pageProps}: AppProps) {
         dark: darkTheme.className,
       }}
     >
-      <NextUIProvider>
-        <Header/>
-        <Component {...pageProps} />
-        <Footer/>
-      </NextUIProvider>
+      <AppProvider>
+        <NextUIProvider>
+          {Component.getLayout ? (
+            getLayout(<Component {...pageProps} />)
+          ) : (
+            <Background>
+              <Header />
+              <Component {...pageProps} />
+              <Footer />
+            </Background>
+          )}
+        </NextUIProvider>
+      </AppProvider>
     </NextThemesProvider>
   );
 }
 
-export default MyApp;
+export default App;

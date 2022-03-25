@@ -1,4 +1,4 @@
-import { useQuery } from 'react-query';
+import { useQuery } from 'shared';
 import { getPrice } from '../api';
 
 export default function useFreeHedgies(wallet: string) {

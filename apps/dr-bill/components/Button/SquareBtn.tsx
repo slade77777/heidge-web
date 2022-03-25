@@ -1,23 +1,27 @@
-import {Button, Text} from '@nextui-org/react';
-import {ReactNode} from 'react';
+import { Button, Text } from '@nextui-org/react';
+import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
   css?: Object;
-}
+  onClick?: () => void;
+};
 
-export default function SquareBtn({children, css}: Props) {
+export default function SquareBtn({ children, css, onClick }: Props) {
   return (
-    <Button css={{
-      minWidth: 0,
-      borderRadius: 0,
-      background: 'transparent',
-      border: '1px solid $primary',
-      '&:hover': {
-        border: '2px solid $primary',
-      },
-      ...css
-    }}>
+    <Button
+      onClick={onClick}
+      css={{
+        minWidth: 0,
+        borderRadius: 0,
+        background: 'transparent',
+        border: '1px solid $primary',
+        '&:hover': {
+          border: '2px solid $primary',
+        },
+        ...css,
+      }}
+    >
       <Text
         css={{
           fontSize: '$xs',
@@ -29,11 +33,11 @@ export default function SquareBtn({children, css}: Props) {
           '@sm': {
             fontSize: 'base',
             lineHeight: '$sm',
-          }
+          },
         }}
       >
         {children}
       </Text>
     </Button>
-  )
+  );
 }

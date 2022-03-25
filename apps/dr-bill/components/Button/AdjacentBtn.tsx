@@ -1,13 +1,16 @@
 import {NextArrow} from 'shared/icons';
 import {Button} from '@nextui-org/react';
+import {forwardRef} from 'react';
 
 type Props = {
   buttonType: 'next' | 'previous',
   size?: number,
 }
-export default function AdjacentBtn({buttonType, size = 60}: Props) {
+
+const AdjacentBtn = forwardRef<HTMLButtonElement, Props>(({buttonType, size = 60}, ref) => {
   return (
     <Button
+      ref={ref}
       rounded
       css={{
         border: '1px solid $text',
@@ -24,4 +27,8 @@ export default function AdjacentBtn({buttonType, size = 60}: Props) {
       <NextArrow className={buttonType === 'previous' ? 'rotate-180' : undefined}/>
     </Button>
   )
-}
+})
+
+AdjacentBtn.displayName = 'AdjacentBtn';
+
+export default AdjacentBtn;
