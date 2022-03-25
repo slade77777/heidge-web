@@ -277,5 +277,11 @@ export const ARTWORKS = {
     slug: 'vending-machine',
     description:
       'This collection presents a variety of Generative Art narratives based on my algorithms, old and new alike. A set of experiments of an old dog learning new tricks.',
+    detail: {
+      page: 'Vending Machine',
+      slug: 'vending-machine',
+      description: 'No description',
+      artworks: [],
+    },
   },
 };
