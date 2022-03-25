@@ -5,7 +5,7 @@ import HeidgeImg from "../HeidgeImg";
 type Props = {
   rank: number;
   name: string;
-  total: number;
+  total: string;
   color?: string;
 };
 
@@ -38,6 +38,10 @@ const TopPlayer: FC<Props> = ({ rank, name, total, color }) => {
       break;
   }
 
+  const formatTotalCoin = (coin: string) => {
+    return Math.round(parseInt(coin.slice(0, -15)) / 10) / 100;
+  };
+
   return (
     <div
       className={`w-full relative before:absolute before:pointer-events-none before:top-0 before:left-0 before:h-full before:w-0 before:transition-all before:opacity-5 ${hoverBgColor} hover:before:w-full flex justify-between text-lg px-3 py-4 mb-2 md:px-24 border-t border-l-8 border-l-white ${bgcolor}`}
@@ -63,7 +67,7 @@ const TopPlayer: FC<Props> = ({ rank, name, total, color }) => {
       </div>
       <div className="flex items-center w-1/2 justify-end">
         <Curio className="text-h_yellow-coin w-6 h-6 mr-2" />
-        <div>{total}</div>
+        <div>{formatTotalCoin(total)}</div>
       </div>
     </div>
   );
