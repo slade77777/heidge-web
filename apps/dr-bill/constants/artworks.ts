@@ -1,4 +1,6 @@
-export const ARTWORKS = {
+import { ArtSlugType, ArtworkCategory } from '../types';
+
+export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
   'plotter-art': {
     title: 'Algorithmic Plotter Art, 1974-1981',
     isHighlight: true,
@@ -10,10 +12,11 @@ export const ARTWORKS = {
       'This collection presents the original plotter drawings (pen on paper) programmed in FORTRAN, executed on a CDC6500 mainframe computer and an offline Calcomp 936 drum plotter. Done at Michigan State University during my MFA/PhD era, 1974-1981.',
     detail: {
       page: 'Plotter Art',
-      slug: '/artworks/plotter-art',
-      description:
-        "I've been involved in many aspects of computer art/computer graphics. First as a student and pioneer of the medium at Michigan State University (MSU). Followed by several years of professing engineering graphics, computer graphics and computer art at The Ohio State University (OSU). Followed by being called upon to start a program at Northern Illinois University (NIU), College of Visual and Performing Arts, School of Art, Department of Design called Electronic Media, where I was an Associate Professor of Design. \n" +
-        'This collection presents the original plotter drawings (pen on paper) programmed in FORTRAN, executed on a CDC6500 mainframe computer and an offline Calcomp 936 drum plotter. Done at Michigan State University during my MFA/PhD era, 1974-1981.',
+      slug: 'plotter-art',
+      description: [
+        `I've been involved in many aspects of computer art/computer graphics. First as a student and pioneer of the medium at Michigan State University (MSU). Followed by several years of professing engineering graphics, computer graphics and computer art at The Ohio State University (OSU). Followed by being called upon to start a program at Northern Illinois University (NIU), College of Visual and Performing Arts, School of Art, Department of Design called Electronic Media, where I was an Associate Professor of Design.`,
+        `This collection presents the original plotter drawings (pen on paper) programmed in FORTRAN, executed on a CDC6500 mainframe computer and an offline Calcomp 936 drum plotter. Done at Michigan State University during my MFA/PhD era, 1974-1981.`,
+      ],
       artworks: [
         {
           key: 'woven-memories',
@@ -269,19 +272,101 @@ export const ARTWORKS = {
       ],
     },
   },
-  'vending-machine': {
-    title: 'Vending Machine',
+  'generative-art-vending-machine': {
+    title: 'Generative Art Vending Machine',
     image: {
       src: 'https://res.cloudinary.com/suborg/image/upload/v1648119063/DrBill/common/vending_machine.png',
     },
-    slug: 'vending-machine',
+    slug: 'generative-art-vending-machine',
     description:
       'This collection presents a variety of Generative Art narratives based on my algorithms, old and new alike. A set of experiments of an old dog learning new tricks.',
     detail: {
-      page: 'Vending Machine',
-      slug: 'vending-machine',
-      description: 'No description',
-      artworks: [],
+      page: 'Generative Art Vending Machine',
+      slug: 'generative-art-vending-machine',
+      description: [
+        `Dr Bill’s Generative Art Vending Machine is a custom application
+            where you can mint Generative Art Tokens of my work. Like a vending
+            machine you select an “algorithmic snack”. Our interface allows you
+            to “generate” your own variation based on your interaction with the
+            algorithm. Save off the variations you like, and ultimately, pick
+            and mint a unique image (NFT) of your own.`,
+        `
+            All algorithmic snacks are original implementations of algorithms by
+            yours truly. Some of these algorithms go way back to the underlying
+            code for my original plotter drawings back in the era, 1973-1981.
+            Some of the algorithms were inspired by other image makers. We were
+            a small group at the time, and we influenced each other (See below).
+          `,
+        `
+            As an intellectual exercise I can study a particular artists’ work
+            and codify his/her methodology or style. Most influential to me were
+            OP artists like Victor Vasarely and Bridget Riley, graphic artists
+            like M.C. Escher, as well as a few painters like Picasso and Warhol.
+            Many of these artists lived and worked before the advent of
+            Generative Art and did not use computers. However, when I look at
+            their efforts, I attempt to conceive an algorithm to create a
+            derivative work. I call it “Art”ificial Intelligence. Along with
+            this collection of algorithmic snacks I am continually inspired to
+            write more.
+          `,
+        `Enjoy your snacks!`,
+      ],
+      artworks: [
+        {
+          key: 'square-dot-composition',
+          name: 'Square Dot Composition',
+          description:
+            'Diamond Twirl Composition is a generative art "derivative" piece inspired by an OP Art painting...',
+          fullDescription: [
+            `Diamond Twirl Composition is a generative art "derivative" piece inspired by an OP Art painting (Collage on Paper) done by Victor Vasarely, called Collage Vert. 1990, 9.75 x 9.75". While Vasarely passed before the advent of Computer Art his works have always intellectually challenged me as a generative artist to derive an algorithm to produce similar aesthetic affects.`,
+            `A regular grid of nx by ny square tiles. The area of each tile has a random color-filled background, then one of two versions of a tile containing a diamond shape where the diagonal of the diamond shape goes from the upper right to lower left, or upper left to lower right. The fill color of the diamond shape is random as well.`,
+          ],
+          image: {
+            src: 'https://res.cloudinary.com/suborg/image/upload/v1648161076/DrBill/vending_machine/kgas01_sqDot_bqthqd.png',
+          },
+        },
+        {
+          key: 'sirko',
+          name: 'Sirko',
+          description:
+            'Sirko is a generative art derivative piece inspired by an OP Art serigraphic print called Tlnko...',
+          fullDescription: [
+            `Sirko is a generative art derivative piece inspired by an OP Art serigraphic print called Tlnko done by Victor Vasarely, c. 1955. While Vasarely passed before the advent of Computer Art his works have always intellectually challenged me as a generative artist to derive an algorithm to produce similar aesthetic affects.`,
+            `Vasarely and Op Art have always inspired me. I remember seeing his work at the Tate Gallery in the 1970’s. I purchased a copy of this print from the museum store and still have it today.`,
+            `In my derivative variation I begin by filling a large black area of many white square tiles. Then I devised an algorithm to randomly pick sub-areas in varying size to overdraw sections with several variations of the square: rotated, skewed or diamond shaped. Vasarely would have been very conscious of what he was doing. I merely generalised his process and let the computer serendipitously make those choices. The result is an ever changing visual field where static and transformed elements visually interact.`,
+          ],
+          image: {
+            src: 'https://res.cloudinary.com/suborg/image/upload/v1648161077/DrBill/vending_machine/kgas18_Sirko_ojmrmh.png',
+          },
+        },
+        {
+          key: 'sea-of-holes',
+          name: 'Sea of Holes',
+          description:
+            'A regular grid of square tiles. A coin-toss algorithm chooses one of two tiles...',
+          fullDescription: [
+            `A regular grid of square tiles. A coin-toss algorithm chooses one of two tiles. Tile one has a quarter circle in the upper right and lower left quadrants touching the midpoints of its sides. Tile two has a quarter circle in the upper left and lower right quadrants touching the midpoints of its sides. Individual tiles disappear as the arcs in adjacent tiles join up. The resulting image produces a Gestalt effect that illustrates the visual whole becoming more than the sum of its parts.`,
+          ],
+          image: {
+            src: 'https://res.cloudinary.com/suborg/image/upload/v1648161076/DrBill/vending_machine/kgas09_SeaOfHex_kusfbe.png',
+          },
+        },
+        {
+          key: 'oblique-cube-composition',
+          name: 'Oblique Cube Composition',
+          description:
+            'Oblique Cube Composition is a generative art derivative piece inspired by an OP Art painting...',
+          fullDescription: [
+            `Oblique Cube Composition is a generative art derivative piece inspired by an OP Art painting (acrylic and panel) done by Victor Vasarely, called Hommage a l\`Hexagon. c.1968. While Vasarely passed before the advent of Computer Art his works have always intellectually challenged me as a generative artist to derive an algorithm to produce similar aesthetic affects.`,
+            `An oblique cube is a form of axonometric (parallel) projection where the front face is full size and shape (height and width), perpendicular to the viewer and the depth is drawn full size along receding lines, usually a 45-degree angle.`,
+            `In this composition an array of squares is generated. Within each square, oblique cubes are drawn in pieces from back to front, in a random orientation, in random colors. All the cube faces are the same random color. A random number "coin flip" algorithm determines whether or not a diamond shape is drawn on the front face of the cube. All the diamond shapes on the cube faces are the same random color.`,
+            `What makes this image interesting to me is the way the faces of contiguous cubes combine and how the areas of the square that the cube does not cover (the black background) integrate into the piece and provide structure producing a visual "whole greater than the sum of its parts.`,
+          ],
+          image: {
+            src: 'https://res.cloudinary.com/suborg/image/upload/v1648161076/DrBill/vending_machine/kgas03_DiaTwirl_tq4pzp.png',
+          },
+        },
+      ],
     },
   },
 };

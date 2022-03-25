@@ -6,7 +6,7 @@ import { ARTWORKS } from '../../../constants/artworks';
 const CategoryPage: NextPage = () => {
   const { query } = useRouter();
   const category = ARTWORKS[query.category as string];
-  console.log(category)
+
   return (
     <ArtworksByCategory
       artworks={category?.detail?.artworks}
