@@ -7,9 +7,9 @@ import SquareBtn from '../Button/SquareBtn';
 import GeneratedArtworkList from './GeneratedArtworkList';
 import Watermark from '../Watermark';
 import { ArtSlugType, ArtworkType } from '../../types';
-import { toast } from 'shared';
+// import { toast } from 'shared';
 import { useState } from 'react';
-import { blobToBase64, getRandomNumber } from '../../utils';
+import { getRandomNumber } from '../../utils';
 
 export default function ArtworkDetail({
   artwork,
@@ -26,24 +26,11 @@ export default function ArtworkDetail({
 
   function generateImages(id: number) {
     const random = getRandomNumber(1, 999);
-    fetch(`/api/art-generation?id=${id}&random=${random}`, {
-      headers: {
-        'Content-Type': 'application/octet-stream',
-      },
-    })
-      .then((blob) => blobToBase64(blob))
-      .then((base64) => {
-        setGeneratedImages((prevState) => ({
-          ...prevState,
-          [random]: base64,
-        }));
-      })
-      .catch((err) => {
-        toast.error('error');
-      });
+    setGeneratedImages((prevState) => ({
+      ...prevState,
+      [random]: `http://5.161.46.108:5000/api/Generator/${id}-${random}`,
+    }));
   }
-
-  console.log('generatedImages', generatedImages);
 
   return (
     <Watermark text={artwork.name}>

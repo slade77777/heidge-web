@@ -13,7 +13,7 @@ export default async function handler(
   }
 
   try {
-    const response = await fetch(
+    const response: any = await fetch(
       `http://5.161.46.108:5000/api/Generator/${req.query.id}-${req.query.random}`,
       {
         headers: {
@@ -21,13 +21,7 @@ export default async function handler(
         },
       },
     );
-    const blob: any = await response.blob();
-    // const imageData = response.json();
-    // console.log('image---', response);
-    // res.setHeader('Content-Type', 'application/octet-stream');
-    // res.setHeader('Content-Type', 'application/octet-stream');
-    console.log('blob', blob);
-    res.send(blob);
+    res.send(response);
   } catch (e) {
     res.status(400).json({ message: 'Can not subscribe this email' });
   }
