@@ -12,7 +12,7 @@ import Header from '../components/Header';
 import { darkTheme, lightTheme } from '../customThemes';
 import Footer from '../components/Footer';
 import Background from '../components/Background';
-import { AppProvider } from 'shared';
+import { AppProvider, Toaster } from 'shared';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -42,6 +42,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
             <Background>
               <Header />
               <Component {...pageProps} />
+              <Toaster />
               <Footer />
             </Background>
           )}

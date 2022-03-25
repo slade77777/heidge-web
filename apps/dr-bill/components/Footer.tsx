@@ -1,6 +1,8 @@
+import { useState } from 'react';
 import { Button, Container, Input, Text } from '@nextui-org/react';
 import { Discord, Instagram, Twitter } from 'shared/icons';
 import { classNames } from 'shared/utils';
+import { toast } from 'shared';
 
 const socialNetworks = [
   {
@@ -39,58 +41,92 @@ const SocialNetworkList = ({ className }: { className?: string }) => (
   </div>
 );
 
-const Subscribe = ({ className }) => (
-  <div className={className}>
-    <Input
-      placeholder="Enter Your Email..."
-      color="success"
-      fullWidth
-      animated={false}
-      rounded={false}
-      css={{
-        label: {
-          height: '54px',
-          background: 'transparent',
-          borderRadius: 0,
-          border: '1px solid $primary',
-          boxSizing: 'border-box',
-        },
-        input: {
-          fontSize: '$xs',
-          lineHeight: '30.6px',
-          fontWeight: 300,
-          color: '$primary',
-        },
-        'input::placeholder': {
-          color: '$primary',
-        },
-        'input:focus': {
-          outline: 'none',
-          boxShadow: 'none',
-        },
-      }}
-    />
-    <Button
-      css={{
-        background: '$primary',
-        height: '54px',
-        width: '100%',
-        marginTop: '7px',
-        borderRadius: 0,
-      }}
-    >
-      <Text
-        css={{
-          lineHeight: '34px',
-          fontWeight: 600,
-          color: '$background',
-        }}
-      >
-        Subscribe
-      </Text>
-    </Button>
-  </div>
-);
+const Subscribe = ({ className }) => {
+  const [email, setEmail] = useState('');
+
+  function handleChange(e) {
+    setEmail(e.target.value);
+  }
+  function handleSubmit(e) {
+    e.preventDefault();
+    if (email) {
+      fetch('/api/subscription', {
+        method: 'POST',
+        body: JSON.stringify({
+          email,
+        }),
+      })
+        .then((res) => {
+          if (res.ok) {
+            toast.success('Your email have been subscribed successfully');
+            setEmail('');
+          }
+        })
+        .catch((err) => {
+          toast.error('Error');
+        });
+    }
+  }
+  return (
+    <div className={className}>
+      <form onSubmit={handleSubmit}>
+        <Input
+          placeholder="Enter Your Email..."
+          color="success"
+          fullWidth
+          animated={false}
+          rounded={false}
+          onChange={handleChange}
+          required
+          value={email}
+          type="email"
+          css={{
+            label: {
+              height: '54px',
+              background: 'transparent',
+              borderRadius: 0,
+              border: '1px solid $primary',
+              boxSizing: 'border-box',
+            },
+            input: {
+              fontSize: '$xs',
+              lineHeight: '30.6px',
+              fontWeight: 300,
+              color: '$primary',
+            },
+            'input::placeholder': {
+              color: '$primary',
+            },
+            'input:focus': {
+              outline: 'none',
+              boxShadow: 'none',
+            },
+          }}
+        />
+        <Button
+          type="submit"
+          css={{
+            background: '$primary',
+            height: '54px',
+            width: '100%',
+            marginTop: '7px',
+            borderRadius: 0,
+          }}
+        >
+          <Text
+            css={{
+              lineHeight: '34px',
+              fontWeight: 600,
+              color: '$background',
+            }}
+          >
+            Subscribe
+          </Text>
+        </Button>
+      </form>
+    </div>
+  );
+};
 
 export default function Footer() {
   return (
