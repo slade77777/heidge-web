@@ -26,6 +26,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255704/DrBill/1920/plotter-1.png',
           },
+          fullDescription: [],
         },
         {
           key: 'twist',
@@ -35,6 +36,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255704/DrBill/1920/plotter-2.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Image-Transformation-Study',
@@ -44,6 +46,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255704/DrBill/1920/plotter-3.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Kolofunc',
@@ -53,6 +56,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-4.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Organic-Illusion',
@@ -62,6 +66,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-5.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Scorpion-Spin',
@@ -71,6 +76,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-6.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Geese',
@@ -80,6 +86,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-7.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Kolomyjec',
@@ -89,6 +96,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-8.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Kolofunc',
@@ -98,6 +106,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-9.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Spatial-Cylinders',
@@ -107,6 +116,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-10.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Water-Into-Wine',
@@ -116,6 +126,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-11.png',
           },
+          fullDescription: [],
         },
         {
           key: 'That-WalleyeLotta-Gull',
@@ -134,6 +145,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-13.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Squares-Random',
@@ -143,6 +155,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-14.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Stars-And-Moons',
@@ -152,6 +165,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-15.png',
           },
+          fullDescription: [],
         },
         {
           key: 'le-Morte-De-Beardsley',
@@ -161,6 +175,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-16.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Horizons',
@@ -170,6 +185,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-17.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Concentric-Squares-Random',
@@ -178,6 +194,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-18.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Frog-Pond',
@@ -187,6 +204,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-19.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Concentric-Squares-Function',
@@ -196,6 +214,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-20.png',
           },
+          fullDescription: [],
         },
         {
           key: 'creature-tunnel',
@@ -205,6 +224,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-21.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Flying-Elephants',
@@ -214,6 +234,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-22.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Bulges-and-Dents',
@@ -223,6 +244,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-24.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Boxes-I',
@@ -232,6 +254,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-25.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Coming-and-Going',
@@ -241,6 +264,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-26.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Boxes-II',
@@ -250,6 +274,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-27.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Banana-Cone',
@@ -259,6 +284,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-28.png',
           },
+          fullDescription: [],
         },
         {
           key: 'Bird-Curves',
@@ -268,6 +294,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           image: {
             src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-29.png',
           },
+          fullDescription: [],
         },
       ],
     },

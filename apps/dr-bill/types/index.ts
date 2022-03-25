@@ -28,3 +28,19 @@ export type ArtworkCategory = {
   detail: ArtDetailType;
   description?: string;
 };
+
+export type MediaShowType = {
+  key: string;
+  label?: string;
+  title: string;
+  description?: string;
+  image: ArtPhoto;
+  href: string;
+};
+
+export enum MediaType {
+  Event = 'event',
+  All = 'all',
+  Video = 'video',
+  Article = 'article',
+}
