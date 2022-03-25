@@ -342,6 +342,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
         {
           key: 'square-dot-composition',
           name: 'Square Dot Composition',
+          id: 1,
           description:
             'Diamond Twirl Composition is a generative art "derivative" piece inspired by an OP Art painting...',
           fullDescription: [
@@ -355,6 +356,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
         {
           key: 'sirko',
           name: 'Sirko',
+          id: 2,
           description:
             'Sirko is a generative art derivative piece inspired by an OP Art serigraphic print called Tlnko...',
           fullDescription: [
@@ -369,6 +371,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
         {
           key: 'sea-of-holes',
           name: 'Sea of Holes',
+          id: 3,
           description:
             'A regular grid of square tiles. A coin-toss algorithm chooses one of two tiles...',
           fullDescription: [
@@ -381,6 +384,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
         {
           key: 'oblique-cube-composition',
           name: 'Oblique Cube Composition',
+          id: 4,
           description:
             'Oblique Cube Composition is a generative art derivative piece inspired by an OP Art painting...',
           fullDescription: [

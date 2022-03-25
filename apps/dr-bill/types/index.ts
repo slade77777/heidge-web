@@ -8,6 +8,7 @@ export type ArtPhoto = {
 export type ArtworkType = {
   key: string;
   name: string;
+  id?: number;
   description?: string;
   fullDescription?: string[];
   image: ArtPhoto;

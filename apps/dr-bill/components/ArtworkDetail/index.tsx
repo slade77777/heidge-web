@@ -7,6 +7,9 @@ import SquareBtn from '../Button/SquareBtn';
 import GeneratedArtworkList from './GeneratedArtworkList';
 import Watermark from '../Watermark';
 import { ArtSlugType, ArtworkType } from '../../types';
+import { toast } from 'shared';
+import { useState } from 'react';
+import { blobToBase64, getRandomNumber } from '../../utils';
 
 export default function ArtworkDetail({
   artwork,
@@ -15,9 +18,33 @@ export default function ArtworkDetail({
   artwork: ArtworkType;
   categorySlug?: ArtSlugType;
 }) {
+  const [generatedImages, setGeneratedImages] = useState({});
+
   if (!artwork) {
     return null;
   }
+
+  function generateImages(id: number) {
+    const random = getRandomNumber(1, 999);
+    fetch(`/api/art-generation?id=${id}&random=${random}`, {
+      headers: {
+        'Content-Type': 'application/octet-stream',
+      },
+    })
+      .then((blob) => blobToBase64(blob))
+      .then((base64) => {
+        setGeneratedImages((prevState) => ({
+          ...prevState,
+          [random]: base64,
+        }));
+      })
+      .catch((err) => {
+        toast.error('error');
+      });
+  }
+
+  console.log('generatedImages', generatedImages);
+
   return (
     <Watermark text={artwork.name}>
       <Container md>
@@ -72,12 +99,27 @@ export default function ArtworkDetail({
             <div className="w-full h-auto">
               <div>
                 <NextImage src={artwork.image.src} alt="123" />
-                <div className="flex flex-row justify-between gap-2">
-                  <SquareBtn css={{ flex: 1 }}> Generate </SquareBtn>
-                  <SquareBtn css={{ flex: 1 }}> Save </SquareBtn>
-                  <SquareBtn css={{ flex: 1 }}> Mint </SquareBtn>
-                </div>
-                <GeneratedArtworkList />
+                {categorySlug === 'generative-art-vending-machine' && (
+                  <>
+                    <div className="flex flex-row justify-between gap-2">
+                      <SquareBtn
+                        css={{ flex: 1 }}
+                        onClick={() =>
+                          artwork.id ? generateImages(artwork.id) : undefined
+                        }
+                      >
+                        {' '}
+                        Generate{' '}
+                      </SquareBtn>
+                      <SquareBtn css={{ flex: 1 }}> Save </SquareBtn>
+                      <SquareBtn css={{ flex: 1 }} disabled>
+                        {' '}
+                        Mint{' '}
+                      </SquareBtn>
+                    </div>
+                    <GeneratedArtworkList generatedImages={generatedImages} />
+                  </>
+                )}
               </div>
             </div>
           </div>
