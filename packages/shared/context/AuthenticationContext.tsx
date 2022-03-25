@@ -38,23 +38,23 @@ const AuthProvider = ({
   const [loading, setLoading] = useState(true);
 
   useEffect(() => {
-    // const unsubscribe = onAuthStateChanged(auth, async (user) => {
-    //   if (!user) {
-    //     setAccount(null);
-    //     nookies.destroy(null, 'token');
-    //     nookies.set(null, 'token', '', { path: '/' });
-    //     setLoading(false);
-    //     return;
-    //   }
+    const unsubscribe = onAuthStateChanged(auth, async (user) => {
+      if (!user) {
+        setAccount(null);
+        nookies.destroy(null, 'token');
+        nookies.set(null, 'token', '', { path: '/' });
+        setLoading(false);
+        return;
+      }
 
-    //   const token = await user.getIdToken(true);
-    //   setAccount(user);
-    //   nookies.destroy(null, 'token');
-    //   nookies.set(null, 'token', token, { path: '/' });
-    //   setLoading(false);
-    // });
+      const token = await user.getIdToken(true);
+      setAccount(user);
+      nookies.destroy(null, 'token');
+      nookies.set(null, 'token', token, { path: '/' });
+      setLoading(false);
+    });
 
-    // return () => unsubscribe();
+    return () => unsubscribe();
   }, []);
 
   const signup = (user: User) => {
