@@ -70,10 +70,10 @@ const KingdomsSection = () => {
             </div>
           </div>
 
-          <div
+          <ParallaxBanner
             className="bg-cover w-full"
-            style={{ backgroundImage: `url(${selectedKingdom.image})` }}
-          ></div>
+            layers={[{ image: selectedKingdom.image, speed: 8 }]}
+          ></ParallaxBanner>
         </div>
       </div>
     </div>

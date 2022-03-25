@@ -1,5 +1,5 @@
 import { FC, memo } from "react";
-import { createSVG } from "./svg-templates";
+import { createSVG } from "../../utils/svg-templates";
 
 const HeidgeImg: FC<{
   width?: number | string;

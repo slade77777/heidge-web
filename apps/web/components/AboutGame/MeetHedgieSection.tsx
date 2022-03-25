@@ -52,7 +52,7 @@ const MeetHedgieSection = () => {
       </div>
 
       <div className="container mx-auto relative h-full">
-        <div className="absolute inset-0 left-[10%] flex justify-center flex-col w-96 max-w-[80%]">
+        <div className="absolute inset-0 left-[10%] top-1/2 w-96 max-w-[80%]">
           <div className="text-h_cyan-100 text-xl md:text-4xl font-bold">Meet Hedgie</div>
           <div className="mt-4 mb-4 font-bold text-xs md:text-lg">
             Hedgies are legendary creatures. Skilled explorers with a storied

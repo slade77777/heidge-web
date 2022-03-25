@@ -20,3 +20,16 @@ export interface Hedgie {
   status?: number;
   canTakeGen3?: number;
 }
+
+export type FireBaseConfig = {
+  apiKey: string;
+  authDomain: string;
+  databaseURL: string;
+  projectId: string;
+  storageBucket: string;
+  messagingSenderId: string;
+  appId: string;
+  measurementId: string;
+};
+
+export * from './auth';

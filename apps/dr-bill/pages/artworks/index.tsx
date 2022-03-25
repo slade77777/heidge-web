@@ -1,9 +1,9 @@
 import type {NextPage} from 'next';
-import Artworks from '../../containers/Artworks';
+import ArtworkCategories from '../../components/ArtworkCategories';
 
 const ArtworkPage: NextPage = () => {
   return (
-    <Artworks />
+    <ArtworkCategories />
   );
 };
 

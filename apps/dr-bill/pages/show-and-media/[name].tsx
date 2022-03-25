@@ -1,3 +1,3 @@
-import ShowAndMediaArticle from '../../containers/ShowAndMediaArticle';
+import ShowAndMediaArticle from '../../components/ShowAndMediaArticle';
 
 export default ShowAndMediaArticle;
