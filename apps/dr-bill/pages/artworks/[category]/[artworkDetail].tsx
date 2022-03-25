@@ -10,10 +10,11 @@ const ArtworkDetailPage: NextPage = () => {
   const { query, asPath } = useRouter();
 
   const detail = useMemo(() => {
-    const category = asPath.split('/')[2] as ArtSlugType;
+    const category = asPath.split('/')?.[2] as ArtSlugType;
+
     return {
       parentSlug: category,
-      data: arr2obj(ARTWORKS[category].detail.artworks)[
+      data: arr2obj(ARTWORKS[category]?.detail?.artworks || [])?.[
         query.artworkDetail as string
       ],
     };

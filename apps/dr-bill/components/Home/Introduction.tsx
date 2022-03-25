@@ -7,7 +7,7 @@ type PhotoWidth = `w_${number}`;
 
 const DrBillPortrait = ({ width = 'w_500' }: { width?: PhotoWidth }) => (
   <Image
-    src={`https://res.cloudinary.com/suborg/image/upload/${width},e_art:audrey/v1648110601/DrBill/1920/20220108_140942_r0apmt.jpg`}
+    src={`https://res.cloudinary.com/suborg/image/upload/${width},e_art:audrey/v1648110601/DrBill/common/20220108_140942_r0apmt.jpg`}
     layout="fill"
     alt="avatar"
     objectFit="cover"

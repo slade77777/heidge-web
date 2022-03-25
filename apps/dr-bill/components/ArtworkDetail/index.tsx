@@ -15,6 +15,9 @@ export default function ArtworkDetail({
   artwork: ArtworkType;
   categorySlug?: ArtSlugType;
 }) {
+  if (!artwork) {
+    return null;
+  }
   return (
     <Watermark text={artwork.name}>
       <Container md>
