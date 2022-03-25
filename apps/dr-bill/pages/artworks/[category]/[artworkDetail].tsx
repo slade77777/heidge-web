@@ -1,9 +1,9 @@
+import { useMemo } from 'react';
 import type { NextPage } from 'next';
 import ArtworkDetail from '../../../components/ArtworkDetail';
 import { useRouter } from 'next/router';
 import { ARTWORKS } from '../../../constants/artworks';
 import { arr2obj } from '../../../utils';
-import { useMemo } from 'react';
 import { ArtSlugType } from '../../../types';
 
 const ArtworkDetailPage: NextPage = () => {
