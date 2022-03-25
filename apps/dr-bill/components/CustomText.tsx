@@ -1,7 +1,13 @@
-import {Text} from '@nextui-org/react';
-import {ReactNode} from 'react';
+import { Text } from '@nextui-org/react';
+import { ReactNode } from 'react';
 
-export const Heading = ({children, css}: { css?: Object, children: ReactNode }) => {
+export const Heading = ({
+  children,
+  css,
+}: {
+  css?: Object;
+  children: ReactNode;
+}) => {
   return (
     <Text
       css={{
@@ -22,10 +28,16 @@ export const Heading = ({children, css}: { css?: Object, children: ReactNode }) 
     >
       {children}
     </Text>
-  )
-}
+  );
+};
 
-export  const Paragraph = ({children, css}: { css?: Object, children: ReactNode }) => {
+export const Paragraph = ({
+  children,
+  css,
+}: {
+  css?: Object;
+  children: ReactNode;
+}) => {
   return (
     <Text
       css={{
@@ -45,5 +57,5 @@ export  const Paragraph = ({children, css}: { css?: Object, children: ReactNode 
     >
       {children}
     </Text>
-  )
-}
+  );
+};
