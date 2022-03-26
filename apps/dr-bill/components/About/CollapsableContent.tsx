@@ -21,7 +21,7 @@ export default function CollapsableContent() {
           },
         }}
       >
-        <div className="grid grid-cols-2 grid-flow-col gap-[50px]">
+        <div className="md:grid md:grid-cols-2 grid-flow-col md:gap-12">
           <Paragraph>
             <Text span weight="bold">Largo, Florida </Text>(Computer Graphic Artist Emeritus / 2020 - present).
             Generative Art, Interactive Media
@@ -80,7 +80,7 @@ export default function CollapsableContent() {
           },
         }}
       >
-        <div className="grid grid-cols-2 grid-flow-col gap-[50px]">
+        <div className="md:grid md:grid-cols-2 grid-flow-col gap-[50px]">
           <Paragraph>
             <Text span weight="bold">Education</Text><br/>
             PhD, Higher Education and Administration, Michigan State University. East Lansing, MI. 1981 <br/>

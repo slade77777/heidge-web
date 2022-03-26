@@ -17,19 +17,10 @@ export default function ArtworksByCategory({
   return (
     <Watermark text={category?.page}>
       <Container md>
-        <Breadcrumbs
-          data={[
-            {
-              text: 'Home',
-              href: '/',
-            },
-            { text: 'Artworks', href: `${PageNames.ARTWORK.en}` },
-            { text: category?.page },
-          ]}
-        />
+        <Breadcrumbs />
         <div className="mt-[100px] mb-[200px]">
           <div className="flex flex-col items-center md:items-start md:grid lg:grid-cols-12 gap-12 mt-[200px]">
-            <div className="col-span-12 md:col-span-6 lg:col-span-5 sticky top-10">
+            <div className="col-span-12 md:col-span-6 lg:col-span-5 md:sticky md:top-10">
               <div className="my-auto">
                 <Heading> {category?.page}</Heading>
                 <div>

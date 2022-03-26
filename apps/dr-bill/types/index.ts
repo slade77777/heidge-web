@@ -45,3 +45,7 @@ export enum MediaType {
   Video = 'video',
   Article = 'article',
 }
+
+export type Response<T> = Promise<{
+  data: T;
+}>;
