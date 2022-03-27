@@ -7,7 +7,7 @@ type Props = {
 }
 export default function Watermark({text, children}: Props) {
   return (
-    <div className="relative">
+    <div className="relative overflow-hidden">
       <Text css={{
         fontFamily: '$heading',
         fontSize: '180px',

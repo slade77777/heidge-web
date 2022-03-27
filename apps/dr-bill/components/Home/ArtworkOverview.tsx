@@ -21,6 +21,7 @@ export default function ArtworkOverview() {
               tag="New"
               className="h-full"
               imageClassName="h-[352px]"
+              href={`${PageNames.ARTWORK.en}`}
               layout="fill"
               objectFit="cover"
             >
@@ -51,10 +52,10 @@ export default function ArtworkOverview() {
           <MoreLink href={PageNames.ARTWORK.en} content="See all collections" />
         </div>
       </div>
-      <div className="hidden md:block col-span-12 md:col-span-6 lg:col-span-7 flex justify-end">
+      <div className="hidden col-span-12 md:col-span-6 lg:col-span-7 md:flex md:justify-end">
         <CardArtwork
           images={artworks}
-          href={`${PageNames.ARTWORK.en}/vending-machine`}
+          href={`${PageNames.ARTWORK.en}`}
           tag="New"
           objectFit="contain"
         >
