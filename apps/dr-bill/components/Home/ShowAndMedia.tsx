@@ -13,7 +13,7 @@ SwiperCore.use([Navigation, Pagination]);
 
 const artworks = [
   {
-    src: 'https://res.cloudinary.com/suborg/image/upload/w_800/v1648110595/DrBill/common/Post_Instagram_Facebook__1080x1080_krhq1a.png',
+    src: '/w_800/v1648110595/DrBill/common/Post_Instagram_Facebook__1080x1080_krhq1a.png',
   },
 ];
 

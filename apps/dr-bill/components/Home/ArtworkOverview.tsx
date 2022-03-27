@@ -5,7 +5,7 @@ import { PageNames } from '../../constants/pageNames';
 
 const artworks = [
   {
-    src: 'https://res.cloudinary.com/suborg/image/upload/v1648114058/DrBill/common/generative_art_thumbnail.png',
+    src: '/v1648114058/DrBill/common/generative_art_thumbnail.png',
   },
 ];
 
@@ -54,8 +54,10 @@ export default function ArtworkOverview() {
       <div className="hidden md:block col-span-12 md:col-span-6 lg:col-span-7 flex justify-end">
         <CardArtwork
           images={artworks}
-          href={`${PageNames.ARTWORK.en}/vending-machine`}
+          href={`${PageNames.ARTWORK.en}/generative-art-vending-machine`}
           tag="New"
+          imageClassName="w-[680px] h-[340px]"
+          layout="fill"
           objectFit="contain"
         >
           <Heading
