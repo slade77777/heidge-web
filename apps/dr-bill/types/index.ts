@@ -45,3 +45,24 @@ export enum MediaType {
   Video = 'video',
   Article = 'article',
 }
+
+export type ContentType =
+  | 'home'
+  | 'show-and-media'
+  | 'generative-art-vending-machine'
+  | 'plotter-art'
+  | 'artworks';
+
+export type Content = {
+  id: number;
+  title: string;
+  short_title?: string;
+  text?: string;
+  image: string;
+  display_order?: number;
+  slug?: string;
+  tags?: string;
+  link?: string;
+  more?: string;
+  content_type?: ContentType;
+};

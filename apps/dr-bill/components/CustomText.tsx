@@ -34,9 +34,11 @@ export const Heading = ({
 export const Paragraph = ({
   children,
   css,
+  className,
 }: {
   css?: Object;
   children: ReactNode;
+  className?: string;
 }) => {
   return (
     <Text
@@ -55,7 +57,7 @@ export const Paragraph = ({
         ...css,
       }}
     >
-      {children}
+      <div className={className}>{children}</div>
     </Text>
   );
 };

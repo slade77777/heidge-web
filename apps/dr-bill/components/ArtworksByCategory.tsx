@@ -5,17 +5,17 @@ import { Heading, Paragraph } from './CustomText';
 import CardArtwork from './CardArtwork';
 import CardRaw from './CardRaw';
 import Watermark from './Watermark';
-import { ArtDetailType, ArtworkType } from '../types';
+import { ArtworkType, Content } from '../types';
 
 export default function ArtworksByCategory({
   artworks,
   category,
 }: {
   artworks: ArtworkType[];
-  category: ArtDetailType;
+  category: Content;
 }) {
   return (
-    <Watermark text={category?.page}>
+    <Watermark text={category?.title}>
       <Container md>
         <Breadcrumbs
           data={[
@@ -24,20 +24,20 @@ export default function ArtworksByCategory({
               href: '/',
             },
             { text: 'Artworks', href: `${PageNames.ARTWORK.en}` },
-            { text: category?.page },
+            { text: category?.title },
           ]}
         />
         <div className="mt-[100px] mb-[200px]">
           <div className="flex flex-col items-center md:items-start md:grid lg:grid-cols-12 gap-12 mt-[200px]">
             <div className="col-span-12 md:col-span-6 lg:col-span-5 sticky top-10">
               <div className="my-auto">
-                <Heading> {category?.page}</Heading>
+                <Heading> {category?.title}</Heading>
                 <div>
-                  {category?.description.map((text, index) => (
-                    <Paragraph css={{ marginTop: '24px' }} key={index}>
-                      {text}
-                    </Paragraph>
-                  ))}
+                  {/*{category?.description.map((text, index) => (*/}
+                  {/*  <Paragraph css={{ marginTop: '24px' }} key={index}>*/}
+                  {/*    {text}*/}
+                  {/*  </Paragraph>*/}
+                  {/*))}*/}
                 </div>
               </div>
             </div>
