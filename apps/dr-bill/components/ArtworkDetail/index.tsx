@@ -1,5 +1,4 @@
 import { Container } from '@nextui-org/react';
-import Breadcrumbs from '../Breadcrumbs';
 import { Heading, Paragraph } from '../CustomText';
 import NextImage from '../NextImage';
 import SquareBtn from '../Button/SquareBtn';
@@ -33,7 +32,6 @@ export default function ArtworkDetail({
   return (
     <Watermark text={artwork.title}>
       <Container md>
-        <Breadcrumbs />
         <div className="mt-[100px] mb-[200px]">
           <div className="grid md:grid-cols-2 gap-16">
             <div>

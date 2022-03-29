@@ -1,12 +1,10 @@
 import { Container } from '@nextui-org/react';
-import Breadcrumbs from './Breadcrumbs';
 import { Heading, Paragraph } from './CustomText';
 import NextImage from './NextImage';
 
 export default function ShowAndMediaArticle() {
   return (
     <Container md>
-      <Breadcrumbs />
       <div className="mt-[30px] lg:px-[100px]">
         <div className="mt-[100px]"/>
         <div className="hidden lg:block relative">

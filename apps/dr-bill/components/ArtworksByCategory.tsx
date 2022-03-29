@@ -1,5 +1,4 @@
 import { Container } from '@nextui-org/react';
-import Breadcrumbs from './Breadcrumbs';
 import { Heading, Paragraph } from './CustomText';
 import CardArtwork from './CardArtwork';
 import CardRaw from './CardRaw';
@@ -18,7 +17,6 @@ export default function ArtworksByCategory({
   return (
     <Watermark text={category.title}>
       <Container md>
-        <Breadcrumbs />
         <div className="mt-[100px] mb-[200px]">
           <div className="flex flex-col items-center md:items-start md:grid lg:grid-cols-12 gap-12 mt-[200px]">
             <div className="col-span-12 md:col-span-6 lg:col-span-5 md:sticky md:top-10">

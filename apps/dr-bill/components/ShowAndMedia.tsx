@@ -1,5 +1,4 @@
 import { Container } from '@nextui-org/react';
-import Breadcrumbs from './Breadcrumbs';
 import { Heading, Paragraph } from './CustomText';
 import CardArtwork from './CardArtwork';
 import CardRaw from './CardRaw';
@@ -44,7 +43,6 @@ export default function ShowAndMedia() {
   return (
     <Watermark text="Show & Media">
       <Container md>
-        <Breadcrumbs />
         <div className="mt-[100px] mb-[200px]">
           <Heading css={{ marginBottom: '80px' }}> Show & Media </Heading>
           <div className="flex flex-row gap-2 mb-10">
