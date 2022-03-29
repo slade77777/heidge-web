@@ -18,8 +18,8 @@ export default function NextImage({
   ...rest
 }: ImageProps | any) {
   const [dimension, setDimension] = useState({
-    width: 480,
-    height: 480,
+    width: 600,
+    height: 600,
   });
   useEffect(() => {
     (async () => {

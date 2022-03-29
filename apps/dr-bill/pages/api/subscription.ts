@@ -10,7 +10,7 @@ export default async function handler(
   try {
     const contactData = JSON.parse(req.body);
     const data = await fetch(
-      `http://5.161.46.108:5000/api/subscribe/${contactData.email}`,
+      `${process.env.NEXT_PUBLIC_API_URL}/api/subscribe/${contactData.email}`,
       {
         method: 'POST',
       },

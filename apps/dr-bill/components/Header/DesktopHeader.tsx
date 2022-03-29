@@ -2,7 +2,7 @@ import DesktopNavigation from './NavigationList';
 import ConnectWalletButton from '../Button/ConnectWalletBtn';
 import { classNames } from 'shared/utils';
 import { Container } from '@nextui-org/react';
-import SocialNetworkList from './SocialNetworkList';
+import SocialNetworkList from '../SocialNetworkList';
 
 export default function DesktopHeader({ className }: { className?: string }) {
   return (

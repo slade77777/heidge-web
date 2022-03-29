@@ -27,7 +27,7 @@ export default function ArtworkDetail({
     const random = getRandomNumber(1, 999);
     setGeneratedImages((prevState) => ({
       ...prevState,
-      [random]: `http://5.161.46.108:5000/api/Generator/${id}-${random}`,
+      [random]: `${process.env.NEXT_PUBLIC_API_URL}/api/generator/${id}-${random}`,
     }));
   }
 
