@@ -4,6 +4,7 @@ import CardArtwork from './CardArtwork';
 import CardRaw from './CardRaw';
 import Watermark from './Watermark';
 import { Content } from '../types';
+import Card from './Card';
 
 export default function ArtworksByCategory({
   artworks,
@@ -30,45 +31,52 @@ export default function ArtworksByCategory({
             <div className="col-span-12 md:col-span-6 lg:col-span-7">
               <div className="md:columns-2 gap-8 w-full">
                 {artworks?.map((artwork) => (
-                  <CardArtwork
-                    key={artwork.id}
-                    className="w-full break-inside-avoid relative !mb-8 !last:mb-0"
-                    imageClassName="w-full"
-                    images={[{ src: artwork.image }]}
+                  <Card
                     href={`/artworks/${artwork.content_type}/${artwork.slug}`}
-                    layout="responsive"
-                  >
-                    <CardRaw>
-                      <Heading
-                        css={{
-                          fontSize: '$base',
-                          lineHeight: '$sm',
-                          fontWeight: 400,
-                          marginBottom: '12px',
-                          '@sm': {
-                            fontSize: '$base',
-                            lineHeight: '$sm',
-                          },
-                        }}
-                      >
-                        {artwork.title}
-                      </Heading>
-                      <Paragraph
-                        className="line-clamp-5"
-                        css={{
-                          fontSize: '$base',
-                          lineHeight: '$md',
-                          marginBottom: '12px',
-                          '@sm': {
-                            fontSize: '$base',
-                            lineHeight: '$md',
-                          },
-                        }}
-                      >
-                        {artwork.text}
-                      </Paragraph>
-                    </CardRaw>
-                  </CardArtwork>
+                    key={artwork.id}
+                    imageSrc={artwork.image}
+                    title={artwork.title}
+                    description={artwork.text}
+                  />
+                  // <CardArtwork
+                  //   key={artwork.id}
+                  //   className="w-full break-inside-avoid relative !mb-8 !last:mb-0"
+                  //   imageClassName="w-full"
+                  //   images={[{ src: artwork.image }]}
+                  //   href={`/artworks/${artwork.content_type}/${artwork.slug}`}
+                  //   layout="responsive"
+                  // >
+                  //   <CardRaw>
+                  //     <Heading
+                  //       css={{
+                  //         fontSize: '$base',
+                  //         lineHeight: '$sm',
+                  //         fontWeight: 400,
+                  //         marginBottom: '12px',
+                  //         '@sm': {
+                  //           fontSize: '$base',
+                  //           lineHeight: '$sm',
+                  //         },
+                  //       }}
+                  //     >
+                  //       {artwork.title}
+                  //     </Heading>
+                  //     <Paragraph
+                  //       className="line-clamp-5"
+                  //       css={{
+                  //         fontSize: '$base',
+                  //         lineHeight: '$md',
+                  //         marginBottom: '12px',
+                  //         '@sm': {
+                  //           fontSize: '$base',
+                  //           lineHeight: '$md',
+                  //         },
+                  //       }}
+                  //     >
+                  //       {artwork.text}
+                  //     </Paragraph>
+                  //   </CardRaw>
+                  // </CardArtwork>
                 ))}
               </div>
             </div>
