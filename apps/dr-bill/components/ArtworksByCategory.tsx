@@ -5,13 +5,13 @@ import { Heading, Paragraph } from './CustomText';
 import CardArtwork from './CardArtwork';
 import CardRaw from './CardRaw';
 import Watermark from './Watermark';
-import { ArtworkType, Content } from '../types';
+import { Content } from '../types';
 
 export default function ArtworksByCategory({
   artworks,
   category,
 }: {
-  artworks: ArtworkType[];
+  artworks: Content[];
   category: Content;
 }) {
   return (
@@ -33,11 +33,7 @@ export default function ArtworksByCategory({
               <div className="my-auto">
                 <Heading> {category?.title}</Heading>
                 <div>
-                  {/*{category?.description.map((text, index) => (*/}
-                  {/*  <Paragraph css={{ marginTop: '24px' }} key={index}>*/}
-                  {/*    {text}*/}
-                  {/*  </Paragraph>*/}
-                  {/*))}*/}
+                  <Paragraph className="mt-3">{category.text}</Paragraph>
                 </div>
               </div>
             </div>
@@ -45,13 +41,11 @@ export default function ArtworksByCategory({
               <div className="columns-2 gap-8 w-full">
                 {artworks?.map((artwork) => (
                   <CardArtwork
-                    key={artwork.key}
+                    key={artwork.id}
                     className="w-full break-inside-avoid relative !mb-8 !last:mb-0"
                     imageClassName="w-full"
-                    images={[artwork.image]}
-                    href={`/${PageNames.ARTWORK.en}/${
-                      category.slug
-                    }/${artwork.key.toLowerCase()}`}
+                    images={[{ src: artwork.image }]}
+                    href={`/artworks/${artwork.content_type}/${artwork.slug}`}
                     layout="responsive"
                   >
                     <CardRaw>
@@ -67,10 +61,10 @@ export default function ArtworksByCategory({
                           },
                         }}
                       >
-                        {' '}
-                        {artwork.name}{' '}
+                        {artwork.title}
                       </Heading>
                       <Paragraph
+                        className="line-clamp-5"
                         css={{
                           fontSize: '$base',
                           lineHeight: '$md',
@@ -81,8 +75,7 @@ export default function ArtworksByCategory({
                           },
                         }}
                       >
-                        {' '}
-                        {artwork.description}{' '}
+                        {artwork.text}
                       </Paragraph>
                     </CardRaw>
                   </CardArtwork>

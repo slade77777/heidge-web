@@ -1,8 +1,9 @@
 import Home from '../components/Home';
 import { InferGetStaticPropsType } from 'next';
-import type { GetStaticPropsContext, GetStaticProps } from 'next';
+import type { GetStaticProps } from 'next';
 import { getArtworkByIndex, getHomeContents, getShowAndMedia } from '../@api';
 import { Content } from '../types';
+import { callConcurrent } from '../utils';
 
 const HomePage: InferGetStaticPropsType<typeof getStaticProps> = ({
   homeData,
@@ -18,14 +19,11 @@ const HomePage: InferGetStaticPropsType<typeof getStaticProps> = ({
 };
 
 export const getStaticProps: GetStaticProps = async () => {
-  const response = await Promise.allSettled([
+  const [homeData, firstArtwork, media] = await callConcurrent<Content>([
     getHomeContents(),
     getArtworkByIndex(2),
     getShowAndMedia(0),
   ]);
-  const [homeData, firstArtwork, media] = response
-    .filter((p) => p.status === 'fulfilled')
-    .map((item: PromiseFulfilledResult<Content[] | Content>) => item.value);
 
   return {
     props: {

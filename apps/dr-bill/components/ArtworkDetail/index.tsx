@@ -6,8 +6,7 @@ import NextImage from '../NextImage';
 import SquareBtn from '../Button/SquareBtn';
 import GeneratedArtworkList from './GeneratedArtworkList';
 import Watermark from '../Watermark';
-import { ArtSlugType, ArtworkType } from '../../types';
-// import { toast } from 'shared';
+import { Content } from '../../types';
 import { useState } from 'react';
 import { getRandomNumber } from '../../utils';
 
@@ -15,8 +14,8 @@ export default function ArtworkDetail({
   artwork,
   categorySlug,
 }: {
-  artwork: ArtworkType;
-  categorySlug?: ArtSlugType;
+  artwork: Content;
+  categorySlug?: string;
 }) {
   const [generatedImages, setGeneratedImages] = useState({});
 
@@ -33,7 +32,7 @@ export default function ArtworkDetail({
   }
 
   return (
-    <Watermark text={artwork.name}>
+    <Watermark text={artwork.title}>
       <Container md>
         <Breadcrumbs
           data={[
@@ -47,45 +46,27 @@ export default function ArtworkDetail({
               href: `/${PageNames.ARTWORK.en}/${categorySlug}`,
             },
             {
-              text: artwork.name,
-              href: `/${
-                PageNames.ARTWORK.en
-              }/${categorySlug}/${artwork.key.toLowerCase()}`,
+              text: artwork.title,
+              href: `/${PageNames.ARTWORK.en}/${categorySlug}/${artwork.slug}`,
             },
           ]}
         />
         <div className="mt-[100px] mb-[200px]">
           <div className="grid md:grid-cols-2 gap-16">
             <div>
-              <Heading css={{ marginBottom: '30px' }}>{artwork.name}</Heading>
-              {!artwork.fullDescription.length ? (
-                <Paragraph
-                  css={{
-                    '@xs': { display: 'block !important' },
-                    display: 'none',
-                  }}
-                >
-                  {artwork.description}
-                </Paragraph>
-              ) : (
-                <div className="space-y-3">
-                  {artwork.fullDescription.map((p, idx) => (
-                    <Paragraph
-                      key={idx}
-                      css={{
-                        '@xs': { display: 'block !important' },
-                        display: 'none',
-                      }}
-                    >
-                      {p}
-                    </Paragraph>
-                  ))}
-                </div>
-              )}
+              <Heading css={{ marginBottom: '30px' }}>{artwork.title}</Heading>
+              <Paragraph
+                css={{
+                  '@xs': { display: 'block !important' },
+                  display: 'none',
+                }}
+              >
+                {artwork.text}
+              </Paragraph>
             </div>
             <div className="w-full h-auto">
               <div>
-                <NextImage src={artwork.image.src} alt="123" />
+                <NextImage src={artwork.image} alt="123" />
                 {categorySlug === 'generative-art-vending-machine' && (
                   <>
                     <div className="flex flex-row justify-between gap-2">

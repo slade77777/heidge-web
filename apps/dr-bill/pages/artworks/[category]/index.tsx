@@ -4,13 +4,18 @@ import type {
   InferGetStaticPropsType,
 } from 'next';
 import ArtworksByCategory from '../../../components/ArtworksByCategory';
-import { getArtworkByIndex, getArtworkBySlug } from '../../../@api';
-import { Content } from '../../../types';
+import {
+  getArtworkByIndex,
+  getArtworkBySlug,
+  getArtworkCategoryByIndex,
+} from '../../../@api';
+import { callConcurrent } from '../../../utils';
 
 const CategoryPage: InferGetStaticPropsType<typeof getStaticProps> = ({
   artworkCategory,
+  artworks,
 }) => {
-  return <ArtworksByCategory artworks={[]} category={artworkCategory} />;
+  return <ArtworksByCategory artworks={artworks} category={artworkCategory} />;
 };
 
 export const getStaticPaths = async () => {
@@ -25,11 +30,16 @@ export const getStaticProps: GetStaticProps = async (
   context: GetStaticPropsContext,
 ) => {
   const slug = context.params.category as string;
-  const artworkCategory: Content = await getArtworkBySlug(slug);
+
+  const [artworkCategory, artworks] = await callConcurrent([
+    getArtworkBySlug(slug),
+    getArtworkCategoryByIndex(0, slug),
+  ]);
 
   return {
     props: {
       artworkCategory,
+      artworks,
     },
   };
 };
