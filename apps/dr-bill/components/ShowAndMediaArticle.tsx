@@ -1,22 +1,10 @@
-import {Container} from '@nextui-org/react';
-import Breadcrumbs from './Breadcrumbs';
-import {PageNames} from '../constants/pageNames';
-import {Heading, Paragraph} from './CustomText';
+import { Container } from '@nextui-org/react';
+import { Heading, Paragraph } from './CustomText';
 import NextImage from './NextImage';
 
 export default function ShowAndMediaArticle() {
   return (
     <Container md>
-      <Breadcrumbs
-        data={[
-          {
-            text: 'Home',
-            href: '/',
-          },
-          {text: 'About', href: `${PageNames.ABOUT.en}`},
-          {text: 'DR. BILL AT THE NFT EXHIBITION 02.07.2023', href: 'dr-bill-at-the-nft-exhibition-02.07.2023'},
-        ]}
-      />
       <div className="mt-[30px] lg:px-[100px]">
         <div className="mt-[100px]"/>
         <div className="hidden lg:block relative">

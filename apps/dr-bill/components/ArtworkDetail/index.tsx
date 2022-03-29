@@ -1,6 +1,4 @@
 import { Container } from '@nextui-org/react';
-import Breadcrumbs from '../Breadcrumbs';
-import { PageNames } from '../../constants/pageNames';
 import { Heading, Paragraph } from '../CustomText';
 import NextImage from '../NextImage';
 import SquareBtn from '../Button/SquareBtn';
@@ -34,23 +32,6 @@ export default function ArtworkDetail({
   return (
     <Watermark text={artwork.title}>
       <Container md>
-        <Breadcrumbs
-          data={[
-            {
-              text: 'Home',
-              href: '/',
-            },
-            { text: 'Artworks', href: `${PageNames.ARTWORK.en}` },
-            {
-              text: 'Generative Art Vending Machine',
-              href: `/${PageNames.ARTWORK.en}/${categorySlug}`,
-            },
-            {
-              text: artwork.title,
-              href: `/${PageNames.ARTWORK.en}/${categorySlug}/${artwork.slug}`,
-            },
-          ]}
-        />
         <div className="mt-[100px] mb-[200px]">
           <div className="grid md:grid-cols-2 gap-16">
             <div>

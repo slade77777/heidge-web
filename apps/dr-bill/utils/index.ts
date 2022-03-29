@@ -1,6 +1,9 @@
 export function genSlug(str: string) {
   return str.trim().toLowerCase().replace(/\s/g, '-');
 }
+export function decodeSlug(str: string) {
+  return str.replace(/-/g, ' ')
+}
 export function arr2obj(
   arr: Array<any>,
   fieldName: string,

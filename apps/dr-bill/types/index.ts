@@ -66,3 +66,7 @@ export type Content = {
   more?: string;
   content_type?: ContentType;
 };
+
+export type Response<T> = Promise<{
+  data: T;
+}>;
