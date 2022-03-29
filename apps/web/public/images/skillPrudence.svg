@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>skillPrudence</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="75.0041801%" y1="93.3084887%" x2="24.9958199%" y2="6.69149518%" id="linearGradient-1">
+            <stop stop-color="#007A3E" stop-opacity="0.9" offset="0.5128205%"></stop>
+            <stop stop-color="#088C3C" stop-opacity="0.9036" offset="11.8%"></stop>
+            <stop stop-color="#12A33A" stop-opacity="0.9096" offset="30.52%"></stop>
+            <stop stop-color="#19B138" stop-opacity="0.9152" offset="48.06%"></stop>
+            <stop stop-color="#1BB638" stop-opacity="0.92" offset="63.13%"></stop>
+            <stop stop-color="#0FD81E" stop-opacity="0.92" offset="77.12%"></stop>
+            <stop stop-color="#04F408" stop-opacity="0.92" offset="91.65%"></stop>
+            <stop stop-color="#00FF00" stop-opacity="0.92" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="17.8598785%" y1="11.6968826%" x2="82.1401215%" y2="88.3031174%" id="linearGradient-2">
+            <stop stop-color="#1BA438" stop-opacity="0.92" offset="0%"></stop>
+            <stop stop-color="#15B82C" stop-opacity="0.9414" offset="26.76%"></stop>
+            <stop stop-color="#06EC0C" stop-opacity="0.9851" offset="81.36%"></stop>
+            <stop stop-color="#00FF00" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="skillPrudence" fill-rule="nonzero">
+            <g id="Layer_1">
+                <circle id="Oval" fill="url(#linearGradient-1)" cx="50" cy="50" r="50"></circle>
+                <circle id="Oval" fill="url(#linearGradient-2)" cx="50.0803859" cy="50.8842444" r="39.7106109"></circle>
+            </g>
+            <g id="Layer_2" transform="translate(17.684887, 36.495177)" fill="#016610">
+                <circle id="Oval" cx="57.9742765" cy="17.2990354" r="3.47266881"></circle>
+                <path d="M53.7299035,23.7299035 C38.6495177,42.0257235 21.6720257,28.6334405 21.6720257,28.6334405 C5.14469453,30.7717042 2.94212219,15.4662379 2.94212219,15.4662379 C2.39549839,32.0900322 21.414791,30.1446945 21.414791,30.1446945 C21.414791,30.1446945 40.8038585,44.4051447 53.7299035,23.7299035" id="Path"></path>
+                <path d="M24.6945338,34.4051447 C24.6945338,34.4051447 27.0900322,41.4469453 36.0932476,40.3054662 C36.1093248,40.2893891 26.3665595,43.4565916 24.6945338,34.4051447 Z" id="Path"></path>
+                <path d="M56.5755627,28.8102894 C56.5755627,28.8102894 55.4823151,22.4437299 48.6173633,22.9581994 C48.6173633,22.9581994 56.221865,20.7234727 56.5755627,28.8102894 Z" id="Path"></path>
+                <path d="M31.1093248,27.6366559 C32.170418,23.1832797 29.4212219,18.6977492 24.9678457,17.6366559 C20.5144695,16.5755627 16.0289389,19.3247588 14.9678457,23.778135 L22.266881,27.2186495 L31.1093248,27.6366559 Z" id="Path"></path>
+                <polyline id="Path" points="22.4598071 29.7106109 23.7138264 24.8874598 22.0900322 24.7427653 20.8360129 29.5659164"></polyline>
+                <path d="M55.0160772,12.7009646 C55.0160772,12.7009646 61.8006431,9.32475884 65.8842444,14.0996785 C65.8842444,14.0996785 63.1028939,6.38263666 55.0160772,12.7009646 Z" id="Path"></path>
+                <circle id="Oval" cx="38.2475884" cy="23.9871383" r="1"></circle>
+                <circle id="Oval" cx="42.1221865" cy="24.0192926" r="1"></circle>
+                <circle id="Oval" cx="39.9356913" cy="26.9614148" r="1"></circle>
+                <circle id="Oval" cx="10.1607717" cy="15.4823151" r="1"></circle>
+                <circle id="Oval" cx="13.5530547" cy="17.3151125" r="1"></circle>
+                <circle id="Oval" cx="10.2411576" cy="18.8906752" r="1"></circle>
+                <circle id="Oval" cx="5.11254019" cy="8.32797428" r="3.47266881"></circle>
+                <path d="M0.0321543408,0.852090032 C0.0321543408,0.852090032 7.5562701,-0.0964630225 9.82315113,5.75562701 C9.82315113,5.75562701 9.75884244,-2.4437299 0.0321543408,0.852090032 Z" id="Path"></path>
+                <path d="M40.3536977,33.7620579 C40.3536977,33.7620579 43.0868167,31.6720257 40.3536977,29.5819936 C37.6205788,27.4919614 34.2122186,30.2090032 33.1189711,31.0289389 C31.1897106,32.4758842 28.4565916,32.7974277 28.4565916,32.7974277 C28.4565916,32.7974277 36.3344051,34.8874598 40.3536977,33.7620579 Z" id="Path"></path>
+            </g>
+        </g>
+    </g>
+</svg>

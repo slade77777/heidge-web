@@ -1,0 +1,67 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="100px" height="100px" viewBox="0 0 100 100" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 53.2 (72643) - https://sketchapp.com -->
+    <title>powerFire</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="67.1056592%" y1="96.9974116%" x2="32.8943408%" y2="3.00258842%" id="linearGradient-1">
+            <stop stop-color="#C40036" stop-opacity="0.9" offset="0%"></stop>
+            <stop stop-color="#D50026" stop-opacity="0.907" offset="20.26%"></stop>
+            <stop stop-color="#FF0000" stop-opacity="0.92" offset="57.98%"></stop>
+            <stop stop-color="#FF0401" stop-opacity="0.9314" offset="63.98%"></stop>
+            <stop stop-color="#FF1106" stop-opacity="0.9435" offset="70.33%"></stop>
+            <stop stop-color="#FE260D" stop-opacity="0.9559" offset="76.85%"></stop>
+            <stop stop-color="#FD4417" stop-opacity="0.9686" offset="83.49%"></stop>
+            <stop stop-color="#FD6A24" stop-opacity="0.9814" offset="90.22%"></stop>
+            <stop stop-color="#FC9833" stop-opacity="0.9941" offset="96.92%"></stop>
+            <stop stop-color="#FBB03B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="16.4409717%" y1="-6.95797571%" x2="82.632004%" y2="105.384595%" id="linearGradient-2">
+            <stop stop-color="#B50041" stop-opacity="0.9" offset="0%"></stop>
+            <stop stop-color="#C60032" stop-opacity="0.9058" offset="20.7%"></stop>
+            <stop stop-color="#F3000B" stop-opacity="0.9172" offset="61.65%"></stop>
+            <stop stop-color="#FF0000" stop-opacity="0.92" offset="71.83%"></stop>
+            <stop stop-color="#FF0401" stop-opacity="0.9314" offset="75.85%"></stop>
+            <stop stop-color="#FF1106" stop-opacity="0.9435" offset="80.11%"></stop>
+            <stop stop-color="#FE260D" stop-opacity="0.9559" offset="84.48%"></stop>
+            <stop stop-color="#FD4417" stop-opacity="0.9686" offset="88.93%"></stop>
+            <stop stop-color="#FD6A24" stop-opacity="0.9814" offset="93.44%"></stop>
+            <stop stop-color="#FC9833" stop-opacity="0.9941" offset="97.94%"></stop>
+            <stop stop-color="#FBB03B" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-52.5711858%" y1="49.1871524%" x2="73.207536%" y2="50.1786791%" id="linearGradient-3">
+            <stop stop-color="#ED1C24" offset="24.62%"></stop>
+            <stop stop-color="#EE2324" offset="35.74%"></stop>
+            <stop stop-color="#EF3623" offset="51.77%"></stop>
+            <stop stop-color="#F25521" offset="70.76%"></stop>
+            <stop stop-color="#F5801F" offset="91.86%"></stop>
+            <stop stop-color="#F7931E" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-21.9916131%" y1="117.66144%" x2="66.3754567%" y2="35.6166875%" id="linearGradient-4">
+            <stop stop-color="#ED1C24" offset="0%"></stop>
+            <stop stop-color="#EF3223" offset="15.15%"></stop>
+            <stop stop-color="#F36620" offset="54.31%"></stop>
+            <stop stop-color="#F6871F" offset="83.8%"></stop>
+            <stop stop-color="#F7931E" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="-36.0105822%" y1="85.5480988%" x2="49.6680703%" y2="46.5652167%" id="linearGradient-5">
+            <stop stop-color="#ED1C24" offset="0%"></stop>
+            <stop stop-color="#EF3823" offset="26.89%"></stop>
+            <stop stop-color="#F57F1F" offset="84.65%"></stop>
+            <stop stop-color="#F7931E" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="powerFire" fill-rule="nonzero">
+            <g id="Layer_1">
+                <circle id="Oval" fill="url(#linearGradient-1)" cx="50" cy="50" r="50"></circle>
+                <circle id="Oval" fill="url(#linearGradient-2)" cx="50.9646302" cy="50" r="39.7106109"></circle>
+            </g>
+            <g id="Layer_2" transform="translate(19.935691, 5.305466)">
+                <polyline id="Path" fill="url(#linearGradient-3)" points="18.0707395 63.6655949 41.0128617 73.4244373 35.659164 64.3086817 55.5305466 68.8585209 40.2572347 55.9967846 61.5916399 43.2958199 37.073955 42.3151125 37.8938907 34.4855305 18.1832797 45.0643087"></polyline>
+                <polyline id="Path" fill="url(#linearGradient-4)" points="0.144694534 61.0771704 53.7299035 53.8585209 36.2057878 48.1350482 62.6366559 30.4983923 34.7427653 33.8424437 46.414791 0.128617363 19.340836 31.318328 12.2829582 5.32154341"></polyline>
+                <path d="M1.43086817,71.2057878 C1.43086817,71.2057878 5.36977492,75.7234727 9.24437299,77.7974277 L29.4051447,76.8327974 L22.7009646,71.0450161 L45.3376206,64.2122186 L25.4823151,59.2122186 L33.4244373,43.1189711 L15.8360129,54.7909968 L12.1543408,42.7813505" id="Path" fill="url(#linearGradient-5)"></path>
+            </g>
+        </g>
+    </g>
+</svg>

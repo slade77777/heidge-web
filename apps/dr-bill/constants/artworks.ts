@@ -6,7 +6,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
     isHighlight: true,
     slug: 'plotter-art',
     image: {
-      src: 'https://res.cloudinary.com/suborg/image/upload/v1648114058/DrBill/common/generative_art_thumbnail.png',
+      src: '/v1648114058/DrBill/common/generative_art_thumbnail.png',
     },
     description:
       'This collection presents the original plotter drawings (pen on paper) programmed in FORTRAN, executed on a CDC6500 mainframe computer and an offline Calcomp 936 drum plotter. Done at Michigan State University during my MFA/PhD era, 1974-1981.',
@@ -24,7 +24,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'A regular tessellation of overlapping “tiles.” The tiles alternate. The form of the tiles are two variations of a circle...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255704/DrBill/1920/plotter-1.png',
+            src: '/v1647255704/DrBill/1920/plotter-1.png',
           },
           fullDescription: [],
         },
@@ -34,7 +34,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'This was a surprising variation of one of my earliest Generative Art pieces, Organic Illusion...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255704/DrBill/1920/plotter-2.png',
+            src: '/v1647255704/DrBill/1920/plotter-2.png',
           },
           fullDescription: [],
         },
@@ -44,7 +44,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'This was a proof of concept drawing of an algorithm I created for changing one image into another...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255704/DrBill/1920/plotter-3.png',
+            src: '/v1647255704/DrBill/1920/plotter-3.png',
           },
           fullDescription: [],
         },
@@ -54,7 +54,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'Hard to believe these two images have survived so long. The printer was one of the first computer output devices...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-4.png',
+            src: '/v1647255703/DrBill/1920/plotter-4.png',
           },
           fullDescription: [],
         },
@@ -64,7 +64,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'A regular grid of square tiles. Each tile consists of a square with its perimeter divided into the same number of points of the circle it contains....',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-5.png',
+            src: '/v1647255703/DrBill/1920/plotter-5.png',
           },
           fullDescription: [],
         },
@@ -74,7 +74,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'The scorpion is a hand-digitized figure taken from a woven rug purchased on a vacation to Greece...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-6.png',
+            src: '/v1647255703/DrBill/1920/plotter-6.png',
           },
           fullDescription: [],
         },
@@ -84,7 +84,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'This drawing uses the Goose figure from a set of hand-digitized representational images...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-7.png',
+            src: '/v1647255703/DrBill/1920/plotter-7.png',
           },
           fullDescription: [],
         },
@@ -94,7 +94,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'Kolomyjec’s Moire was my attempt at making an Algorithmic Art contribution to the Op Art Movement...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-8.png',
+            src: '/v1647255703/DrBill/1920/plotter-8.png',
           },
           fullDescription: [],
         },
@@ -104,7 +104,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'Hard to believe these two images have survived so long. The printer was one of the first computer output devices...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-9.png',
+            src: '/v1647255703/DrBill/1920/plotter-9.png',
           },
           fullDescription: [],
         },
@@ -114,7 +114,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'This is an early work. It is a regular grid tessellation where each “tile” consists of two randomly generated overlapping ellipse shapes...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-10.png',
+            src: '/v1647255703/DrBill/1920/plotter-10.png',
           },
           fullDescription: [],
         },
@@ -124,7 +124,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'A variation of Banana-Cone. Linear interpolation between two digitized representational images...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-11.png',
+            src: '/v1647255703/DrBill/1920/plotter-11.png',
           },
           fullDescription: [],
         },
@@ -134,7 +134,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'I had the idea to do a bird-fish transformation with digitized data...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-12.png',
+            src: '/v1647255703/DrBill/1920/plotter-12.png',
           },
         },
         {
@@ -143,7 +143,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'M.C. Escher demonstrated this algorithm by employing traditional media and interlocking figures in his “square limit” graphic works...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-13.png',
+            src: '/v1647255703/DrBill/1920/plotter-13.png',
           },
           fullDescription: [],
         },
@@ -153,7 +153,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'The is regular grid tessellation made up of 9 column x 7 rows of tiles...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-14.png',
+            src: '/v1647255703/DrBill/1920/plotter-14.png',
           },
           fullDescription: [],
         },
@@ -163,7 +163,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'This is a simple regular grid tessellation; the tiles are either a twinkling star or a moon...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255703/DrBill/1920/plotter-15.png',
+            src: '/v1647255703/DrBill/1920/plotter-15.png',
           },
           fullDescription: [],
         },
@@ -173,7 +173,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'le Morté de Beardsley is a carefully designed image. I wanted to pay homage to Aubrey Beardley...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-16.png',
+            src: '/v1647255700/DrBill/1920/plotter-16.png',
           },
           fullDescription: [],
         },
@@ -183,7 +183,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'Horizons was an image intended as a wedding present for friends...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-17.png',
+            src: '/v1647255700/DrBill/1920/plotter-17.png',
           },
           fullDescription: [],
         },
@@ -192,7 +192,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           name: 'Concentric Squares Random',
           description: 'Concentric Squares Random...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-18.png',
+            src: '/v1647255700/DrBill/1920/plotter-18.png',
           },
           fullDescription: [],
         },
@@ -202,7 +202,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'This drawing uses the Frog figure from a set of hand-digitized representational images...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-19.png',
+            src: '/v1647255700/DrBill/1920/plotter-19.png',
           },
           fullDescription: [],
         },
@@ -212,7 +212,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'This is regular grid tessellation made up of 9 column x 7 rows of tiles...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-20.png',
+            src: '/v1647255700/DrBill/1920/plotter-20.png',
           },
           fullDescription: [],
         },
@@ -222,7 +222,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'This drawing uses all the figures from a set of hand-digitized representational images...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-21.png',
+            src: '/v1647255700/DrBill/1920/plotter-21.png',
           },
           fullDescription: [],
         },
@@ -232,7 +232,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'This drawing uses the Elephant figure from a set of hand-digitized representational images...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255700/DrBill/1920/plotter-22.png',
+            src: '/v1647255700/DrBill/1920/plotter-22.png',
           },
           fullDescription: [],
         },
@@ -242,7 +242,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'An Op Art inspired work. Bulges and Dents is a two tile tessellation where each tile is a tessellation...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-24.png',
+            src: '/v1647255699/DrBill/1920/plotter-24.png',
           },
           fullDescription: [],
         },
@@ -252,7 +252,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'Boxes I is a generative art "derivative" piece inspired by one of the earliest pioneers of the generative art medium..',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-25.png',
+            src: '/v1647255699/DrBill/1920/plotter-25.png',
           },
           fullDescription: [],
         },
@@ -262,7 +262,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'This drawing uses the Goose figure from a set of hand-digitized representational images...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-26.png',
+            src: '/v1647255699/DrBill/1920/plotter-26.png',
           },
           fullDescription: [],
         },
@@ -272,7 +272,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'Boxes II is a generative art "derivative" piece inspired by one of the earliest pioneers of the generative art medium...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-27.png',
+            src: '/v1647255699/DrBill/1920/plotter-27.png',
           },
           fullDescription: [],
         },
@@ -282,7 +282,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'This was my very first computer graphic image I considered an original work of art...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-28.png',
+            src: '/v1647255699/DrBill/1920/plotter-28.png',
           },
           fullDescription: [],
         },
@@ -292,7 +292,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
           description:
             'This drawing uses the Goose figure from a set of hand-digitized representational images...',
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-29.png',
+            src: '/v1647255699/DrBill/1920/plotter-29.png',
           },
           fullDescription: [],
         },
@@ -302,7 +302,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
   'generative-art-vending-machine': {
     title: 'Generative Art Vending Machine',
     image: {
-      src: 'https://res.cloudinary.com/suborg/image/upload/v1648119063/DrBill/common/vending_machine.png',
+      src: '/v1648119063/DrBill/common/vending_machine.png',
     },
     slug: 'generative-art-vending-machine',
     description:
@@ -350,7 +350,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
             `A regular grid of nx by ny square tiles. The area of each tile has a random color-filled background, then one of two versions of a tile containing a diamond shape where the diagonal of the diamond shape goes from the upper right to lower left, or upper left to lower right. The fill color of the diamond shape is random as well.`,
           ],
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1648161076/DrBill/vending_machine/kgas01_sqDot_bqthqd.png',
+            src: '/v1648161076/DrBill/vending_machine/kgas01_sqDot_bqthqd.png',
           },
         },
         {
@@ -365,7 +365,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
             `In my derivative variation I begin by filling a large black area of many white square tiles. Then I devised an algorithm to randomly pick sub-areas in varying size to overdraw sections with several variations of the square: rotated, skewed or diamond shaped. Vasarely would have been very conscious of what he was doing. I merely generalised his process and let the computer serendipitously make those choices. The result is an ever changing visual field where static and transformed elements visually interact.`,
           ],
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1648161077/DrBill/vending_machine/kgas18_Sirko_ojmrmh.png',
+            src: '/v1648161077/DrBill/vending_machine/kgas18_Sirko_ojmrmh.png',
           },
         },
         {
@@ -378,7 +378,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
             `A regular grid of square tiles. A coin-toss algorithm chooses one of two tiles. Tile one has a quarter circle in the upper right and lower left quadrants touching the midpoints of its sides. Tile two has a quarter circle in the upper left and lower right quadrants touching the midpoints of its sides. Individual tiles disappear as the arcs in adjacent tiles join up. The resulting image produces a Gestalt effect that illustrates the visual whole becoming more than the sum of its parts.`,
           ],
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1648161076/DrBill/vending_machine/kgas09_SeaOfHex_kusfbe.png',
+            src: '/v1648161076/DrBill/vending_machine/kgas09_SeaOfHex_kusfbe.png',
           },
         },
         {
@@ -394,7 +394,7 @@ export const ARTWORKS: Record<ArtSlugType, ArtworkCategory> = {
             `What makes this image interesting to me is the way the faces of contiguous cubes combine and how the areas of the square that the cube does not cover (the black background) integrate into the piece and provide structure producing a visual "whole greater than the sum of its parts.`,
           ],
           image: {
-            src: 'https://res.cloudinary.com/suborg/image/upload/v1648161076/DrBill/vending_machine/kgas03_DiaTwirl_tq4pzp.png',
+            src: '/v1648161076/DrBill/vending_machine/kgas03_DiaTwirl_tq4pzp.png',
           },
         },
       ],

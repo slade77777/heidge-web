@@ -1,45 +1,7 @@
 import { useState } from 'react';
-import { Button, Container, Input, Text } from '@nextui-org/react';
-import { Discord, Instagram, Twitter } from 'shared/icons';
-import { classNames } from 'shared/utils';
+import { Button, Container, Text } from '@nextui-org/react';
 import { toast } from 'shared';
-
-const socialNetworks = [
-  {
-    icon: <Discord className="h-5 w-5" />,
-    href: process.env.NEXT_PUBLIC_TWITTER_URL,
-  },
-  {
-    icon: <Twitter className="h-5 w-5" />,
-  },
-  {
-    icon: <Instagram className="h-5 w-5" />,
-  },
-];
-
-const SocialNetworkList = ({ className }: { className?: string }) => (
-  <div className={classNames('flex flex-row gap-6 items-center', className)}>
-    {socialNetworks.map((e, i) => (
-      <a href={e.href} key={i} target="_blank" rel="noreferrer">
-        <Button
-          css={{
-            padding: 0,
-            minWidth: '50px',
-            height: '50px',
-            borderRadius: '100%',
-            background: '$primary',
-            display: 'flex',
-            justifyContent: 'center',
-            alignItems: 'center',
-            color: '$background',
-          }}
-        >
-          {e.icon}
-        </Button>
-      </a>
-    ))}
-  </div>
-);
+import SocialNetworkList from './SocialNetworkList';
 
 const Subscribe = ({ className }) => {
   const [email, setEmail] = useState('');
@@ -70,38 +32,14 @@ const Subscribe = ({ className }) => {
   return (
     <div className={className}>
       <form onSubmit={handleSubmit}>
-        <Input
-          placeholder="Enter Your Email..."
+        <input
+          placeholder="Enter your email..."
           color="success"
-          fullWidth
-          animated={false}
-          rounded={false}
           onChange={handleChange}
           required
+          className="px-3 py-2 w-full"
           value={email}
           type="email"
-          css={{
-            label: {
-              height: '54px',
-              background: 'transparent',
-              borderRadius: 0,
-              border: '1px solid $primary',
-              boxSizing: 'border-box',
-            },
-            input: {
-              fontSize: '$xs',
-              lineHeight: '30.6px',
-              fontWeight: 300,
-              color: '$primary',
-            },
-            'input::placeholder': {
-              color: '$primary',
-            },
-            'input:focus': {
-              outline: 'none',
-              boxShadow: 'none',
-            },
-          }}
         />
         <Button
           type="submit"
@@ -161,7 +99,7 @@ export default function Footer() {
           <Subscribe className="w-full md:max-w-[306px] mx-auto mb-[50px]" />
         </div>
         <div className="w-full md:w-[335px] md:order-first">
-          <SocialNetworkList className="mb-5 w-full" />
+          <SocialNetworkList className="mb-5 w-full" isSolid />
           <Text
             css={{
               lineHeight: '32px',

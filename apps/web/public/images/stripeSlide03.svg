@@ -1,0 +1,40 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="904px" height="885px" viewBox="0 0 904 885" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Bg_Stripe</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="0.229978578%" y1="49.9999898%" x2="50.1799636%" y2="49.9999898%" id="linearGradient-1">
+            <stop stop-color="#FF5585" stop-opacity="0.868280157" offset="0%"></stop>
+            <stop stop-color="#FF5585" stop-opacity="0.337767701" offset="58.0236486%"></stop>
+            <stop stop-color="#FF5585" stop-opacity="0.188701923" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="5.06879025%" y1="93.2887644%" x2="66.8909475%" y2="11.4332168%" id="linearGradient-2">
+            <stop stop-color="#FF5585" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#FF5585" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="4.92459811%" y1="95.7048551%" x2="107.324732%" y2="6.38881896%" id="linearGradient-3">
+            <stop stop-color="#FF5585" stop-opacity="0.5" offset="0%"></stop>
+            <stop stop-color="#FF5585" stop-opacity="0" offset="74.76%"></stop>
+        </linearGradient>
+        <linearGradient x1="4.03564136e-05%" y1="50.0000344%" x2="74.7599834%" y2="50.0000344%" id="linearGradient-4">
+            <stop stop-color="#FFA4BE" stop-opacity="0.798295455" offset="0%"></stop>
+            <stop stop-color="#FF5585" stop-opacity="0.6" offset="52.093011%"></stop>
+            <stop stop-color="#FF5585" stop-opacity="0.171629152" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop_the-powers01" transform="translate(-536.000000, 0.000000)" fill-rule="nonzero">
+            <g id="bg" transform="translate(0.000000, -105.000000)">
+                <g id="Group-3" transform="translate(514.000000, 0.000000)">
+                    <g id="Bg_Stripe" transform="translate(22.000000, 0.000000)">
+                        <path d="M1237.003,5.002 L750.134,5.002 L128.547,626.589 C45.514,709.622 45.512,844.24 128.545,927.273 C211.575,1010.303 346.194,1010.303 429.228,927.269 L1237.003,119.494 L1237.003,5.002 Z" id="Path" fill="url(#linearGradient-1)"></path>
+                        <path d="M620.058,3 L327.13,295.928 C284.077,338.981 284.076,408.784 327.13,451.837 C370.183,494.891 439.986,494.891 483.04,451.837 L931.876,3 L620.058,3 Z" id="Path" fill="url(#linearGradient-2)"></path>
+                        <path d="M1233,0.676 L1169.149,0.676 L569.668,600.157 C568.836,600.942 568.011,601.737 567.197,602.552 C521.215,648.534 521.216,723.085 567.197,769.068 C612.366,814.237 685.102,815.031 731.245,771.459 L731.283,771.497 L1233,269.779 L1233,0.676 Z" id="Path" fill="url(#linearGradient-3)"></path>
+                        <path d="M386.819,3 L17.719,372.1 C-5.858,395.677 -5.859,433.902 17.719,457.478 C41.295,481.054 79.52,481.054 103.097,457.477 L557.573,3 L386.819,3 Z" id="Path" fill="url(#linearGradient-4)"></path>
+                    </g>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

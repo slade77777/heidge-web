@@ -12,7 +12,7 @@ import Header from '../components/Header';
 import { darkTheme, lightTheme } from '../customThemes';
 import Footer from '../components/Footer';
 import Background from '../components/Background';
-import { AppProvider, Toaster } from 'shared';
+import { MetamaskProvider, Toaster } from 'shared';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -34,7 +34,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
         dark: darkTheme.className,
       }}
     >
-      <AppProvider>
+      <MetamaskProvider>
         <NextUIProvider>
           {Component.getLayout ? (
             getLayout(<Component {...pageProps} />)
@@ -47,7 +47,7 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
             </Background>
           )}
         </NextUIProvider>
-      </AppProvider>
+      </MetamaskProvider>
     </NextThemesProvider>
   );
 }

@@ -3,6 +3,8 @@ const withTM = require("next-transpile-modules")(["shared"]);
 module.exports = withTM({
   reactStrictMode: true,
   images: {
-    domains: ['cdn.discordapp.com', 'res.cloudinary.com', '5.161.46.108']
+    loader: 'cloudinary',
+    path:'https://res.cloudinary.com/suborg/',
+    formats: ['image/avif', 'image/webp']
   }
 });
