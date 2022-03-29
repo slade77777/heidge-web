@@ -1,6 +1,6 @@
 import { Content } from '../types';
 
-const baseUrl = process.env.NEXT_PUBLIC_API_URL;
+const baseUrl = process.env.API_URL;
 
 export function getHomeContents(): Promise<Content[]> {
   return fetch(`${baseUrl}/content/home/0`).then((res) => res.json());
