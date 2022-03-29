@@ -14,8 +14,10 @@ export default function ArtworksByCategory({
   artworks: Content[];
   category: Content;
 }) {
+  if (!category) return null;
+
   return (
-    <Watermark text={category?.title}>
+    <Watermark text={category.title}>
       <Container md>
         <Breadcrumbs
           data={[
@@ -24,14 +26,14 @@ export default function ArtworksByCategory({
               href: '/',
             },
             { text: 'Artworks', href: `${PageNames.ARTWORK.en}` },
-            { text: category?.title },
+            { text: category.title },
           ]}
         />
         <div className="mt-[100px] mb-[200px]">
           <div className="flex flex-col items-center md:items-start md:grid lg:grid-cols-12 gap-12 mt-[200px]">
             <div className="col-span-12 md:col-span-6 lg:col-span-5 sticky top-10">
               <div className="my-auto">
-                <Heading> {category?.title}</Heading>
+                <Heading> {category.title}</Heading>
                 <div>
                   <Paragraph className="mt-3">{category.text}</Paragraph>
                 </div>
