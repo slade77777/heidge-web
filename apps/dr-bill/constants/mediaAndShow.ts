@@ -8,7 +8,7 @@ export const SHOW_AND_MEDIA: MediaShowType[] = [
     description:
       'My artwork will be exhibited on digital screens at this NFT Art gathering in Toronto on March 26, 2022.',
     image: {
-      src: 'https://res.cloudinary.com/suborg/image/upload/v1648110595/DrBill/common/Post_Instagram_Facebook__1080x1080_krhq1a.png',
+      src: '/v1648110595/DrBill/common/Post_Instagram_Facebook__1080x1080_krhq1a.png',
     },
     href: 'https://nft-art.eventbrite.ca',
   },
@@ -19,7 +19,7 @@ export const SHOW_AND_MEDIA: MediaShowType[] = [
     description:
       'Concept behind ‘shotgun’ art approaches 1940s abstract expressionism',
     image: {
-      src: 'https://res.cloudinary.com/suborg/image/upload/w_800/v1648181711/DrBill/common/Computer-World-1978_ex2ke6.png',
+      src: '/w_800/v1648181711/DrBill/common/Computer-World-1978_ex2ke6.png',
     },
     href: 'https://books.google.ca/books?id=ICoe1vr9x3kC&lpg=PA30&ots=jtzdeSTnMh&dq=michigan+state+university+college+of+engineering+ibm+1800&pg=PA30&redir_esc=y#v=onepage&q=michigan%20state%20university%20college%20of%20engineering%20ibm%201800&f=true',
   },
@@ -30,7 +30,7 @@ export const SHOW_AND_MEDIA: MediaShowType[] = [
     description:
       'Dr. Bill takes the audience of an NFT Art event in Toronto on the generative art journey, from the 70’s until now.',
     image: {
-      src: 'https://res.cloudinary.com/suborg/image/upload/w_800/v1648181783/DrBill/common/Dr.Bill-Generative-Art-Retrospective_wbiujp.png',
+      src: '/w_800/v1648181783/DrBill/common/Dr.Bill-Generative-Art-Retrospective_wbiujp.png',
     },
     href: 'https://www.youtube.com/watch?v=lZMvtv2drQA',
   },
@@ -41,7 +41,7 @@ export const SHOW_AND_MEDIA: MediaShowType[] = [
     description:
       ' An interesting generative art collection by Alex Rudloff that was influenced by me and other OGs of Generative Art.',
     image: {
-      src: 'https://res.cloudinary.com/suborg/image/upload/w_800/v1648181854/DrBill/common/1_DbdGAGUSR4Al-W4_dWvVcA_siva5c.png',
+      src: '/w_800/v1648181854/DrBill/common/1_DbdGAGUSR4Al-W4_dWvVcA_siva5c.png',
     },
     href: 'https://medium.com/@alexrudloff/blocks-a-generative-art-nft-built-exclusively-on-stacks-242a7295c404',
   },
@@ -51,7 +51,7 @@ export const SHOW_AND_MEDIA: MediaShowType[] = [
     title: ' The appeal of computer graphics',
     description: 'An article I wrote in September 1975',
     image: {
-      src: 'https://res.cloudinary.com/suborg/image/upload/v1647255699/DrBill/1920/plotter-28.png',
+      src: '/v1647255699/DrBill/1920/plotter-28.png',
     },
     href: 'https://www.atariarchives.org/artist/sec15.php',
   },

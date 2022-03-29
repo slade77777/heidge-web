@@ -2,7 +2,7 @@ import { FC, memo } from "react";
 import { createSVG } from "../../utils/svg-templates";
 
 const HeidgeImg: FC<{
-  width?: number;
+  width?: number | string;
   color?: string;
   maxWidth?: string;
   imgURL?: string;

@@ -1,0 +1,46 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="1210px" height="1023px" viewBox="0 0 1210 1023" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+    <!-- Generator: Sketch 52.4 (67378) - http://www.bohemiancoding.com/sketch -->
+    <title>Rays</title>
+    <desc>Created with Sketch.</desc>
+    <defs>
+        <linearGradient x1="50.0000251%" y1="99.9999656%" x2="50.000016%" y2="3.93313378e-05%" id="linearGradient-1">
+            <stop stop-color="#00D6FB" offset="0%"></stop>
+            <stop stop-color="#09DAF4" offset="8.65%"></stop>
+            <stop stop-color="#22E6E0" offset="36.59%"></stop>
+            <stop stop-color="#32EDD4" offset="62.02%"></stop>
+            <stop stop-color="#37EFD0" offset="82.52%"></stop>
+            <stop stop-color="#37EFD0" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50.0000116%" y1="100.000035%" x2="50%" y2="1.15725338e-05%" id="linearGradient-2">
+            <stop stop-color="#1BDFF0" offset="0%"></stop>
+            <stop stop-color="#1FE0F0" stop-opacity="0.5753" offset="42.47%"></stop>
+            <stop stop-color="#2CE2EE" stop-opacity="0.1344" offset="86.56%"></stop>
+            <stop stop-color="#31E3EE" stop-opacity="0" offset="100%"></stop>
+        </linearGradient>
+        <linearGradient x1="50.0001476%" y1="100.000005%" x2="50.0001356%" y2="4.06072716e-05%" id="linearGradient-3">
+            <stop stop-color="#00E8C9" offset="0%"></stop>
+            <stop stop-color="#05DBF1" stop-opacity="0.9095" offset="54.86%"></stop>
+            <stop stop-color="#06D9F6" stop-opacity="0.9" offset="60.65%"></stop>
+            <stop stop-color="#06D9F6" stop-opacity="0.2" offset="99.51%"></stop>
+        </linearGradient>
+        <linearGradient x1="49.7044613%" y1="49.7078228%" x2="96.9695676%" y2="96.4205805%" id="linearGradient-4">
+            <stop stop-color="#12DEED" stop-opacity="0.1" offset="0%"></stop>
+            <stop stop-color="#3BE5ED" stop-opacity="0.4806" offset="42.29%"></stop>
+            <stop stop-color="#78EFEE" offset="100%"></stop>
+        </linearGradient>
+    </defs>
+    <g id="Page-1" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+        <g id="Desktop_the-kingdoms" transform="translate(-230.000000, 0.000000)" fill-rule="nonzero">
+            <g id="bg" transform="translate(0.000000, -190.000000)">
+                <g id="Rays" transform="translate(230.000000, 0.000000)">
+                    <polygon id="Path" fill="#008BE7" points="1209 0 1164.83155 44.1694254 1090.97954 118.021378 0 1209 1209 1209 1209 79.8320565 1209 56.390211"></polygon>
+                    <path d="M1014.07949,178 L78.456763,1113.13354 C56.5144123,1135.06433 56.5144123,1170.62113 78.456763,1192.55191 C100.399114,1214.4827 135.97467,1214.4827 157.91702,1192.55191 L1173,178 L1014.07949,178 Z" id="Path" fill="url(#linearGradient-1)" opacity="0.67"></path>
+                    <polygon id="Path" fill="url(#linearGradient-2)" opacity="0.6" points="1210 336 339 1212 961.18576 1212 1210 963.390021"></polygon>
+                    <path d="M1210,213 L400.593269,1022.11328 C357.134563,1065.55003 357.136592,1135.9839 400.593269,1179.42167 C444.045887,1222.85944 514.500408,1222.85944 557.957085,1179.42167 L1209.99899,527.615779 L1210,213 Z" id="Path" fill="url(#linearGradient-3)" opacity="0.76"></path>
+                    <polygon id="Path" fill="url(#linearGradient-4)" opacity="0.6" points="1209 552 697.059457 1064.15665 556 1213 1165.55897 1213 1209 1169.54063"></polygon>
+                </g>
+            </g>
+        </g>
+    </g>
+</svg>

@@ -1,7 +1,10 @@
 import FilledArrow from 'shared/icons/FilledArrow';
-import {classNames} from 'shared/utils';
+import { classNames } from 'shared/utils';
 import Link from 'next/link';
-import {Text} from '@nextui-org/react';
+import { Container, Text } from '@nextui-org/react';
+import { useRouter } from 'next/router';
+import { useCallback, useEffect, useState } from 'react';
+import { decodeSlug } from '../utils';
 
 export type BreadItem = {
   href?: string;
@@ -24,7 +27,7 @@ const BreadcrumbsItem: React.FC<Props> = ({item, isLastItem}) => {
             lineHeight: '11px',
             textTransform: 'uppercase',
             fontWeight: isLastItem ? 600 : 300,
-          }}>{item.text}</Text>
+          }}>{decodeSlug(item.text)}</Text>
         </a>
       </Link>
     );
@@ -35,28 +38,44 @@ const BreadcrumbsItem: React.FC<Props> = ({item, isLastItem}) => {
     lineHeight: '11px',
     textTransform: 'uppercase',
     fontWeight: isLastItem ? 600 : 300,
-  }}>{item.text}</Text>;
+  }}>{decodeSlug(item.text)}</Text>;
 };
 
-export default function Breadcrumbs({data}: { data: BreadItem[] }) {
-  const isLastItem = (currentIndex) => {
-    return currentIndex == data.length - 1;
-  };
+export default function Breadcrumbs() {
+  const [breadcrumbs, setBreadcrumbs] = useState(null);
+  const {asPath} = useRouter();
+  const isLastItem = useCallback((currentIndex) => {
+    return currentIndex == breadcrumbs.length - 1;
+  }, [breadcrumbs]);
+
+  useEffect(() => {
+    if (asPath) {
+      const paths = asPath.split('/');
+      paths.shift();
+      const pathArray = paths.map((path, index) => ({text: path, href: `/${paths.slice(0, index + 1).join('/')}`}));
+      pathArray.unshift({text: 'home', href: '/'});
+      setBreadcrumbs(pathArray);
+    }
+  }, [asPath]);
+
+  if (breadcrumbs?.[1]?.href === '/') return null
 
   return (
-    <nav className="relative">
-      <ol className="flex flex-no-wrap items-center m-0 p-0 list-none z-10">
-        {data.map((item, index) => (
-          <li className="flex items-center gap-4" key={index}>
-            <div className={classNames('text-red-800', isLastItem(index) && 'font-bold')}>
-              <BreadcrumbsItem item={item} isLastItem={isLastItem(index)}/>
-            </div>
-            <span className={classNames('mr-4', isLastItem(index) && 'hidden')}>
-              <FilledArrow/>
+    <Container md>
+      <nav className="relative">
+        <ol className="flex flex-no-wrap items-center m-0 p-0 list-none z-10">
+          {breadcrumbs?.map((item, index) => (
+            <li className="flex items-center gap-4" key={index}>
+              <div className={classNames('text-red-800', isLastItem(index) && 'font-bold')}>
+                <BreadcrumbsItem item={item} isLastItem={isLastItem(index)} />
+              </div>
+              <span className={classNames('mr-4', isLastItem(index) && 'hidden')}>
+              <FilledArrow />
             </span>
-          </li>
-        ))}
-      </ol>
-    </nav>
+            </li>
+          ))}
+        </ol>
+      </nav>
+    </Container>
   );
 };
