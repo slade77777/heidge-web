@@ -18,7 +18,8 @@
     "ethers": "^5.5.3",
     "firebase": "^9.6.9",
     "react-hot-toast": "^2.2.0",
-    "react-query": "^3.34.16"
+    "react-query": "^3.34.16",
+    "react-scroll-parallax": "^3.0.5"
   },
   "prettier": {
     "singleQuote": true,
