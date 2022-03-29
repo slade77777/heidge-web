@@ -12,6 +12,10 @@ export { Toaster } from 'react-hot-toast';
 export { default as toast } from 'react-hot-toast';
 export * from './types';
 export * from './context/ReactQueryContext';
-export { useMetamask, ConnectionEnum } from './context/MetamaskContext';
+export {
+  useMetamask,
+  ConnectionEnum,
+  MetamaskProvider,
+} from './context/MetamaskContext';
 export { AppProvider } from './context/AppContext';
 export * from './context/AuthenticationContext';
