@@ -1,8 +1,9 @@
 import { Heading, Paragraph } from '../CustomText';
 import MoreLink from '../MoreLink';
-import CardArtwork from '../CardArtwork';
 import { PageNames } from '../../constants/pageNames';
 import { Content } from '../../types';
+import Card from '../Card';
+import BlurImage from '../BlurImage';
 
 export default function ArtworkOverview({
   overview,
@@ -12,67 +13,25 @@ export default function ArtworkOverview({
   artwork: Content;
 }) {
   return (
-    <div className="grid grid-cols-12 md:gap-10 lg:gap-12 my-[200px]">
-      <div className="col-span-12 md:col-span-6 lg:col-span-5">
-        <div className="my-auto">
-          <Heading>{overview.title}</Heading>
-          <div className="md:hidden mt-6">
-            <CardArtwork
-              images={[{ src: overview.image }]}
-              tag="New"
-              className="h-full"
-              imageClassName="h-[352px]"
-              href={`${PageNames.ARTWORK.en}`}
-              layout="fill"
-              objectFit="cover"
-            >
-              <Heading
-                css={{
-                  overflow: 'hidden',
-                  '@xs': {
-                    fontSize: '$lg',
-                    lineHeight: '$lg',
-                  },
-                  '@sm': {
-                    fontSize: '$sm',
-                    lineHeight: '$md',
-                  },
-                }}
-              >
-                {overview.title}
-              </Heading>
-            </CardArtwork>
-          </div>
-          <Paragraph css={{ margin: '24px 0' }}>{overview.text}</Paragraph>
-          <MoreLink href={PageNames.ARTWORK.en} content="See all collections" />
-        </div>
+    <div className="grid grid-cols-1 lg:grid-cols-[40%,auto] gap-5 lg:gap-12 my-24 lg:my-48">
+      <div>
+        <Heading>{overview.title}</Heading>
+        <Paragraph css={{ marginTop: '1.5rem' }}>{overview.text}</Paragraph>
+        <MoreLink
+          href={PageNames.ARTWORK.en}
+          content="See all collections"
+          className="hidden lg:block pt-5"
+        />
       </div>
-      <div className="hidden col-span-12 md:col-span-6 lg:col-span-7 md:flex md:justify-end">
-        <CardArtwork
-          images={[{ src: artwork.image }]}
-          href={`${PageNames.ARTWORK.en}/${artwork.slug}`}
-          tag="New"
-          imageClassName="w-[680px] h-[340px]"
-          layout="fill"
-          objectFit="contain"
-        >
-          <Heading
-            css={{
-              overflow: 'hidden',
-              '@xs': {
-                fontSize: '$lg',
-                lineHeight: '$lg',
-              },
-              '@sm': {
-                fontSize: '$sm',
-                lineHeight: '$md',
-              },
-            }}
-          >
-            {artwork.title}
-          </Heading>
-        </CardArtwork>
-      </div>
+      <Card href={`${PageNames.ARTWORK.en}/${artwork.slug}`} tag="New">
+        <BlurImage src={artwork.image} className="aspect-w-2 aspect-h-1" />
+        <Card.CardTitle>{artwork.title}</Card.CardTitle>
+      </Card>
+      <MoreLink
+        href={PageNames.ARTWORK.en}
+        content="See all collections"
+        className="lg:hidden"
+      />
     </div>
   );
 }

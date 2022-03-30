@@ -1,9 +1,9 @@
 import { Container } from '@nextui-org/react';
 import { Heading, Paragraph } from './CustomText';
-import CardArtwork from './CardArtwork';
-import CardRaw from './CardRaw';
 import Watermark from './Watermark';
 import { Content } from '../types';
+import Card from './Card';
+import BlurImage from './BlurImage';
 
 export default function ArtworksByCategory({
   artworks,
@@ -17,9 +17,9 @@ export default function ArtworksByCategory({
   return (
     <Watermark text={category.title}>
       <Container md>
-        <div className="mt-[100px] mb-[200px]">
-          <div className="flex flex-col items-center md:items-start md:grid lg:grid-cols-12 gap-12 mt-[200px]">
-            <div className="col-span-12 md:col-span-6 lg:col-span-5 md:sticky md:top-10">
+        <div className="mt-24 mb-48">
+          <div className="grid grid-cols-1 lg:grid-cols-[40%,auto] gap-10">
+            <div className="">
               <div className="my-auto">
                 <Heading> {category.title}</Heading>
                 <div>
@@ -27,50 +27,19 @@ export default function ArtworksByCategory({
                 </div>
               </div>
             </div>
-            <div className="col-span-12 md:col-span-6 lg:col-span-7">
-              <div className="md:columns-2 gap-8 w-full">
-                {artworks?.map((artwork) => (
-                  <CardArtwork
-                    key={artwork.id}
-                    className="w-full break-inside-avoid relative !mb-8 !last:mb-0"
-                    imageClassName="w-full"
-                    images={[{ src: artwork.image }]}
-                    href={`/artworks/${artwork.content_type}/${artwork.slug}`}
-                    layout="responsive"
-                  >
-                    <CardRaw>
-                      <Heading
-                        css={{
-                          fontSize: '$base',
-                          lineHeight: '$sm',
-                          fontWeight: 400,
-                          marginBottom: '12px',
-                          '@sm': {
-                            fontSize: '$base',
-                            lineHeight: '$sm',
-                          },
-                        }}
-                      >
-                        {artwork.title}
-                      </Heading>
-                      <Paragraph
-                        className="line-clamp-5"
-                        css={{
-                          fontSize: '$base',
-                          lineHeight: '$md',
-                          marginBottom: '12px',
-                          '@sm': {
-                            fontSize: '$base',
-                            lineHeight: '$md',
-                          },
-                        }}
-                      >
-                        {artwork.text}
-                      </Paragraph>
-                    </CardRaw>
-                  </CardArtwork>
-                ))}
-              </div>
+            <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
+              {artworks?.map((artwork) => (
+                <Card
+                  href={`/artworks/${artwork.content_type}/${artwork.slug}`}
+                  key={artwork.id}
+                >
+                  <BlurImage src={artwork.image} />
+                  <Card.CardTitle>{artwork.title}</Card.CardTitle>
+                  <Card.CardBody>
+                    <div className="line-clamp-5">{artwork.text}</div>
+                  </Card.CardBody>
+                </Card>
+              ))}
             </div>
           </div>
         </div>

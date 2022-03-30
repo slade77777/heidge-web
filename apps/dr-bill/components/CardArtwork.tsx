@@ -4,6 +4,7 @@ import { classNames } from 'shared/utils';
 import CardRaw from './CardRaw';
 import NextImage from './NextImage';
 import CustomLink from './CustomLink';
+import Card from './Card';
 
 type Props = {
   images: {
@@ -34,7 +35,12 @@ export default function CardArtwork({
     <CustomLink href={href} isExternalLink={isExternalLink}>
       <CardRaw css={{ border: '1px solid $text' }} className={className}>
         <div className={classNames('relative', imageClassName)}>
-          <NextImage src={images[0].src} alt={images[0].alt} {...props} objectFit="cover" />
+          <NextImage
+            src={images[0].src}
+            alt={images[0].alt}
+            {...props}
+            objectFit="cover"
+          />
         </div>
         <CardRaw
           css={{

@@ -70,3 +70,13 @@ export type Content = {
 export type Response<T> = Promise<{
   data: T;
 }>;
+
+export type Card = {
+  id: number;
+  href?: string;
+  imageSrc: string;
+  description?: string;
+  title: string;
+  tag?: string;
+};
+export type Ratio = `aspect-w-${number} aspect-h-${number}`;

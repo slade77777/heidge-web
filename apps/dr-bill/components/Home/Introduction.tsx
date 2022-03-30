@@ -1,11 +1,11 @@
 import { theme } from '@nextui-org/react';
-import Image from 'next/image';
 import { Heading, Paragraph } from '../CustomText';
 import MoreLink from '../MoreLink';
 import { Content } from '../../types';
+import BlurImage from '../BlurImage';
 
 const DrBillPortrait = ({ imgUrl }: { imgUrl?: string }) => (
-  <Image src={imgUrl} layout="fill" alt="avatar" objectFit="cover" />
+  <BlurImage src={imgUrl} alt="avatar" />
 );
 
 export default function Introduction({ data }: { data: Content }) {
