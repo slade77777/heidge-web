@@ -35,7 +35,7 @@ export default function ArtworkDetail({
 
   useEffect(() => {
     const dataStored = getDataFormLocal(LOCAL_KEY);
-    if (!!dataStored.selected) {
+    if (!!dataStored?.selected) {
       setImgUrls(dataStored.list);
       setGeneratedPhoto(dataStored.selected);
     } else {
