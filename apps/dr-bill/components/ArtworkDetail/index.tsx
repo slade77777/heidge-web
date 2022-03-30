@@ -34,7 +34,7 @@ export default function ArtworkDetail({
   }, [artwork.more, imgUrls]);
 
   useEffect(() => {
-    const dataStored = getDataFormLocal(LOCAL_KEY);
+    const dataStored = getDataFormLocal(`${LOCAL_KEY}-${artwork.more}`);
     if (!!dataStored?.selected) {
       setImgUrls(dataStored.list);
       setGeneratedPhoto(dataStored.selected);
@@ -45,7 +45,7 @@ export default function ArtworkDetail({
 
   function handleSave() {
     toast.success('Saved data');
-    saveToLocal(LOCAL_KEY, {
+    saveToLocal(`${LOCAL_KEY}-${artwork.more}`, {
       list: imgUrls,
       selected: generatedPhoto,
     });
