@@ -63,7 +63,7 @@ export type Content = {
   slug?: string;
   tags?: string;
   link?: string;
-  more?: string;
+  more?: number;
   content_type?: ContentType;
 };
 

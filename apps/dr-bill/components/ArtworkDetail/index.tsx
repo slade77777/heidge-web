@@ -1,12 +1,21 @@
+import { useCallback, useEffect, useState } from 'react';
 import { Container } from '@nextui-org/react';
 import { Heading, Paragraph } from '../CustomText';
 import SquareBtn from '../Button/SquareBtn';
 import GeneratedArtworkList from './GeneratedArtworkList';
 import Watermark from '../Watermark';
 import { Content } from '../../types';
-import { useState } from 'react';
 import { getRandomNumber } from '../../utils';
-import BlurImage from '../BlurImage';
+import { getDataFormLocal, saveToLocal } from '../../utils/localStorage';
+import { toast } from 'shared';
+// import BlurImage from '../BlurImage';
+
+function genImgUrl(more: number) {
+  const random = getRandomNumber(1, 999);
+  return `${process.env.NEXT_PUBLIC_API_URL}/api/generator/${more}-${random}`;
+}
+
+const LOCAL_KEY = 'photo-generation';
 
 export default function ArtworkDetail({
   artwork,
@@ -15,18 +24,35 @@ export default function ArtworkDetail({
   artwork: Content;
   categorySlug?: string;
 }) {
-  const [generatedImages, setGeneratedImages] = useState({});
+  const [imgUrls, setImgUrls] = useState([]);
+  const [generatedPhoto, setGeneratedPhoto] = useState('');
+
+  const generateImagesCb = useCallback(() => {
+    const newPhotoUrl = genImgUrl(artwork.more);
+    setGeneratedPhoto(newPhotoUrl);
+    setImgUrls([...imgUrls, newPhotoUrl]);
+  }, [artwork.more, imgUrls]);
+
+  useEffect(() => {
+    const dataStored = getDataFormLocal(LOCAL_KEY);
+    if (!!dataStored.selected) {
+      setImgUrls(dataStored.list);
+      setGeneratedPhoto(dataStored.selected);
+    } else {
+      generateImagesCb();
+    }
+  }, []);
+
+  function handleSave() {
+    toast.success('Saved data');
+    saveToLocal(LOCAL_KEY, {
+      list: imgUrls,
+      selected: generatedPhoto,
+    });
+  }
 
   if (!artwork) {
     return null;
-  }
-
-  function generateImages(id: number) {
-    const random = getRandomNumber(1, 999);
-    setGeneratedImages((prevState) => ({
-      ...prevState,
-      [random]: `${process.env.NEXT_PUBLIC_API_URL}/api/generator/${id}-${random}`,
-    }));
   }
 
   return (
@@ -47,24 +73,30 @@ export default function ArtworkDetail({
             </div>
             <div className="w-full h-auto">
               <div>
-                <BlurImage src={artwork.image} />
+                <img
+                  src={generatedPhoto}
+                  className="w-[598ox] h-[598px]"
+                  alt="gen-img"
+                />
                 {categorySlug === 'generative-art-vending-machine' && (
                   <>
                     <div className="flex flex-row justify-between gap-2 mt-3">
                       <SquareBtn
                         css={{ flex: 1 }}
-                        onClick={() =>
-                          artwork.id ? generateImages(artwork.id) : undefined
-                        }
+                        onClick={artwork.id ? generateImagesCb : undefined}
                       >
                         Generate
                       </SquareBtn>
-                      <SquareBtn css={{ flex: 1 }}> Save </SquareBtn>
-                      <SquareBtn css={{ flex: 1 }} disabled>
-                        Mint
+                      <SquareBtn css={{ flex: 1 }} onClick={handleSave}>
+                        Save
                       </SquareBtn>
+                      <SquareBtn css={{ flex: 1 }}>Mint</SquareBtn>
                     </div>
-                    <GeneratedArtworkList generatedImages={generatedImages} />
+                    <GeneratedArtworkList
+                      onSelect={setGeneratedPhoto}
+                      imageUrlsList={imgUrls}
+                      currentPhoto={generatedPhoto}
+                    />
                   </>
                 )}
               </div>
