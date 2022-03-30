@@ -1,12 +1,12 @@
 import { Container } from '@nextui-org/react';
 import { Heading, Paragraph } from '../CustomText';
-import NextImage from '../NextImage';
 import SquareBtn from '../Button/SquareBtn';
 import GeneratedArtworkList from './GeneratedArtworkList';
 import Watermark from '../Watermark';
 import { Content } from '../../types';
 import { useState } from 'react';
 import { getRandomNumber } from '../../utils';
+import BlurImage from '../BlurImage';
 
 export default function ArtworkDetail({
   artwork,
@@ -33,7 +33,7 @@ export default function ArtworkDetail({
     <Watermark text={artwork.title}>
       <Container md>
         <div className="mt-[100px] mb-[200px]">
-          <div className="grid md:grid-cols-2 gap-16">
+          <div className="grid lg:grid-cols-2 gap-16">
             <div>
               <Heading css={{ marginBottom: '30px' }}>{artwork.title}</Heading>
               <Paragraph
@@ -47,23 +47,21 @@ export default function ArtworkDetail({
             </div>
             <div className="w-full h-auto">
               <div>
-                <NextImage src={artwork.image} alt="123" />
+                <BlurImage src={artwork.image} />
                 {categorySlug === 'generative-art-vending-machine' && (
                   <>
-                    <div className="flex flex-row justify-between gap-2">
+                    <div className="flex flex-row justify-between gap-2 mt-3">
                       <SquareBtn
                         css={{ flex: 1 }}
                         onClick={() =>
                           artwork.id ? generateImages(artwork.id) : undefined
                         }
                       >
-                        {' '}
-                        Generate{' '}
+                        Generate
                       </SquareBtn>
                       <SquareBtn css={{ flex: 1 }}> Save </SquareBtn>
                       <SquareBtn css={{ flex: 1 }} disabled>
-                        {' '}
-                        Mint{' '}
+                        Mint
                       </SquareBtn>
                     </div>
                     <GeneratedArtworkList generatedImages={generatedImages} />

@@ -1,31 +1,23 @@
-// import CardArtwork from '../CardArtwork';
-// import CardRaw from '../CardRaw';
-// import { Text } from '@nextui-org/react';
-// import { Paragraph } from '../CustomText';
 import { PageNames } from '../../constants/pageNames';
 import { Content } from '../../types';
 import Card from '../Card';
+import BlurImage from '../BlurImage';
 
 export default function ArtworkList({ artworks }: { artworks: Content[] }) {
   return (
-    <div className="grid lg:grid-cols-3 gap-5 md:gap-7 lg:gap-10">
-      <div className="md:col-span-2">
-        <Card
-          ratio="aspect-w-2 aspect-h-1"
-          title={artworks[1].title}
-          imageSrc={artworks[1].image}
-          description={artworks[1].text}
-          href={`${PageNames.ARTWORK.en}/${artworks[1].slug}`}
-        />
-      </div>
-      <div className="md:col-span-1">
-        <Card
-          title={artworks[0].title}
-          imageSrc={artworks[0].image}
-          description={artworks[0].text}
-          href={`${PageNames.ARTWORK.en}/${artworks[0].slug}`}
-        />
-      </div>
+    <div className="grid lg:grid-cols-[33%,1fr] gap-5 md:gap-7 lg:gap-10">
+      {artworks.map((artwork, index) => (
+        <Card href={`${PageNames.ARTWORK.en}/${artwork.slug}`} key={artwork.id}>
+          <BlurImage
+            src={artwork.image}
+            className={`aspect-w-${index === 1 ? 2 : 1} aspect-h-1`}
+          />
+          <Card.CardTitle>{artwork.title}</Card.CardTitle>
+          <Card.CardBody>
+            <div className="line-clamp-5">{artwork.text}</div>
+          </Card.CardBody>
+        </Card>
+      ))}
     </div>
   );
 }

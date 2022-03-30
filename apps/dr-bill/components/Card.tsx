@@ -1,56 +1,50 @@
-import Image from 'next/image';
-import { useState } from 'react';
-import { classNames } from 'shared/utils';
-import { Ratio } from '../types';
 import CustomLink from './CustomLink';
+import { ReactNode } from 'react';
+import { Heading, Paragraph } from './CustomText';
 
 function Card({
+  children,
   href,
-  imageSrc,
-  title,
-  description,
-  tag,
-  ratio,
   isExternalLink,
-  imgAlt,
 }: {
   href?: string;
-  imageSrc: string;
-  imgAlt?: string;
-  description?: string;
-  title: string;
   tag?: string;
-  ratio?: Ratio;
   isExternalLink?: boolean;
+  children: ReactNode;
 }) {
-  const [isLoading, setLoading] = useState(true);
   return (
     <CustomLink href={href} isExternalLink={isExternalLink}>
-      <div className="border border-black">
-        <div
-          className={`${
-            ratio || 'aspect-w-1 aspect-h-1'
-          } w-full overflow-hidden bg-transparent`}
-        >
-          <Image
-            alt={imgAlt}
-            src={imageSrc}
-            layout="fill"
-            objectFit="contain"
-            className={classNames(
-              'duration-700 ease-in-out group-hover:opacity-75',
-              isLoading ? 'blur grayscale' : 'blur-0 grayscale-0',
-            )}
-            onLoadingComplete={() => setLoading(false)}
-          />
-        </div>
-        <div className="px-5">
-          <h3 className="mt-4 text-lg text-black">{title}</h3>
-          <p className="mt-1 font-light line-clamp-5">{description}</p>
-        </div>
-      </div>
+      <div className="border border-black">{children}</div>
     </CustomLink>
   );
 }
+
+export const CardBody = ({ children }: { children: ReactNode }) => {
+  return <Paragraph css={{ padding: '0 1rem 1rem' }}>{children}</Paragraph>;
+};
+
+export const CardTitle = ({ children }: { children: ReactNode }) => {
+  return (
+    <Heading
+      css={{
+        overflow: 'hidden',
+        padding: '1rem',
+        '@xs': {
+          fontSize: '$lg',
+          lineHeight: '$lg',
+        },
+        '@sm': {
+          fontSize: '$sm',
+          lineHeight: '$md',
+        },
+      }}
+    >
+      {children}
+    </Heading>
+  );
+};
+
+Card.CardTitle = CardTitle;
+Card.CardBody = CardBody;
 
 export default Card;

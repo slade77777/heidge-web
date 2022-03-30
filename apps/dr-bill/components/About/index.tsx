@@ -1,18 +1,18 @@
 import { Container } from '@nextui-org/react';
-import Image from 'next/image';
 import CollapsableContent from './CollapsableContent';
 import { Heading, Paragraph } from '../CustomText';
 import Watermark from '../Watermark';
+import BlurImage from '../BlurImage';
 
 export default function About() {
   return (
     <Watermark text="About">
       <Container md>
         <div className="mt-[100px]">
-          <div className="hidden lg:block w-[420px] h-[540px] mr-[54px] relative float-left">
-            <Image
+          <div className="hidden lg:block w-[420px] h-auto mr-8 mb-3 relative float-left">
+            <BlurImage
+              className="aspect-w-3 aspect-h-4"
               src="/e_art:audrey/v1648110601/DrBill/common/20220108_140942_r0apmt.jpg"
-              layout="fill"
               alt="avatar"
             />
           </div>

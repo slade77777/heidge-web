@@ -1,6 +1,4 @@
-import { Text } from '@nextui-org/react';
-import { Heading, Paragraph } from '../CustomText';
-import CardArtwork from '../CardArtwork';
+import { Heading } from '../CustomText';
 import CardSchedule from '../CardSchedule';
 import AdjacentBtn from '../Button/AdjacentBtn';
 import MoreLink from '../MoreLink';
@@ -8,6 +6,8 @@ import { Swiper, SwiperSlide } from 'swiper/react';
 import SwiperCore, { Navigation, Pagination } from 'swiper';
 import { useRef } from 'react';
 import { Content } from '../../types';
+import Card from '../Card';
+import BlurImage from '../BlurImage';
 
 SwiperCore.use([Navigation, Pagination]);
 
@@ -53,19 +53,11 @@ export default function ShowAndMedia({
             <div className="col-span-12 md:col-span-6 lg:col-span-5">
               <div className="my-auto">
                 <div className="relative mx-auto mt-[50px]">
-                  <CardArtwork
-                    images={[{ src: media[0].image }]}
-                    href={media[0].link}
-                    isExternalLink
-                    className="h-full"
-                    imageClassName=""
-                    tag="Events"
-                  >
-                    <Text css={{ lineHeight: '$md', fontWeight: 600 }}>
-                      {media[0].title}
-                    </Text>
-                    <Paragraph>{media[0].text}</Paragraph>
-                  </CardArtwork>
+                  <Card href={media[0].link} isExternalLink tag="Events">
+                    <BlurImage src={media[0].image} />
+                    <Card.CardTitle>{media[0].title}</Card.CardTitle>
+                    <Card.CardBody>{media[0].text}</Card.CardBody>
+                  </Card>
                 </div>
               </div>
             </div>
