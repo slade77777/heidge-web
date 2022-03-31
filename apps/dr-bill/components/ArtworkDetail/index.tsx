@@ -55,6 +55,10 @@ export default function ArtworkDetail({
   }
 
   function handleMint() {
+    if (!account) {
+      toast.error('Please connect wallet');
+      return;
+    }
     const contract = getContract(
       process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
       drBillAbi,
@@ -64,7 +68,7 @@ export default function ArtworkDetail({
     const tokenId = artwork.more * 0x100000000 + Number(randomNo);
 
     contract
-      .mint(account, tokenId, {
+      .mint(tokenId, {
         value: getTotalEthFromWei(),
       })
       .then(() => {
@@ -97,7 +101,12 @@ export default function ArtworkDetail({
             </div>
             <div className="w-full h-auto">
               <div>
-                <CustomImage src={''} width={598} height={598} alt="gen-img" />
+                <CustomImage
+                  src={generatedPhoto}
+                  width={598}
+                  height={598}
+                  alt="gen-img"
+                />
                 {categorySlug === 'generative-art-vending-machine' && (
                   <>
                     <div className="flex flex-row justify-between gap-2 mt-3">

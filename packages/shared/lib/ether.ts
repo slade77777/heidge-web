@@ -12,7 +12,7 @@ export function str2BigNumber(vl: string): BigNumber {
 }
 
 export function getTotalEthFromWei() {
-  return ethers.utils.parseEther((parseFloat('0.08') * 1).toString())._hex;
+  return ethers.utils.parseEther('0.01')._hex;
 }
 
 export function hasEnoughBalance(balanceWei: string, amountWei: BigNumber) {

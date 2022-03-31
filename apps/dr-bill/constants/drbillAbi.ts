@@ -75,6 +75,19 @@ export const drBillAbi = [
   {
     inputs: [
       {
+        internalType: 'uint256',
+        name: '_tokenId',
+        type: 'uint256',
+      },
+    ],
+    name: 'mint',
+    outputs: [],
+    stateMutability: 'payable',
+    type: 'function',
+  },
+  {
+    inputs: [
+      {
         internalType: 'address',
         name: '_to',
         type: 'address',
@@ -85,7 +98,7 @@ export const drBillAbi = [
         type: 'uint256',
       },
     ],
-    name: 'mint',
+    name: 'mintTo',
     outputs: [],
     stateMutability: 'payable',
     type: 'function',
