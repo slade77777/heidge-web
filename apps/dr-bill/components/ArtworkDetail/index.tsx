@@ -1,8 +1,8 @@
 import { Container } from '@nextui-org/react';
+import { getTotalEthFromWei, toast, useMetamask } from 'shared';
 import { Heading, Paragraph } from '../CustomText';
 import Watermark from '../Watermark';
 import { Content } from '../../types';
-import { getTotalEthFromWei, toast, useMetamask } from 'shared';
 import { drBillAbi } from '../../constants/drbillAbi';
 import GeneratedImage from './GeneratedImage';
 
