@@ -34,6 +34,7 @@ type ContextType = {
   provider?: any;
   signer?: Signer;
   purchase?: (to: string, value: BigNumber) => Promise<any>;
+  getContract?: (address: string, abi: Array<any>) => any;
 };
 
 const Context = createContext<ContextType>({
@@ -43,6 +44,7 @@ const Context = createContext<ContextType>({
 
 export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
   const providerRef = useRef<any>(null);
+  const contractRef = useRef<any>(null);
   const [connection, setConnection] = useState<ConnectionEnum>(
     ConnectionEnum.NotConnected,
   );
@@ -150,6 +152,18 @@ export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
     }
   }, []);
 
+  function getContract(contractAddress: string, abi: Array<any>) {
+    if (
+      !contractRef.current &&
+      MetaMaskOnboarding.isMetaMaskInstalled() &&
+      !!providerRef.current
+    ) {
+      const signer = providerRef.current?.getSigner();
+      contractRef.current = new ethers.Contract(contractAddress, abi, signer);
+    }
+    return contractRef.current;
+  }
+
   return (
     <Context.Provider
       value={{
@@ -162,6 +176,7 @@ export const MetamaskProvider = ({ children }: { children: ReactNode }) => {
         provider: providerRef.current,
         signer: providerRef.current?.getSigner(),
         purchase: purchaseCb,
+        getContract,
       }}
     >
       {children}

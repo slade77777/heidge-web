@@ -1,4 +1,5 @@
 import { useCallback, useEffect, useState } from 'react';
+import Image from 'next/image';
 import { Container } from '@nextui-org/react';
 import { Heading, Paragraph } from '../CustomText';
 import SquareBtn from '../Button/SquareBtn';
@@ -7,8 +8,9 @@ import Watermark from '../Watermark';
 import { Content } from '../../types';
 import { getRandomNumber } from '../../utils';
 import { getDataFormLocal, saveToLocal } from '../../utils/localStorage';
-import { toast } from 'shared';
-// import BlurImage from '../BlurImage';
+import { getTotalEthFromWei, toast, useMetamask } from 'shared';
+import { drBillAbi } from '../../constants/drbillAbi';
+import CustomImage from '../CustomImage';
 
 function genImgUrl(more: number) {
   const random = getRandomNumber(1, 999);
@@ -24,6 +26,7 @@ export default function ArtworkDetail({
   artwork: Content;
   categorySlug?: string;
 }) {
+  const { getContract, account } = useMetamask();
   const [imgUrls, setImgUrls] = useState([]);
   const [generatedPhoto, setGeneratedPhoto] = useState('');
 
@@ -51,6 +54,27 @@ export default function ArtworkDetail({
     });
   }
 
+  function handleMint() {
+    const contract = getContract(
+      process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
+      drBillAbi,
+    );
+
+    const randomNo = generatedPhoto.split('-')[1];
+    const tokenId = artwork.more * 0x100000000 + Number(randomNo);
+
+    contract
+      .mint(account, tokenId, {
+        value: getTotalEthFromWei(),
+      })
+      .then(() => {
+        toast.success('Success');
+      })
+      .catch((err) => {
+        toast.error(err?.message);
+      });
+  }
+
   if (!artwork) {
     return null;
   }
@@ -73,11 +97,7 @@ export default function ArtworkDetail({
             </div>
             <div className="w-full h-auto">
               <div>
-                <img
-                  src={generatedPhoto}
-                  className="w-[598ox] h-[598px]"
-                  alt="gen-img"
-                />
+                <CustomImage src={''} width={598} height={598} alt="gen-img" />
                 {categorySlug === 'generative-art-vending-machine' && (
                   <>
                     <div className="flex flex-row justify-between gap-2 mt-3">
@@ -90,7 +110,9 @@ export default function ArtworkDetail({
                       <SquareBtn css={{ flex: 1 }} onClick={handleSave}>
                         Save
                       </SquareBtn>
-                      <SquareBtn css={{ flex: 1 }}>Mint</SquareBtn>
+                      <SquareBtn css={{ flex: 1 }} onClick={handleMint}>
+                        Mint
+                      </SquareBtn>
                     </div>
                     <GeneratedArtworkList
                       onSelect={setGeneratedPhoto}
