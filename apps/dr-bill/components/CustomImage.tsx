@@ -5,7 +5,7 @@ const customLoader: ImageLoader = ({
   width,
   quality,
 }: ImageLoaderProps) => {
-  return `${src}?w=${width}&q=${quality || 90}`;
+  return `${src}?w=${width}&q=${quality || 75}`;
 };
 
 const CustomImage = (props: ImageProps) => {

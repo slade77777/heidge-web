@@ -1,28 +1,29 @@
 import CustomImage from '../CustomImage';
 import { classNames } from 'shared/utils';
+import { genImgUrl } from '../../utils';
 
 export default function GeneratedArtworkList({
-  imageUrlsList,
-  currentPhoto,
+  randomNumbersList,
+  currentNumber,
   onSelect,
 }: {
-  imageUrlsList: string[];
-  currentPhoto?: string;
-  onSelect?: (url: string) => void;
+  randomNumbersList: number[];
+  currentNumber?: number;
+  onSelect?: (url: number) => void;
 }) {
   return (
     <div className="grid grid-cols-8 gap-[10px] mt-2">
-      {imageUrlsList.map((url) => (
+      {randomNumbersList.map((number) => (
         <div
-          key={url}
-          onClick={() => onSelect(url)}
+          key={number}
+          onClick={() => onSelect(number)}
           className={classNames(
             'w-[66px] h-[66px]',
-            currentPhoto === url ? 'border-2 border-black' : '',
+            currentNumber === number ? 'border-2 border-black' : '',
           )}
         >
           <CustomImage
-            src={url}
+            src={genImgUrl(number)}
             width={66}
             height={66}
             objectFit="cover"

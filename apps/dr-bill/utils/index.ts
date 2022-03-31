@@ -2,7 +2,7 @@ export function genSlug(str: string) {
   return str.trim().toLowerCase().replace(/\s/g, '-');
 }
 export function decodeSlug(str: string) {
-  return str.replace(/-/g, ' ')
+  return str.replace(/-/g, ' ');
 }
 export function arr2obj(
   arr: Array<any>,
@@ -32,4 +32,8 @@ export function callConcurrent<T>(promises: Promise<any>[]): Promise<T[]> {
       .filter((p) => p.status === 'fulfilled')
       .map((item: PromiseFulfilledResult<T>) => item.value),
   );
+}
+
+export function genImgUrl(integratedId: number): string {
+  return `${process.env.NEXT_PUBLIC_API_URL}/api/generator/${integratedId}`;
 }

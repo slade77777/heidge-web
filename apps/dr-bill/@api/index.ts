@@ -29,3 +29,7 @@ export function getShowAndMedia(index: number) {
     res.json(),
   );
 }
+
+export function getRandomNumber(more: string) {
+  return fetch(`${ssrBaseUrl}/api/getrandom/${more}`).then((res) => res.json());
+}
