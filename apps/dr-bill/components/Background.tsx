@@ -31,7 +31,7 @@ export default function Background({children}) {
     let arr = [], len = 5;
     while (len--) {
       const size = getRandomNumber(100, 600), top = getRandomNumber(-size, 2000), left = getRandomNumber(-size, 1920);
-      arr.push(<BlurCircle size={`${size}px`} top={`${top}px`} left={`${left}px`} />)
+      arr.push(<BlurCircle key={len} size={`${size}px`} top={`${top}px`} left={`${left}px`} />)
     }
     return arr;
   }, []);
