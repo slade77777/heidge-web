@@ -1,12 +1,17 @@
 import { Container } from '@nextui-org/react';
-import { getTotalEthFromWei, NETWORKS, toast, useMetamask } from 'shared';
+import {
+  getTotalEthFromWei,
+  METAMASK_ERRORS,
+  NETWORKS,
+  toast,
+  useMetamask,
+} from 'shared';
 import { Heading, Paragraph } from '../CustomText';
 import Watermark from '../Watermark';
 import { Content } from '../../types';
 import { drBillAbi } from '../../constants/drbillAbi';
 import GeneratedImage from './GeneratedImage';
 import { METAMASK_NETWORK } from '../../constants/common';
-import { METAMASK_ERRORS } from '../../constants/metamask';
 
 export default function ArtworkDetail({
   artwork,
