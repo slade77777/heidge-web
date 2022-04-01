@@ -55,6 +55,10 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
     setCurrentRandom(selectedNum);
   }
 
+  function handleRemove(selected: number) {
+    setSavedList((prevState) => prevState.filter((num) => num !== selected));
+  }
+
   useEffect(() => {
     const localData = getDataFormLocal(`${LOCAL_KEY}-${more}`);
     if (!!localData?.selected) {
@@ -107,9 +111,7 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
             onSelect={handleSelect}
             randomNumbersList={savedList}
             currentNumber={currentRandom}
-            onRemove={(no) =>
-              setSavedList((prevState) => prevState.filter((num) => num !== no))
-            }
+            onRemove={handleRemove}
           />
         </>
       )}

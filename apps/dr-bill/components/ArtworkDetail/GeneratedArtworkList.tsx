@@ -41,22 +41,20 @@ export default function GeneratedArtworkList({
               alt="generated photo"
             />
           </div>
-          {currentNumber !== number && (
-            <div className="text-center hidden group-hover:block">
-              <button
-                onClick={() => onRemove(number)}
-                className="active:text-gray-300 active:scale-125 transition-all ease-linear rounded-full w-6 h-6"
+          <div className="text-center hidden group-hover:block">
+            <button
+              onClick={() => onRemove(number)}
+              className="active:text-gray-300 active:scale-125 transition-all ease-linear rounded-full w-6 h-6"
+            >
+              <span
+                className={
+                  isDark ? 'text-sm text-amber-400' : 'text-sm text-black'
+                }
               >
-                <span
-                  className={
-                    isDark ? 'text-sm text-amber-400' : 'text-sm text-black'
-                  }
-                >
-                  ✕
-                </span>
-              </button>
-            </div>
-          )}
+                ✕
+              </span>
+            </button>
+          </div>
         </div>
       ))}
     </div>
