@@ -1,11 +1,14 @@
 import CustomLink from './CustomLink';
 import { ReactNode } from 'react';
 import { Heading, Paragraph } from './CustomText';
+import { CSS } from '@nextui-org/react';
+import Tag from './Tag';
 
 function Card({
   children,
   href,
   isExternalLink,
+  tag,
 }: {
   href?: string;
   tag?: string;
@@ -14,16 +17,19 @@ function Card({
 }) {
   return (
     <CustomLink href={href} isExternalLink={isExternalLink}>
-      <div className="border border-black">{children}</div>
+      <div className="border border-black relative">
+        <div>{children}</div>
+        {!!tag && <Tag text={tag} />}
+      </div>
     </CustomLink>
   );
 }
 
-export const CardBody = ({ children }: { children: ReactNode }) => {
-  return <Paragraph css={{ padding: '0 1rem 1rem' }}>{children}</Paragraph>;
+export const CardBody = ({ children, css }: { children: ReactNode; css?: CSS }) => {
+  return <Paragraph css={{ padding: '0 1rem 1rem', ...css }}>{children}</Paragraph>;
 };
 
-export const CardTitle = ({ children }: { children: ReactNode }) => {
+export const CardTitle = ({ children, css }: { children: ReactNode; css?: CSS }) => {
   return (
     <Heading
       css={{
@@ -37,6 +43,7 @@ export const CardTitle = ({ children }: { children: ReactNode }) => {
           fontSize: '$sm',
           lineHeight: '$md',
         },
+        ...css
       }}
     >
       {children}

@@ -1,8 +1,8 @@
 import {ReactNode} from 'react';
-import {Card} from '@nextui-org/react';
+import {Card, CSS} from '@nextui-org/react';
 
 type Props = {
-  css?: Object;
+  css?: CSS;
   children?: ReactNode;
   className?: string;
 }
