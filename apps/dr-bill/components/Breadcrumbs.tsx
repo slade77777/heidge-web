@@ -63,7 +63,7 @@ export default function Breadcrumbs() {
   return (
     <Container md>
       <nav className="relative">
-        <ol className="flex flex-wrap items-center m-0 p-0 list-none z-10">
+        <ol className="flex flex-no-wrap items-center m-0 p-0 list-none z-10">
           {breadcrumbs?.map((item, index) => (
             <li className="flex items-center gap-4" key={index}>
               <div className={classNames('text-red-800', isLastItem(index) && 'font-bold')}>

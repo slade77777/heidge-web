@@ -1,3 +1,10 @@
+import {
+  Circle,
+  PolygonAndEllipse,
+  Triangle,
+  TriangleAndSquare,
+} from './Polygons';
+import { useTheme } from '@nextui-org/react';
 import SwitchThemeButton from './Button/SwitchThemeBtn';
 import { BACKGROUND_SHAPES } from '../constants/backgroundShapes';
 // import whiteCircle from '../public/assets/shapes/white-circle.png';
@@ -42,15 +49,7 @@ export default function Background({children}) {
       <div className="fixed bottom-0 md:top-1/2 right-5 z-10">
         <SwitchThemeButton />
       </div>
-      <style jsx>{`
-        .background {
-          position: relative;
-          background-image: ${backgroundImage.join(', ')};
-          background-size: ${backgroundSize.join(', ')};
-          background-position: ${backgroundPosition.join(', ')};
-          background-repeat: no-repeat;
-        }
-      `}</style>
+      {/*<SwitchThemeButton className="absolute top-1/2 right-0 -translate-x-1/2"/>*/}
     </div>
   );
 }

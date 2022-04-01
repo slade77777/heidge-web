@@ -1,9 +1,9 @@
-import { Button, CSS, Text } from '@nextui-org/react';
+import { Button, Text } from '@nextui-org/react';
 import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
-  css?: CSS;
+  css?: Object;
   onClick?: () => void;
   disabled?: boolean;
 };
@@ -14,7 +14,6 @@ export default function SquareBtn({ children, css, onClick, disabled }: Props) {
       onClick={onClick}
       disabled={disabled}
       css={{
-        position: 'relative',
         minWidth: 0,
         borderRadius: 0,
         color: disabled ? '$gray100' : '$black',
