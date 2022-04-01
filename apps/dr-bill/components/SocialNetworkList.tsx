@@ -22,7 +22,7 @@ const SocialNetworkList = ({
   className?: string;
   isSolid?: boolean;
 }) => (
-  <div className={classNames('flex flex-row gap-6 items-center', className)}>
+  <div className={classNames('flex flex-row gap-6 relative items-center', className)}>
     {socialNetworks.map((e, i) => (
       <a href={e.href} key={i} target="_blank" rel="noreferrer">
         {isSolid ? (

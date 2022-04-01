@@ -12,7 +12,7 @@ export default function MobileHeader({ className }: { className?: string }) {
   };
   return (
     <div className={classNames('flex items-center justify-end', className)}>
-      <button onClick={() => setVisible(true)}>
+      <button className="relative" onClick={() => setVisible(true)}>
         <Menu className="w-10 h-5" />
       </button>
       <Modal
