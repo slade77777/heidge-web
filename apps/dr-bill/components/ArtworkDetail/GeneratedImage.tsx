@@ -1,4 +1,4 @@
-import React, { useCallback, useEffect, useState } from 'react';
+import React, { useEffect, useState } from 'react';
 import CustomImage from '../CustomImage';
 import SquareBtn from '../Button/SquareBtn';
 import GeneratedArtworkList from './GeneratedArtworkList';
@@ -19,7 +19,7 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
   const [savedList, setSavedList] = useState([]);
   const [loading, setLoading] = useState(false);
 
-  const generateImage = useCallback(() => {
+  function generateImage() {
     setLoading(true);
     fetch(`/api/get-random-number/${more}`)
       .then((res) => res.json())
@@ -29,7 +29,7 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
       .catch((err) => {
         toast.error(err?.message);
       });
-  }, [more]);
+  }
 
   function handleSave() {
     saveToLocal(`${LOCAL_KEY}-${more}`, {
@@ -39,6 +39,9 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
     if (savedList.includes(currentRandom)) {
       toast.error('This image is added already');
       return;
+    }
+    if (savedList.length === 8) {
+      savedList.pop();
     }
     const newList = [currentRandom, ...savedList];
     setSavedList(newList);
@@ -50,6 +53,10 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
 
   function handleSelect(selectedNum: number) {
     setCurrentRandom(selectedNum);
+  }
+
+  function handleRemove(selected: number) {
+    setSavedList((prevState) => prevState.filter((num) => num !== selected));
   }
 
   useEffect(() => {
@@ -64,23 +71,24 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
 
   return (
     <div>
-      <div className="relative w-full h-full">
+      <div className="relative">
         {loading && (
           <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 z-30">
             <Loading type="spinner" size="lg" />
           </div>
         )}
-        <CustomImage
-          src={genImgUrl(currentRandom)}
-          width={598}
-          height={598}
-          alt="gen-img"
-          className={classNames(
-            'duration-700 ease-in-out group-hover:opacity-75',
-            loading ? 'blur-md' : 'blur-0',
-          )}
-          onLoadingComplete={() => setLoading(false)}
-        />
+        <div className="aspect-w-1 aspect-h-1">
+          <CustomImage
+            src={genImgUrl(currentRandom)}
+            layout="fill"
+            alt="gen-img"
+            className={classNames(
+              'duration-700 ease-in-out group-hover:opacity-75',
+              loading ? 'blur-md' : 'blur-0',
+            )}
+            onLoadingComplete={() => setLoading(false)}
+          />
+        </div>
       </div>
       {categorySlug === 'generative-art-vending-machine' && (
         <>
@@ -90,7 +98,7 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
               onClick={generateImage}
               disabled={loading}
             >
-              {loading ? <Loading type="spinner" size="sm" /> : 'Generate'}
+              Generate
             </SquareBtn>
             <SquareBtn css={{ flex: 1 }} onClick={handleSave}>
               Save
@@ -101,8 +109,9 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
           </div>
           <GeneratedArtworkList
             onSelect={handleSelect}
-            randomNumbersList={savedList.slice(0, 8)}
+            randomNumbersList={savedList}
             currentNumber={currentRandom}
+            onRemove={handleRemove}
           />
         </>
       )}

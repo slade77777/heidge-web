@@ -1,8 +1,8 @@
 import { Container } from '@nextui-org/react';
+import { getTotalEthFromWei, toast, useMetamask } from 'shared';
 import { Heading, Paragraph } from '../CustomText';
 import Watermark from '../Watermark';
 import { Content } from '../../types';
-import { getTotalEthFromWei, toast, useMetamask } from 'shared';
 import { drBillAbi } from '../../constants/drbillAbi';
 import GeneratedImage from './GeneratedImage';
 
@@ -15,7 +15,7 @@ export default function ArtworkDetail({
 }) {
   const { getContract, account } = useMetamask();
 
-  function handleMint(tokenId: number) {
+  async function handleMint(tokenId: number) {
     if (!account) {
       toast.error('Please connect wallet');
       return;
@@ -25,16 +25,22 @@ export default function ArtworkDetail({
       drBillAbi,
     );
 
-    contract
-      .mint(tokenId, {
+    try {
+      await contract.mint(tokenId, {
         value: getTotalEthFromWei(),
-      })
-      .then(() => {
-        toast.success('Success');
-      })
-      .catch((err) => {
-        toast.error(err?.message);
       });
+
+      const response = await fetch(`/api/mint/confirm/${tokenId}`);
+      const data = await response.json();
+
+      if (data.status) {
+        toast.success('Minted success');
+      } else {
+        toast.error('Mint failed');
+      }
+    } catch (err) {
+      toast.error(err?.error?.message);
+    }
   }
 
   if (!artwork) {

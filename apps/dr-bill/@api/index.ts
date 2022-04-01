@@ -1,6 +1,6 @@
 import { Content } from '../types';
 
-const ssrBaseUrl = process.env.API_URL;
+export const ssrBaseUrl = process.env.API_URL;
 
 export function getHomeContents(): Promise<Content[]> {
   return fetch(`${ssrBaseUrl}/content/home/0`).then((res) => res.json());

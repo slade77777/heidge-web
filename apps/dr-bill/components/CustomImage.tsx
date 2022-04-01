@@ -1,11 +1,7 @@
 import Image, { ImageProps, ImageLoader, ImageLoaderProps } from 'next/image';
 
-const customLoader: ImageLoader = ({
-  src,
-  width,
-  quality,
-}: ImageLoaderProps) => {
-  return `${src}?w=${width}&q=${quality || 75}`;
+const customLoader: ImageLoader = ({ src }: ImageLoaderProps) => {
+  return src;
 };
 
 const CustomImage = (props: ImageProps) => {

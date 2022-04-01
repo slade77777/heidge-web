@@ -3,6 +3,34 @@ import { CSS, Text, useTheme } from '@nextui-org/react';
 import { useMetamask } from 'shared';
 import { Wallet } from 'shared/icons';
 import { classNames, getShortWalletAddress } from 'shared/utils';
+import ExternalLink from '../ExternalLink';
+
+const WalletButton = ({
+  css,
+  className,
+  onClick,
+}: {
+  css?: Object;
+  className?: string;
+  onClick?: () => void;
+}) => {
+  return (
+    <div className={className}>
+      <SquareBtn
+        onClick={onClick}
+        css={{
+          width: 220,
+          height: '56px',
+          ...css,
+        }}
+      >
+        <Text css={{ fontSize: '$base', fontWeight: 600 }}>
+          Connect Wallet{' '}
+        </Text>
+      </SquareBtn>
+    </div>
+  );
+};
 
 export default function ConnectWalletButton({ css }: { css?: CSS }) {
   const { account, connect } = useMetamask();
@@ -30,15 +58,14 @@ export default function ConnectWalletButton({ css }: { css?: CSS }) {
   }
 
   return (
-    <SquareBtn
-      onClick={connect}
-      css={{
-        width: 220,
-        height: '56px',
-        ...css,
-      }}
-    >
-      <Text css={{ fontSize: '$base', fontWeight: 600 }}>Connect Wallet </Text>
-    </SquareBtn>
+    <>
+      <WalletButton css={css} className="hidden lg:block" onClick={connect} />
+      <ExternalLink
+        href={process.env.NEXT_PUBLIC_DEEP_LINK}
+        className="lg:hidden"
+      >
+        <WalletButton css={css} onClick={connect} />
+      </ExternalLink>
+    </>
   );
 }
