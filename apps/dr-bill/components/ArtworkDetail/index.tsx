@@ -39,7 +39,7 @@ export default function ArtworkDetail({
         toast.error('Mint failed');
       }
     } catch (err) {
-      toast.error(err?.message);
+      toast.error(err?.error?.message);
     }
   }
 
