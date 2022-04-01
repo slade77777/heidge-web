@@ -1,5 +1,5 @@
 import SquareBtn from './SquareBtn';
-import { CSS, Text, useTheme } from '@nextui-org/react';
+import { Text, useTheme } from '@nextui-org/react';
 import { useMetamask } from 'shared';
 import { Wallet } from 'shared/icons';
 import { classNames, getShortWalletAddress } from 'shared/utils';
@@ -32,7 +32,7 @@ const WalletButton = ({
   );
 };
 
-export default function ConnectWalletButton({ css }: { css?: CSS }) {
+export default function ConnectWalletButton({ css }: { css?: Object }) {
   const { account, connect } = useMetamask();
   const { isDark } = useTheme();
 
