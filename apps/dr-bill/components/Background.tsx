@@ -6,7 +6,7 @@ import {
 } from './Polygons';
 import { useTheme } from '@nextui-org/react';
 import SwitchThemeButton from './Button/SwitchThemeBtn';
-import { BACKGROUND_SHAPES } from '../constants/backgroundShapes';
+// import { BACKGROUND_SHAPES } from '../constants/backgroundShapes';
 // import whiteCircle from '../public/assets/shapes/white-circle.png';
 // import { useMemo } from 'react';
 // import { getRandomNumber } from '../utils';
@@ -33,7 +33,7 @@ import { BACKGROUND_SHAPES } from '../constants/backgroundShapes';
 // }
 
 export default function Background({children}) {
-  const {backgroundImage, backgroundSize, backgroundPosition} = BACKGROUND_SHAPES;
+//   const {backgroundImage, backgroundSize, backgroundPosition} = BACKGROUND_SHAPES;
   // const BlurCircles = useMemo(() => {
   //   let arr = [], len = 5;
   //   while (len--) {
