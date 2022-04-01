@@ -34,7 +34,7 @@ export default function ArtworkDetail({
       const data = await response.json();
 
       if (data.status) {
-        toast.success('Mint success');
+        toast.success('Minted success');
       } else {
         toast.error('Mint failed');
       }
