@@ -1,10 +1,12 @@
 import { Container } from '@nextui-org/react';
-import { getTotalEthFromWei, toast, useMetamask } from 'shared';
+import { getTotalEthFromWei, NETWORKS, toast, useMetamask } from 'shared';
 import { Heading, Paragraph } from '../CustomText';
 import Watermark from '../Watermark';
 import { Content } from '../../types';
 import { drBillAbi } from '../../constants/drbillAbi';
 import GeneratedImage from './GeneratedImage';
+import { METAMASK_NETWORK } from '../../constants/common';
+import { METAMASK_ERRORS } from '../../constants/metamask';
 
 export default function ArtworkDetail({
   artwork,
@@ -13,13 +15,19 @@ export default function ArtworkDetail({
   artwork: Content;
   categorySlug?: string;
 }) {
-  const { getContract, account } = useMetamask();
+  const { getContract, account, networkName } = useMetamask();
 
   async function handleMint(tokenId: number) {
     if (!account) {
       toast.error('Please connect wallet');
       return;
     }
+
+    if (networkName !== METAMASK_NETWORK) {
+      toast.error(`Please switch to use ${NETWORKS[METAMASK_NETWORK].name}`);
+      return;
+    }
+
     const contract = getContract(
       process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
       drBillAbi,
@@ -39,7 +47,8 @@ export default function ArtworkDetail({
         toast.error('Mint failed');
       }
     } catch (err) {
-      toast.error(err?.error?.message);
+      const code = err?.error?.code as string;
+      toast.error(METAMASK_ERRORS[code].message || 'Something went wrong');
     }
   }
 
