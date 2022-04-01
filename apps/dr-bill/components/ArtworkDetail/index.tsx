@@ -15,7 +15,7 @@ export default function ArtworkDetail({
 }) {
   const { getContract, account } = useMetamask();
 
-  function handleMint(tokenId: number) {
+  async function handleMint(tokenId: number) {
     if (!account) {
       toast.error('Please connect wallet');
       return;
@@ -25,16 +25,22 @@ export default function ArtworkDetail({
       drBillAbi,
     );
 
-    contract
-      .mint(tokenId, {
+    try {
+      await contract.mint(tokenId, {
         value: getTotalEthFromWei(),
-      })
-      .then(() => {
-        toast.success('Success');
-      })
-      .catch((err) => {
-        toast.error(err?.message);
       });
+
+      const response = await fetch(`/api/mint/confirm/${tokenId}`);
+      const data = await response.json();
+
+      if (data.status) {
+        toast.success('Mint success');
+      } else {
+        toast.error('Mint failed');
+      }
+    } catch (err) {
+      toast.error(err?.message);
+    }
   }
 
   if (!artwork) {

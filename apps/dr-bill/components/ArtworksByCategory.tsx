@@ -30,8 +30,12 @@ export default function ArtworksByCategory({
             <div className="grid grid-cols-1 lg:grid-cols-2 gap-5">
               {artworks?.map((artwork) => (
                 <Card
-                  href={`/artworks/${artwork.content_type}/${artwork.slug}`}
+                  href={
+                    artwork.link ||
+                    `/artworks/${artwork.content_type}/${artwork.slug}`
+                  }
                   key={artwork.id}
+                  isExternalLink={!!artwork.link}
                 >
                   <BlurImage src={artwork.image} />
                   <Card.CardTitle>{artwork.title}</Card.CardTitle>
