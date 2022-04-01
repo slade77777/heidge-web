@@ -14,6 +14,7 @@ export default function SquareBtn({ children, css, onClick, disabled }: Props) {
       onClick={onClick}
       disabled={disabled}
       css={{
+        position: 'relative',
         minWidth: 0,
         borderRadius: 0,
         color: disabled ? '$gray100' : '$black',
