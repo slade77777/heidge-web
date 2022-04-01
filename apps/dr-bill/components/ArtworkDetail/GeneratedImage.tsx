@@ -40,6 +40,9 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
       toast.error('This image is added already');
       return;
     }
+    if (savedList.length === 8) {
+      savedList.pop();
+    }
     const newList = [currentRandom, ...savedList];
     setSavedList(newList);
     saveToLocal(`${LOCAL_KEY}-${more}`, {
@@ -102,8 +105,11 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
           </div>
           <GeneratedArtworkList
             onSelect={handleSelect}
-            randomNumbersList={savedList.slice(0, 8)}
+            randomNumbersList={savedList}
             currentNumber={currentRandom}
+            onRemove={(no) =>
+              setSavedList((prevState) => prevState.filter((num) => num !== no))
+            }
           />
         </>
       )}
