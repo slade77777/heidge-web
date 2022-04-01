@@ -64,8 +64,8 @@ export default function ArtworkDetail({
   return (
     <Watermark text={artwork.title}>
       <Container md>
-        <div className="mt-[100px] mb-[200px]">
-          <div className="grid lg:grid-cols-2 gap-16">
+        <div className="my-5 lg:mt-[100px] lg:mb-[200px]">
+          <div className="grid lg:grid-cols-2 gap-5 lg:gap-16">
             <div>
               <Heading css={{ marginBottom: '30px' }}>{artwork.title}</Heading>
               <Paragraph
