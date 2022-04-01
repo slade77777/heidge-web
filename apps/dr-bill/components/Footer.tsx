@@ -37,7 +37,7 @@ const Subscribe = ({ className }) => {
           color="success"
           onChange={handleChange}
           required
-          className="px-3 py-2 w-full relative"
+          className="px-3 py-2 w-full"
           value={email}
           type="email"
         />

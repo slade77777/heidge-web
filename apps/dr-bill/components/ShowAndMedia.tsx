@@ -45,11 +45,11 @@ export default function ShowAndMedia() {
       <Container md>
         <div className="mt-[100px] mb-[200px]">
           <Heading css={{ marginBottom: '80px' }}> Show & Media </Heading>
-          <div className="grid grid-cols-2 md:flex md:flex-row gap-2 mb-10">
+          <div className="flex flex-row gap-2 mb-10">
             {filters.map((btn) => (
               <button
                 className={classNames(
-                  'px-4 py-1 relative',
+                  'px-4 py-1',
                   selectedType === btn.key
                     ? 'text-white bg-black border border-black'
                     : 'text-black bg-transparent border border-black',
