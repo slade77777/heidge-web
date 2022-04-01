@@ -1,9 +1,11 @@
 export function genSlug(str: string) {
   return str.trim().toLowerCase().replace(/\s/g, '-');
 }
+
 export function decodeSlug(str: string) {
   return str.replace(/-/g, ' ');
 }
+
 export function arr2obj(
   arr: Array<any>,
   fieldName: string,
@@ -11,11 +13,11 @@ export function arr2obj(
   if (!arr || !arr?.length) {
     return null;
   }
-  return arr.reduce((a, v) => ({ ...a, [v[fieldName].toLowerCase()]: v }), {});
+  return arr.reduce((a, v) => ({...a, [v[fieldName].toLowerCase()]: v}), {});
 }
 
 export function getRandomNumber(min: number, max: number) {
-  return Math.floor(Math.random() * (max - min + 1)) + min;
+  return (Math.random() * (max - min + 1) << 0) + min;
 }
 
 export function blobToBase64(blob) {

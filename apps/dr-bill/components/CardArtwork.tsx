@@ -4,7 +4,6 @@ import { classNames } from 'shared/utils';
 import CardRaw from './CardRaw';
 import NextImage from './NextImage';
 import CustomLink from './CustomLink';
-import Card from './Card';
 
 type Props = {
   images: {
