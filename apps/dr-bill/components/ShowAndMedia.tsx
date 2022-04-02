@@ -1,12 +1,11 @@
-import { Container } from '@nextui-org/react';
-import { Heading, Paragraph } from './CustomText';
-import CardArtwork from './CardArtwork';
-import CardRaw from './CardRaw';
+import { Container, useTheme } from '@nextui-org/react';
+import { Heading } from './CustomText';
 import Watermark from './Watermark';
-import { SHOW_AND_MEDIA } from '../constants/mediaAndShow';
 import { useState } from 'react';
-import { MediaType } from '../types';
+import { Content, MediaType } from '../types';
 import { classNames } from 'shared/utils';
+import Card from './Card';
+import BlurImage from './BlurImage';
 
 const filters: { key: MediaType; title: string }[] = [
   {
@@ -27,17 +26,18 @@ const filters: { key: MediaType; title: string }[] = [
   },
 ];
 
-export default function ShowAndMedia() {
+export default function ShowAndMedia({ news }: { news: Content[] }) {
   const [selectedType, setSelectedType] = useState<MediaType>(MediaType.All);
-  const [data, setData] = useState(SHOW_AND_MEDIA);
+  const [data, setData] = useState(news);
+  const { isDark } = useTheme();
 
   function filterByType(type: MediaType) {
     setSelectedType(type);
     if (type === MediaType.All) {
-      setData(SHOW_AND_MEDIA);
+      setData(news);
       return;
     }
-    setData(SHOW_AND_MEDIA.filter((dt) => dt.label === type));
+    setData(news.filter((dt) => dt.tags.toLowerCase() === type.toLowerCase()));
   }
 
   return (
@@ -45,14 +45,22 @@ export default function ShowAndMedia() {
       <Container md>
         <div className="mt-[100px] mb-[200px]">
           <Heading css={{ marginBottom: '80px' }}> Show & Media </Heading>
-          <div className="flex flex-row gap-2 mb-10">
+          <div className="flex flex-wrap gap-2 mb-10">
             {filters.map((btn) => (
               <button
                 className={classNames(
-                  'px-4 py-1',
+                  'px-4 py-1 text-sm',
                   selectedType === btn.key
-                    ? 'text-white bg-black border border-black'
-                    : 'text-black bg-transparent border border-black',
+                    ? `${
+                        isDark
+                          ? 'text-black bg-white border border-white'
+                          : 'text-white bg-black border border-black'
+                      }`
+                    : `${
+                        isDark
+                          ? 'text-white bg-transparent border border-white'
+                          : 'text-black bg-transparent border border-black'
+                      }`,
                 )}
                 key={btn.key}
                 onClick={() => filterByType(btn.key)}
@@ -61,51 +69,18 @@ export default function ShowAndMedia() {
               </button>
             ))}
           </div>
-          <div className="md:columns-2 lg:columns-3 gap-10 w-full">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-10">
             {data.map((media) => (
-              <CardArtwork
-                key={media.key}
-                className="w-full break-inside-avoid relative !mb-8 !last:mb-0"
-                imageClassName="w-full"
-                images={[media.image]}
-                href={media.href}
+              <Card
+                key={media.id}
+                href={media.link}
                 isExternalLink
-                layout="responsive"
-                tag={media.label}
+                tag={media.tags}
               >
-                <CardRaw>
-                  <Heading
-                    css={{
-                      fontFamily: '$p',
-                      fontSize: '$xs',
-                      lineHeight: '$sm',
-                      fontWeight: 600,
-                      marginBottom: '12px',
-                      '@xs': {
-                        fontSize: '$base !important',
-                        lineHeight: '$md !important',
-                      },
-                    }}
-                  >
-                    {' '}
-                    {media.title}{' '}
-                  </Heading>
-                  <Paragraph
-                    css={{
-                      fontSize: '$base',
-                      lineHeight: '$md',
-                      marginBottom: '12px',
-                      '@sm': {
-                        fontSize: '$base',
-                        lineHeight: '$md',
-                      },
-                    }}
-                  >
-                    {' '}
-                    {media.description}{' '}
-                  </Paragraph>
-                </CardRaw>
-              </CardArtwork>
+                <BlurImage src={media.image} />
+                <Card.CardTitle>{media.title}</Card.CardTitle>
+                <Card.CardBody>{media.text}</Card.CardBody>
+              </Card>
             ))}
           </div>
         </div>

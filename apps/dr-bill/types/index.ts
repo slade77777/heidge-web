@@ -61,7 +61,7 @@ export type Content = {
   image: string;
   display_order?: number;
   slug?: string;
-  tags?: string;
+  tags?: MediaType;
   link?: string;
   more?: number;
   content_type?: ContentType;
