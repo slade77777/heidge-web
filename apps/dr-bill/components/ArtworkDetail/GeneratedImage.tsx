@@ -5,7 +5,7 @@ import GeneratedArtworkList from './GeneratedArtworkList';
 import { Loading } from '@nextui-org/react';
 import { classNames } from 'shared/utils';
 import { genImgUrl } from '../../utils';
-import { toast } from 'shared';
+import { toast, useMetamask } from 'shared';
 import { getDataFormLocal, saveToLocal } from '../../utils/localStorage';
 import { LOCAL_KEY } from '../../constants';
 
@@ -15,11 +15,16 @@ type Props = {
   more: number;
 };
 const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
+  const { account } = useMetamask();
   const [currentRandom, setCurrentRandom] = useState(0);
   const [savedList, setSavedList] = useState([]);
   const [loading, setLoading] = useState(false);
 
   function generateImage() {
+    if (!account) {
+      toast.error('Please connect wallet');
+      return;
+    }
     setLoading(true);
     fetch(`/api/get-random-number/${more}`)
       .then((res) => res.json())
@@ -103,7 +108,11 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
             <SquareBtn css={{ flex: 1 }} onClick={handleSave}>
               Save
             </SquareBtn>
-            <SquareBtn css={{ flex: 1 }} onClick={() => mint(currentRandom)}>
+            <SquareBtn
+              disabled={!account}
+              css={{ flex: 1 }}
+              onClick={() => mint(currentRandom)}
+            >
               Mint
             </SquareBtn>
           </div>

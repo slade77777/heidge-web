@@ -60,12 +60,14 @@ export default function ConnectWalletButton({ css }: { css?: Object }) {
   return (
     <>
       <WalletButton css={css} className="hidden lg:block" onClick={connect} />
-      <ExternalLink
-        href={process.env.NEXT_PUBLIC_DEEP_LINK}
-        className="lg:hidden"
-      >
-        <WalletButton css={css} onClick={connect} />
-      </ExternalLink>
+      {typeof window !== 'undefined' && (
+        <ExternalLink
+          href={process.env.NEXT_PUBLIC_DEEP_LINK + window.location.href}
+          className="lg:hidden"
+        >
+          <WalletButton css={css} />
+        </ExternalLink>
+      )}
     </>
   );
 }
