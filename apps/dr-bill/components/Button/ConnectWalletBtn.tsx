@@ -20,7 +20,7 @@ const WalletButton = ({
         onClick={onClick}
         css={{
           width: 220,
-          height: '56px',
+          height: 56,
           ...css,
         }}
       >
