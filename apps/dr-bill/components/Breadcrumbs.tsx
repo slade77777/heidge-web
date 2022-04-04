@@ -65,10 +65,17 @@ export default function Breadcrumbs() {
     if (asPath) {
       const paths = asPath.split('/');
       paths.shift();
-      const pathArray = paths.map((path, index) => ({
-        text: path,
-        href: `/${paths.slice(0, index + 1).join('/')}`,
-      }));
+      const pathArray = paths
+        .map((p: string) => {
+          if (p.includes('?')) {
+            return p.split('?')[0];
+          }
+          return p;
+        })
+        .map((path, index) => ({
+          text: path,
+          href: `/${paths.slice(0, index + 1).join('/')}`,
+        }));
       pathArray.unshift({ text: 'home', href: '/' });
       setBreadcrumbs(pathArray);
     }
