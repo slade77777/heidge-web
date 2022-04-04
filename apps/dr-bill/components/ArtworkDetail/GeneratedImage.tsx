@@ -21,10 +21,6 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
   const [loading, setLoading] = useState(false);
 
   function generateImage() {
-    if (!account) {
-      toast.error('Please connect wallet');
-      return;
-    }
     setLoading(true);
     fetch(`/api/get-random-number/${more}`)
       .then((res) => res.json())
@@ -64,13 +60,40 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
     setSavedList((prevState) => prevState.filter((num) => num !== selected));
   }
 
-  useEffect(() => {
-    const localData = getDataFormLocal(`${LOCAL_KEY}-${more}`);
-    if (!!localData?.selected) {
-      setSavedList(localData.list);
-      setCurrentRandom(localData.selected);
+  function handleMint() {
+    if (typeof window === 'undefined') {
+      return;
+    }
+    if (!account && window.innerWidth <= 768) {
+      window.location.href =
+        process.env.NEXT_PUBLIC_DEEP_LINK +
+        window.location.href +
+        `?selected=${currentRandom}&list=${savedList.join(',')}`;
     } else {
-      generateImage();
+      mint?.(currentRandom);
+    }
+  }
+
+  useEffect(() => {
+    const searchParams = window.location.search;
+    if (searchParams) {
+      let params = new URL(window.location.href).searchParams;
+      const selected = params.get('selected');
+      const list = params.get('list');
+      if (selected) {
+        setCurrentRandom(Number(selected));
+      }
+      if (list) {
+        setSavedList(list.split(',').map(Number));
+      }
+    } else {
+      const localData = getDataFormLocal(`${LOCAL_KEY}-${more}`);
+      if (!!localData?.selected) {
+        setSavedList(localData.list);
+        setCurrentRandom(localData.selected);
+      } else {
+        generateImage();
+      }
     }
   }, [more]);
 
@@ -108,11 +131,7 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
             <SquareBtn css={{ flex: 1 }} onClick={handleSave}>
               Save
             </SquareBtn>
-            <SquareBtn
-              disabled={!account}
-              css={{ flex: 1 }}
-              onClick={() => mint(currentRandom)}
-            >
+            <SquareBtn css={{ flex: 1 }} onClick={handleMint}>
               Mint
             </SquareBtn>
           </div>
