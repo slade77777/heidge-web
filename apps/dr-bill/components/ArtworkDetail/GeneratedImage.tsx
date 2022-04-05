@@ -134,14 +134,14 @@ const GeneratedImage = ({ categorySlug, mint, more, thumbnail }: Props) => {
             <SquareBtn
               css={{ flex: 1 }}
               onClick={handleSave}
-              disabled={loading}
+              disabled={loading || !currentRandom}
             >
               Save
             </SquareBtn>
             <SquareBtn
               css={{ flex: 1 }}
               onClick={handleMint}
-              disabled={loading}
+              disabled={loading || !currentRandom}
             >
               Mint
             </SquareBtn>
