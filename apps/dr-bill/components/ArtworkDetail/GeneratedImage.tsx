@@ -8,6 +8,7 @@ import { genImgUrl } from '../../utils';
 import { toast, useMetamask } from 'shared';
 import { getDataFormLocal, saveToLocal } from '../../utils/localStorage';
 import { LOCAL_KEY } from '../../constants';
+import { DEEP_LINK } from '../../constants/common';
 
 type Props = {
   categorySlug: string;
@@ -21,15 +22,19 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
   const [loading, setLoading] = useState(false);
 
   function generateImage() {
-    setLoading(true);
-    fetch(`/api/get-random-number/${more}`)
-      .then((res) => res.json())
-      .then((num) => {
-        setCurrentRandom(num);
-      })
-      .catch((err) => {
-        toast.error(err?.message);
-      });
+    if (!account && window.innerWidth <= 768) {
+      window.location.href = DEEP_LINK;
+    } else {
+      setLoading(true);
+      fetch(`/api/get-random-number/${more}`)
+        .then((res) => res.json())
+        .then((num) => {
+          setCurrentRandom(num);
+        })
+        .catch((err) => {
+          toast.error(err?.message);
+        });
+    }
   }
 
   function handleSave() {
@@ -65,35 +70,19 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
       return;
     }
     if (!account && window.innerWidth <= 768) {
-      window.location.href =
-        process.env.NEXT_PUBLIC_DEEP_LINK +
-        window.location.href +
-        `?selected=${currentRandom}&list=${savedList.join(',')}`;
+      window.location.href = DEEP_LINK;
     } else {
       mint?.(currentRandom);
     }
   }
 
   useEffect(() => {
-    const searchParams = window.location.search;
-    if (searchParams) {
-      let params = new URL(window.location.href).searchParams;
-      const selected = params.get('selected');
-      const list = params.get('list');
-      if (selected) {
-        setCurrentRandom(Number(selected));
-      }
-      if (list) {
-        setSavedList(list.split(',').map(Number));
-      }
+    const localData = getDataFormLocal(`${LOCAL_KEY}-${more}`);
+    if (!!localData?.selected) {
+      setSavedList(localData.list);
+      setCurrentRandom(localData.selected);
     } else {
-      const localData = getDataFormLocal(`${LOCAL_KEY}-${more}`);
-      if (!!localData?.selected) {
-        setSavedList(localData.list);
-        setCurrentRandom(localData.selected);
-      } else {
-        generateImage();
-      }
+      generateImage();
     }
   }, [more]);
 

@@ -4,6 +4,7 @@ import { useMetamask } from 'shared';
 import { Wallet } from 'shared/icons';
 import { classNames, getShortWalletAddress } from 'shared/utils';
 import ExternalLink from '../ExternalLink';
+import { DEEP_LINK } from '../../constants/common';
 
 const WalletButton = ({
   css,
@@ -60,14 +61,9 @@ export default function ConnectWalletButton({ css }: { css?: Object }) {
   return (
     <>
       <WalletButton css={css} className="hidden lg:block" onClick={connect} />
-      {typeof window !== 'undefined' && (
-        <ExternalLink
-          href={process.env.NEXT_PUBLIC_DEEP_LINK + window.location.href}
-          className="lg:hidden"
-        >
-          <WalletButton css={css} />
-        </ExternalLink>
-      )}
+      <ExternalLink href={DEEP_LINK} className="lg:hidden">
+        <WalletButton css={css} />
+      </ExternalLink>
     </>
   );
 }

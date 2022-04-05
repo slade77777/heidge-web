@@ -20,7 +20,9 @@ const Subscribe = ({ className }) => {
       })
         .then((res) => {
           if (res.ok) {
-            toast.success('Your email have been subscribed successfully');
+            toast.success('Email have been added to list', {
+              duration: 6000,
+            });
             setEmail('');
           }
         })

@@ -6,10 +6,12 @@ const BlurImage = ({
   className,
   src,
   alt,
+  objectFit,
 }: {
   className?: string;
   src: string;
   alt?: string;
+  objectFit?: 'contain' | 'cover';
 }) => {
   const [isLoading, setLoading] = useState(true);
   return (
@@ -22,7 +24,7 @@ const BlurImage = ({
         alt={alt}
         src={src}
         layout="fill"
-        objectFit="contain"
+        objectFit={objectFit || 'contain'}
         className={classNames(
           'bg-white duration-700 ease-in-out group-hover:opacity-75',
           isLoading

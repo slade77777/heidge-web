@@ -5,7 +5,7 @@ import { Content } from '../../types';
 import BlurImage from '../BlurImage';
 
 const DrBillPortrait = ({ imgUrl }: { imgUrl?: string }) => (
-  <BlurImage src={imgUrl} alt="avatar" />
+  <BlurImage src={imgUrl} alt="avatar" objectFit="cover" />
 );
 
 export default function Introduction({ data }: { data: Content }) {
