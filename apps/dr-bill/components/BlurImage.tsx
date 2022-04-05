@@ -22,9 +22,9 @@ const BlurImage = ({
         alt={alt}
         src={src}
         layout="fill"
-        objectFit="cover"
+        objectFit="contain"
         className={classNames(
-          'duration-700 ease-in-out group-hover:opacity-75',
+          'bg-white duration-700 ease-in-out group-hover:opacity-75',
           isLoading
             ? 'scale-105 blur-md grayscale'
             : 'scale-100 blur-0 grayscale-0',

@@ -25,7 +25,7 @@ const Subscribe = ({ className }) => {
           }
         })
         .catch((err) => {
-          toast.error('Error');
+          toast.error(err?.message || 'Error');
         });
     }
   }
@@ -99,16 +99,17 @@ export default function Footer() {
           <Subscribe className="w-full md:max-w-[306px] mx-auto mb-[50px]" />
         </div>
         <div className="w-full md:w-[335px] md:order-first">
-          <SocialNetworkList className="mb-5 w-full" isSolid />
-          <Text
-            css={{
-              lineHeight: '32px',
-              fontWeight: 300,
-              marginBottom: '20px',
-            }}
-          >
-            Have a question? Hit us up on Discord or Twitter!
-          </Text>
+          <SocialNetworkList className="mb-5 w-full" isSolid>
+            <Text
+              css={{
+                lineHeight: '32px',
+                fontWeight: 300,
+                marginBottom: '20px',
+              }}
+            >
+              Have a question? Hit us up on Twitter!
+            </Text>
+          </SocialNetworkList>
           <Text
             css={{
               lineHeight: '34px',
