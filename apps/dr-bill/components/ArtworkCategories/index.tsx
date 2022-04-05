@@ -12,8 +12,10 @@ export default function ArtworkCategories({
   return (
     <Watermark text="Artworks">
       <Container md>
-        <div className="mt-[100px] mb-[200px]">
-          <Heading css={{ margin: '72px 0' }}> Artworks </Heading>
+        <div className="mt-5 mb-20">
+          <div className="my-5 lg:my-16">
+            <Heading> Artworks </Heading>
+          </div>
           <ArtworkList artworks={artworks} />
         </div>
       </Container>
