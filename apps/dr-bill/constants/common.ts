@@ -6,8 +6,3 @@ export const YOUTUBE_LINK_RETRO = 'https://www.youtube.com/watch?v=lZMvtv2drQA';
 
 export const METAMASK_NETWORK =
   (process.env.NEXT_PUBLIC_METAMASK_NETWORK as NetworkName) || 'ropsten';
-
-export const DEEP_LINK =
-  typeof window !== 'undefined'
-    ? process.env.NEXT_PUBLIC_DEEP_LINK + window.location.href
-    : '';

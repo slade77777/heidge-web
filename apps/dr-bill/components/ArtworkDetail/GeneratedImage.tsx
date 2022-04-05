@@ -8,7 +8,7 @@ import { genImgUrl } from '../../utils';
 import { toast, useMetamask } from 'shared';
 import { getDataFormLocal, saveToLocal } from '../../utils/localStorage';
 import { LOCAL_KEY } from '../../constants';
-import { DEEP_LINK } from '../../constants/common';
+import useDeepLink from '../../hooks/useDeepLink';
 
 type Props = {
   categorySlug: string;
@@ -17,23 +17,28 @@ type Props = {
 };
 const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
   const { account } = useMetamask();
+  const deepLink = useDeepLink();
   const [currentRandom, setCurrentRandom] = useState(0);
   const [savedList, setSavedList] = useState([]);
   const [loading, setLoading] = useState(false);
 
   function generateImage() {
+    setLoading(true);
+    fetch(`/api/get-random-number/${more}`)
+      .then((res) => res.json())
+      .then((num) => {
+        setCurrentRandom(num);
+      })
+      .catch((err) => {
+        toast.error(err?.message);
+      });
+  }
+
+  function handleGenerationImg() {
     if (!account && window.innerWidth <= 768) {
-      window.location.href = DEEP_LINK;
+      window.location.href = deepLink;
     } else {
-      setLoading(true);
-      fetch(`/api/get-random-number/${more}`)
-        .then((res) => res.json())
-        .then((num) => {
-          setCurrentRandom(num);
-        })
-        .catch((err) => {
-          toast.error(err?.message);
-        });
+      generateImage();
     }
   }
 
@@ -70,7 +75,7 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
       return;
     }
     if (!account && window.innerWidth <= 768) {
-      window.location.href = DEEP_LINK;
+      window.location.href = deepLink;
     } else {
       mint?.(currentRandom);
     }
@@ -112,7 +117,7 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
           <div className="flex flex-row justify-between gap-2 mt-3">
             <SquareBtn
               css={{ flex: 1 }}
-              onClick={generateImage}
+              onClick={handleGenerationImg}
               disabled={loading}
             >
               Generate

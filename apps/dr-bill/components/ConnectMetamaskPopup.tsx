@@ -1,15 +1,16 @@
 import { useEffect, useState } from 'react';
 import { classNames } from 'shared/utils';
 import { useMetamask } from 'shared';
-import { DEEP_LINK } from '../constants/common';
+import useDeepLink from '../hooks/useDeepLink';
 
 const ConnectMetamaskPopup = () => {
   const { account } = useMetamask();
+  const deeplink = useDeepLink();
   const [show, setShow] = useState(false);
   useEffect(() => {
     const timeOutId = setTimeout(() => {
       setShow(true);
-    }, 1000);
+    }, 2000);
     return () => {
       if (timeOutId) {
         clearTimeout(timeOutId);
@@ -30,7 +31,7 @@ const ConnectMetamaskPopup = () => {
     >
       <div className="max-w-md mx-auto px-2 lg:px-0 flex justify-between items-center h-full">
         <div className="text-center">
-          <a href={DEEP_LINK} className="py-1 px-3 text-xs text-blue-500">
+          <a href={deeplink} className="py-1 px-3 text-xs text-blue-500">
             Switch to MetaMask App →
           </a>
         </div>

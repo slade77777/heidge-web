@@ -4,7 +4,7 @@ import { useMetamask } from 'shared';
 import { Wallet } from 'shared/icons';
 import { classNames, getShortWalletAddress } from 'shared/utils';
 import ExternalLink from '../ExternalLink';
-import { DEEP_LINK } from '../../constants/common';
+import useDeepLink from '../../hooks/useDeepLink';
 
 const WalletButton = ({
   css,
@@ -35,6 +35,7 @@ const WalletButton = ({
 
 export default function ConnectWalletButton({ css }: { css?: Object }) {
   const { account, connect } = useMetamask();
+  const deepLink = useDeepLink();
   const { isDark } = useTheme();
 
   if (account) {
@@ -61,7 +62,7 @@ export default function ConnectWalletButton({ css }: { css?: Object }) {
   return (
     <>
       <WalletButton css={css} className="hidden lg:block" onClick={connect} />
-      <ExternalLink href={DEEP_LINK} className="lg:hidden">
+      <ExternalLink href={deepLink} className="lg:hidden">
         <WalletButton css={css} />
       </ExternalLink>
     </>
