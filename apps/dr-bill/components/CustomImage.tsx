@@ -14,6 +14,6 @@ const CustomImage = (props: ImageProps) => {
         Photo
       </div>
     );
-  return <Image loader={customLoader} {...props} alt={props.alt} />;
+  return <Image loader={customLoader} unoptimized {...props} alt={props.alt} />;
 };
 export default CustomImage;

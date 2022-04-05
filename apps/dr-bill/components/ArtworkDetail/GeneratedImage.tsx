@@ -9,13 +9,15 @@ import { toast, useMetamask } from 'shared';
 import { getDataFormLocal, saveToLocal } from '../../utils/localStorage';
 import { LOCAL_KEY } from '../../constants';
 import useDeepLink from '../../hooks/useDeepLink';
+import BlurImage from '../BlurImage';
 
 type Props = {
   categorySlug: string;
   mint?: (id: number) => void;
   more: number;
+  thumbnail?: string;
 };
-const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
+const GeneratedImage = ({ categorySlug, mint, more, thumbnail }: Props) => {
   const { account } = useMetamask();
   const deepLink = useDeepLink();
   const [currentRandom, setCurrentRandom] = useState(0);
@@ -30,6 +32,7 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
         setCurrentRandom(num);
       })
       .catch((err) => {
+        setLoading(false);
         toast.error(err?.message);
       });
   }
@@ -86,8 +89,6 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
     if (!!localData?.selected) {
       setSavedList(localData.list);
       setCurrentRandom(localData.selected);
-    } else {
-      generateImage();
     }
   }, [more]);
 
@@ -100,16 +101,20 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
           </div>
         )}
         <div className="aspect-w-1 aspect-h-1">
-          <CustomImage
-            src={genImgUrl(currentRandom)}
-            layout="fill"
-            alt="gen-img"
-            className={classNames(
-              'duration-700 ease-in-out group-hover:opacity-75',
-              loading ? 'blur-md' : 'blur-0',
-            )}
-            onLoadingComplete={() => setLoading(false)}
-          />
+          {currentRandom ? (
+            <CustomImage
+              src={genImgUrl(currentRandom)}
+              layout="fill"
+              alt="gen-img"
+              className={classNames(
+                'duration-700 ease-in-out group-hover:opacity-75',
+                loading ? 'blur-md' : 'blur-0',
+              )}
+              onLoadingComplete={() => setLoading(false)}
+            />
+          ) : (
+            <BlurImage src={thumbnail} />
+          )}
         </div>
       </div>
       {categorySlug === 'generative-art-vending-machine' && (
@@ -122,10 +127,18 @@ const GeneratedImage = ({ categorySlug, mint, more }: Props) => {
             >
               Generate
             </SquareBtn>
-            <SquareBtn css={{ flex: 1 }} onClick={handleSave}>
+            <SquareBtn
+              css={{ flex: 1 }}
+              onClick={handleSave}
+              disabled={loading}
+            >
               Save
             </SquareBtn>
-            <SquareBtn css={{ flex: 1 }} onClick={handleMint}>
+            <SquareBtn
+              css={{ flex: 1 }}
+              onClick={handleMint}
+              disabled={loading}
+            >
               Mint
             </SquareBtn>
           </div>

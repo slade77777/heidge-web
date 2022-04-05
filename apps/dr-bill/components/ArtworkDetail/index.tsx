@@ -81,6 +81,7 @@ export default function ArtworkDetail({
               <GeneratedImage
                 categorySlug={categorySlug}
                 more={artwork.more}
+                thumbnail={artwork.image}
                 mint={handleMint}
               />
             </div>
