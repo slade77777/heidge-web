@@ -77,6 +77,10 @@ const GeneratedImage = ({ categorySlug, mint, more, thumbnail }: Props) => {
     if (typeof window === 'undefined') {
       return;
     }
+    if (!currentRandom) {
+      toast.error('Please generate an image!');
+      return;
+    }
     if (!account && window.innerWidth <= 768) {
       window.location.href = deepLink;
     } else {
