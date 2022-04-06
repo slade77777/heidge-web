@@ -1,46 +1,33 @@
 import SwitchThemeButton from './Button/SwitchThemeBtn';
-import { BACKGROUND_SHAPES } from '../constants/backgroundShapes';
-// import whiteCircle from '../public/assets/shapes/white-circle.png';
+import Polygon from './Polygon';
 
-// const BlurCircle = () => {
-//   return (
-//     <div className="blur-circle">
-//       <style jsx>{`
-//         .blur-circle {
-//           background-image: url(${whiteCircle.src}), url(${whiteCircle.src}), url(${whiteCircle.src}), url(${whiteCircle.src}), url(${whiteCircle.src}), url(${whiteCircle.src});
-//           background-position: -150px -150px, right top, right -131px center, left center, center, center bottom -160px;
-//           background-size: 331px, 190px, 230px, 145px, 343px, 332px;
-//           background-repeat: no-repeat;
-//           filter: blur(100px);
-//           position: absolute;
-//           width: 100%;
-//           height: 100%;
-//           top: 0;
-//           left: 0;
-//         }
-//       `}</style>
-//     </div>
-//   )
-// }
+const Polygons = () => (
+  <div className="absolute w-full h-full overflow-hidden">
+    <Polygon size={300} className="triangle absolute top-0 right-0 rotate-[165deg] opacity-5"/>
+    <Polygon size={380} className="triangle absolute top-[950px] -left-10 rotate-[195deg] opacity-5"/>
+    <Polygon size={100} className="square absolute top-0 right-6 rotate-[60deg] opacity-5"/>
+    <Polygon size={87} className="square absolute top-[2200px] left-10 rotate-[30deg] opacity-5"/>
+    <Polygon size={368} className="circle absolute top-[1850px] right-[124px] opacity-5"/>
+    <Polygon className="pentagon absolute top-[1540px] left-1/3 -rotate-[15deg] opacity-5"/>
+    <Polygon size={57} className="circle absolute top-[1578px] left-1/3 opacity-5"/>
+
+    <Polygon size={331} className="blur-circle absolute -top-[150px] -left-[150px]"/>
+    <Polygon size={190} className="blur-circle absolute -top-[61px] right-[165px]"/>
+    <Polygon size={230} className="blur-circle absolute top-1/2 -right-[131px]"/>
+    <Polygon size={145} className="blur-circle absolute top-1/2 left-0"/>
+    <Polygon size={343} className="blur-circle absolute top-1/2 left-1/2"/>
+    <Polygon size={332} className="blur-circle absolute -bottom-[160px] left-1/2"/>
+  </div>
+)
 
 export default function Background({children}) {
-  const {backgroundImage, backgroundSize, backgroundPosition} = BACKGROUND_SHAPES;
   return (
-    <div className="background">
-      {/*<BlurCircle />*/}
+    <div className="background relative">
+      <Polygons />
       <main>{children}</main>
       <div className="fixed bottom-0 md:top-1/2 right-5 z-10">
         <SwitchThemeButton />
       </div>
-      <style jsx>{`
-        .background {
-          position: relative;
-          background-image: ${backgroundImage.join(', ')};
-          background-size: ${backgroundSize.join(', ')};
-          background-position: ${backgroundPosition.join(', ')};
-          background-repeat: no-repeat;
-        }
-      `}</style>
     </div>
   );
 }
