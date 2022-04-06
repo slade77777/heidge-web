@@ -1,11 +1,11 @@
-import { Text } from '@nextui-org/react';
+import { CSS, Text } from '@nextui-org/react';
 import { ReactNode } from 'react';
 
 export const Heading = ({
   children,
   css,
 }: {
-  css?: Object;
+  css?: CSS;
   children: ReactNode;
 }) => {
   return (
@@ -36,7 +36,7 @@ export const Paragraph = ({
   css,
   className,
 }: {
-  css?: Object;
+  css?: CSS;
   children: ReactNode;
   className?: string;
 }) => {

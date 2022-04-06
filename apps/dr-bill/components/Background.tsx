@@ -1,24 +1,15 @@
-import {
-  Circle,
-  PolygonAndEllipse,
-  Triangle,
-  TriangleAndSquare,
-} from './Polygons';
-import { useTheme } from '@nextui-org/react';
 import SwitchThemeButton from './Button/SwitchThemeBtn';
-// import { BACKGROUND_SHAPES } from '../constants/backgroundShapes';
+import { BACKGROUND_SHAPES } from '../constants/backgroundShapes';
 // import whiteCircle from '../public/assets/shapes/white-circle.png';
-// import { useMemo } from 'react';
-// import { getRandomNumber } from '../utils';
 
-// const BlurCircle = ({size, top, left}) => {
+// const BlurCircle = () => {
 //   return (
 //     <div className="blur-circle">
 //       <style jsx>{`
 //         .blur-circle {
-//           background-image: url(${whiteCircle.src});
-//           background-position: ${top} ${left};
-//           background-size: ${size};
+//           background-image: url(${whiteCircle.src}), url(${whiteCircle.src}), url(${whiteCircle.src}), url(${whiteCircle.src}), url(${whiteCircle.src}), url(${whiteCircle.src});
+//           background-position: -150px -150px, right top, right -131px center, left center, center, center bottom -160px;
+//           background-size: 331px, 190px, 230px, 145px, 343px, 332px;
 //           background-repeat: no-repeat;
 //           filter: blur(100px);
 //           position: absolute;
@@ -33,23 +24,23 @@ import SwitchThemeButton from './Button/SwitchThemeBtn';
 // }
 
 export default function Background({children}) {
-//   const {backgroundImage, backgroundSize, backgroundPosition} = BACKGROUND_SHAPES;
-  // const BlurCircles = useMemo(() => {
-  //   let arr = [], len = 5;
-  //   while (len--) {
-  //     const size = getRandomNumber(100, 600), top = getRandomNumber(-size, 2000), left = getRandomNumber(-size, 1920);
-  //     arr.push(<BlurCircle key={len} size={`${size}px`} top={`${top}px`} left={`${left}px`} />)
-  //   }
-  //   return arr;
-  // }, []);
+  const {backgroundImage, backgroundSize, backgroundPosition} = BACKGROUND_SHAPES;
   return (
     <div className="background">
-      {/*{BlurCircles}*/}
+      {/*<BlurCircle />*/}
       <main>{children}</main>
       <div className="fixed bottom-0 md:top-1/2 right-5 z-10">
         <SwitchThemeButton />
       </div>
-      {/*<SwitchThemeButton className="absolute top-1/2 right-0 -translate-x-1/2"/>*/}
+      <style jsx>{`
+        .background {
+          position: relative;
+          background-image: ${backgroundImage.join(', ')};
+          background-size: ${backgroundSize.join(', ')};
+          background-position: ${backgroundPosition.join(', ')};
+          background-repeat: no-repeat;
+        }
+      `}</style>
     </div>
   );
 }

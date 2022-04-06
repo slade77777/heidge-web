@@ -1,6 +1,7 @@
 import { Card, Text } from '@nextui-org/react';
 import { Paragraph } from './CustomText';
 import CustomLink from './CustomLink';
+import Tag from './Tag';
 
 type Props = {
   title?: string;
@@ -29,27 +30,13 @@ export default function CardSchedule({
         background: 'transparent',
       }}
     >
-      <CustomLink href={href} isExternalLink={isExternal}>
-        <Text css={{ lineHeight: '$md', fontWeight: 600 }}>{title}</Text>
-      </CustomLink>
-      <Paragraph>{content}</Paragraph>
-      {!!tag && (
-        <Text
-          css={{
-            fontSize: '$xs',
-            lineHeight: '$sm',
-            background: '$text',
-            color: '$background',
-            position: 'absolute',
-            fontWeight: 400,
-            top: 0,
-            right: 0,
-            padding: '10px 20px',
-          }}
-        >
-          {tag}
-        </Text>
-      )}
+      <div>
+        <CustomLink href={href} isExternalLink={isExternal}>
+          <Text css={{ lineHeight: '$md', fontWeight: 600 }}>{title}</Text>
+        </CustomLink>
+        <Paragraph>{content}</Paragraph>
+      </div>
+      {!!tag && <Tag text={tag} />}
     </Card>
   );
 }
