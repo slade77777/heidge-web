@@ -28,32 +28,39 @@ const SocialNetworkList = ({
   children?: ReactNode;
 }) =>
   !socialNetworks.filter((item) => !!item.href).length ? null : (
-    <div className={classNames('flex flex-row gap-6 items-center', className)}>
-      {socialNetworks.map((e, i) => (
-        <a href={e.href} key={i} target="_blank" rel="noreferrer">
-          {isSolid ? (
-            <Button
-              css={{
-                padding: 0,
-                minWidth: 50,
-                height: 50,
-                borderRadius: '100%',
-                background: '$primary',
-                display: 'flex',
-                justifyContent: 'center',
-                alignItems: 'center',
-                color: '$background',
-              }}
-            >
-              {e.icon}
-            </Button>
-          ) : (
-            e.icon
-          )}
-        </a>
-      ))}
+    <>
+      <div
+        className={classNames(
+          'flex flex-row gap-6 items-center justify-center lg:justify-start',
+          className,
+        )}
+      >
+        {socialNetworks.map((e, i) => (
+          <a href={e.href} key={i} target="_blank" rel="noreferrer">
+            {isSolid ? (
+              <Button
+                css={{
+                  padding: 0,
+                  minWidth: 50,
+                  height: 50,
+                  borderRadius: '100%',
+                  background: '$primary',
+                  display: 'flex',
+                  justifyContent: 'center',
+                  alignItems: 'center',
+                  color: '$background',
+                }}
+              >
+                {e.icon}
+              </Button>
+            ) : (
+              e.icon
+            )}
+          </a>
+        ))}
+      </div>
       {children}
-    </div>
+    </>
   );
 
 export default SocialNetworkList;
