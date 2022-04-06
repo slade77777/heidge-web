@@ -1,9 +1,9 @@
-import { Button, Text } from '@nextui-org/react';
+import { Button, CSS, Text } from '@nextui-org/react';
 import { ReactNode } from 'react';
 
 type Props = {
   children: ReactNode;
-  css?: Object;
+  css?: CSS;
   onClick?: () => void;
   disabled?: boolean;
 };

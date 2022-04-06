@@ -98,7 +98,7 @@ export default function Footer() {
             Leave your email to be informed of exhibits, drops and other
             goodies.
           </Text>
-          <Subscribe className="w-full md:max-w-[306px] mx-auto mb-[50px]" />
+          <Subscribe className="w-full md:max-w-[306px] mx-auto mb-[50px] relative" />
         </div>
         <div className="w-full md:w-[335px] md:order-first">
           <SocialNetworkList className="mb-5 w-full" isSolid>
