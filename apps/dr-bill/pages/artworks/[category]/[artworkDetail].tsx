@@ -1,12 +1,7 @@
 import ArtworkDetail from '../../../components/ArtworkDetail';
-import { callConcurrent } from '../../../utils';
 import { Content } from '../../../types';
-import { GetStaticProps, GetStaticPropsContext } from 'next';
-import {
-  getArtworkByIndex,
-  getArtworkBySlug,
-  getArtworkCategoryByIndex,
-} from '../../../@api';
+import { GetServerSideProps, GetStaticPropsContext } from 'next';
+import { getArtworkBySlug } from '../../../@api';
 
 const ArtworkDetailPage = ({
   data,
@@ -18,30 +13,7 @@ const ArtworkDetailPage = ({
   return <ArtworkDetail artwork={data} categorySlug={parentSlug} />;
 };
 
-export const getStaticPaths = async () => {
-  const allArtworks = await getArtworkByIndex(0);
-  const promises = allArtworks.map((aw) =>
-    getArtworkCategoryByIndex(0, aw.slug),
-  );
-  const response = await callConcurrent<Content>(promises);
-  const data = response.reduce<Content[]>((acc, vl) => acc.concat(vl), []);
-
-  if (!data.length) {
-    throw Error('can not render page');
-  }
-
-  return {
-    paths: data.map((p) => ({
-      params: {
-        category: p.content_type,
-        artworkDetail: p.slug,
-      },
-    })),
-    fallback: false,
-  };
-};
-
-export const getStaticProps: GetStaticProps = async (
+export const getServerSideProps: GetServerSideProps = async (
   context: GetStaticPropsContext,
 ) => {
   const slug = context.params.artworkDetail as string;

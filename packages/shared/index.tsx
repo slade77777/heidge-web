@@ -20,3 +20,4 @@ export {
 export { AppProvider } from './context/AppContext';
 export * from './context/AuthenticationContext';
 export * from './constants';
+export { default as useNextProgressbar } from './lib/useNextProgressbar';

@@ -1,11 +1,10 @@
 import Home from '../components/Home';
-import { InferGetStaticPropsType } from 'next';
-import type { GetStaticProps } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { getArtworkByIndex, getHomeContents, getShowAndMedia } from '../@api';
 import { Content } from '../types';
 import { callConcurrent } from '../utils';
 
-const HomePage: InferGetStaticPropsType<typeof getStaticProps> = ({
+const HomePage: InferGetServerSidePropsType<typeof getServerSideProps> = ({
   homeData,
   firstArtwork,
   media,
@@ -18,7 +17,7 @@ const HomePage: InferGetStaticPropsType<typeof getStaticProps> = ({
   );
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const [homeData, firstArtwork, media] = await callConcurrent<Content>([
     getHomeContents(),
     getArtworkByIndex(2),

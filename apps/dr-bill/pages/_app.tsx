@@ -5,14 +5,14 @@ import type { AppProps } from 'next/app';
 import { NextPage } from 'next';
 import type { ReactElement } from 'react';
 import { ReactNode } from 'react';
-
+import { useRouter } from 'next/router';
 import { ThemeProvider as NextThemesProvider } from 'next-themes';
 import { NextUIProvider } from '@nextui-org/react';
 import Header from '../components/Header';
 import { darkTheme, lightTheme } from '../customThemes';
 import Footer from '../components/Footer';
 import Background from '../components/Background';
-import { MetamaskProvider, Toaster } from 'shared';
+import { MetamaskProvider, Toaster, useNextProgressbar } from 'shared';
 import Breadcrumbs from '../components/Breadcrumbs';
 import ConnectMetamaskPopup from '../components/ConnectMetamaskPopup';
 
@@ -25,6 +25,9 @@ type AppPropsWithLayout = AppProps & {
 };
 
 function App({ Component, pageProps }: AppPropsWithLayout) {
+  const router = useRouter();
+  useNextProgressbar(router);
+
   const getLayout = Component.getLayout;
 
   return (

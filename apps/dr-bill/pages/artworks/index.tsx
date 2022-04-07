@@ -1,15 +1,15 @@
-import type { GetStaticProps, InferGetStaticPropsType } from 'next';
+import type { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import ArtworkCategories from '../../components/ArtworkCategories';
 import { getArtworkByIndex } from '../../@api';
 import { Content } from '../../types';
 
-const ArtworkPage: InferGetStaticPropsType<typeof getStaticProps> = ({
+const ArtworkPage: InferGetServerSidePropsType<typeof getServerSideProps> = ({
   artworks,
 }) => {
   return <ArtworkCategories artworks={artworks} />;
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const artworks: Content[] = await getArtworkByIndex(0);
 
   return {

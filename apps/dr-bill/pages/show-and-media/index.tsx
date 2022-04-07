@@ -1,15 +1,15 @@
 import ShowAndMedia from '../../components/ShowAndMedia';
 import { getShowAndMedia } from '../../@api';
-import { GetStaticProps, InferGetStaticPropsType } from 'next';
+import { GetServerSideProps, InferGetServerSidePropsType } from 'next';
 import { Content } from '../../types';
 
-export const ShowAndMediaPage: InferGetStaticPropsType<
-  typeof getStaticProps
+export const ShowAndMediaPage: InferGetServerSidePropsType<
+  typeof getServerSideProps
 > = ({ news }) => {
   return <ShowAndMedia news={news} />;
 };
 
-export const getStaticProps: GetStaticProps = async () => {
+export const getServerSideProps: GetServerSideProps = async () => {
   const news: Content[] = await getShowAndMedia(0);
   return {
     props: {

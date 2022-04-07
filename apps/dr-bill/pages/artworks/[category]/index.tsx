@@ -1,32 +1,20 @@
 import type {
-  GetStaticProps,
+  GetServerSideProps,
   GetStaticPropsContext,
-  InferGetStaticPropsType,
+  InferGetServerSidePropsType,
 } from 'next';
 import ArtworksByCategory from '../../../components/ArtworksByCategory';
-import {
-  getArtworkByIndex,
-  getArtworkBySlug,
-  getArtworkCategoryByIndex,
-} from '../../../@api';
+import { getArtworkBySlug, getArtworkCategoryByIndex } from '../../../@api';
 import { callConcurrent } from '../../../utils';
 
-const CategoryPage: InferGetStaticPropsType<typeof getStaticProps> = ({
+const CategoryPage: InferGetServerSidePropsType<typeof getServerSideProps> = ({
   artworkCategory,
   artworks,
 }) => {
   return <ArtworksByCategory artworks={artworks} category={artworkCategory} />;
 };
 
-export const getStaticPaths = async () => {
-  const artworks = await getArtworkByIndex(0);
-  return {
-    paths: artworks.map((artwork) => ({ params: { category: artwork.slug } })),
-    fallback: true,
-  };
-};
-
-export const getStaticProps: GetStaticProps = async (
+export const getServerSideProps: GetServerSideProps = async (
   context: GetStaticPropsContext,
 ) => {
   const slug = context.params.category as string;
