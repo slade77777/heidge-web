@@ -1,11 +1,12 @@
 import SwitchThemeButton from './Button/SwitchThemeBtn';
 import Polygon from './Polygon';
+import { useTheme } from '@nextui-org/react';
 
 const Polygons = () => (
   <div className="absolute top-0 w-full h-full overflow-hidden">
     <Polygon
       size={300}
-      className="triangle absolute top-0 right-0 rotate-[165deg] opacity-5"
+      className="animate-spin duration-500 triangle absolute top-0 right-0 rotate-[165deg] opacity-5"
     />
     <Polygon
       size={380}
@@ -32,11 +33,24 @@ const Polygons = () => (
 );
 
 const Light = () => {
+  const { isDark } = useTheme();
   return (
     <>
-      <div className="fixed -top-20 right-0 bg-white w-80 h-80 opacity-10 lg:opacity-60 rounded-full blur-3xl backdrop-blur-3xl" />
-      <div className="fixed -top-20 left-0 bg-white w-60 h-80 opacity-30 lg:opacity-50 rounded-full blur-3xl backdrop-blur-3xl" />
-      <div className="fixed -bottom-10 left-1/2 -translate-x-1/2 bg-white w-[500px] h-60 opacity-20 lg:opacity-60 rounded-full blur-3xl backdrop-blur-3xl" />
+      <div
+        className={`fixed -top-20 right-0 bg-white w-80 h-80 opacity-10 lg:opacity-${
+          isDark ? 5 : 60
+        } rounded-full blur-3xl backdrop-blur-3xl`}
+      />
+      <div
+        className={`fixed -top-44 -left-16 bg-white w-80 h-80 opacity-30 lg:opacity-${
+          isDark ? 5 : 50
+        } rounded-full blur-3xl backdrop-blur-3xl`}
+      />
+      <div
+        className={`fixed -bottom-20 left-1/2 -translate-x-1/2 bg-white w-1/3 h-1/3 opacity-20 lg:opacity-${
+          isDark ? 5 : 50
+        } rounded-full blur-3xl backdrop-blur-3xl`}
+      />
     </>
   );
 };
