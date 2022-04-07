@@ -8,7 +8,7 @@ export default function About() {
   return (
     <Watermark text="About">
       <Container md>
-        <div className="mt-[100px]">
+        <div className="mt-[45px] md:mt-[100px]">
           <div className="hidden lg:block w-[420px] h-auto mr-8 mb-3 relative float-left">
             <BlurImage
               className="aspect-w-3 aspect-h-4"
@@ -16,7 +16,7 @@ export default function About() {
               alt="avatar"
             />
           </div>
-          <Heading css={{ marginBottom: '30px' }}>
+          <Heading >
             About <br />
             Dr. Bill Kolomyjec
           </Heading>

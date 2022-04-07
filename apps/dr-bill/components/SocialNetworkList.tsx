@@ -19,22 +19,17 @@ const socialNetworks = [
 ];
 
 const SocialNetworkList = ({
-  className,
-  isSolid,
-  children,
-}: {
+                             className,
+                             isSolid,
+                             children,
+                           }: {
   className?: string;
   isSolid?: boolean;
   children?: ReactNode;
 }) =>
   !socialNetworks.filter((item) => !!item.href).length ? null : (
-    <>
-      <div
-        className={classNames(
-          'flex flex-row gap-6 items-center justify-center lg:justify-start',
-          className,
-        )}
-      >
+    <div className={classNames('flex flex-col justify-center relative', className)}>
+      <div className="flex flex-row items-center gap-6">
         {socialNetworks.map((e, i) => (
           <a href={e.href} key={i} target="_blank" rel="noreferrer">
             {isSolid ? (
@@ -60,7 +55,7 @@ const SocialNetworkList = ({
         ))}
       </div>
       {children}
-    </>
+    </div>
   );
 
 export default SocialNetworkList;

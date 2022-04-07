@@ -11,7 +11,7 @@ const HomePage: InferGetServerSidePropsType<typeof getServerSideProps> = ({
 }) => {
   return (
     <>
-      <div className="h-9" />
+      <div className="md:h-9" />
       <Home data={homeData} artwork={firstArtwork} media={media} />
     </>
   );
