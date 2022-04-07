@@ -6,7 +6,7 @@ const Polygons = () => (
   <div className="absolute top-0 w-full h-full overflow-hidden">
     <Polygon
       size={300}
-      className="animate-spin duration-500 triangle absolute top-0 right-0 rotate-[165deg] opacity-5"
+      className="duration-500 triangle absolute top-0 right-0 rotate-[165deg] opacity-5"
     />
     <Polygon
       size={380}
