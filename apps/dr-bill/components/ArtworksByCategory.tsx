@@ -17,7 +17,7 @@ export default function ArtworksByCategory({
   return (
     <Watermark text={category.title}>
       <Container md>
-        <div className="mt-24 mb-48">
+        <div className="mt-8 lg:mt-24 mb-48">
           <div className="grid grid-cols-1 lg:grid-cols-[40%,auto] gap-10">
             <div className="">
               <div className="my-auto">

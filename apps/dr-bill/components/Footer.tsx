@@ -106,6 +106,7 @@ export default function Footer() {
               css={{
                 lineHeight: '32px',
                 fontWeight: 300,
+                marginTop: '28px',
                 marginBottom: '20px',
               }}
             >
