@@ -16,7 +16,7 @@ function Card({
   const { isDark } = useTheme();
   return (
     <CustomLink href={href} isExternalLink={isExternalLink}>
-      <div className={isDark ? 'border border-white' : 'border border-black'}>
+      <div className={isDark ? 'border border-white relative' : 'border border-black relative'}>
         {children}
       </div>
     </CustomLink>
