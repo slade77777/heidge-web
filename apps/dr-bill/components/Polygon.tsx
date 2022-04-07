@@ -1,4 +1,5 @@
 import { useTheme } from '@nextui-org/react';
+import BlurImage from '../public/assets/blur.png';
 
 type Props = {
   id?: string;
@@ -18,15 +19,18 @@ export default function Polygon({size, className}: Props) {
           background: ${darkColor};
         }
 
-        .circle, .blur-circle {
+        .circle {
           -moz-border-radius: 50%;
           -webkit-border-radius: 50%;
           border-radius: 50%;
         }
 
         .blur-circle {
-          background: ${theme.colors.accents1.value};
-          filter: blur(100px);
+          background-color: transparent;
+          background-image: url(${BlurImage.src});
+          background-position: center;
+          background-repeat: no-repeat;
+          background-size: contain;
         }
 
         .triangle {
