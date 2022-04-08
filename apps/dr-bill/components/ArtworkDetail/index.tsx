@@ -1,17 +1,12 @@
 import { Container } from '@nextui-org/react';
-import {
-  getTotalEthFromWei,
-  METAMASK_ERRORS,
-  NETWORKS,
-  toast,
-  useMetamask,
-} from 'shared';
+import { METAMASK_ERRORS, NETWORKS, toast, useMetamask } from 'shared';
 import { Heading, Paragraph } from '../CustomText';
 import Watermark from '../Watermark';
 import { Content } from '../../types';
 import { drBillAbi } from '../../constants/drbillAbi';
 import GeneratedImage from './GeneratedImage';
 import { METAMASK_NETWORK } from '../../constants/common';
+import useUnitPrice from '../../hooks/useUnitPrice';
 
 export default function ArtworkDetail({
   artwork,
@@ -20,8 +15,8 @@ export default function ArtworkDetail({
   artwork: Content;
   categorySlug?: string;
 }) {
-  console.log(artwork.more);
   const { getContract, account, networkName } = useMetamask();
+  const { unitPrice } = useUnitPrice();
 
   async function handleMint(tokenId: number) {
     if (!account) {
@@ -34,6 +29,11 @@ export default function ArtworkDetail({
       return;
     }
 
+    if (!unitPrice) {
+      toast.error('Price is missing');
+      return;
+    }
+
     const contract = getContract(
       process.env.NEXT_PUBLIC_CONTRACT_ADDRESS,
       drBillAbi,
@@ -41,7 +41,7 @@ export default function ArtworkDetail({
 
     try {
       await contract.mint(tokenId, {
-        value: getTotalEthFromWei(),
+        value: unitPrice,
       });
 
       const response = await fetch(`/api/mint/confirm/${tokenId}`);
