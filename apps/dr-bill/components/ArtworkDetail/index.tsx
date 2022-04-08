@@ -20,6 +20,7 @@ export default function ArtworkDetail({
   artwork: Content;
   categorySlug?: string;
 }) {
+  console.log(artwork.more);
   const { getContract, account, networkName } = useMetamask();
 
   async function handleMint(tokenId: number) {
@@ -52,8 +53,12 @@ export default function ArtworkDetail({
         toast.error('Mint failed');
       }
     } catch (err) {
-      const code = err?.error?.code as string;
-      toast.error(METAMASK_ERRORS[code].message || 'Something went wrong');
+      if (err?.error?.code === -32603) {
+        toast.error(err.error?.message);
+      } else {
+        const code = (err?.error?.code as string) || err.code;
+        toast.error(METAMASK_ERRORS[code].message || 'Something went wrong');
+      }
     }
   }
 
