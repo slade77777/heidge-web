@@ -31,6 +31,10 @@ export const Heading = ({
   );
 };
 
+function createMarkup(content: string) {
+  return { __html: content };
+}
+
 export const Paragraph = ({
   children,
   css,
@@ -57,7 +61,14 @@ export const Paragraph = ({
         ...css,
       }}
     >
-      <div className={className}>{children}</div>
+      {typeof children === 'string' ? (
+        <div
+          className={className}
+          dangerouslySetInnerHTML={createMarkup(children as string)}
+        />
+      ) : (
+        children
+      )}
     </Text>
   );
 };

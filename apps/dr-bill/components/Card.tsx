@@ -1,6 +1,6 @@
 import CustomLink from './CustomLink';
 import { ReactNode } from 'react';
-import { Heading, Paragraph } from './CustomText';
+import { Heading } from './CustomText';
 import { useTheme } from '@nextui-org/react';
 
 function Card({
@@ -16,7 +16,13 @@ function Card({
   const { isDark } = useTheme();
   return (
     <CustomLink href={href} isExternalLink={isExternalLink}>
-      <div className={isDark ? 'border border-white relative' : 'border border-black relative'}>
+      <div
+        className={
+          isDark
+            ? 'border border-white relative'
+            : 'border border-black relative'
+        }
+      >
         {children}
       </div>
     </CustomLink>
@@ -24,7 +30,7 @@ function Card({
 }
 
 export const CardBody = ({ children }: { children: ReactNode }) => {
-  return <Paragraph css={{ padding: '0 1rem 1rem' }}>{children}</Paragraph>;
+  return <div className="font-light pt-0 p-4">{children}</div>;
 };
 
 export const CardTitle = ({ children }: { children: ReactNode }) => {

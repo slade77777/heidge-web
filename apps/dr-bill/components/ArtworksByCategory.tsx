@@ -40,7 +40,9 @@ export default function ArtworksByCategory({
                   <BlurImage src={artwork.image} />
                   <Card.CardTitle>{artwork.title}</Card.CardTitle>
                   <Card.CardBody>
-                    <div className="line-clamp-5">{artwork.text}</div>
+                    <Paragraph className="line-clamp-5">
+                      {artwork.text}
+                    </Paragraph>
                   </Card.CardBody>
                 </Card>
               ))}
