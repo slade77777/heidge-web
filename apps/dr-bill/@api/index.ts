@@ -25,7 +25,7 @@ export function getArtworkBySlug(slug: string) {
 }
 
 export function getShowAndMedia(index: number) {
-  return fetch(`${ssrBaseUrl}/content/show-and-media/${index}`).then((res) =>
+  return fetch(`${ssrBaseUrl}/content/events-and-media/${index}`).then((res) =>
     res.json(),
   );
 }

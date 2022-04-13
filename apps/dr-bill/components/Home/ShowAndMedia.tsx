@@ -74,7 +74,7 @@ export default function ShowAndMedia({
                   />
                 ))}
                 <div className="h-[135px] flex justify-end items-end">
-                  <MoreLink href="/show-and-media" content="View all" />
+                  <MoreLink href="/events-and-media" content="View all" />
                 </div>
               </div>
             </div>

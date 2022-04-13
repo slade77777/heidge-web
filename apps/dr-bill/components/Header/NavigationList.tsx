@@ -18,7 +18,7 @@ const navigationList = [
   },
   {
     title: 'Show & Media',
-    url: PageNames.SHOW_AND_MEDIA.en,
+    url: PageNames.EVENTS_AND_MEDIA.en,
   },
 ]
 const Button = ({className, title, url, onClick, active = false}) => {

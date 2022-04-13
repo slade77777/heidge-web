@@ -1,6 +1,6 @@
 import { MediaShowType, MediaType } from '../types';
 
-export const SHOW_AND_MEDIA: MediaShowType[] = [
+export const EVENTS_AND_MEDIA: MediaShowType[] = [
   {
     key: '1',
     label: MediaType.Event,

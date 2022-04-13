@@ -48,7 +48,7 @@ export enum MediaType {
 
 export type ContentType =
   | 'home'
-  | 'show-and-media'
+  | 'events-and-media'
   | 'generative-art-vending-machine'
   | 'plotter-art'
   | 'artworks';

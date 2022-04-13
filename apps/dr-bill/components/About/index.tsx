@@ -52,7 +52,7 @@ export default function About() {
             I found my niche designing graphics for multimedia training
             products. After several years my division morphed into Accenture
             Learning and I started designing E-Learning graphics and managing
-            projects. I &qout;retired&qout; from Accenture Learning and
+            projects. I “retired” from Accenture Learning and
             relocated to Pinellas County Florida.
             <br />
             <br />
@@ -66,7 +66,7 @@ export default function About() {
             until Covid-19 made classroom teaching a health risk.
             <br />
             <br />
-            Finally, fully retired, I promote my legacy where I can and create
+            Finally, fully retired, I promote my legacy and create
             Generative Art at my leisure.
           </Paragraph>
           <CollapsableContent />

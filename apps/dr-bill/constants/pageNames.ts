@@ -6,7 +6,7 @@ const ARTWORK = {
   en: '/artworks',
 }
 
-const SHOW_AND_MEDIA = {
-  en: '/show-and-media',
+const EVENTS_AND_MEDIA = {
+  en: '/events-and-media',
 }
-export const PageNames = {ABOUT, ARTWORK, SHOW_AND_MEDIA}
+export const PageNames = {ABOUT, ARTWORK, EVENTS_AND_MEDIA}

@@ -41,10 +41,10 @@ export default function ShowAndMedia({ news }: { news: Content[] }) {
   }
 
   return (
-    <Watermark text="Show & Media">
+    <Watermark text="Events & Media">
       <Container md>
         <div className="mt-5 lg:mt-[100px] mb-[100px] lg:mb-[200px]">
-          <Heading css={{ marginBottom: '40px' }}> Show & Media </Heading>
+          <Heading css={{ marginBottom: '40px' }}> Events & Media </Heading>
           <div className="flex flex-wrap gap-2 mb-10">
             {filters.map((btn) => (
               <button

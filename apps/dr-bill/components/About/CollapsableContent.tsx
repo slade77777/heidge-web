@@ -23,9 +23,9 @@ export default function CollapsableContent() {
       >
         <div className="md:grid md:grid-cols-2 grid-flow-col md:gap-12">
           <Paragraph>
-            <Text span weight="bold">Largo, Florida </Text>(Computer Graphic Artist Emeritus / 2020 - present).
-            Generative Art, Interactive Media
-            Art and Legacy work.
+            <Text span weight="bold">Largo, Florida </Text>(Artist / 2020 - present).
+            Generative Art Design, Development and Production, 
+            Computer Graphics/Computer Art Advocacy and Legacy activities.
             <br/><br/>
             <Text span weight="bold">Saint Petersburg College </Text>(Adjunct Faculty / Professional Trainer / 2013
             - 2020). Digital Media
