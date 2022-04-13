@@ -58,7 +58,7 @@ const Light = () => {
 export default function Background({ children }) {
   return (
     <div className="background relative">
-      <Light />
+      {/*<Light />*/}
       <Polygons />
       <main>{children}</main>
       <div className="fixed bottom-0 md:top-1/2 right-5 z-10">

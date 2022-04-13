@@ -1,6 +1,10 @@
 import { CSS, Text } from '@nextui-org/react';
 import { ReactNode } from 'react';
 
+function createMarkup(content: string) {
+  return { __html: content };
+}
+
 export const Heading = ({
   children,
   css,
@@ -30,10 +34,6 @@ export const Heading = ({
     </Text>
   );
 };
-
-function createMarkup(content: string) {
-  return { __html: content };
-}
 
 export const Paragraph = ({
   children,
