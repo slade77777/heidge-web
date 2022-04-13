@@ -17,7 +17,7 @@ const navigationList = [
     url: PageNames.ARTWORK.en,
   },
   {
-    title: 'Show & Media',
+    title: 'Events & Media',
     url: PageNames.EVENTS_AND_MEDIA.en,
   },
 ]
