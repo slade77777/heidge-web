@@ -87,7 +87,7 @@ const GeneratedImage = ({
       return;
     }
     if (!account && window.innerWidth <= 768) {
-      window.location.href = deepLink;
+      window.location.href = `${deepLink}/?current=${currentRandom}`;
     } else {
       mint?.(currentRandom);
     }
@@ -166,7 +166,7 @@ const GeneratedImage = ({
         <MetamaskWarningModal
           onClose={() => setModal(false)}
           visible={modal}
-          href={`${process.env.NEXT_PUBLIC_DEEP_LINK}${window.location.host}?current=${currentRandom}`}
+          href={`${deepLink}/?current=${currentRandom}`}
         />
       )}
     </div>
