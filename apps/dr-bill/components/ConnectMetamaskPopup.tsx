@@ -30,11 +30,7 @@ const ConnectMetamaskPopup = () => {
       )}
     >
       <div className="max-w-md mx-auto px-2 lg:px-0 flex justify-between items-center h-full">
-        <div className="text-center">
-          <a href={deeplink} className="py-1 px-3 text-xs text-blue-500">
-            Switch to MetaMask App →
-          </a>
-        </div>
+        <div className="text-center">witch to MetaMask App ?</div>
         <button
           className="text-right text-sm text-gray-400 active:text-black"
           onClick={() => setShow(!show)}

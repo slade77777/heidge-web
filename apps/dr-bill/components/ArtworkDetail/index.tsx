@@ -11,9 +11,11 @@ import useUnitPrice from '../../hooks/useUnitPrice';
 export default function ArtworkDetail({
   artwork,
   categorySlug,
+  generatedImg,
 }: {
   artwork: Content;
   categorySlug?: string;
+  generatedImg?: number;
 }) {
   const { getContract, account, networkName } = useMetamask();
   const { unitPrice } = useUnitPrice();
@@ -87,6 +89,7 @@ export default function ArtworkDetail({
                 categorySlug={categorySlug}
                 more={artwork.more}
                 thumbnail={artwork.image}
+                generatedImg={generatedImg}
                 mint={handleMint}
               />
             </div>
