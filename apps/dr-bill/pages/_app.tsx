@@ -14,7 +14,6 @@ import Footer from '../components/Footer';
 import Background from '../components/Background';
 import { MetamaskProvider, Toaster, useNextProgressbar } from 'shared';
 import Breadcrumbs from '../components/Breadcrumbs';
-import ConnectMetamaskPopup from '../components/ConnectMetamaskPopup';
 
 type NextPageWithLayout = NextPage & {
   getLayout?: (page: ReactElement) => ReactNode;
@@ -45,7 +44,6 @@ function App({ Component, pageProps }: AppPropsWithLayout) {
             getLayout(<Component {...pageProps} />)
           ) : (
             <Background>
-              <ConnectMetamaskPopup />
               <Header />
               <Breadcrumbs />
               <Component {...pageProps} />

@@ -10,19 +10,28 @@ import { getDataFormLocal, saveToLocal } from '../../utils/localStorage';
 import { LOCAL_KEY } from '../../constants';
 import useDeepLink from '../../hooks/useDeepLink';
 import BlurImage from '../BlurImage';
+import { MetamaskWarningModal } from '../MetamaskWarning';
 
 type Props = {
   categorySlug: string;
   mint?: (id: number) => void;
   more: number;
   thumbnail?: string;
+  generatedImg?: number;
 };
-const GeneratedImage = ({ categorySlug, mint, more, thumbnail }: Props) => {
+const GeneratedImage = ({
+  categorySlug,
+  mint,
+  more,
+  thumbnail,
+  generatedImg,
+}: Props) => {
   const { account } = useMetamask();
   const deepLink = useDeepLink();
-  const [currentRandom, setCurrentRandom] = useState(0);
+  const [currentRandom, setCurrentRandom] = useState(generatedImg);
   const [savedList, setSavedList] = useState([]);
   const [loading, setLoading] = useState(false);
+  const [modal, setModal] = useState(false);
 
   function generateImage() {
     setLoading(true);
@@ -37,15 +46,11 @@ const GeneratedImage = ({ categorySlug, mint, more, thumbnail }: Props) => {
       });
   }
 
-  function handleGenerationImg() {
-    if (!account && window.innerWidth <= 768) {
-      window.location.href = deepLink;
-    } else {
-      generateImage();
-    }
-  }
-
   function handleSave() {
+    if (!account && window.innerWidth <= 768) {
+      setModal(true);
+      return;
+    }
     saveToLocal(`${LOCAL_KEY}-${more}`, {
       selected: currentRandom,
       list: savedList,
@@ -82,7 +87,7 @@ const GeneratedImage = ({ categorySlug, mint, more, thumbnail }: Props) => {
       return;
     }
     if (!account && window.innerWidth <= 768) {
-      window.location.href = deepLink;
+      window.location.href = `${deepLink}/?current=${currentRandom}`;
     } else {
       mint?.(currentRandom);
     }
@@ -92,7 +97,9 @@ const GeneratedImage = ({ categorySlug, mint, more, thumbnail }: Props) => {
     const localData = getDataFormLocal(`${LOCAL_KEY}-${more}`);
     if (!!localData?.selected) {
       setSavedList(localData.list);
-      setCurrentRandom(localData.selected);
+      if (!currentRandom) {
+        setCurrentRandom(localData.selected);
+      }
     }
   }, [more]);
 
@@ -126,7 +133,7 @@ const GeneratedImage = ({ categorySlug, mint, more, thumbnail }: Props) => {
           <div className="flex flex-row justify-between gap-2 mt-3">
             <SquareBtn
               css={{ flex: 1 }}
-              onClick={handleGenerationImg}
+              onClick={generateImage}
               disabled={loading}
             >
               Generate
@@ -138,6 +145,7 @@ const GeneratedImage = ({ categorySlug, mint, more, thumbnail }: Props) => {
             >
               Save
             </SquareBtn>
+
             <SquareBtn
               css={{ flex: 1 }}
               onClick={handleMint}
@@ -153,6 +161,13 @@ const GeneratedImage = ({ categorySlug, mint, more, thumbnail }: Props) => {
             onRemove={handleRemove}
           />
         </>
+      )}
+      {typeof window !== 'undefined' && (
+        <MetamaskWarningModal
+          onClose={() => setModal(false)}
+          visible={modal}
+          href={`${deepLink}/?current=${currentRandom}`}
+        />
       )}
     </div>
   );
