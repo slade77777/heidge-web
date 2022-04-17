@@ -13,7 +13,7 @@ export default function Tag({text, css}: { text: string; css?: CSS }) {
         top: 0,
         right: 0,
         padding: '10px 20px',
-        ...css
+        ...css,
       }}
     >
       {text}
