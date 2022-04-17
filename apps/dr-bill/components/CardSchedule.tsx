@@ -31,12 +31,15 @@ export default function CardSchedule({
       }}
     >
       <div>
-        <CustomLink href={href} isExternalLink={isExternal}>
-          <Text css={{ lineHeight: '$md', fontWeight: 600 }}>{title}</Text>
-        </CustomLink>
-        <Paragraph>{content}</Paragraph>
+        <div className="float-right w-[90px] h-[42px]">&nbsp;</div>
+        <div>
+          <CustomLink href={href} isExternalLink={isExternal}>
+            <Text css={{ lineHeight: '$md', fontWeight: 600 }}>{title}</Text>
+          </CustomLink>
+          <Paragraph>{content}</Paragraph>
+        </div>
+        {!!tag && <Tag text={tag} />}
       </div>
-      {!!tag && <Tag text={tag} />}
     </Card>
   );
 }
